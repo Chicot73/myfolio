@@ -1,0 +1,59 @@
+@mixin font ($weight, $size, $height) {
+    font-weight: $weight; //начертание
+    font-size: $size; //размер
+    line-height: $height; //интерлиньяж
+    font-family: 'Open Sans';
+    //@include font (700, 9rem, 116%);
+    }
+    
+    @mixin vert-c {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    @mixin absolute00 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(0,0);
+    }
+    
+    @mixin absolute0-center {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%,0);
+    }
+    
+    @mixin gray-1 {
+        color: #424241;
+    }
+    
+    @mixin gray-2 {
+        color: #5C5C5C;
+    }
+    
+    @mixin gray-3 {
+        color: #909090;
+    }
+    
+    @mixin gray-4-bg {
+        background: #F3F5F6;
+    }
+    
+    @mixin turquoise {
+        color: #7ECFDA;
+    }
+    
+    @mixin turquoise-bg {
+        background: #7ECFDA;
+    }
+    
+    @mixin white {
+        color: #FFFFFF;
+    }
+    
+    @mixin white-bg {
+        background: #FFFFFF;
+    }

@@ -1,0 +1,9 @@
+.header__title {
+    font-weight: bold;
+    font-size: 7.8rem;
+    line-height: 100%;
+    font-family: 'Bebas Neue';
+    text-transform: uppercase;
+    @include gray-1;
+    margin-bottom: 1.1rem;
+}

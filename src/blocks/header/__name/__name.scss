@@ -1,0 +1,17 @@
+.header__name {
+    position: relative;
+    @include font (700, 2.3rem, 150%); 
+    @include gray-1;
+    padding-left: 4.2rem;
+    &::before {
+        content: url("../img/sign.svg");
+        position: absolute;
+        top: -.2rem;
+        left: 0;
+        transform: translate(0,0);
+        /* background-image: url("../img/sign.svg");
+        background-repeat: no-repeat; */
+        z-index: 1;
+        width: 1.8rem;
+    }
+}

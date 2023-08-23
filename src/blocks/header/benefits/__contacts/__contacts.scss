@@ -1,0 +1,10 @@
+.benefits__contacts {
+    flex: 0 1 20.1rem;
+    @include turquoise-bg;
+    text-align: center;
+    @include font (600, 1.3rem, 154%);
+    text-transform: uppercase;
+    height: 100%;
+    padding-top: 2.1rem;
+    @include white;
+}

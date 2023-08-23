@@ -1,0 +1,9 @@
+.header__menu li a {
+    @include font (500, 1.2rem, 150%); 
+    @include gray-1;
+    padding-right: 3rem;
+}
+
+.header__menu {
+    @include vert-c;
+}
