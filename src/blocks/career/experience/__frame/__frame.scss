@@ -1,0 +1,37 @@
+.experience__frame {
+    position: relative;
+    border: 2px solid #7ECFDA;
+    background: #FFFBE6;
+    box-shadow: 0.2rem 0.2rem 0.5rem 0 rgba(0, 0, 0, 0.10);
+    margin-bottom: 4rem;
+    height: 0;
+    cursor: pointer;
+    &:hover {
+        .experience__button {
+            box-shadow: 0 0 0.5rem 0.1rem rgba(23, 202, 199, .5);
+        }
+        .experience__button--w {
+            opacity: 1;
+            clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+            @keyframes example {
+            0%   {clip-path: polygon(0 0, 0 0, 0 0, 0 0);}
+            15%   {clip-path: polygon(3% 0, 36% 0, 0 39%, 0 3%);}
+            35%  {clip-path: polygon(44% 0, 83% 0, 0 86%, 0 43%);}
+            65%  {clip-path: polygon(100% 52%, 100% 15%, 13% 100%, 50% 100%);}
+            85% {clip-path: polygon(100% 94%, 100% 57%, 57% 100%, 94% 100%);}
+            100% {clip-path: polygon(100% 94%, 100% 98%, 99% 100%, 94% 100%);}
+            }
+            
+            animation-name: example;
+            animation-duration: .7s;
+            animation-timing-function: ease-out;
+            -webkit-animation-timing-function: ease-out;
+            -o-animation-timing-function: ease-out;
+            -moz-animation-timing-function: ease-out;
+            animation-iteration-count: infinite;
+            -webkit-animation-iteration-count: infinite;
+            -o-animation-iteration-count: infinite;
+            -moz-animation-iteration-count: infinite;
+        }
+    }
+}

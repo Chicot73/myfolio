@@ -1,0 +1,10 @@
+.circle--3 {
+    position: absolute;
+    width: .9rem;
+    height: .9rem;
+    border-radius: 50%;
+    @include turquoise-bg;
+    bottom: 0;
+    right: 0;
+    transform: translate(50%, 50%);
+}

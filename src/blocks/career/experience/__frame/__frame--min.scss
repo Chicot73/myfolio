@@ -1,0 +1,67 @@
+.experience__frame--min {
+    height: 0;
+    animation-timing-function: ease-out;
+    @keyframes framemin-1 {
+
+        from {
+            height: 45.7rem;
+        }
+        to { 
+            height: 0;
+        }
+    }
+    @keyframes framemin-2 {
+
+        from {
+            height: 50.8rem;
+        }
+        to { 
+            height: 0;
+        }
+    }
+    @keyframes framemin-3 {
+
+        from {
+            height: 17.4rem;
+        }
+        to { 
+            height: 0;
+        }
+    }
+    @keyframes framemin-4 {
+
+        from {
+            height: 35.8rem;
+        }
+        to { 
+            height: 0;
+        }
+    }
+    @keyframes framemin-5 {
+
+        from {
+            height: 31.9rem;
+        }
+        to { 
+            height: 0;
+        }
+    }
+    @keyframes framemin-6 {
+
+        from {
+            height: 16.8rem;
+        }
+        to { 
+            height: 0;
+        }
+    }
+    @keyframes framemin-7 {
+
+        from {
+            height: 24.1rem;
+        }
+        to { 
+            height: 0;
+        }
+    }
+}

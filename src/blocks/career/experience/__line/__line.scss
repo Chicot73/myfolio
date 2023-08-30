@@ -1,0 +1,10 @@
+.experience__line {
+    position: relative;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -.15rem);
+    width: 100%;
+    border: .2rem solid #7ECFDA;
+    box-shadow: 0.2rem 0.2rem 0.5rem 0 rgba(0, 0, 0, 0.10);
+    height: 0;
+}

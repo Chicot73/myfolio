@@ -1,0 +1,67 @@
+.experience__frame--max {
+    height: max-content;
+    animation-timing-function: ease-out;
+    @keyframes framemax-1 {
+
+        from {
+            height: 0;
+        }
+        to { 
+            height: 45.7rem;
+        }
+    }
+    @keyframes framemax-2 {
+
+        from {
+            height: 0;
+        }
+        to { 
+            height: 50.8rem;
+        }
+    }
+    @keyframes framemax-3 {
+
+        from {
+            height: 0;
+        }
+        to { 
+            height: 17.4rem;
+        }
+    }
+    @keyframes framemax-4 {
+
+        from {
+            height: 0;
+        }
+        to { 
+            height: 35.8rem;
+        }
+    }
+    @keyframes framemax-5 {
+
+        from {
+            height: 0;
+        }
+        to { 
+            height: 31.9rem;
+        }
+    }
+    @keyframes framemax-6 {
+
+        from {
+            height: 0;
+        }
+        to { 
+            height: 16.8rem;
+        }
+    }
+    @keyframes framemax-7 {
+
+        from {
+            height: 0;
+        }
+        to { 
+            height: 24.1rem;
+        }
+    }
+}

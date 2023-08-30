@@ -1,0 +1,5 @@
+.experience__company {
+    @include font (normal, 1.4rem, 150%);
+    @include gray-2;
+    margin-bottom: 2.4rem;
+}

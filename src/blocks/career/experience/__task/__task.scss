@@ -1,0 +1,5 @@
+.experience__task {
+    @include font (600, 1.3rem, 150%);
+    @include gray-2;
+    margin-bottom: .7rem;
+}

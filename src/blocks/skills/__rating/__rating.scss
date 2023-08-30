@@ -1,0 +1,5 @@
+.skills__rating {
+    flex: 0 0 13.7rem;
+    @include turquoise-bg;
+    @include font (600, 1.4rem, 116%);
+}

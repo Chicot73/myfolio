@@ -1,0 +1,12 @@
+.education__desc {
+    @include font (normal, 1.4rem, 150%);
+    @include gray-2;
+    
+    &:not(:last-of-type) {
+        margin-bottom: 1.4rem;
+    }
+    
+    &:first-of-type {
+        margin-bottom: 2.7rem;
+    }
+}
