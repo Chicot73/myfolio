@@ -1,0 +1,8 @@
+.examples__subtitle {
+    @include font (normal, 1.4rem, 153%);
+    @include gray-2;
+    margin-bottom: .7rem;
+    & span {
+        @include font (600, 1.5rem, 154%);
+    }
+}

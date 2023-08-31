@@ -1,3 +1,6 @@
 .skills__rail {
-    display: flex;
+    @include vert-c;
+    &:not(:last-child) {
+        margin-bottom: 2.5rem;
+    }
 }

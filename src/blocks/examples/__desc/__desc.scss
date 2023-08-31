@@ -1,0 +1,6 @@
+.examples__desc {
+    @include font (normal, 1.3rem, 154%);
+    @include gray-2;
+    margin-bottom: .7rem;
+    width: 38.4rem;
+}

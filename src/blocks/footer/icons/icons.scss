@@ -1,0 +1,23 @@
+.icons {
+    flex: 0 0 40.3em;
+    padding: 4.1rem 7rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    @include turquoise-bg;
+    & a:not(:last-child) {
+        margin-right: 3.1rem;
+    }
+    & a:nth-child(1) {
+        img {
+            width: 3.65rem;
+            margin-right: .75rem;
+        }
+    }
+    & a:nth-child(2) {
+        img {
+            width: 3.7rem;
+        }
+    }
+    
+}

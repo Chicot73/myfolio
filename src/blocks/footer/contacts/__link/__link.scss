@@ -1,0 +1,12 @@
+.contacts__link {
+    @include font (600, 1.4rem, 150%); 
+    & span {
+        @include font (300, 1.4rem, 150%); 
+        &:hover {
+            color:antiquewhite;
+        }
+    }
+    & a {
+        @include white;
+    }
+}

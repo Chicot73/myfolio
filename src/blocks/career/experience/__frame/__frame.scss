@@ -1,7 +1,7 @@
 .experience__frame {
     position: relative;
     border: 2px solid #7ECFDA;
-    background: #FFFBE6;
+    @include yellow-bg;
     box-shadow: 0.2rem 0.2rem 0.5rem 0 rgba(0, 0, 0, 0.10);
     margin-bottom: 4rem;
     height: 0;

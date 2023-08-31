@@ -39,6 +39,26 @@ body {
     z-index: 1;
 }
 
+.container-example {
+  position: relative;
+    width: 120rem;
+    /* top: 0;
+    left: 50%;
+    transform: translate(-50%, 0); */
+    margin: 0 auto;
+    background: #F5F5F5;
+    padding-left: 7rem;
+    padding-right: 7rem;
+    z-index: 1;
+}
+
+.container-footer {
+  position: relative;
+  width: 120rem;
+  z-index: 1;
+  margin: 0 auto;
+}
+
 li {
   list-style-type: none;
   padding-left: 0;

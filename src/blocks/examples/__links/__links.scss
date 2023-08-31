@@ -1,0 +1,25 @@
+.examples__links {
+    display: flex;
+    margin-top: 2.6rem;
+    margin-bottom: 6.8rem;
+    cursor: pointer;
+    & a {
+        @include font (normal, 1.1rem, 153%);
+        @include gray-2;
+        @include white-bg;
+        padding: 0.55rem 2rem 0.8rem;
+        border: .1rem solid #909090;
+        border-radius: 5rem;   
+    }
+    & a:first-child {
+        margin-right: 2.4rem;
+    }
+    & a:hover {
+        @include yellow-bg;
+    }
+    & a:active {
+        @include turquoise-bg;
+        @include white;
+        border: .1rem solid #7ECFDA;
+    }
+}

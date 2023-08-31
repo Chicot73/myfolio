@@ -1,0 +1,9 @@
+.principals__intro {
+    width: 36.4rem;
+    padding-right: 4.2rem;
+    @include font (600, 1.45rem, 150%);
+    @include gray-3;
+    & p:not(:last-of-type) {
+        margin-bottom: 1.4rem;
+    }
+}

@@ -1,0 +1,8 @@
+.icons__icon {
+    & img {
+        width: 3.9rem;
+    }
+    &:hover {
+        filter: drop-shadow(0 0 1.9rem #FFFFFF);
+    }
+}

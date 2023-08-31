@@ -33,6 +33,10 @@
     @mixin gray-2 {
         color: #5C5C5C;
     }
+
+    @mixin gray-22 {
+        color: #838383;
+    }
     
     @mixin gray-3 {
         color: #909090;
@@ -48,6 +52,14 @@
     
     @mixin turquoise-bg {
         background: #7ECFDA;
+    }
+
+    @mixin yellow {
+        color: #FFFBE6;
+    }
+
+    @mixin yellow-bg {
+        background: #FFFBE6;
     }
     
     @mixin white {

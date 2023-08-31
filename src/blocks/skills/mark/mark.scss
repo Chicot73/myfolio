@@ -1,1 +1,13 @@
-.mark {}
+.mark {
+    position: relative;
+    &::before {
+        content: 'уровень';
+        position: absolute;
+        top: -3.4rem;
+        left: 50%;
+        transform: translate(-50%, 0);
+        @include turquoise;
+        @include font (normal, 1.4rem, 150%);
+        font-style: italic;
+    }
+}

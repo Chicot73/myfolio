@@ -1,0 +1,7 @@
+.examples__title {
+    @include font (bold, 2.3rem, 154%);
+    text-transform: uppercase;
+    color: #838383;
+    //margin-top: 5.7rem;
+    margin-bottom: 4rem;
+}

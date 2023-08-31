@@ -1,0 +1,5 @@
+.principals__title {
+    @include font (600, 1.5rem, 150%);
+    @include gray-2;
+    margin-bottom: 1rem;
+}
