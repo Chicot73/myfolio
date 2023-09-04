@@ -1,8 +1,15 @@
 .skills__sort {
     flex: 1 0 auto;
     @include font (600, 1.4rem, 150%);
-    @include gray-22;
+    @include gray-23;
     @include gray-4-bg;
     padding: .7rem 1.5rem .5rem; 
     text-transform: uppercase;
+}
+
+@media only screen and (min-width: 48em) and (max-width: 76.5em) {
+    .skills__sort {
+        @include font (600, 1.3rem, 150%);
+        padding: .7rem .8rem .5rem; 
+    }
 }

@@ -4,3 +4,18 @@
     @include turquoise;
     margin-bottom: 3.3rem;
 }
+
+@media only screen and (min-width: 48em) and (max-width: 76.5em) {
+    .title {
+        @include font (bold, 2.2rem, 154%);
+        margin-bottom: 3rem;
+    }   
+}
+
+@media only screen and (min-width: 36em) and (max-width: 47.99em) {
+    .title {
+        @include font (bold, 2.2rem, 154%);
+        margin-bottom: 3rem;
+        text-align: center;
+    } 
+}

@@ -2,8 +2,33 @@
     width: 36.4rem;
     padding-right: 4.2rem;
     @include font (600, 1.45rem, 150%);
-    @include gray-3;
+    @include gray-22;
     & p:not(:last-of-type) {
         margin-bottom: 1.4rem;
+    }
+}
+
+@media only screen and (min-width: 62.5em) and (max-width: 76.5em) {
+    .principals__intro {
+        width: 30rem;
+        padding-right: 4.1rem;
+    }
+}
+
+@media only screen and (min-width: 48em) and (max-width: 62.49em) {
+    .principals__intro {
+        width: auto;
+        padding-right: none;
+    }
+}
+
+@media only screen and (min-width: 36em) and (max-width: 47.99em) {
+    .principals__intro {
+        width: auto;
+        padding-right: none;
+        letter-spacing: 0.025em;
+        & p:last-of-type {
+            margin-bottom: 5rem;
+        }
     }
 }

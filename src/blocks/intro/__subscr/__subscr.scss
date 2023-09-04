@@ -3,3 +3,16 @@
     @include gray-3;
     font-style: italic;
 }
+
+@media only screen and (min-width: 48em) and (max-width: 62.49em) {
+    .intro__subscr {
+        position: absolute;
+        top: 39.8rem;
+        right: 0;
+    }
+}
+@media only screen and (min-width: 36em) and (max-width: 47.99em) {
+    .intro__subscr {
+        display: none;
+    }
+}

@@ -1,0 +1,18 @@
+.experience__wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3.1rem;
+}
+
+@media only screen and (min-width: 48em) and (max-width: 62.49em) {
+    .experience__wrapper {
+        margin-bottom: 3rem;
+    }
+}
+
+@media only screen and (min-width: 36em) and (max-width: 47.99em) {
+    .experience__wrapper {
+        display: block;
+        margin-bottom: 7rem;
+    }
+}

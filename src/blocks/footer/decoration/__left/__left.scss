@@ -1,5 +1,16 @@
 .decoration__left {
     flex: 0 0 79.7rem;
     background: #808080;
-    
+}
+
+@media only screen and (min-width: 62.5em) and (max-width: 76.5em) {
+    .decoration__left {
+        flex: 0 0 66.1rem;
+    }
+}
+
+@media only screen and (min-width: 48em) and (max-width: 62.49em) {
+    .decoration__left {
+        flex: 0 0 52.5rem;
+    }
 }

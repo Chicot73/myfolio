@@ -1,6 +1,19 @@
 .competentions__title {
     @include font (normal, 1.6rem, 144%);
     @include gray-1;
-    margin-top: 2.9rem;
-    margin-bottom: .5rem;
+    padding-top: 2.9rem;
+    padding-bottom: .5rem;
+}
+
+@media only screen and (min-width: 62.5em) and (max-width: 76.5em) {
+    .competentions__title {
+        @include font (normal, 1.4rem, 144%);
+    }
+}
+
+@media only screen and (min-width: 48em) and (max-width: 62.49em) {
+    .competentions__title {
+        padding-top: 9rem;
+        padding-bottom: .5rem;
+    }
 }

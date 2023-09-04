@@ -1,3 +1,26 @@
 .exhibitions__colomn {
     width: 33.4rem;
 }
+
+@media only screen and (min-width: 62.5em) and (max-width: 76.5em) {
+    .exhibitions__colomn {
+        width: 27.6rem;
+    }
+}
+
+@media only screen and (min-width: 48em) and (max-width: 62.49em) {
+    .exhibitions__colomn {
+        width: 31.4rem;
+    }
+}
+
+@media only screen and (min-width: 36em) and (max-width: 47.99em) {
+    .exhibitions__colomn {
+        width: 30rem;
+        margin-left: auto;
+        margin-right: auto;
+        &:first-child {
+            margin-bottom: 2rem;
+        }
+    }
+}

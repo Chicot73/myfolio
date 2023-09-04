@@ -1,4 +1,26 @@
 .intro__diploma {
     width: 25.4rem;
-    margin-bottom: 2.2rem;
+    margin-bottom: 1.7rem;
+}
+
+@media only screen and (min-width: 62.5em) and (max-width: 76.5em) {
+    .intro__diploma {
+        width: 22.8rem;
+    }
+}
+
+@media only screen and (min-width: 48em) and (max-width: 62.49em) {
+    .intro__diploma {
+        width: 22.6rem;
+        margin-bottom: 0;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+}
+
+@media only screen and (min-width: 36em) and (max-width: 47.99em) {
+    .intro__diploma {
+        display: none;
+    }
 }

@@ -1,5 +1,29 @@
 .skills__colomn {
-    margin-top: 3.6rem                   ;
+    margin-top: 3.6rem;
     width: 33.4rem;
     margin-bottom: .8rem;
+}
+
+@media only screen and (min-width: 62.5em) and (max-width: 76.5em) {
+    .skills__colomn {
+        margin-top: 1.6rem;
+        width: 27.6rem;
+        margin-bottom: 0;
+    }
+}
+
+@media only screen and (min-width: 48em) and (max-width: 62.49em) {
+    .skills__colomn {
+        width: 31.4rem;
+        margin-bottom: 0;
+        margin-top: 3rem;
+    }
+}
+
+@media only screen and (min-width: 36em) and (max-width: 47.99em) {
+    .skills__colomn {
+        width: 100%;
+        margin: 0 auto;
+        margin-bottom: 2.5rem;
+    }
 }

@@ -2,3 +2,9 @@
     @include vert-c;
     height: 6.2rem;
 }
+
+@media only screen and (min-width: 62.5em) and (max-width: 76.5em) {
+    .benefits {
+        height: 6rem;
+    }
+}

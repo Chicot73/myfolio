@@ -4,3 +4,24 @@
     padding: 4.1rem 7rem;
     background: #717171;
 }
+
+@media only screen and (min-width: 62.5em) and (max-width: 76.5em) {
+    .contacts {
+        flex: 0 0 66.1rem;
+        padding: 3.3rem 6rem;
+    }
+}
+
+@media only screen and (min-width: 48em) and (max-width: 62.49em) {
+    .contacts {
+        justify-content: space-between;
+        flex: 0 0 52.5rem;
+        padding: 3.2rem 3.8rem;
+    }
+}
+@media only screen and (min-width: 36em) and (max-width: 47.99em) {
+    .contacts {
+        justify-content: space-between;
+        padding: 3.2rem 5rem;
+    }
+}

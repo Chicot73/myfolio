@@ -1,5 +1,11 @@
 .principals__title {
     @include font (600, 1.5rem, 150%);
-    @include gray-2;
+    @include gray-23;
     margin-bottom: 1rem;
+}
+
+@media only screen and (min-width: 36em) and (max-width: 47.99em) {
+    .principals__title {
+        text-align: center;
+    }
 }

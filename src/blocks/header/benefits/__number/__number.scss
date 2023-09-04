@@ -6,3 +6,9 @@
     @include gray-2;
     margin-bottom: .2rem;
 }
+
+@media only screen and (min-width: 62.5em) and (max-width: 76.5em) {
+    .benefits__number {
+        font-size: 3rem;
+    }
+}

@@ -57,10 +57,13 @@
                 </div>
                 <div class="header__image">
                     <picture loading="lazy">
-                        <source srcset="img/myface_big.avif" type="image/avif">
-                        <source srcset="img/myface_big.vebp" type="image/vebp">
-                        <source srcset="img/myface_big.jpg" type="image/jpg">
-                        <img src="img/myface_big.jpg" alt="мое фото">
+                        <source media="(min-width: 76.51em)" srcset="img/myface_big.avif" type="image/avif">
+                        <source media="(min-width: 76.51em)" srcset="img/myface_big.vebp" type="image/vebp">
+                        <source media="(min-width: 76.51em)" srcset="img/myface_big.jpg" type="image/jpg">
+                        <source media="(max-width: 76.5em)" srcset="img/myface_md.avif" type="image/avif">
+                        <source media="(max-width: 76.5em)" srcset="img/myface_md.vebp" type="image/vebp">
+                        <source media="(max-width: 76.5em)" srcset="img/myface_md.jpg" type="image/jpg">
+                        <img src="img/myface_md.jpg" alt="мое фото">
                     </picture>
                 </div>
             </div>
@@ -105,7 +108,7 @@
                     <p class="intro__paragraph">Здравствуйте!</p>
                     <p class="intro__paragraph">Я&ensp;&mdash;&ensp;Игорь Бобырев, веб-дизайнер и разработчик сайтов. 
                     Если вы здесь&ensp;&mdash;&ensp;вы мой потенциальный заказчик или работодатель, я вас приветствую!</p>
-                    <p class="intro__paragraph">Я родился в 1973 г. в Москве. В 1990 г. начал работать 
+                    <p class="intro__paragraph">Я родился в 1973 г. в Москве.<br>В 1990 г. начал работать 
                     внештатным сотрудником городской газеты &mdash; иллюстратором. С 1991 по 2018 гг. я&ensp;&mdash; 
                     штатный сотрудник в различных компаниях, связанных с издательством или полиграфией. 
                     С 2006 года начал увлекаться веб-дизайном и написанием кода.</p>
@@ -128,17 +131,17 @@
                         <h2 class="title">ОБРАЗОВАНИЕ:</h2>
                         <h4 class="subtitle">Основное образование:</h4>
                         <p class="education__desc">1993 г. Московский издательско-полиграфический колледж 
-                        им. И. Федорова. Специальность: «Корректирование и техническое редактирование книг 
+                        им. И. Федорова.<br>Специальность: «Корректирование и техническое редактирование книг 
                         и журналов». Квалификация: «младший редактор АПИО» (диплом).</p>
                         <h4 class="subtitle">Дополнительное профессиональное образование:</h4>
                         <p class="education__desc">2011 г.  Британская Высшая Школа Дизайна. Российское 
-                        отделение программ ДПО. Курс «Графический дизайн &ndash; базовый курс» (диплом)</p>
+                        отделение программ ДПО.<br>Курс «Графический дизайн &ndash; базовый курс» (диплом)</p>
                         <p class="education__desc">2022 г. Онлайн-школа Glo Academy. Курс «Веб-старт 19.0»</p>
                     </article>
                     
                     <article class="experience">
                         <h2 class="title">Опыт работы в компаниях:</h2>
-                        <div class="wrapper">
+                        <div class="experience__wrapper">
                             <div class="experience__colomn">
                                 <h4 class="subtitle">июнь 2013 г. &ndash; март 2018 г.</h4>
                                 <h5 class="experience__company">УК «Группа ГМС» &ndash; дизайнер-верстальщик</h5>
@@ -323,7 +326,7 @@
                     </article>             
                     <article class="exhibitions">
                         <h2 class="title">Опыт выставочной деятельности:</h2>
-                        <div class="wrapper">
+                        <div class="exhibitions__wrapper">
                             <div class="exhibitions__colomn">
                                 <div class="flex">
                                     <div class="exhibitions__number">2011</div>
@@ -344,11 +347,11 @@
             </div>
             <section class="skills">
                 <h2 class="title">Мои технические навыки:</h2>
-                <div class="wrapper">
+                <div class="skills__wrapper">
                     <div class="skills__colomn">
                         <div class="skills__rail">
                             <p class="skills__sort">Маркетинг</p>
-                            <p class="skills__rating mark">«средний»</p>
+                            <p class="skills__rating">«средний»</p>
                         </div>
                         <div class="skills__rail">
                             <p class="skills__sort skills__sort--txt">Графический дизайн</p>
@@ -362,7 +365,7 @@
                     <div class="skills__colomn">
                         <div class="skills__rail">
                             <p class="skills__sort">HTML</p>
-                            <p class="skills__rating mark">«продвинутый»</p>
+                            <p class="skills__rating">«продвинутый»</p>
                         </div>
                         <div class="skills__rail">
                             <p class="skills__sort">CSS</p>
@@ -373,12 +376,12 @@
                             <p class="skills__rating">«средний»</p>
                         </div>
                     </div>
-                    <div class="skills__colomn">
+                    <div class="skills__colomn skills__colomn-3">
                         <div class="skills__rail">
                             <p class="skills__sort">PHP</p>
-                            <p class="skills__rating mark">«начальный»</p>
+                            <p class="skills__rating mark3">«начальный»</p>
                         </div>
-                        <div class="skills__rail">
+                        <div class="skills__rail skills__rail--min">
                             <p class="skills__sort">JQuery</p>
                             <p class="skills__rating">«начальный»</p>
                         </div>
@@ -391,16 +394,25 @@
             </section>
             <section class="principals">
                 <h2 class="title">Характерные принципы работы:</h2>
-                <div class="wrapper">
+                <div class="principals__wrapper">
                     <article class="principals__intro">
+                        <div class="principals__dots">
+                            <img src="img/bullets.svg" loading="lazy" alt="bullets">
+                        </div>
                         <p>Создаю дизайн с учетом пожеланий заказчика, согласовывая все изменения. 
                             Благодаря работающей системе поиска уникальных идей успешно решаю с 
                             заказчиком стоящие перед его компанией маркетинговые задачи: например, 
                             привлечение новых клиентов, раскрутка новых позиций в линейке товаров / услуг и т.д.</p>
+                        <div class="principals__dots">
+                            <img src="img/bullets.svg" loading="lazy" alt="bullets">
+                        </div>
                         <p>Верстаю готовые работающие сайты на основе дизайн-макетов. Работал с макетами PSD, 
                             Adobe XD и Figma. Знаю, как правильно экспортировать графику из макета, 
                             нахожу и подключаю все необходимые шрифты, узнаю точные отступы. Если есть возможность 
                             достать из макета SVG, использую его а не растровый вариант. </p>
+                        <div class="principals__dots">
+                            <img src="img/bullets.svg" loading="lazy" alt="bullets">
+                        </div>
                         <p>Создаю макет сайта с учетом его адаптива на всех устройствах, если это есть в брифе.</p>
                     </article>
                     <article class="principals__stories">
@@ -484,14 +496,14 @@
                         <a href="http://" alt="Ссылка на сайт BPD">Ссылка на сайт Funiro</a>
                         <a href="http://" alt="Cсылка на репозиторий GitHub">Cсылка на репозиторий GitHub</a>
                     </div>
+                    <a href="http://" alt="Ссылка на видеопример" class="examples__preview-2">
+                        <img src="img/funiro_big.png" alt="сайт Funiro" loading="lazy">
+                    </a>
                     <div class="examples__footnote">
                         <div class="examples__line"></div>
                         <p class="examples__note">*&ensp;оба проекта&ensp;&ndash;&ensp;некоммерческие, созданы в учебных целях.
                         </p>
                     </div>
-                    <a href="http://" alt="Ссылка на видеопример" class="examples__preview-2">
-                        <img src="img/funiro_big.png" alt="сайт Funiro" loading="lazy">
-                    </a>
                 </div>
             </aside>
             <div class="examples__graycol"></div>
@@ -503,7 +515,7 @@
                 <ul class="contacts">
                     <div class="contacts__column">
                         <li class="contacts__link">  
-                            <a href="https://wa.me/+79258247862" alt="Телефон" class="contacts__phone">Телефон:&ensp;<span>+7 925 824 7862 (whatsApp)</span></a>
+                            <a href="https://wa.me/+79258247862" alt="Телефон" class="contacts__phone">Телефон:&ensp;<span>+7 925 824 7862<br>(whatsApp)</span></a>
                         </li>
                         <li class="contacts__link">  
                             <a href="https://t.me/yorg17" alt="Ссылка на Telegram" class="contacts__tg">Telegram:&ensp;<span>@yorg17</span></a>

@@ -6,3 +6,20 @@
         margin-bottom: 1.4rem;
     }
 }
+
+@media only screen and (min-width: 48em) and (max-width: 62.49em) {
+    .contacts__column {
+        &:first-child {
+            margin-right: 0;
+        }
+    }
+}
+
+@media only screen and (min-width: 36em) and (max-width: 47.99em) {
+    .contacts__column {
+        &:first-child {
+            width: 19rem;
+            margin-right: 0;
+        }
+    }
+}

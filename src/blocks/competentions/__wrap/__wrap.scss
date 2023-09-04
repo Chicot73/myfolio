@@ -1,3 +1,10 @@
 .competentions__wrap {
     @include vert-c;
 }
+
+@media only screen and (min-width: 36em) and (max-width: 47.99em) {
+    .competentions__wrap {
+        display: block;
+        padding-bottom: 4.1rem;
+    }
+}

@@ -1,4 +1,18 @@
 .intro {
     padding-right: 4.2rem;
-    flex: 0 0 36.2rem;
+    width: 36.2rem;
+}
+
+@media only screen and (min-width: 62.5em) and (max-width: 76.5em) {
+    .intro {
+        padding-right: 2.6rem;
+        width: 29rem;
+    }
+}
+@media only screen and (min-width: 36em) and (max-width: 62.49em) {
+    .intro {
+        position: relative;
+        padding-right: 0;
+        width: 100%;
+    }
 }

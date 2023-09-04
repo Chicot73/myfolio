@@ -7,3 +7,17 @@
 .header__menu {
     @include vert-c;
 }
+
+@media only screen and (min-width: 62.5em) and (max-width: 76.5em) {
+    .header__menu li a {
+        @include font (500, 1.1rem, 150%); 
+        @include gray-1;
+        padding-right: 2.8rem;
+    }
+}
+
+@media only screen and (min-width: 36em) and (max-width: 62.49em) {
+    .header__menu {
+        display: none;
+    }
+}

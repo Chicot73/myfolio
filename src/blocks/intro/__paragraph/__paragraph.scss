@@ -1,9 +1,32 @@
 .intro__paragraph {
     @include font (600, 1.5rem, 153%);
-    @include gray-3;
+    @include gray-22;
     margin-bottom: 1.5rem;
     letter-spacing: .02em;
     &:last-of-type {
         margin-bottom: 4.7rem;
+    }
+}
+
+@media only screen and (min-width: 62.5em) and (max-width: 76.5em) {
+    .intro__paragraph {
+        @include font (600, 1.4rem, 153%);
+    }
+}
+
+@media only screen and (min-width: 48em) and (max-width: 62.49em) {
+    .intro__paragraph {
+        @include font (600, 1.4rem, 153%);
+        width: 37.8rem;
+    }
+}
+
+@media only screen and (min-width: 36em) and (max-width: 47.99em) {
+    .intro__paragraph {
+        @include font (600, 1.4rem, 153%);
+        width: 100%;
+        &:last-of-type {
+            margin-bottom: 6rem;
+        }
     }
 }

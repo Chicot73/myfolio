@@ -1,3 +1,21 @@
 .experience__colomn {
-    width: 33.4rem;
+    width: 33.1rem;
+}
+
+@media only screen and (min-width: 62.5em) and (max-width: 76.5em) {
+    .experience__colomn {
+        width: 27.1rem;
+    }
+}
+
+@media only screen and (min-width: 48em) and (max-width: 62.49em) {
+    .experience__colomn {
+        width: 30.8rem;
+    }
+}
+
+@media only screen and (min-width: 36em) and (max-width: 47.99em) {
+    .experience__colomn {
+        width: 100%;
+    }
 }

@@ -2,6 +2,11 @@
     @include font (bold, 2.3rem, 154%);
     text-transform: uppercase;
     color: #838383;
-    //margin-top: 5.7rem;
     margin-bottom: 4rem;
+}
+
+@media only screen and (min-width: 48em) and (max-width: 76.5em) {
+    .examples__title {
+        @include font (bold, 2.2rem, 154%);
+    }
 }

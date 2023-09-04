@@ -1,10 +1,19 @@
 .skills__rating {
+    position: relative;
     flex: 0 0 auto;
     width: 13.7rem;
     @include turquoise-bg;
     @include white;
     @include font (600, 1.4rem, 116%);
     padding: .625rem 1.5rem 1rem; 
-    letter-spacing: 0.2 em;
     text-align: center;
+}
+
+@media only screen and (min-width: 62.5em) and (max-width: 76.5em) {
+    .skills__rating {
+        width: 12.3rem;
+        @include font (600, 1.3rem, 116%);
+        padding: .7rem 0 .8rem;
+        //letter-spacing: .02em;
+    }
 }

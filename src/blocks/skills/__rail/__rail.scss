@@ -4,3 +4,27 @@
         margin-bottom: 2.5rem;
     }
 }
+
+@media only screen and (min-width: 48em) and (max-width: 76.5em) {
+    .skills__rail {
+        @include vert-c;
+        &:not(:last-child) {
+            margin-bottom: 2rem;
+        }
+    }
+}
+
+@media only screen and (min-width: 48em) and (max-width: 62.49em) {
+    .skills__rail {
+        width: 31.4rem;
+        margin-bottom: 2rem;
+    }
+}
+
+@media only screen and (min-width: 36em) and (max-width: 47.99em) {
+    .skills__rail .mark {
+        &::before {
+            content: none;
+        }
+    }
+}

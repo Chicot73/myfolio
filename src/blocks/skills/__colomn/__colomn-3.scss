@@ -1,0 +1,10 @@
+@media only screen and (min-width: 48em) and (max-width: 62.49em) {
+    .skills__colomn-3 {
+        width: 100%;
+        @include vert-c;
+        position: absolute;
+        bottom: -5.2rem;
+        left: 50%;
+        transform: translate(-50%,0);
+    }
+}

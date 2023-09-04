@@ -3,3 +3,22 @@
     justify-content: space-between;
     padding-bottom: 6.1rem;
 }
+
+@media only screen and (min-width: 62.5em) and (max-width: 76.5em) {
+    .wrapper {
+        padding-bottom: 5rem;
+    }
+}
+
+@media only screen and (min-width: 48em) and (max-width: 62.49em) {
+    .wrapper {
+        display: block;
+    }
+}
+
+@media only screen and (min-width: 36em) and (max-width: 47.99em) {
+    .wrapper {
+        padding: 0 5.9rem 5rem;
+        display: block;
+    }
+}

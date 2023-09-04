@@ -1,3 +1,14 @@
 .principals__column {
     width: 33.4rem;
 }
+@media only screen and (min-width: 62.5em) and (max-width: 76.5em) {
+    .principals__column {
+        width: 27.6rem;
+    }
+}
+@media only screen and (min-width: 48em) and (max-width: 62.49em) {
+    .principals__column {
+        width: 31.4rem;
+        margin-bottom: 2.5rem;
+    }
+}

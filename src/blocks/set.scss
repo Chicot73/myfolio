@@ -29,9 +29,6 @@ body {
 .container {
     position: relative;
     width: 120rem;
-    /* top: 0;
-    left: 50%;
-    transform: translate(-50%, 0); */
     margin: 0 auto;
     background: #FFFFFF;
     padding-left: 7rem;
@@ -42,9 +39,6 @@ body {
 .container-example {
   position: relative;
     width: 120rem;
-    /* top: 0;
-    left: 50%;
-    transform: translate(-50%, 0); */
     margin: 0 auto;
     background: #F5F5F5;
     padding-left: 7rem;
@@ -85,6 +79,10 @@ img {
 
 
 @media only screen and (min-width: 62.5em) and (max-width: 76.5em) {
+  body {
+    padding-top: 3.7rem;
+    padding-bottom: 3.7rem;
+  } 
   html {
    font-size: 10px;
    //font-size: 6.4px;
@@ -93,53 +91,106 @@ img {
  }
  .container {
    width: 100rem;
-   margin: 3.7rem auto;
-   padding-left: 6.5rem;
-    padding-right: 6.5rem;
+   margin: 0 auto;
+   padding-left: 6.1rem;
+   padding-right: 6.1rem;
  }
+  .container-example {
+    width: 100rem;
+    padding-left: 6.1rem;
+    padding-right: 6.1rem;
+  }
+
+  .container-footer {
+    width: 100rem;
+  }
 } 
 
 @media only screen and (min-width: 48em) and (max-width: 62.49em) {
+  body {
+    padding-top: 3.7rem;
+    padding-bottom: 3.7rem;
+  } 
    html {
     font-size: 10px;
 
   }
   .container {
     width: 76.79rem;
-    margin: 3.7rem auto;
+    margin: 0 auto;
    padding-left: 5.8rem;
     padding-right: 5.8rem;
   }
-} 
+  .container-example {
+    width: 76.79rem;
+    padding-left: 3.8rem;
+    padding-right: 5.8rem;
+  }
+  
+  .container-footer {
+    width: 76.79rem;
+  }
+}
+
+ 
 
 @media only screen and (min-width: 36em) and (max-width: 47.99em) {
+  body {
+    padding-top: 2.9rem;
+    padding-bottom: 2.9rem;
+  }
   html {
    font-size: 10px;
 
  }
  .container {
-   width: 35.99rem;
-   margin: 2.9rem auto;
+   width: 57.6rem;
+   margin: 0 auto;
    padding-left: 4.4rem;
     padding-right: 4.4rem;
  }
+ .container-example {
+  width: 57.6rem;
+  padding-left: 4.4rem;
+  padding-right: 4.4rem; 
+}
+
+.container-footer {
+  width: 57.6rem;
+}
 }
 
 @media only screen and (min-width: 20em) and (max-width: 35.99em) {
+  body {
+    padding-top: 2.4rem;
+    padding-bottom: 2.4rem;
+  }
   html {
     font-size: 10px;
     // font-size: 1.75vw; //11.9px
     // font-size vw: (100/320) * 4.3px; // где 320 это ширина мобильного экрана
   }
   .container {
-    width: 19.99rem;
+    width: 32rem;
     margin: 2.4rem auto;
    padding-left: 3.3rem;
     padding-right: 3.3rem;
   }
+  .container-example {
+    width: 32rem;
+    padding-left: 3.3rem;
+    padding-right: 3.3rem; 
+  }
+  .container-footer {
+    width: 32rem;
+  }
 }
 
 @media only screen and (max-width: 19.99em) {
+  body {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
   html {
     font-size: 3.125vw;
   }
@@ -148,5 +199,13 @@ img {
     margin: 0 auto;
    padding-left: 3.3rem;
     padding-right: 3.3rem;
+  }
+  .container-example {
+    width: 100%;
+    padding-left: 3.3rem;
+    padding-right: 3.3rem; 
+  }
+  .container-footer {
+    width: 100%;
   }
 }

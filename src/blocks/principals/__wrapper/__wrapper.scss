@@ -1,0 +1,18 @@
+.principals__wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 7rem;
+}
+
+@media only screen and (min-width: 48em) and (max-width: 76.5em) {
+    .principals__wrapper {
+        padding-bottom: 5rem;
+    }
+}
+
+@media only screen and (min-width: 36em) and (max-width: 47.99em) {
+    .principals__wrapper {
+        display: block;
+        padding: 0 5.9rem 5rem;
+    }
+}

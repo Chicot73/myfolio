@@ -8,3 +8,10 @@
     padding-top: 2.1rem;
     @include white;
 }
+
+@media only screen and (min-width: 62.5em) and (max-width: 76.5em) {
+    .benefits__contacts {
+        flex: 0 1 16.4rem;
+        @include font (600, 1.1rem, 154%);
+    }
+}

@@ -3,3 +3,9 @@
     @include vert-c;
     margin-bottom: 3.9rem;
 }
+
+@media only screen and (min-width: 48em) and (max-width: 76.5em) {
+    .header__upper {
+        margin-bottom: 1.9rem;
+    }
+}

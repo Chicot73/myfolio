@@ -1,0 +1,63 @@
+.skills__wrapper {
+    position: relative;
+    @include vert-c;
+    margin-bottom: 5rem;
+    & .skills__colomn .skills__rail {
+        &:nth-of-type(1) {
+            .skills__rating::before {
+                content: 'уровень';
+                position: absolute;
+                top: -3.4rem;
+                left: 50%;
+                transform: translate(-50%, 0);
+                @include turquoise;
+                @include font (normal, 1.4rem, 150%);
+                font-style: italic;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 62.5em) and (max-width: 76.5em) {
+    .skills__wrapper {
+        margin-bottom: 6rem;
+    }
+}
+
+@media only screen and (min-width: 48em) and (max-width: 62.49em) {
+    .skills__wrapper {
+        margin-bottom: 9rem;
+        & .skills__colomn:nth-child(3) .skills__rail:nth-of-type(1) {
+            .skills__rating::before {
+                content: none;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 36em) and (max-width: 47.99em) {
+    .skills__wrapper {
+        display: block;
+        margin-top: 6rem;
+        margin-bottom: 7rem;
+        padding-left: 5.9rem;
+        padding-right: 5.9rem;
+        & .skills__colomn .skills__rail:nth-of-type(1) {
+            .skills__rating::before {
+                content: none;
+            }
+        }
+        & .skills__colomn:first-child .skills__rail:nth-of-type(1) {
+            .skills__rating::before {
+                content: 'уровень';
+                position: absolute;
+                top: -3.4rem;
+                left: 50%;
+                transform: translate(-50%, 0);
+                @include turquoise;
+                @include font (normal, 1.4rem, 150%);
+                font-style: italic;
+            }
+        }
+    }
+}

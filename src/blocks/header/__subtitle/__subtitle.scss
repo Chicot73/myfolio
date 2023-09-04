@@ -3,3 +3,17 @@
     @include gray-3;
     margin-bottom: 5.3rem;
 }
+
+@media only screen and (min-width: 62.5em) and (max-width: 76.5em) {
+    .header__subtitle {
+        @include font (normal, 1.4rem, 175%);
+        margin-bottom: 3.4rem;
+    }
+}
+
+@media only screen and (min-width: 36em) and (max-width: 47.99em) {
+    .header__subtitle {
+        @include font (normal, 1.5rem, 175%);
+        margin-bottom: 4.7rem;
+    }
+}

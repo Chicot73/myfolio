@@ -2,3 +2,15 @@
     flex: 1 1 auto;
     margin-bottom: 5.4rem;
 }
+
+@media only screen and (min-width: 62.5em) and (max-width: 76.5em) {
+    .header__content {
+        margin-bottom: 5.1rem;
+    }
+}
+
+@media only screen and (min-width: 36em) and (max-width: 47.99em) {
+    .header__content {
+        margin-bottom: 7.4rem;
+    }
+}

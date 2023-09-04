@@ -7,3 +7,30 @@
     transform: translate(0,0);
     z-index: 3;
 }
+
+@media only screen and (min-width: 62.5em) and (max-width: 76.5em) {
+    .examples__preview {
+        top: 13.3rem;
+        width: 60.4rem;
+        height: auto;
+    }
+}
+
+@media only screen and (min-width: 48em) and (max-width: 62.49em) {
+    .examples__preview {
+        top: 12.3rem;
+        width: 44.8rem;
+        height: auto;
+    }
+}
+
+@media only screen and (min-width: 36em) and (max-width: 47.99em) {
+    .examples__preview {
+        position: inherit;
+        margin-left: -6.2rem;
+        & img {
+            width: 59.3rem;
+            height: fit-content;
+        }
+    }
+}

@@ -1,0 +1,29 @@
+.principals__dots {
+    display: none;
+}
+
+@media only screen and (min-width: 48em) and (max-width: 76.5em) {
+    .principals__dots {
+        display: block;
+        width: 5rem;
+        margin-bottom: 1.3rem;
+        &:not(:first-child) {
+            margin-top: 3rem;
+        }
+        
+    }
+}
+
+@media only screen and (min-width: 36em) and (max-width: 47.99em) {
+    .principals__dots {
+        display: block;
+        width: 5rem;
+        margin-bottom: 1.3rem;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 1.3rem;
+        &:not(:first-child) {
+            margin-top: 3rem;
+        }
+    }
+}
