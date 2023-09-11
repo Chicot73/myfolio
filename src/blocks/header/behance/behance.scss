@@ -1,13 +1,38 @@
 .behance {
     position: absolute;
-    z-index: 2;
+    //z-index: 2;
     top: 0;
     right: 0;
     width: 11.9rem;
     height: 11.9rem;
-    @include turquoise-bg;
     padding-top: 2.9rem; 
     text-align: center;
+    background: #7ECFDA;
+    animation: bg3 .2s;
+    animation-timing-function: ease-out;
+    @keyframes bg3 {
+
+        from {
+            background: #68c6d3;
+        }
+        to { 
+            background: #7ECFDA;
+        }
+    }
+    &:hover {
+        background: #68c6d3;
+        animation: bg4 .2s;
+        animation-timing-function: ease-out;
+        @keyframes bg4 {
+
+            from {
+                background: #7ECFDA;
+            }
+            to { 
+                background: #68c6d3;
+            }
+        }
+    }
     
     & img {
         width: 4.9rem;
@@ -17,7 +42,13 @@
 
 } 
 
-@media only screen and (min-width: 36em) and (max-width: 76.5em) {
+@media only screen and (min-width: 20.1em) and (max-width: 76.5em) {
+    .behance {
+        width: 11.2rem;
+    }
+}
+
+@media only screen and (max-width: 20.09em) {
     .behance {
         width: 11.2rem;
     }

@@ -1,0 +1,36 @@
+.popup-menu__links {
+    position: absolute;
+    top: 50%;
+    right: 6.6rem;
+    transform: translate(0, -50%);
+    width: 10.6rem;
+    height: 17.5rem;
+    z-index: 101;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    & li a {
+        display: block;
+        @include font (600, 1.5rem, 150%);
+        @include gray-3;
+        &:hover {
+            @include turquoise;
+        }
+    }
+}
+
+@media only screen and (max-width: 36.09em) {
+    .popup-menu__links {
+        right: 2rem;
+        width: 10rem;
+        height: 15.7rem;
+        & li a {
+            @include font (600, 1.4rem, 150%);
+            @include gray-3;
+            &:hover {
+                @include turquoise;
+            }
+        }
+    }
+}

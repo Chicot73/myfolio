@@ -1,0 +1,24 @@
+.yt-button__circle {
+    width: 14.8rem;
+    height: 14.8rem;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.56);
+    filter: drop-shadow(4px 4px 12px rgba(0, 0, 0, 0.18));
+    @include absolute-center;
+    & img {
+        width:  7.3rem;
+        height: 5.1rem;
+        @include absolute-center;
+    }
+}
+
+@media only screen and (max-width: 62.5em) {
+    .yt-button__circle {
+        width: 10.8rem;
+        height: 10.8rem;
+        & img {
+            width:  5.3rem;
+            height: 3.4rem;
+        }
+    }
+}

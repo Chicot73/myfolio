@@ -61,6 +61,91 @@ accordeon.addEventListener('click', (e) => {
 });
 
 
+//Pop-up меню
+
+let puBurger = document.querySelector('.header__burger'),
+    puBody = document.querySelector('.popup-menu'),
+    puBack = document.querySelector('.dark'),
+    puBack2 = document.querySelector('.dark2'),
+    puBack3 = document.querySelector('.dark3'),
+    puCross = document.querySelector('.popup-menu__cross'),
+    puLinks = document.querySelector('.popup-menu__links'),
+    body = document.querySelector('body');
+
+puBurger.addEventListener('click', (e) => {
+
+    //puBody.style.display = 'block';
+    if (puBody.classList.contains('popup-menu--out')) {
+        puBody.classList.remove('popup-menu--out');
+    }; 
+    puBody.classList.add('popup-menu--in');
+    puBack.style.display = 'block';
+    puBack2.style.display = 'block';
+    puBack3.style.display = 'block';
+    body.style.overflow = 'hidden';
+});
+
+let puArr = [puCross, puLinks].forEach(item => {
+    item.addEventListener('click', (e) => {
+        puBody.classList.remove('popup-menu--in');
+        puBody.classList.add('popup-menu--out');
+        puBack.style.display = 'none';
+        puBack2.style.display = 'none';
+        puBack3.style.display = 'none';
+        body.style.overflow = 'scroll';
+        //puBody.style.display = 'none';
+    }); 
+});
+
+    
+
+window.addEventListener('resize', (e) => { 
+    if (puBody.classList.contains('popup-menu--out')) {
+        puBody.classList.remove('popup-menu--out');
+    }; 
+});
+
+
+
+//Проигрыватель
+
+//let vcross = document.querySelector('.video__cross');
+
+
+var tag = document.createElement('script');
+
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+// 3. This function creates an <iframe> (and YouTube player)
+//    after the API code downloads.
+var player;
+function onYouTubeIframeAPIReady() {
+player = new YT.Player (
+                'player', {
+                height: '1572',
+                width: '720',
+                videoId: 'd-_XvkSt1UI',
+                events: {
+                'onReady': onPlayerReady,
+            }
+        }
+    );
+}
+
+// 4. The API will call this function when the video player is ready.
+function onPlayerReady(event) {
+    event.target.playVideo();
+}
+
+// 5. The API calls this function when the player's state changes.
+//    The function indicates that when playing a video (state=1),
+//    the player should play for six seconds and then stop.
+
+
+
+
 
 
 

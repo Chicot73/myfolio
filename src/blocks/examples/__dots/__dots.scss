@@ -3,15 +3,24 @@
     margin-bottom: 3.5rem;
 }
 
-@media only screen and (min-width: 36em) and (max-width: 76.5em) {
+@media only screen and (min-width: 20.1em) and (max-width: 76.5em) {
     .examples__dots {
         width: 6.9rem;
         margin-bottom: 3.1rem;
     }
 }
 
-@media only screen and (min-width: 36em) and (max-width: 47.99em) {
+@media only screen and (min-width: 20.1em) and (max-width: 48.09em) {
     .examples__dots {
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+
+@media only screen and (max-width: 20.09em) {
+    .examples__dots {
+        width: 6.9rem;
+        margin-bottom: 3.1rem;
         margin-right: auto;
         margin-left: auto;
     }

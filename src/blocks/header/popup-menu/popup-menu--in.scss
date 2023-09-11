@@ -1,0 +1,14 @@
+.popup-menu--in {
+    left: 0;
+    animation: slice1 .3s;
+    animation-timing-function: ease-out;
+    @keyframes slice1 {
+
+        from {
+            left: -150%;
+        }
+        to { 
+            left: 0;
+        }
+    }
+}

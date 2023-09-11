@@ -21,12 +21,17 @@
             <div class="header__wrap">
                 <div class="header__content">
                     <nav class="header__upper">
-                        <div class="header__name">Игорь Бобырев</div>
+                        <div class="header__flex">
+                            <div class="header__burger">
+                                <img src="img/burger.svg" loading="lazy" alt="webdev">
+                            </div>
+                            <div class="header__name">Игорь Бобырев</div>
+                        </div>
                         <ul class="header__menu">
-                            <li><a href="#">Обо мне</a></li>
-                            <li><a href="#">Опыт работы</a></li>
-                            <li><a href="#">Образование</a></li>
-                            <li><a href="#">Портфолио</a></li>
+                            <li><a href="#aboutme">Обо мне</a></li>
+                            <li><a href="#experience">Опыт работы</a></li>
+                            <li><a href="#education">Образование</a></li>
+                            <li><a href="#examples">Портфолио</a></li>
                         </ul>
                     </nav>
                     <h1 class="header__title">
@@ -38,7 +43,7 @@
                     </h1>
                     <h3 class="header__subtitle">Лучший дизайн &mdash; тот, которого не видно, но который работает</h3>
                     <section class="benefits">
-                        <a href="#" alt="Мои контакты" class="benefits__contacts">Мои контакты</a>
+                        <a href="#contacts" alt="Мои контакты" class="benefits__contacts">Мои контакты</a>
                         <ul class="benefits__block">
                             <li class="benefits__item">
                                 <div class="benefits__number">30+</div>
@@ -57,12 +62,12 @@
                 </div>
                 <div class="header__image">
                     <picture loading="lazy">
-                        <source media="(min-width: 76.51em)" srcset="img/myface_big.avif" type="image/avif">
-                        <source media="(min-width: 76.51em)" srcset="img/myface_big.vebp" type="image/vebp">
-                        <source media="(min-width: 76.51em)" srcset="img/myface_big.jpg" type="image/jpg">
-                        <source media="(max-width: 76.5em)" srcset="img/myface_md.avif" type="image/avif">
-                        <source media="(max-width: 76.5em)" srcset="img/myface_md.vebp" type="image/vebp">
-                        <source media="(max-width: 76.5em)" srcset="img/myface_md.jpg" type="image/jpg">
+                        <source media="(min-width: 76.51em)" srcset="img/myface_big.avif" type="image/avif" alt="мое фото">
+                        <source media="(min-width: 76.51em)" srcset="img/myface_big.vebp" type="image/vebp" alt="мое фото">
+                        <source media="(min-width: 76.51em)" srcset="img/myface_big.jpg" type="image/jpg" alt="мое фото">
+                        <source media="(max-width: 76.5em)" srcset="img/myface_md.avif" type="image/avif" alt="мое фото">
+                        <source media="(max-width: 76.5em)" srcset="img/myface_md.vebp" type="image/vebp" alt="мое фото">
+                        <source media="(max-width: 76.5em)" srcset="img/myface_md.jpg" type="image/jpg" alt="мое фото">
                         <img src="img/myface_md.jpg" alt="мое фото">
                     </picture>
                 </div>
@@ -71,7 +76,32 @@
                 <img src="img/behance.svg" alt="">
                 <p class="behance__text">Профиль<br>Behance.net</p>
             </a>
+            <aside class="popup-menu">
+                <div class="popup-menu__image">
+                    <picture loading="lazy">
+                        <source media="(min-width: 36.1em)" srcset="img/myfase-wide.avif" type="image/avif" alt="мое фото">
+                        <source media="(min-width: 36.1em)" srcset="img/myfase-wide.vebp" type="image/vebp" alt="мое фото">
+                        <source media="(min-width: 36.1em)" srcset="img/myfase-wide.jpg" type="image/jpg" alt="мое фото">
+                        <source media="(max-width: 36.09em)" srcset="img/myfase-320.avif" type="image/avif" alt="мое фото">
+                        <source media="(max-width: 36.09em)" srcset="img/myfase-320.vebp" type="image/vebp" alt="мое фото">
+                        <source media="(max-width: 36.09em)" srcset="img/myfase-320.jpg" type="image/jpg" alt="мое фото">
+                        <!-- <img src="img/myfase-wide.jpg" alt="мое фото"> -->
+                        <img src="img/myfase-320.jpg" alt="мое фото">
+                    </picture>
+                </div>
+                <button class="video__cross popup-menu__cross">
+                    <img src="img/cross.svg" alt="закрыть видео" loading="lazy">
+                </button>
+                <ul class="popup-menu__links">
+                    <li><a href="#aboutme">Обо мне</a></li>
+                    <li><a href="#experience">Опыт работы</a></li>
+                    <li><a href="#education">Образование</a></li>
+                    <li><a href="#examples">Портфолио</a></li>
+                </ul>
+            </aside>
+            <div class="dark"></div>
         </div>
+        <div class="dark2"></div>
     </header>
     <main>
         <div class="container">
@@ -101,7 +131,7 @@
                 </div>
             </section>
             <div class="wrapper">
-                <section class="intro">
+                <section class="intro" id="aboutme">
                     <div class="intro__dots">
                         <img src="img/bullets.svg" loading="lazy" alt="bullets">
                     </div>
@@ -126,7 +156,7 @@
                     </div>
                     <div class="intro__subscr">Защита дипломного проекта.</div> 
                 </section>
-                <section class="career">
+                <section class="career" id="education">
                     <article class="education">
                         <h2 class="title">ОБРАЗОВАНИЕ:</h2>
                         <h4 class="subtitle">Основное образование:</h4>
@@ -139,7 +169,7 @@
                         <p class="education__desc">2022 г. Онлайн-школа Glo Academy. Курс «Веб-старт 19.0»</p>
                     </article>
                     
-                    <article class="experience">
+                    <article class="experience" id="experience">
                         <h2 class="title">Опыт работы в компаниях:</h2>
                         <div class="experience__wrapper">
                             <div class="experience__colomn">
@@ -429,7 +459,7 @@
                             </p>
                             <h4 class="principals__title">Адаптивная верстка</h4>
                             <p class="principals__story">Делаю адаптив сайта не с помощью библиотеки Bootstrap, 
-                                а с помощью тега &lt;media&gt;, что не привязывает к определенной технологии и работает на всех OC.
+                                а с помощью тега &lt;media&gt;, что не привязывает к определенной технологии и работает даже на старых браузерах.
                             </p>
                         </div>
                         <div class="principals__column">
@@ -449,8 +479,9 @@
                     </article>
                 </div>
             </section>
+            <div class="dark3"></div>
         </div>
-        <div class="container-example">
+        <div class="container-example" id="examples">
             <aside class="examples">
                 <h2 class="examples__title">Примеры разработки веб-сайтов:</h2>
                 <div class="examples__wrap">
@@ -467,14 +498,35 @@
                     <p class="examples__desc--bold">Используемые технологии:</p>
                     <p class="examples__desc">HTML5, Gulp, SASS, flex-box, Grid, JS, AJAX, PHP</p>
                     <p class="examples__desc">Библиотеки:&ensp;PHPMailer,  just-validate,  inputmask,  Swiper.</p>
-                    <p class="examples__desc">На видеопримере справа вы можете увидеть, как работает форма обратной связи с точки зрения заказчика сайта.</p>
+                    <p class="examples__desc">На видеопримере рядом с текстом вы можете увидеть, как работает форма обратной связи с точки зрения заказчика сайта.</p>
                     <div class="examples__links">
-                        <a href="http://" alt="Ссылка на сайт BPD">Ссылка на сайт BPD</a>
-                        <a href="http://" alt="Cсылка на репозиторий GitHub">Cсылка на репозиторий GitHub</a>
+                        <div class="examples__link">
+                            <a href="http://" alt="Ссылка на сайт BPD">Ссылка на сайт BPD</a>
+                        </div>
+                        <div class="examples__link">
+                            <a href="http://" alt="Cсылка на репозиторий GitHub">Cсылка на репозиторий GitHub</a>
+                        </div>
                     </div>
-                    <a href="http://" alt="Ссылка на видеопример" class="examples__preview">
+                    <div class="examples__preview">
                         <img src="img/bpd_big.png" alt="сайт BPD" loading="lazy">
-                    </a>
+                        <div class="yt-button">
+                            <a href="" alt="Ссылка на видеопример" class="yt-button__bg">
+                                <div class="yt-button__circle">
+                                    <img src="img/yt.svg" loading="lazy" alt="bullets">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="examples__preview-320">
+                        <img src="img/bpd_small.png" alt="сайт BPD" loading="lazy">
+                        <div class="yt-button">
+                            <a a href="" alt="Ссылка на видеопример" class="yt-button__bg">
+                                <div class="yt-button__circle">
+                                    <img src="img/yt.svg" loading="lazy" alt="bullets">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
                 </div>
                 <div class="examples__wrap">
                     <div class="examples__dots">
@@ -491,14 +543,37 @@
                     <p class="examples__desc--bold">Используемые технологии:</p>
                     <p class="examples__desc">HTML-5, Gulp, SASS, flex-box, JS, AJAX.</p>
                     <p class="examples__desc">Библиотеки:&ensp;Swiper.</p>
-                    <p class="examples__desc">На видеопримере справа вы можете увидеть, как работает форма обратной связи с точки зрения заказчика сайта.</p>
+                    <p class="examples__desc">На видеопримере рядом с текстом вы можете увидеть, как работает корзина товаров:
+                         товар можно поместить в корзину сразу, а можно из списка приоритетных товаров рядом с корзиной. Товары 
+                         сохраняются в корзине у пользователя в последующие дни (если не очищать кэш браузера)</p>
                     <div class="examples__links">
-                        <a href="http://" alt="Ссылка на сайт BPD">Ссылка на сайт Funiro</a>
-                        <a href="http://" alt="Cсылка на репозиторий GitHub">Cсылка на репозиторий GitHub</a>
+                        <div class="examples__link">
+                            <a href="http://" alt="Ссылка на сайт Funiro">Ссылка на сайт Funiro</a>
+                        </div>
+                        <div class="examples__link">
+                            <a href="http://" alt="Cсылка на репозиторий GitHub">Cсылка на репозиторий GitHub</a>
+                        </div>
                     </div>
-                    <a href="http://" alt="Ссылка на видеопример" class="examples__preview-2">
+                    <div class="examples__preview-2">
                         <img src="img/funiro_big.png" alt="сайт Funiro" loading="lazy">
-                    </a>
+                        <div class="yt-button">
+                            <a href="" alt="Ссылка на видеопример" class="yt-button__bg-2">
+                                <div class="yt-button__circle">
+                                    <img src="img/yt.svg" loading="lazy" alt="bullets">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="examples__preview-320">
+                        <img src="img/funiro_small.png" alt="сайт Funiro" loading="lazy">
+                        <div class="yt-button">
+                            <a a href="" alt="Ссылка на видеопример" class="yt-button__bg">
+                                <div class="yt-button__circle">
+                                    <img src="img/yt.svg" loading="lazy" alt="bullets">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
                     <div class="examples__footnote">
                         <div class="examples__line"></div>
                         <p class="examples__note">*&ensp;оба проекта&ensp;&ndash;&ensp;некоммерческие, созданы в учебных целях.
@@ -510,7 +585,7 @@
         </div>
     </main>
     <footer>
-        <div class="container-footer">
+        <div class="container-footer"  id="contacts">
             <div class="footer__wrap">
                 <ul class="contacts">
                     <div class="contacts__column">
@@ -521,7 +596,7 @@
                             <a href="https://t.me/yorg17" alt="Ссылка на Telegram" class="contacts__tg">Telegram:&ensp;<span>@yorg17</span></a>
                         </li>
                         <li class="contacts__link">  
-                            <a href="https://www.behance.net/adm5edf" alt="профиль на behance.net" class="contacts__tg">Посмотреть мои работы:<br><span>behance.net/adm5edf</span></a>
+                            <a href="https://www.behance.net/adm5edf" alt="профиль на behance.net" class="contacts__tg">Мои работы по дизайну:<br><span>behance.net/adm5edf</span></a>
                         </li>
                     </div>
                     <div class="contacts__column">
@@ -552,5 +627,14 @@
             </div>
         </div>
     </footer>
+    <div class="video">
+        <div class="video__bg">
+            <div class="video__wrapper">
+                <button class="video__cross">
+                    <img src="img/cross.svg" alt="закрыть видео" loading="lazy">
+                </button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

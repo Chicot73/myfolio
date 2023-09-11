@@ -5,13 +5,27 @@
     width: 19.6rem;
 }
 
-@media only screen and (min-width: 62.5em) and (max-width: 76.5em) {
+@media only screen and (min-width: 62.51em) and (max-width: 76.5em) {
     .competentions__desc {
         @include font (normal, 1.1rem, 150%);     
         width: 19.6rem;
     }
 }
-@media only screen and (min-width: 48em) and (max-width: 62.49em) {
+@media only screen and (min-width: 36.1em) and (max-width: 62.5em) {
+    .competentions__desc {
+        @include font (normal, 1.1rem, 150%);
+        width: 100%;    
+    }
+}
+
+@media only screen and (min-width: 20.1em) and (max-width: 36.09em) {
+    .competentions__desc {
+        @include font (normal, 1.1rem, 150%); 
+        width: 100%;    
+    }
+}
+
+@media only screen and (max-width: 20.09em) {
     .competentions__desc {
         @include font (normal, 1.1rem, 150%); 
         width: 100%;    

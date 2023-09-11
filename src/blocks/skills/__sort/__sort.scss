@@ -7,9 +7,23 @@
     text-transform: uppercase;
 }
 
-@media only screen and (min-width: 48em) and (max-width: 76.5em) {
+@media only screen and (min-width: 48.1em) and (max-width: 76.5em) {
     .skills__sort {
         @include font (600, 1.3rem, 150%);
         padding: .7rem .8rem .5rem; 
+    }
+}
+
+@media only screen and (min-width: 20.1em) and (max-width: 36.09em) {
+    .skills__sort {
+        width: 12.4rem;
+        padding: .7rem 1.1rem .5rem; 
+    }
+}
+
+@media only screen and (max-width: 20.09em) {
+    .skills__sort {
+        width: 12.4rem;
+        padding: .7rem 1.1rem .5rem; 
     }
 }

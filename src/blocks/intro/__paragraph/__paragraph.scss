@@ -8,20 +8,20 @@
     }
 }
 
-@media only screen and (min-width: 62.5em) and (max-width: 76.5em) {
+@media only screen and (min-width: 62.51em) and (max-width: 76.5em) {
     .intro__paragraph {
         @include font (600, 1.4rem, 153%);
     }
 }
 
-@media only screen and (min-width: 48em) and (max-width: 62.49em) {
+@media only screen and (min-width: 48.1em) and (max-width: 62.5em) {
     .intro__paragraph {
         @include font (600, 1.4rem, 153%);
         width: 37.8rem;
     }
 }
 
-@media only screen and (min-width: 36em) and (max-width: 47.99em) {
+@media only screen and (min-width: 36.1em) and (max-width: 48.09em) {
     .intro__paragraph {
         @include font (600, 1.4rem, 153%);
         width: 100%;

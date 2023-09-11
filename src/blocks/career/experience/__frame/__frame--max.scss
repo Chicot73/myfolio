@@ -7,7 +7,7 @@
             height: 0;
         }
         to { 
-            height: 45.7rem;
+            height: 50.1rem;
         }
     }
     @keyframes framemax-2 {
@@ -16,7 +16,7 @@
             height: 0;
         }
         to { 
-            height: 50.8rem;
+            height: 53.3rem;
         }
     }
     @keyframes framemax-3 {
@@ -25,7 +25,7 @@
             height: 0;
         }
         to { 
-            height: 17.4rem;
+            height: 17.9rem;
         }
     }
     @keyframes framemax-4 {
@@ -34,7 +34,7 @@
             height: 0;
         }
         to { 
-            height: 35.8rem;
+            height: 36.3rem;
         }
     }
     @keyframes framemax-5 {
@@ -43,7 +43,7 @@
             height: 0;
         }
         to { 
-            height: 31.9rem;
+            height: 32.4rem;
         }
     }
     @keyframes framemax-6 {
@@ -52,7 +52,7 @@
             height: 0;
         }
         to { 
-            height: 16.8rem;
+            height: 17.3rem;
         }
     }
     @keyframes framemax-7 {
@@ -61,7 +61,78 @@
             height: 0;
         }
         to { 
-            height: 24.1rem;
+            height: 23.9rem;
         }
     }
 }
+
+@media only screen and (max-width: 36.09em) {
+    .experience__frame--max {
+        height: max-content;
+        animation-timing-function: ease-out;
+        @keyframes framemax-1 {
+    
+            from {
+                height: 0;
+            }
+            to { 
+                height: 59.2rem;
+            }
+        }
+        @keyframes framemax-2 {
+    
+            from {
+                height: 0;
+            }
+            to { 
+                height: 67rem;
+            }
+        }
+        @keyframes framemax-3 {
+    
+            from {
+                height: 0;
+            }
+            to { 
+                height: 23.8rem;
+            }
+        }
+        @keyframes framemax-4 {
+    
+            from {
+                height: 0;
+            }
+            to { 
+                height: 40.3rem;
+            }
+        }
+        @keyframes framemax-5 {
+    
+            from {
+                height: 0;
+            }
+            to { 
+                height: 42.1rem;
+            }
+        }
+        @keyframes framemax-6 {
+    
+            from {
+                height: 0;
+            }
+            to { 
+                height: 17.3rem;
+            }
+        }
+        @keyframes framemax-7 {
+    
+            from {
+                height: 0;
+            }
+            to { 
+                height: 25.8rem;
+            }
+        }
+    }
+}
+        

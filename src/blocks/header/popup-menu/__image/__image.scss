@@ -1,0 +1,17 @@
+.popup-menu__image {
+    & picture {
+        display: block;
+        height: 31.5rem;
+        width: fit-content;
+    }   
+}
+
+@media only screen and (max-width: 36.09em) {
+    .popup-menu__image {
+        & picture {
+            display: block;
+            height: 33.2rem;
+            width: fit-content;
+        }
+    }
+}

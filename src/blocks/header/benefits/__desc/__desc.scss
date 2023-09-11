@@ -3,7 +3,7 @@
     @include gray-3;
 }
 
-@media only screen and (min-width: 62.5em) and (max-width: 76.5em) {
+@media only screen and (min-width: 62.51em) and (max-width: 76.5em) {
     .benefits__desc {
         @include font (normal, 1.1rem, 150%);
     }

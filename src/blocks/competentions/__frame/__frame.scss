@@ -7,7 +7,7 @@
     margin-bottom: 5.7rem;
 }
 
-@media only screen and (min-width: 62.5em) and (max-width: 76.5em) {
+@media only screen and (min-width: 62.51em) and (max-width: 76.5em) {
     .competentions__frame {
         width: 27.6rem;
         height: 11.2rem;
@@ -15,24 +15,47 @@
     }
 }
 
-@media only screen and (min-width: 48em) and (max-width: 62.49em) {
+@media only screen and (min-width: 48.1em) and (max-width: 62.5em) {
     .competentions__frame {
         width: 19.8rem;
-        height: 16.9rem;
+        height: 17.9rem;
         padding-left: .8rem;
         padding-right: .8rem;
         text-align: center;
     }
 }
 
-@media only screen and (min-width: 36em) and (max-width: 47.99em) {
+@media only screen and (min-width: 36.1em) and (max-width: 48.09em) {
     .competentions__frame {
         margin: 0 auto;
         position: relative;
         width: 37rem;
         height: 12.2rem;
         @include gray-4-bg;
-        padding-left: 3.7rem;
+        padding-left: 2.1rem;
+        padding-right: 14rem;
         margin-bottom: 3.3rem;
+    }
+}
+
+@media only screen and (min-width: 20.1em) and (max-width: 36.09em) {
+    .competentions__frame {
+        margin: 0 auto;
+        width: 100%;
+        height: 11.5rem;
+        padding-left: 1.9rem;
+        padding-right: 9.3rem;
+        margin-bottom: 3rem;
+    }
+}
+
+@media only screen and (max-width: 20.09em) {
+    .competentions__frame {
+        margin: 0 auto;
+        width: 100%;
+        height: 11.5rem;
+        padding-left: 1.9rem;
+        padding-right: 9.3rem;
+        margin-bottom: 3rem;
     }
 }

@@ -5,14 +5,22 @@
     margin-bottom: 3.3rem;
 }
 
-@media only screen and (min-width: 48em) and (max-width: 76.5em) {
+@media only screen and (min-width: 48.1em) and (max-width: 76.5em) {
     .title {
         @include font (bold, 2.2rem, 154%);
         margin-bottom: 3rem;
     }   
 }
 
-@media only screen and (min-width: 36em) and (max-width: 47.99em) {
+@media only screen and (min-width: 20.1em) and (max-width: 48.09em) {
+    .title {
+        @include font (bold, 2.2rem, 154%);
+        margin-bottom: 3rem;
+        text-align: center;
+    } 
+}
+
+@media only screen and (max-width: 20.09em) {
     .title {
         @include font (bold, 2.2rem, 154%);
         margin-bottom: 3rem;

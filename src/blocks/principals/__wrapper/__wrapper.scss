@@ -4,15 +4,29 @@
     padding-bottom: 7rem;
 }
 
-@media only screen and (min-width: 48em) and (max-width: 76.5em) {
+@media only screen and (min-width: 48.1em) and (max-width: 76.5em) {
     .principals__wrapper {
         padding-bottom: 5rem;
     }
 }
 
-@media only screen and (min-width: 36em) and (max-width: 47.99em) {
+@media only screen and (min-width: 36.1em) and (max-width: 48.09em) {
     .principals__wrapper {
         display: block;
         padding: 0 5.9rem 5rem;
+    }
+}
+
+@media only screen and (min-width: 20.1em) and (max-width: 36.09em) {
+    .principals__wrapper {
+        display: block;
+        padding: 0;
+    }
+}
+
+@media only screen and (max-width: 20.09em) {
+    .principals__wrapper {
+        display: block;
+        padding: 0;
     }
 }

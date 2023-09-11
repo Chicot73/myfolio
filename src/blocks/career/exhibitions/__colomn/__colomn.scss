@@ -2,23 +2,41 @@
     width: 33.4rem;
 }
 
-@media only screen and (min-width: 62.5em) and (max-width: 76.5em) {
+@media only screen and (min-width: 62.51em) and (max-width: 76.5em) {
     .exhibitions__colomn {
         width: 27.6rem;
     }
 }
 
-@media only screen and (min-width: 48em) and (max-width: 62.49em) {
+@media only screen and (min-width: 48.1em) and (max-width: 62.5em) {
     .exhibitions__colomn {
         width: 31.4rem;
     }
 }
 
-@media only screen and (min-width: 36em) and (max-width: 47.99em) {
+@media only screen and (min-width: 36.1em) and (max-width: 48.09em) {
     .exhibitions__colomn {
         width: 30rem;
         margin-left: auto;
         margin-right: auto;
+        &:first-child {
+            margin-bottom: 2rem;
+        }
+    }
+}
+
+@media only screen and (min-width: 20.1em) and (max-width: 36.09em) {
+    .exhibitions__colomn {
+        width: 100%;
+        &:first-child {
+            margin-bottom: 2rem;
+        }
+    }
+}
+
+@media only screen and (max-width: 20.09em) {
+    .exhibitions__colomn {
+        width: 100%;
         &:first-child {
             margin-bottom: 2rem;
         }

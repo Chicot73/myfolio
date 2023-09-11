@@ -1,0 +1,26 @@
+.popup-menu {
+    //display: none;
+    position: absolute;
+    position: absolute;
+    top: 0;
+    left: -150%;
+    transform: translate(0,0);
+    width: 48.4rem;
+    height: 31.5rem;
+    background: #fefef2;
+    box-shadow: 0.4rem 0.4rem 1rem 0rem rgba(0, 0, 0, 0.15); 
+    z-index: 100;
+}
+
+/* @media only screen and (max-width: 62.5em) {
+    .popup-menu {
+        display: block;
+    }
+} */
+
+@media only screen and (max-width: 36.09em) {
+    .popup-menu {
+        width: 32rem;
+        height: 33.2rem;
+    }
+}

@@ -1,0 +1,22 @@
+.header__burger {
+    display: none;
+}
+
+@media only screen and (max-width: 62.5em) {
+    .header__burger {
+        display: block;
+        padding-top: .2rem;
+        width: 3.3rem;
+        height: fit-content;
+        margin-right: 3.1rem;
+        cursor: pointer;
+    }
+}
+
+@media only screen and (max-width: 36.09em) {
+    .header__burger {
+        display: block;
+        width: 3.8rem;
+        margin-right: 0;
+    }
+}

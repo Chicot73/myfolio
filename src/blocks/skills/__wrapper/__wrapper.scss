@@ -18,13 +18,13 @@
     }
 }
 
-@media only screen and (min-width: 62.5em) and (max-width: 76.5em) {
+@media only screen and (min-width: 62.51em) and (max-width: 76.5em) {
     .skills__wrapper {
         margin-bottom: 6rem;
     }
 }
 
-@media only screen and (min-width: 48em) and (max-width: 62.49em) {
+@media only screen and (min-width: 48.1em) and (max-width: 62.5em) {
     .skills__wrapper {
         margin-bottom: 9rem;
         & .skills__colomn:nth-child(3) .skills__rail:nth-of-type(1) {
@@ -35,7 +35,7 @@
     }
 }
 
-@media only screen and (min-width: 36em) and (max-width: 47.99em) {
+@media only screen and (min-width: 20.1em) and (max-width: 48.09em) {
     .skills__wrapper {
         display: block;
         margin-top: 6rem;
@@ -57,6 +57,48 @@
                 @include turquoise;
                 @include font (normal, 1.4rem, 150%);
                 font-style: italic;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 20.1em) and (max-width: 36.09em) {
+    .skills__wrapper {
+        padding: 0;
+        & .skills__colomn:first-child .skills__rail:nth-of-type(2) {
+            .skills__rating {
+                padding: 1.6rem 1.5rem 2.1rem;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 20.09em) {
+    .skills__wrapper {
+        display: block;
+        margin-top: 6rem;
+        margin-bottom: 7rem;
+        padding: 0;
+        & .skills__colomn .skills__rail:nth-of-type(1) {
+            .skills__rating::before {
+                content: none;
+            }
+        }
+        & .skills__colomn:first-child .skills__rail:nth-of-type(1) {
+            .skills__rating::before {
+                content: 'уровень';
+                position: absolute;
+                top: -3.4rem;
+                left: 50%;
+                transform: translate(-50%, 0);
+                @include turquoise;
+                @include font (normal, 1.4rem, 150%);
+                font-style: italic;
+            }
+        }
+        & .skills__colomn:first-child .skills__rail:nth-of-type(2) {
+            .skills__rating {
+                padding: 1.6rem 1.5rem 2.1rem;
             }
         }
     }

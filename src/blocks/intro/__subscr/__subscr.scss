@@ -4,14 +4,14 @@
     font-style: italic;
 }
 
-@media only screen and (min-width: 48em) and (max-width: 62.49em) {
+@media only screen and (min-width: 48.1em) and (max-width: 62.5em) {
     .intro__subscr {
         position: absolute;
         top: 39.8rem;
         right: 0;
     }
 }
-@media only screen and (min-width: 36em) and (max-width: 47.99em) {
+@media only screen and (min-width: 36.1em) and (max-width: 48.09em) {
     .intro__subscr {
         display: none;
     }

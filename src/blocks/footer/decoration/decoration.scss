@@ -3,13 +3,19 @@
     height: 6.3rem;
 }
 
-@media only screen and (min-width: 48em) and (max-width: 62.49em) {
+@media only screen and (min-width: 48.1em) and (max-width: 62.5em) {
     .decoration {
         height: 3.7rem;
     }
 }
 
-@media only screen and (min-width: 36em) and (max-width: 47.99em) {
+@media only screen and (min-width: 20.1em) and (max-width: 48.09em) {
+    .decoration {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 20.09em) {
     .decoration {
         display: none;
     }

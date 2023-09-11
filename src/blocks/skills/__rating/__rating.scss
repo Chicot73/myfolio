@@ -9,7 +9,7 @@
     text-align: center;
 }
 
-@media only screen and (min-width: 62.5em) and (max-width: 76.5em) {
+@media only screen and (min-width: 62.51em) and (max-width: 76.5em) {
     .skills__rating {
         width: 12.3rem;
         @include font (600, 1.3rem, 116%);

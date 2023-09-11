@@ -4,7 +4,13 @@
     justify-content: space-between;
 }
 
-@media only screen and (min-width: 36em) and (max-width: 62.49em) {
+@media only screen and (min-width: 20.1em) and (max-width: 62.5em) {
+    .principals__stories {
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 20.09em) {
     .principals__stories {
         display: block;
     }

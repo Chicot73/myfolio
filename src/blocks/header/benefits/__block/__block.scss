@@ -7,8 +7,20 @@
     padding-right: 3rem;
 }
 
-@media only screen and (min-width: 36em) and (max-width: 62.49em) {
+@media only screen and (min-width: 36.1em) and (max-width: 62.5em) {
     .benefits__block {
         padding-right: 0;
+    }
+}
+
+@media only screen and (min-width: 20.1em) and (max-width: 36.09em) {
+    .benefits__block {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 20.09em) {
+    .benefits__block {
+        display: none;
     }
 }

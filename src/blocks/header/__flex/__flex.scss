@@ -1,0 +1,10 @@
+.header__flex {
+    display: flex;
+    align-items: center;
+}
+
+@media only screen and (max-width: 36.09em) {
+    .header__flex {
+        display: block;
+    }
+}

@@ -3,8 +3,20 @@
     height: 6.2rem;
 }
 
-@media only screen and (min-width: 62.5em) and (max-width: 76.5em) {
+@media only screen and (min-width: 62.51em) and (max-width: 76.5em) {
     .benefits {
         height: 6rem;
+    }
+}
+
+@media only screen and (min-width: 20.1em) and (max-width: 36.09em) {
+    .benefits {
+        height: auto;
+    }
+}
+
+@media only screen and (max-width: 20.09em) {
+    .benefits {
+        height: auto;
     }
 }

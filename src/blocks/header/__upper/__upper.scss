@@ -4,8 +4,24 @@
     margin-bottom: 3.9rem;
 }
 
-@media only screen and (min-width: 48em) and (max-width: 76.5em) {
+@media only screen and (min-width: 48.1em) and (max-width: 76.5em) {
     .header__upper {
         margin-bottom: 1.9rem;
+    }
+}
+
+@media only screen and (min-width: 36.1em) and (max-width: 62.5em) {
+    .header__upper {
+        margin-top: 3.7rem;
+        margin-bottom: 4.6rem;
+        height: auto;
+    }
+}
+
+@media only screen and (max-width: 36.09em) {
+    .header__upper {
+        margin-top: 3.8rem;
+        margin-bottom: 2.4rem;
+        height: auto;
     }
 }

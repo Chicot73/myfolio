@@ -1,0 +1,29 @@
+.examples__preview-320 {
+    display: none;
+}
+
+@media only screen and (min-width: 20.1em) and (max-width: 36.09em) {
+    .examples__preview-320 {
+        position: relative;
+        display: block;
+        margin-left: -2.1rem;
+        margin-bottom: 5rem;
+        & img {
+            width: 30rem;
+            height: fit-content;
+        }
+    }
+}
+
+@media only screen and (max-width: 20.09em) {
+    .examples__preview-320 {
+        position: relative;
+        display: block;
+        margin-left: -2.1rem;
+        margin-bottom: 5rem;
+        & img {
+            width: 30rem;
+            height: fit-content;
+        }
+    }
+}

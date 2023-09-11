@@ -4,21 +4,35 @@
     padding-bottom: 6.1rem;
 }
 
-@media only screen and (min-width: 62.5em) and (max-width: 76.5em) {
+@media only screen and (min-width: 62.51em) and (max-width: 76.5em) {
     .wrapper {
         padding-bottom: 5rem;
     }
 }
 
-@media only screen and (min-width: 48em) and (max-width: 62.49em) {
+@media only screen and (min-width: 48.1em) and (max-width: 62.5em) {
     .wrapper {
         display: block;
     }
 }
 
-@media only screen and (min-width: 36em) and (max-width: 47.99em) {
+@media only screen and (min-width: 36.1em) and (max-width: 48.09em) {
     .wrapper {
         padding: 0 5.9rem 5rem;
         display: block;
+    }
+}
+
+@media only screen and (min-width: 20.1em) and (max-width: 36.09em) {
+    .wrapper {
+        display: block;
+        padding: 0;
+    }
+}
+
+@media only screen and (max-width: 20.09em) {
+    .wrapper {
+        display: block;
+        padding: 0;
     }
 }
