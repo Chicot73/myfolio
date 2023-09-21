@@ -2,7 +2,7 @@
     & img {
         width: 3.9rem;
     }
-    filter: drop-shadow(0 0 0 rgba(255, 255, 255, .3));
+    filter: drop-shadow(0 0 0 rgba(255, 255, 255, .1));
     animation: shadow1 .2s;
     animation-timing-function: ease-out;
     @keyframes shadow1 {
@@ -11,7 +11,7 @@
             filter: drop-shadow(0 0 1.9rem rgba(255, 255, 255, 1));
         }
         to { 
-            filter: drop-shadow(0 0 0 rgba(255, 255, 255, .3));
+            filter: drop-shadow(0 0 0 rgba(255, 255, 255, .1));
         }
     }
     &:hover {
@@ -21,7 +21,7 @@
         @keyframes shadow2 {
 
             from {
-                filter: drop-shadow(0 0 0 rgba(255, 255, 255, .3));
+                filter: drop-shadow(0 0 0 rgba(255, 255, 255, .1));
             }
             to { 
                 filter: drop-shadow(0 0 1.9rem rgba(255, 255, 255, 1));

@@ -43,7 +43,7 @@
                     </h1>
                     <h3 class="header__subtitle">Лучший дизайн &mdash; тот, которого не видно, но который работает</h3>
                     <section class="benefits">
-                        <a href="#contacts" alt="Мои контакты" class="benefits__contacts">Мои контакты</a>
+                        <a href="#contacts" class="benefits__contacts">Мои контакты</a>
                         <ul class="benefits__block">
                             <li class="benefits__item">
                                 <div class="benefits__number">30+</div>
@@ -72,8 +72,8 @@
                     </picture>
                 </div>
             </div>
-            <a href="https://www.behance.net/adm5edf" alt="Профиль на Behance.net" class="behance">
-                <img src="img/behance.svg" alt="">
+            <a href="https://www.behance.net/adm5edf" class="behance">
+                <img src="img/behance.svg" alt="Профиль на Behance.net">
                 <p class="behance__text">Профиль<br>Behance.net</p>
             </a>
             <aside class="popup-menu">
@@ -85,11 +85,10 @@
                         <source media="(max-width: 36.09em)" srcset="img/myfase-320.avif" type="image/avif" alt="мое фото">
                         <source media="(max-width: 36.09em)" srcset="img/myfase-320.vebp" type="image/vebp" alt="мое фото">
                         <source media="(max-width: 36.09em)" srcset="img/myfase-320.jpg" type="image/jpg" alt="мое фото">
-                        <!-- <img src="img/myfase-wide.jpg" alt="мое фото"> -->
                         <img src="img/myfase-320.jpg" alt="мое фото">
                     </picture>
                 </div>
-                <button class="video__cross popup-menu__cross">
+                <button class="popup-menu__cross">
                     <img src="img/cross.svg" alt="закрыть видео" loading="lazy">
                 </button>
                 <ul class="popup-menu__links">
@@ -501,16 +500,16 @@
                     <p class="examples__desc">На видеопримере рядом с текстом вы можете увидеть, как работает форма обратной связи с точки зрения заказчика сайта.</p>
                     <div class="examples__links">
                         <div class="examples__link">
-                            <a href="http://" alt="Ссылка на сайт BPD">Ссылка на сайт BPD</a>
+                            <a href="http://igorbobyrev.ru/homeworks/BPD/">Ссылка на сайт BPD</a>
                         </div>
                         <div class="examples__link">
-                            <a href="http://" alt="Cсылка на репозиторий GitHub">Cсылка на репозиторий GitHub</a>
+                            <a href="https://github.com/Chicot73/BPD/tree/master/src">Cсылка на репозиторий GitHub</a>
                         </div>
                     </div>
                     <div class="examples__preview">
                         <img src="img/bpd_big.png" alt="сайт BPD" loading="lazy">
                         <div class="yt-button">
-                            <a href="" alt="Ссылка на видеопример" class="yt-button__bg">
+                            <a href="#" class="yt-button__bg yt-button__mark" id="bpd" data-video="m35sHBpUXBQ">
                                 <div class="yt-button__circle">
                                     <img src="img/yt.svg" loading="lazy" alt="bullets">
                                 </div>
@@ -520,7 +519,7 @@
                     <div class="examples__preview-320">
                         <img src="img/bpd_small.png" alt="сайт BPD" loading="lazy">
                         <div class="yt-button">
-                            <a a href="" alt="Ссылка на видеопример" class="yt-button__bg">
+                            <a href="#" class="yt-button__bg yt-button__mark" id="bpd2" data-video="m35sHBpUXBQ">
                                 <div class="yt-button__circle">
                                     <img src="img/yt.svg" loading="lazy" alt="bullets">
                                 </div>
@@ -548,16 +547,16 @@
                          сохраняются в корзине у пользователя в последующие дни (если не очищать кэш браузера)</p>
                     <div class="examples__links">
                         <div class="examples__link">
-                            <a href="http://" alt="Ссылка на сайт Funiro">Ссылка на сайт Funiro</a>
+                            <a href="http://igorbobyrev.ru/homeworks/funiro/">Ссылка на сайт Funiro</a>
                         </div>
                         <div class="examples__link">
-                            <a href="http://" alt="Cсылка на репозиторий GitHub">Cсылка на репозиторий GitHub</a>
+                            <a href="https://github.com/Chicot73/funiro/tree/main/src">Cсылка на репозиторий GitHub</a>
                         </div>
                     </div>
                     <div class="examples__preview-2">
                         <img src="img/funiro_big.png" alt="сайт Funiro" loading="lazy">
                         <div class="yt-button">
-                            <a href="" alt="Ссылка на видеопример" class="yt-button__bg-2">
+                            <a href="#" class="yt-button__bg-2 yt-button__mark" id="funiro" data-video="tP68PiRF4KI">
                                 <div class="yt-button__circle">
                                     <img src="img/yt.svg" loading="lazy" alt="bullets">
                                 </div>
@@ -567,7 +566,7 @@
                     <div class="examples__preview-320">
                         <img src="img/funiro_small.png" alt="сайт Funiro" loading="lazy">
                         <div class="yt-button">
-                            <a a href="" alt="Ссылка на видеопример" class="yt-button__bg">
+                            <a href="#" class="yt-button__bg yt-button__mark" data-video="tP68PiRF4KI">
                                 <div class="yt-button__circle">
                                     <img src="img/yt.svg" loading="lazy" alt="bullets">
                                 </div>
@@ -587,28 +586,28 @@
     <footer>
         <div class="container-footer"  id="contacts">
             <div class="footer__wrap">
-                <ul class="contacts">
-                    <div class="contacts__column">
+                <div class="contacts">
+                    <ul class="contacts__column">
                         <li class="contacts__link">  
-                            <a href="https://wa.me/+79258247862" alt="Телефон" class="contacts__phone">Телефон:&ensp;<span>+7 925 824 7862<br>(whatsApp)</span></a>
+                            <a href="https://wa.me/+79258247862" class="contacts__phone">Телефон:&ensp;<span>+7 925 824 7862<br>(whatsApp)</span></a>
                         </li>
                         <li class="contacts__link">  
-                            <a href="https://t.me/yorg17" alt="Ссылка на Telegram" class="contacts__tg">Telegram:&ensp;<span>@yorg17</span></a>
+                            <a href="https://t.me/yorg17" class="contacts__tg">Telegram:&ensp;<span>@yorg17</span></a>
                         </li>
                         <li class="contacts__link">  
-                            <a href="https://www.behance.net/adm5edf" alt="профиль на behance.net" class="contacts__tg">Мои работы по дизайну:<br><span>behance.net/adm5edf</span></a>
+                            <a href="https://www.behance.net/adm5edf" class="contacts__tg">Мои работы по дизайну:<br><span>behance.net/adm5edf</span></a>
                         </li>
-                    </div>
-                    <div class="contacts__column">
+                    </ul>
+                    <ul class="contacts__column">
                         <li class="contacts__link">  
-                            <a href="mailto:yorg1973fisher@yandex.ru" alt="E-mail адрес" class="contacts__e-mail">E-mail адрес:<br><span>yorg1973fisher@yandex.ru</span></a>
+                            <a href="mailto:yorg1973fisher@yandex.ru" class="contacts__e-mail">E-mail адрес:<br><span>yorg1973fisher@yandex.ru</span></a>
                         </li>
                         <li class="contacts__link">  
-                            <a href="https://goo.gl/maps/e6YCfRaHUJy8oQq89" alt="Почтовый адрес" class="contacts__tg">Почтовый адрес:<br><span>143442, Московская область,<br>
+                            <a href="https://goo.gl/maps/e6YCfRaHUJy8oQq89" class="contacts__tg">Почтовый адрес:<br><span>143442, Московская область,<br>
                                 Красногорский р-н, пос. Отрадное,<br>ул. Лесная, д. 17, кв. 54.</span></a>
                         </li>
-                    </div>
-                </ul>
+                    </ul>
+                </div>
                 <div class="icons">
                     <a href="https://www.behance.net/adm5edf" class="icons__icon">
                         <img src="img/be.svg" alt="профиль на behance.net" loading="lazy">
@@ -628,13 +627,14 @@
         </div>
     </footer>
     <div class="video">
-        <div class="video__bg">
-            <div class="video__wrapper">
-                <button class="video__cross">
-                    <img src="img/cross.svg" alt="закрыть видео" loading="lazy">
-                </button>
+        <div class="video__bg" id="vframe1">
+            <div class="video__wrapper" id="player">
             </div>
+            <button class="video__cross" id="vcross1">
+                <img src="img/cross.svg" alt="закрыть видео" loading="lazy">
+            </button>
         </div>
+        <div class="dark4"></div>
     </div>
 </body>
 </html>

@@ -1,11 +1,25 @@
 .video__bg {
     display: none;
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 75.8vw;
+    height: 47.5vw;
+    z-index: 5;
+    /* aspect ratio  |  умножить ширину на
+    -----------------------------------
+         1:1      |         1
+         1:3      |         3
+         4:3      |        0.75
+        16:9      |       0.5625 */
     background: rgba(126, 126, 126, 0.74);
-    padding: 2.4rem;
     z-index: 1100;
+}
+
+@media only screen and (max-width: 76.5em) {
+    .video__bg {
+        width: 79vw;
+        height: 49.7vw;
+    }
 }

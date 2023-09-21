@@ -1,6 +1,6 @@
-.dark {
+.dark4 {
     display: none;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -8,5 +8,5 @@
     background: rgba(236, 236, 236, 0.85);
     padding: 2.4rem;
     //backdrop-filter: blur(0.7rem);
-    z-index: 1;
+    z-index: 4;
 }

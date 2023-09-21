@@ -74,7 +74,6 @@ let puBurger = document.querySelector('.header__burger'),
 
 puBurger.addEventListener('click', (e) => {
 
-    //puBody.style.display = 'block';
     if (puBody.classList.contains('popup-menu--out')) {
         puBody.classList.remove('popup-menu--out');
     }; 
@@ -93,7 +92,6 @@ let puArr = [puCross, puLinks].forEach(item => {
         puBack2.style.display = 'none';
         puBack3.style.display = 'none';
         body.style.overflow = 'scroll';
-        //puBody.style.display = 'none';
     }); 
 });
 
@@ -109,39 +107,70 @@ window.addEventListener('resize', (e) => {
 
 //Проигрыватель
 
-//let vcross = document.querySelector('.video__cross');
 
 
-var tag = document.createElement('script');
+document.addEventListener('DOMContentLoaded', function() {
 
-tag.src = "https://www.youtube.com/iframe_api";
-var firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-// 3. This function creates an <iframe> (and YouTube player)
-//    after the API code downloads.
-var player;
-function onYouTubeIframeAPIReady() {
-player = new YT.Player (
-                'player', {
-                height: '1572',
-                width: '720',
-                videoId: 'd-_XvkSt1UI',
-                events: {
-                'onReady': onPlayerReady,
-            }
+    var player;
+
+    let ytCross = document.getElementById('vcross1'),
+    backgro = document.getElementById('vframe1'),
+    ytBack = document.querySelector('.dark4'),
+    mark = document.querySelectorAll('.yt-button__mark'),
+    body = document.querySelector('body');
+
+    document.addEventListener('click', (e) => {
+        const targetVideo = e.target.closest('.yt-button__mark');
+        if (targetVideo) {
+            mark.forEach((item, i) => {
+                if (item === targetVideo) {
+                    backgro.classList.add('active');
+                    ytBack.classList.add('active');
+                    body.style.overflow = 'hidden';
+                    player = new YT.Player('player', {
+                        height: '1080',
+                        width: '100%',
+                        videoId: item.dataset.video,//из атрибута data-video кнопки
+                        playerVars: { 'autoplay': 1, 'controls': 1 },
+                        events: {
+                            'onReady': onPlayerReady,
+                            'onStateChange': onPlayerStateChange
+                        }
+                    });
+
+                    function onPlayerReady(event) {
+                        event.target.setVolume(30);
+                        event.target.playVideo();
+                        event.target.setPlaybackQuality('highres');
+                    }
+
+                    function onPlayerStateChange(event) {
+                        if (event.data == YT.PlayerState.BUFFERING) {
+                            event.target.setPlaybackQuality('highres');
+                        }
+                    }
+                }
+            })
         }
-    );
-}
+    })
 
-// 4. The API will call this function when the video player is ready.
-function onPlayerReady(event) {
-    event.target.playVideo();
-}
+    let ytbgArr = [ytBack, ytCross];
+    ytbgArr.forEach(item => {
+        item.addEventListener('click', (e) => {
+            backgro.classList.remove('active');
+            ytBack.classList.remove('active');
+            body.style.overflow = 'scroll';
+            player.destroy();
+        }); 
+    });
+})
 
-// 5. The API calls this function when the player's state changes.
-//    The function indicates that when playing a video (state=1),
-//    the player should play for six seconds and then stop.
+
 
 
 
