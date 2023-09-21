@@ -4,9 +4,10 @@
     margin-bottom: 1.8rem;
 }
 
-@media only screen and (min-width: 62.51em) and (max-width: 76.5em) {
+@media only screen and (max-width: 76.5em) {
     .subtitle {
-        @include font (600, 1.4rem, 148%);
+        @include font (600, 1.5rem, 148%);
         margin-bottom: 1.6rem;
+        letter-spacing: -0.01em;
     }
 }
