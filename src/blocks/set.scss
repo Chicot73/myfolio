@@ -19,6 +19,7 @@ html, body {
   padding: 0;
   color: #5C5C5C;
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: none;
 }
 
 body {
@@ -143,7 +144,6 @@ img, picture {
   }
   html {
    font-size: 10px;
-
  }
  .container {
    width: 57.6rem;
