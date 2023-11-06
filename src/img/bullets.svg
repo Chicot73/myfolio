@@ -5,8 +5,9 @@
 <style type="text/css">
 	.st0{fill:#73F1ED;}
 	.st1{fill:#7ECFDA;}
+	.st2{fill:#74B2CC;}
 </style>
 <circle class="st0" cx="9" cy="9" r="9"/>
 <circle class="st1" cx="41" cy="9" r="9"/>
-<circle class="st1" cx="72" cy="9" r="9"/>
+<circle class="st2" cx="72" cy="9" r="9"/>
 </svg>
