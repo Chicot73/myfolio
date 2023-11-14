@@ -4,7 +4,7 @@ let accordeon = document.querySelector('.experience'),
     tab = document.querySelectorAll('.experience__frame'),
     cut = document.querySelectorAll('.experience__cut'),
     button = document.querySelectorAll('.experience__button');
-    buttonW = document.querySelectorAll('.experience__button--w');
+buttonW = document.querySelectorAll('.experience__button--w');
 
 function click1(e) {
     const target = e.target.closest('.experience__frame');
@@ -22,22 +22,22 @@ function click1(e) {
                         cut[i].style.display = 'none';
                     }
                     setTimeout(noone, 350); //1000 - 1 second
-                    
-                    button[i].style.transform = 'translate(-50%, 50%)'+'rotate(180deg)';
-                    buttonW[i].style.transform = 'translate(-50%, 50%)'+'rotate(180deg)';
+
+                    button[i].style.transform = 'translate(-50%, 50%)' + 'rotate(180deg)';
+                    buttonW[i].style.transform = 'translate(-50%, 50%)' + 'rotate(180deg)';
                 } else {
                     if (tab[i].classList.contains('experience__frame--min')) {
                         tab[i].classList.remove('experience__frame--min');
                     };
-                    
+
                     tab[i].style.animation = 'framemax-' + surrent + ' .7s';
                     tab[i].classList.add('experience__frame--max');
                     function cutt() {
                         cut[i].style.display = 'block';
                     }
-                    setTimeout(cutt, 100); 
-                    button[i].style.transform = 'translate(-50%, 50%)'+'rotate(0deg)';
-                    buttonW[i].style.transform = 'translate(-50%, 50%)'+'rotate(0deg)';
+                    setTimeout(cutt, 100);
+                    button[i].style.transform = 'translate(-50%, 50%)' + 'rotate(0deg)';
+                    buttonW[i].style.transform = 'translate(-50%, 50%)' + 'rotate(0deg)';
                 }
             } else {
                 if (tab[i].classList.contains('experience__frame--max')) {
@@ -48,17 +48,18 @@ function click1(e) {
                         cut[i].style.display = 'none';
                     }
                     setTimeout(noone, 350); //1000 - 1 second
-                    
-                    button[i].style.transform = 'translate(-50%, 50%)'+'rotate(180deg)';
-                    buttonW[i].style.transform = 'translate(-50%, 50%)'+'rotate(180deg)';
+
+                    button[i].style.transform = 'translate(-50%, 50%)' + 'rotate(180deg)';
+                    buttonW[i].style.transform = 'translate(-50%, 50%)' + 'rotate(180deg)';
                 };
             };
         })
     };
-}; 
-accordeon.addEventListener('click', (e) => { 
-    click1(e); 
+};
+accordeon.addEventListener('click', (e) => {
+    click1(e);
 });
+
 
 
 //Pop-up меню
@@ -76,7 +77,7 @@ puBurger.addEventListener('click', (e) => {
 
     if (puBody.classList.contains('popup-menu--out')) {
         puBody.classList.remove('popup-menu--out');
-    }; 
+    };
     puBody.classList.add('popup-menu--in');
     puBack.style.display = 'block';
     puBack2.style.display = 'block';
@@ -92,16 +93,18 @@ let puArr = [puCross, puLinks].forEach(item => {
         puBack2.style.display = 'none';
         puBack3.style.display = 'none';
         body.style.overflow = 'scroll';
-    }); 
+    });
 });
 
-    
 
-window.addEventListener('resize', (e) => { 
+
+window.addEventListener('resize', (e) => {
     if (puBody.classList.contains('popup-menu--out')) {
         puBody.classList.remove('popup-menu--out');
-    }; 
+    };
 });
+
+
 
 
 
@@ -109,7 +112,7 @@ window.addEventListener('resize', (e) => {
 
 
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
 
     var tag = document.createElement('script');
     tag.src = "https://www.youtube.com/iframe_api";
@@ -119,10 +122,10 @@ document.addEventListener('DOMContentLoaded', function() {
     var player;
 
     let ytCross = document.getElementById('vcross1'),
-    backgro = document.getElementById('vframe1'),
-    ytBack = document.querySelector('.dark4'),
-    mark = document.querySelectorAll('.yt-button__mark'),
-    body = document.querySelector('body');
+        backgro = document.getElementById('vframe1'),
+        ytBack = document.querySelector('.dark4'),
+        mark = document.querySelectorAll('.yt-button__mark'),
+        body = document.querySelector('body');
 
     document.addEventListener('click', (e) => {
         const targetVideo = e.target.closest('.yt-button__mark');
@@ -166,15 +169,44 @@ document.addEventListener('DOMContentLoaded', function() {
             ytBack.classList.remove('active');
             body.style.overflow = 'scroll';
             player.destroy();
-        }); 
+        });
     });
 })
 
 
 
+//Cертификаты
 
+let educationLinks = document.querySelectorAll(".education__link"),
+    diplomaImg = document.getElementById('diploma-img'),
+    sertificateImg = document.getElementById('sertificate-img'),
+    regards = [diplomaImg, sertificateImg],
+    bodySert = document.querySelector('body');
 
+document.addEventListener('click', (e) => {
+    const targetBtn = e.target.closest(".education__link");
+    if (targetBtn) {
+        educationLinks.forEach((item, i) => {
+            if (item === targetBtn) {
+                if (i === 0) { //первый объект в массиве
+                    diplomaImg.classList.add("active");
+                    bodySert.style.overflow = 'hidden';
+                } else {
+                    sertificateImg.classList.add("active");
+                    bodySert.style.overflow = 'hidden';
+                }
+            }
+        })
+    }
+})
 
+regards.forEach(item => {
+    item.addEventListener('click', (e) => { //одно событие на каждый item
+        diplomaImg.classList.remove("active");
+        sertificateImg.classList.remove("active");
+        bodySert.style.overflow = 'scroll';
+    });
+});
 
 
 
