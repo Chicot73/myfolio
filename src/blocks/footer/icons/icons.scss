@@ -5,20 +5,23 @@
     justify-content: flex-end;
     align-items: flex-start;
     @include turquoise-bg;
+
     & a:not(:last-child) {
         margin-right: 3.1rem;
     }
+
     & a:nth-child(1) {
         img {
             width: 3.65rem;
             margin-right: .75rem;
         }
     }
+
     & a:nth-child(2) {
         img {
             width: 3.7rem;
         }
-    }   
+    }
 }
 
 @media only screen and (min-width: 62.51em) and (max-width: 76.5em) {
@@ -32,15 +35,18 @@
     .icons {
         flex: 0 0 24.3em;
         padding: 3.5rem 3.8rem;
+
         & a:not(:last-child) {
             margin-right: 2.5rem;
         }
+
         & a:nth-child(1) {
             img {
                 width: 3.3rem;
                 margin-right: .5rem;
             }
         }
+
         & a:nth-child(2) {
             img {
                 width: 3.3rem;

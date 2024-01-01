@@ -3,6 +3,7 @@
     @include gray-22;
     margin-bottom: 1.5rem;
     letter-spacing: .02em;
+
     &:last-of-type {
         margin-bottom: 4.7rem;
     }
@@ -25,6 +26,7 @@
     .intro__paragraph {
         @include font (600, 1.4rem, 153%);
         width: 100%;
+
         &:last-of-type {
             margin-bottom: 6rem;
         }

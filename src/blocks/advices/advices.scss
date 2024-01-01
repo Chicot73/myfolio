@@ -1,0 +1,43 @@
+.advices {
+    border: 0.2rem solid #7ECFDA;
+    @include yellow-bg;
+    position: relative;
+    padding: 4rem 2.8rem 3rem 4.5rem;
+    box-shadow: 0.2rem 0.2rem 0.5rem 0 rgba(0, 0, 0, 0.10);
+    width: 100%;
+    max-width: 31.8rem;
+    height: max-content;
+    margin-top: 0;
+}
+
+@media only screen and (min-width: 62.51em) and (max-width: 76.5em) {
+    .advices {
+        max-width: 27rem;
+        padding: 3.1rem 2.1rem 2.3rem 3.5rem;
+        margin-bottom: 3rem;
+    }
+}
+
+@media only screen and (max-width: 62.5em) {
+    .advices {
+        max-width: 100%;
+        padding: 3.1rem 2.8rem 2.2rem 4.5rem;
+        margin-bottom: 5rem;
+        margin-top: 3rem;
+    }
+}
+
+@media only screen and (max-width: 48.09em) {
+    .advices {
+        max-width: 100%;
+        padding: 3.1rem 2.1rem 2.3rem 3rem;
+        margin-bottom: 5rem;
+        margin-top: 1rem;
+    }
+}
+
+@media only screen and (max-width: 36.09em) {
+    .advices {
+        margin-top: 4rem;
+    }
+}

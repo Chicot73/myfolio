@@ -1,0 +1,11 @@
+.buttons__button--turget {
+    margin: 0;
+    border-left: 0 solid #FFFBE6;
+    border-top: 0 solid #FFFBE6;
+
+    &:hover {
+        background-color: #FFFFFF;
+        border-left: .3rem solid #FFFBE6;
+        border-top: .3rem solid #FFFBE6;
+    }
+}

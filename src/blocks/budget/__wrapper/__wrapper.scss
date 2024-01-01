@@ -1,0 +1,21 @@
+.budget__wrapper {
+    display: flex;
+    margin-left: -2.4rem;
+    margin-right: -2.4rem;
+    padding-top: 6.4rem;
+    padding-bottom: 5.5rem;
+}
+
+@media only screen and (max-width: 62.5em) {
+    .budget__wrapper {
+        display: block;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media only screen and (max-width: 36.09em) {
+    .budget__wrapper {
+        padding-bottom: 2.5rem;
+    }
+}

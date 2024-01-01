@@ -1,0 +1,19 @@
+.main__h4 {
+    @include font (700, 1.5rem, 140%);
+    @include gray-23;
+    display: block;
+    user-select: none;
+    margin-bottom: 1.5rem;
+
+    & span {
+        @include font (800, 1.5rem, 140%);
+        font-style: italic;
+        color: #000;
+    }
+}
+
+@media only screen and (max-width: 36.09em) {
+    .main__h4 {
+        margin-bottom: 1.5rem;
+    }
+}

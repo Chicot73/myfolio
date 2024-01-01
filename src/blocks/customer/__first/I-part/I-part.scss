@@ -1,0 +1,7 @@
+.I-part {
+    grid-area: I;
+
+    & p:nth-of-type(2) {
+        margin-bottom: 3.5rem;
+    }
+}

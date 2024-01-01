@@ -1,0 +1,29 @@
+.main {
+    //flex: 1 1 0;
+    display: grid;
+    margin-left: 2.4rem;
+    margin-right: 2.4rem;
+    width: 100%;
+    max-width: 69.6rem;
+    margin-bottom: .5rem;
+}
+
+@media only screen and (min-width: 62.51em) and (max-width: 76.5em) {
+    .main {
+        max-width: 57rem;
+    }
+}
+
+@media only screen and (max-width: 62.5em) {
+    .main {
+        //flex: 1 1 0;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media only screen and (max-width: 36.09em) {
+    .main {
+        max-width: 27rem;
+    }
+}

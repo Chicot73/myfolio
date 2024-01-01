@@ -1,0 +1,21 @@
+.positioning__wrapper2 {
+    display: flex;
+    margin-left: -2.4rem;
+    margin-right: -2.4rem;
+    padding-bottom: .5rem;
+    position: relative;
+}
+
+@media only screen and (max-width: 62.5em) {
+    .positioning__wrapper2 {
+        display: block;
+        margin: 0;
+    }
+}
+
+@media only screen and (max-width: 36.09em) {
+    .positioning__wrapper2 {
+        margin: 0;
+        margin-top: 16rem;
+    }
+}

@@ -1,0 +1,35 @@
+.delimiter__alert {
+    @include font (600, 1.5rem, 45%);
+    @include gray-23;
+    border-bottom: 0.2rem dashed #5C5C5C;
+    position: absolute;
+    bottom: 4.4rem;
+    left: 50%;
+    transform: translate(-50%, 0);
+    padding-bottom: 1rem;
+    max-width: 120rem;
+    text-align: center;
+    //display: none;
+}
+
+@media only screen and (max-width: 62.5em) {
+    .delimiter__alert {
+        left: 40%;
+        transform: translate(-33%, 0);
+    }
+}
+
+@media only screen and (max-width: 48.09em) {
+    .delimiter__alert {
+        left: 25%;
+        transform: translate(-15%, 0);
+    }
+}
+
+@media only screen and (max-width: 36.09em) {
+    .delimiter__alert {
+        left: 10%;
+        transform: translate(-5%, 0);
+        bottom: 1.4rem;
+    }
+}

@@ -2,6 +2,7 @@
     &:first-child {
         margin-right: 7.6rem;
     }
+
     & li:not(:last-of-type) {
         margin-bottom: 1.4rem;
     }
@@ -29,6 +30,7 @@
         width: 100%;
         padding-right: 3.8rem;
         margin-right: 0;
+
         &:first-child {
             margin-bottom: 1.4rem;
         }
@@ -40,6 +42,7 @@
         width: 100%;
         padding-right: 3.8rem;
         margin-right: 0;
+
         &:first-child {
             margin-bottom: 1.4rem;
         }

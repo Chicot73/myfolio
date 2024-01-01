@@ -1,0 +1,12 @@
+.customer__input--placeholder {
+    @include font (600, 1.4rem, normal);
+    @include gray-32;
+    margin: .4rem 0 3rem;
+    display: none;
+}
+
+@media only screen and (max-width: 36.09em) {
+    .customer__input--placeholder {
+        display: block;
+    }
+}

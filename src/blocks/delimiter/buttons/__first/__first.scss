@@ -1,0 +1,5 @@
+.buttons__first {
+    & button:first-child {
+        display: none;
+    }
+}

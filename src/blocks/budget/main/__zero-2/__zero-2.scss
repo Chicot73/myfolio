@@ -1,0 +1,13 @@
+.main__zero-2 {
+    display: none;
+}
+
+@media only screen and (max-width: 36.09em) {
+    .main__zero-2 {
+        display: block;
+        @include font (600, 2.5rem, 150%);
+        color: transparent;
+        width: 100%;
+        max-width: 50%;
+    }
+}

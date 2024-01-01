@@ -1,0 +1,45 @@
+.counter__input {
+    position: relative;
+    padding: 0.8rem 1rem;
+    width: 100%;
+    max-width: 7.3rem;
+    @include font (600, 1.5rem, normal);
+    @include gray-2;
+    //@include gray-5-bg;
+    border: 0.1rem solid #b6b6b6;
+    box-shadow: 0.1rem 0.1rem 0.85rem 0 rgba(0, 0, 0, 0.14) inset;
+    //margin-bottom: 4rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    cursor: text;
+    text-align: center;
+
+    &:hover {
+        outline: 0.1rem solid #b6b6b6;
+    }
+
+    &:focus {
+        outline: 0.1rem solid #838383;
+        border: 0.1rem solid #838383;
+        box-shadow: none;
+    }
+
+    &::placeholder {
+        @include gray-32;
+        text-align: center;
+    }
+}
+
+@media only screen and (min-width: 62.51em) and (max-width: 76.5em) {
+    .counter__input {
+        margin-left: .5rem;
+        margin-right: .5rem;
+    }
+}
+
+@media only screen and (max-width: 36.09em) {
+    .counter__input {
+        margin-left: .2rem;
+        margin-right: .2rem;
+    }
+}

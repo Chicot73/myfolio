@@ -1,0 +1,16 @@
+.change-menu--out {
+    left: -150%;
+    animation: slice4 .3s;
+    animation-timing-function: ease-out;
+
+    @keyframes slice4 {
+
+        from {
+            left: 50%;
+        }
+
+        to {
+            left: -150%;
+        }
+    }
+}

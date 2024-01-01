@@ -4,87 +4,115 @@
     line-height: $height; //интерлиньяж
     font-family: 'Open Sans';
     //@include font (700, 9rem, 116%);
-    }
-    
-    @mixin vert-c {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-    
-    @mixin absolute00 {
-        position: absolute;
-        top: 0;
-        left: 0;
-        transform: translate(0,0);
-    }
-    
-    @mixin absolute0-center {
-        position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translate(-50%,0);
-    }
+}
 
-    @mixin absolute-center {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-    }
-    
-    @mixin gray-1 {
-        color: #424241;
-    }
-    
-    @mixin gray-2 {
-        color: #474747;
-    }
+@mixin sizes ($maxwith, $maxheight) {
+    width: 100%;
+    max-width: $maxwith;
+    height: 100%;
+    max-height: $maxheight;
+    //@include sizes (2.5rem, 2.5rem);
+}
 
-    @mixin gray-2-bg {
-        background: #474747;
-    }
+@mixin vert-c {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
-    @mixin gray-23 {
-        color: #5c5c5c;
-    }
+@mixin absolute00 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+}
 
-    @mixin gray-22 {
-        color: #838383;
-    }
-    
-    @mixin gray-3 {
-        color: #909090;
-    }
+@mixin absolute0-center {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
 
-    @mixin gray-3-bg {
-        background: #909090;
-    }
-    
-    @mixin gray-4-bg {
-        background: #F3F5F6;
-    }
-    
-    @mixin turquoise {
-        color: #7ECFDA;
-    }
-    
-    @mixin turquoise-bg {
-        background: #7ECFDA;
-    }
+@mixin absolute-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
-    @mixin yellow {
-        color: #FFFBE6;
-    }
+@mixin gray-1 {
+    color: #424241;
+}
 
-    @mixin yellow-bg {
-        background: #FFFBE6;
-    }
-    
-    @mixin white {
-        color: #FFFFFF;
-    }
-    
-    @mixin white-bg {
-        background: #FFFFFF;
-    }
+@mixin gray-2 {
+    color: #474747;
+}
+
+@mixin gray-2-bg {
+    background: #474747;
+}
+
+@mixin gray-23 {
+    color: #5c5c5c;
+}
+
+@mixin gray-22 {
+    color: #838383;
+}
+
+@mixin gray-3 {
+    color: #909090;
+}
+
+@mixin gray-32 {
+    color: #9c9c9c;
+}
+
+@mixin gray-3-bg {
+    background: #909090;
+}
+
+@mixin gray-4 {
+    color: #F3F5F6;
+}
+
+@mixin gray-4-bg {
+    background: #F3F5F6;
+}
+
+@mixin gray-5-bg {
+    background: #FBFBFB;
+}
+
+@mixin turquoise {
+    color: #7ECFDA;
+}
+
+@mixin turquoise-dark {
+    color: #4dc1d0;
+}
+
+@mixin turquoise-bg {
+    background: #7ECFDA;
+}
+
+@mixin turquoise-lite-bg {
+    background: #EAF9F8;
+}
+
+@mixin yellow {
+    color: #FFFBE6;
+}
+
+@mixin yellow-bg {
+    background: #FFFBE6;
+}
+
+@mixin white {
+    color: #FFFFFF;
+}
+
+@mixin white-bg {
+    background: #FFFFFF;
+}

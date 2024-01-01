@@ -1,0 +1,12 @@
+.buttons__center {
+    margin-bottom: 5rem;
+    margin-right: auto;
+    margin-left: 0;
+}
+
+@media only screen and (max-width: 48.09em) {
+    .buttons__center {
+        //margin-left: 11rem;
+        margin-left: auto;
+    }
+}

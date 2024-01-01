@@ -96,11 +96,46 @@ let puArr = [puCross, puLinks].forEach(item => {
     });
 });
 
+//Меню выбора сайта
+
+let changeBtn = document.querySelector('.benefits__button'),
+    changeBody = document.querySelector('.change-menu'),
+    changeBack = document.querySelector('.dark'),
+    changeBack2 = document.querySelector('.dark2'),
+    changeBack3 = document.querySelector('.dark3'),
+    changeCross = document.querySelector('.change-menu__cross'),
+    body2 = document.querySelector('body');
+
+changeBtn.addEventListener('click', (e) => {
+
+    if (changeBody.classList.contains('change-menu--out')) {
+        changeBody.classList.remove('change-menu--out');
+    };
+    changeBody.classList.add('change-menu--in');
+    changeBack.style.display = 'block';
+    changeBack2.style.display = 'block';
+    changeBack3.style.display = 'block';
+    body2.style.overflow = 'hidden';
+});
+let changeArr = [changeCross, changeBack].forEach(item => {
+    item.addEventListener('click', (e) => {
+        changeBody.classList.remove('change-menu--in');
+        changeBody.classList.add('change-menu--out');
+        changeBack.style.display = 'none';
+        changeBack2.style.display = 'none';
+        changeBack3.style.display = 'none';
+        body2.style.overflow = 'scroll';
+    });
+});
+
 
 
 window.addEventListener('resize', (e) => {
     if (puBody.classList.contains('popup-menu--out')) {
         puBody.classList.remove('popup-menu--out');
+    };
+    if (changeBody.classList.contains('change-menu--out')) {
+        changeBody.classList.remove('change-menu--out');
     };
 });
 
@@ -207,6 +242,7 @@ regards.forEach(item => {
         bodySert.style.overflow = 'scroll';
     });
 });
+
 
 
 

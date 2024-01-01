@@ -1,0 +1,33 @@
+.main__title--2 {
+    //применяется в секциях, где слева вначале нет рисунка или блока
+    position: relative;
+    @include font (bold, 2.3rem, 154%);
+    text-transform: uppercase;
+    @include turquoise;
+    margin-bottom: 3.5rem;
+    width: auto;
+}
+
+@media only screen and (min-width: 62.51em) and (max-width: 76.5em) {
+    .main__title--2 {
+        @include font (bold, 2.2rem, 154%);
+        margin-bottom: 3rem;
+    }
+}
+
+@media only screen and (max-width: 62.5em) {
+    .main__title--2 {
+        @include font (bold, 2.2rem, 154%);
+        margin-bottom: 3rem;
+    }
+}
+
+@media only screen and (max-width: 48.09em) {
+    .main__title--2 {
+        @include font (bold, 2.2rem, 154%);
+        margin-bottom: 3rem;
+        width: 100%;
+        text-align: center;
+        letter-spacing: -0.03em;
+    }
+}

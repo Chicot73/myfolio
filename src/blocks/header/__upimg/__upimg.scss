@@ -1,0 +1,42 @@
+.header__upimg {
+    & picture {
+        display: block;
+        width: 100%;
+        max-width: 60.2rem;
+        margin: 0 auto;
+    }
+
+}
+
+@media only screen and (min-width: 48.1em) and (max-width: 62.5em) {
+    .header__upimg {
+        & picture {
+            display: block;
+            width: 100%;
+            max-width: 55rem;
+            margin: 3rem auto 0 0;
+        }
+
+    }
+}
+
+@media only screen and (min-width: 36.1em) and (max-width: 48.09em) {
+    .header__upimg {
+        & picture {
+            display: block;
+            width: 100%;
+            max-width: 65rem;
+            margin: 6rem auto 0 0;
+        }
+
+    }
+}
+
+@media only screen and (max-width: 36.09em) {
+    .header__upimg {
+        & picture {
+            margin-top: 4rem;
+        }
+
+    }
+}

@@ -7,13 +7,14 @@
     @include turquoise-bg;
     cursor: pointer;
     z-index: 7;
+
     & img {
         position: absolute;
         width: 60%;
         height: auto;
         top: 50%;
         left: 50%;
-        transform: translate(-50%,-50%);
+        transform: translate(-50%, -50%);
     }
 }
 
@@ -23,6 +24,7 @@
         right: .8vw;
         width: 1.9vw;
         height: 1.9vw;
+
         & img {
             width: 70%;
         }
@@ -35,6 +37,7 @@
         right: 1.2vw;
         width: 2vw;
         height: 2vw;
+
         & img {
             width: 70%;
         }
@@ -47,6 +50,7 @@
         right: 1.2vw;
         width: 2.4vw;
         height: 2.4vw;
+
         & img {
             width: 90%;
         }

@@ -22,6 +22,11 @@ let paths = {
     dest: baseDir + '/js',
   },
 
+  scripts2: {
+    src: baseDir + '../js/*.js',
+    dest: baseDir + '../js',
+  },
+
   cssOutputName: 'style.css',
   jsOutputName: 'script.min.js',
 
@@ -99,10 +104,18 @@ function scripts() {
     .pipe(dest(paths.scripts.dest))
 }
 
+function scripts2() {
+  return src(paths.scripts2.src)
+    .pipe(concat(paths.jsOutputName))
+    .pipe(uglify())
+    .pipe(dest(paths.scripts2.dest))
+}
+
 exports.browsersync = browsersync;
 exports.assets = series(styles, images);
 exports.styles = styles;
 exports.scripts = scripts;
+exports.scripts2 = scripts2;
 exports.images = images;
 exports.images = cleanimg;
-exports.default = parallel(images, styles, scripts, browsersync, startwatch);
+exports.default = parallel(images, styles, scripts, scripts2, browsersync, startwatch);

@@ -1,0 +1,5 @@
+.customer__article {
+    @include font (600, 1.5rem, normal);
+    @include gray-3;
+    padding-bottom: 1.6rem;
+}

@@ -1,0 +1,17 @@
+.advices__item {
+    @include font (600, 1.4rem, auto);
+    font-style: italic;
+    @include gray-23;
+    padding-bottom: 1.6rem;
+    list-style-type: disc;
+}
+
+@media only screen and (max-width: 48.09em) {
+    .advices__item {
+        @include font (600, 1.5rem, auto);
+        font-style: italic;
+        @include gray-23;
+        padding-bottom: 1.6rem;
+        list-style-type: none;
+    }
+}

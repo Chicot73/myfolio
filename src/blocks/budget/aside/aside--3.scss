@@ -1,0 +1,32 @@
+.aside--3 {
+    //flex: 1 1 31.8rem;
+    margin-left: 2.4rem;
+    margin-right: 2.4rem;
+    width: 100%;
+    max-width: 31.8rem;
+}
+
+
+@media only screen and (min-width: 62.51em) and (max-width: 76.5em) {
+    .aside--3 {
+        width: 100%;
+        max-width: 27.8rem;
+    }
+}
+
+@media only screen and (max-width: 62.5em) {
+    .aside--3 {
+        margin-top: 7rem;
+        @include vert-c;
+        margin-left: 0;
+        margin-right: 0;
+        max-width: 100%;
+    }
+}
+
+@media only screen and (max-width: 36.09em) {
+    .aside--3 {
+        margin-top: 1rem;
+        display: block;
+    }
+}

@@ -1,0 +1,29 @@
+.delimiter__popup {
+    position: relative;
+    padding: 7rem 11.6rem 9.4rem;
+    background: #FFFFFF;
+    margin: 0 auto;
+    box-shadow: 0 0 2rem 0 rgba(0, 0, 0, 0.26);
+    width: 100%;
+    max-width: 81.1rem;
+}
+
+@media only screen and (max-width: 62.5em) {
+    .delimiter__popup {
+        max-width: 60rem;
+        padding: 7rem 6.6rem 9.4rem;
+    }
+}
+
+@media only screen and (max-width: 48.09em) {
+    .delimiter__popup {
+        max-width: 60rem;
+        padding: 7rem 4.6rem 9.4rem;
+    }
+}
+
+@media only screen and (max-width: 36.09em) {
+    .delimiter__popup {
+        padding: 7rem 3rem 7.6rem;
+    }
+}

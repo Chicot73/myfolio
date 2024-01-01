@@ -1,0 +1,31 @@
+.aside__img {
+    @include sizes (25.8rem, 25.8rem);
+    margin: 0 auto;
+    margin-bottom: 3.8rem;
+    width: 100%;
+    max-width: 23rem;
+}
+
+@media only screen and (max-width: 62.5em) {
+    .aside__img {
+        width: 100%;
+        max-width: 19rem;
+        margin-right: 4rem;
+    }
+}
+
+@media only screen and (max-width: 48.09em) {
+    .aside__img {
+        width: 100%;
+        max-width: 13rem;
+        margin-right: 3rem;
+    }
+}
+
+@media only screen and (max-width: 36.09em) {
+    .aside__img {
+        width: 100%;
+        max-width: 17rem;
+        margin: 0 auto;
+    }
+}

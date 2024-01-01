@@ -1,0 +1,14 @@
+.IV-part {
+    grid-area: IV;
+    margin-bottom: 2.4rem;
+
+    & h3:last-of-type {
+        margin-top: 2rem;
+    }
+}
+
+@media only screen and (min-width: 62.51em) and (max-width: 76.5em) {
+    .IV-part {
+        margin-bottom: 0;
+    }
+}

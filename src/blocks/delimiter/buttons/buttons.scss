@@ -1,0 +1,27 @@
+.buttons {
+    display: flex;
+    margin-left: -1.2rem;
+    margin-right: -1.2rem;
+}
+
+@media only screen and (max-width: 36.09em) {
+    .buttons {
+        flex-direction: column-reverse;
+
+        & button:last-child {
+            margin-bottom: 2.4rem;
+        }
+
+        & button:first-child {
+            padding: 2.3rem 2.2rem 2rem;
+
+            .buttons__btnimg {
+                display: none;
+            }
+
+            .buttons__btnname {
+                @include font (600, 1.4rem, 116%);
+            }
+        }
+    }
+}

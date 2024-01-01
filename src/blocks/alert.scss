@@ -1,0 +1,15 @@
+span.alert {
+    width: 100%;
+    max-width: 2.2rem;
+    position: absolute;
+    top: 5%;
+    left: -3.3rem;
+    transform: translate(0, -5%);
+    //display: none;
+}
+
+@media only screen and (max-width: 48.09em) {
+    span.alert {
+        left: -2.5rem;
+    }
+}

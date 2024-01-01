@@ -1,0 +1,12 @@
+.buttons__button--turget-2 {
+    margin: 0;
+    background-color: #FFFBE6;
+    border-left: 0 solid #EAF9F8;
+    border-top: 0 solid #EAF9F8;
+
+    &:hover {
+        background-color: #FFFFFF;
+        border-left: .3rem solid #EAF9F8;
+        border-top: .3rem solid #EAF9F8;
+    }
+}

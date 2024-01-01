@@ -10,25 +10,30 @@
     cursor: pointer;
     animation: yt3 .2s;
     animation-timing-function: ease-out;
+
     @keyframes yt3 {
 
         from {
             opacity: 1;
         }
-        to { 
+
+        to {
             opacity: 0;
         }
     }
+
     &:hover {
         opacity: 1;
         animation: yt4 .2s;
         animation-timing-function: ease-out;
+
         @keyframes yt4 {
 
             from {
                 opacity: 0;
             }
-            to { 
+
+            to {
                 opacity: 1;
             }
         }

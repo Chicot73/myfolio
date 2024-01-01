@@ -1,0 +1,22 @@
+.customer__date {
+    @include vert-c;
+}
+
+@media only screen and (min-width: 62.51em) and (max-width: 76.5em) {
+    .customer__date {
+        width: 100%;
+        max-width: 56.2rem;
+    }
+}
+
+@media only screen and (min-width: 48.1em) and (max-width: 62.5em) {
+    .customer__date {
+        margin: 0 -2.5rem;
+    }
+}
+
+@media only screen and (max-width: 48.09em) {
+    .customer__date {
+        display: block;
+    }
+}

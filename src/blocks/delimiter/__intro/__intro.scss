@@ -1,0 +1,13 @@
+.delimiter__intro {
+    @include font (400, 2rem, 140%);
+    @include gray-23;
+    margin-bottom: 3.4rem;
+}
+
+@media only screen and (max-width: 48.09em) {
+    .delimiter__intro {
+        @include font (400, 1.7rem, 140%);
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+}

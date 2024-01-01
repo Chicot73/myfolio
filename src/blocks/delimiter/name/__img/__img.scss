@@ -1,0 +1,15 @@
+.name__img {
+    width: 100%;
+    max-width: 8.5rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(0, 0);
+}
+
+@media only screen and (max-width: 48.09em) {
+    .name__img {
+        width: 100%;
+        max-width: 6.5rem;
+    }
+}

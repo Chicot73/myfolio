@@ -1,0 +1,25 @@
+.main__complex--2 {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 1.9rem;
+
+    & .main__label:not(:last-child) {
+        margin-right: 2.4rem;
+    }
+
+    & label:last-child {
+        flex-grow: 1;
+    }
+}
+
+@media only screen and (max-width: 36.09em) {
+    .main__complex--2 {
+        margin-left: 3.2rem;
+        display: block;
+
+        .main__subtitle-bullet {
+            margin-left: 0;
+        }
+    }
+}

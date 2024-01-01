@@ -1,0 +1,15 @@
+.history__wrapper {
+    display: flex;
+    margin-left: -2.4rem;
+    margin-right: -2.4rem;
+    padding-top: 6.4rem;
+}
+
+@media only screen and (max-width: 62.5em) {
+    .history__wrapper {
+        display: block;
+        padding-top: 0;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}

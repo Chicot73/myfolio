@@ -1,0 +1,35 @@
+.main__textarea {
+    width: 100%;
+    max-width: 69.7rem;
+    min-height: 23.5rem;
+    max-height: 60rem;
+    @include font (600, 1.5rem, normal);
+    @include gray-2;
+    padding: 1rem 2.5rem;
+    @include gray-5-bg;
+    border: 0.1rem solid #b6b6b6;
+    box-shadow: 0.1rem 0.1rem 0.85rem 0 rgba(0, 0, 0, 0.14) inset;
+    margin-bottom: 4rem;
+    cursor: text;
+    resize: vertical;
+
+    &:hover {
+        outline: 0.1rem solid #b6b6b6;
+    }
+
+    &:focus {
+        outline: 0.1rem solid #838383;
+        border: 0.1rem solid #838383;
+        box-shadow: none;
+    }
+
+    &::placeholder {
+        @include gray-32;
+    }
+}
+
+@media only screen and (min-width: 62.51em) and (max-width: 76.5em) {
+    .main__textarea {
+        max-width: 56.2rem;
+    }
+}

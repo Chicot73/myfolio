@@ -1,0 +1,235 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-size: 10px;
+  // font-size: 0.520835vw; // на разрешении 1920 0.520835vw === 10px
+  font-family: 'Open Sans', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  text-rendering: auto;
+  margin: 0;
+  padding: 0;
+  color: #5C5C5C;
+  //scroll-behavior: smooth;
+  -webkit-text-size-adjust: none;
+}
+
+body {
+  background-color: #F5F5F5;
+  padding-top: 4.4rem;
+  padding-bottom: 4.4rem;
+}
+
+.container {
+  position: relative;
+  width: 120rem;
+  margin: 0 auto;
+  background: #FFFFFF;
+  padding-left: 7rem;
+  padding-right: 7rem;
+  z-index: 1;
+  overflow: visible;
+}
+
+.container-example {
+  position: relative;
+  width: 120rem;
+  margin: 0 auto;
+  background: #F5F5F5;
+  padding-left: 7rem;
+  padding-right: 7rem;
+  z-index: 1;
+}
+
+.container-footer {
+  position: relative;
+  width: 120rem;
+  z-index: 1;
+  margin: 0 auto;
+}
+
+li {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+input,
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+img,
+picture {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+
+@media only screen and (min-width: 62.51em) and (max-width: 76.5em) {
+
+  //@media only screen and (min-width: 100em) and (max-width: 115em) {
+  body {
+    padding-top: 3.7rem;
+    padding-bottom: 3.7rem;
+  }
+
+  html {
+    font-size: 10px;
+    //font-size: 6.4px;
+    // font-size vw: (100/768) * 10px; // где 768 это ширина мобильного экрана
+
+  }
+
+  .container {
+    width: 100rem;
+    margin: 0 auto;
+    padding-left: 6.1rem;
+    padding-right: 6.1rem;
+  }
+
+  .container-example {
+    width: 100rem;
+    padding-left: 6.1rem;
+    padding-right: 6.1rem;
+  }
+
+  .container-footer {
+    width: 100rem;
+  }
+}
+
+@media only screen and (min-width: 48.1em) and (max-width: 62.5em) {
+  body {
+    padding-top: 2.7rem;
+    padding-bottom: 2.7rem;
+  }
+
+  html {
+    font-size: 10px;
+
+  }
+
+  .container {
+    width: 76.79rem;
+    margin: 0 auto;
+    padding-left: 5.8rem;
+    padding-right: 5.8rem;
+  }
+
+  .container-example {
+    width: 76.79rem;
+    padding-left: 3.8rem;
+    padding-right: 5.8rem;
+  }
+
+  .container-footer {
+    width: 76.79rem;
+  }
+}
+
+
+
+@media only screen and (min-width: 36.1em) and (max-width: 48.09em) {
+  body {
+    padding-top: 1.9rem;
+    padding-bottom: 1.9rem;
+  }
+
+  html {
+    font-size: 10px;
+  }
+
+  .container {
+    width: 57.6rem;
+    margin: 0 auto;
+    padding-left: 4.4rem;
+    padding-right: 4.4rem;
+  }
+
+  .container-example {
+    width: 57.6rem;
+    padding-left: 4.4rem;
+    padding-right: 4.4rem;
+  }
+
+  .container-footer {
+    width: 57.6rem;
+  }
+}
+
+@media only screen and (min-width: 20.1em) and (max-width: 36.09em) {
+  body {
+    padding-top: 2.4rem;
+    padding-bottom: 2.4rem;
+  }
+
+  html {
+    font-size: 10px;
+    // font-size: 1.75vw; //11.9px
+    // font-size vw: (100/320) * 4.3px; // где 320 это ширина мобильного экрана
+  }
+
+  .container {
+    width: 32rem;
+    margin: 0 auto;
+    padding-left: 3.3rem;
+    padding-right: 3.3rem;
+  }
+
+  .container-example {
+    width: 32rem;
+    padding-left: 3.3rem;
+    padding-right: 3.3rem;
+  }
+
+  .container-footer {
+    width: 32rem;
+  }
+}
+
+@media only screen and (max-width: 20.09em) {
+  body {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  html {
+    font-size: 3.125vw;
+  }
+
+  .container {
+    width: 100%;
+    margin: 0 auto;
+    padding-left: 3.3rem;
+    padding-right: 3.3rem;
+  }
+
+  .container-example {
+    width: 100%;
+    padding-left: 3.3rem;
+    padding-right: 3.3rem;
+  }
+
+  .container-footer {
+    width: 100%;
+  }
+}

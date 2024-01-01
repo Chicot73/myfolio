@@ -1,0 +1,34 @@
+.counter__arrow {
+    @include sizes(1rem, 1.5rem);
+    position: absolute;
+    top: 1.2rem;
+    right: 1.7rem;
+    transform: translate(-1.7rem, -1.2rem);
+    z-index: 1;
+    transform: rotate(180deg);
+    cursor: pointer;
+}
+
+@media only screen and (min-width: 62.51em) and (max-width: 76.5em) {
+    .counter__arrow {
+        @include sizes(1rem, 1.5rem);
+        position: absolute;
+        top: 1.2rem;
+        right: 1.3rem;
+        transform: translate(-1.3rem, -1.2rem);
+        transform: rotate(180deg);
+        cursor: pointer;
+    }
+}
+
+@media only screen and (max-width: 36.09em) {
+    .counter__arrow {
+        @include sizes(1rem, 1.5rem);
+        position: absolute;
+        top: 1.2rem;
+        right: 0.5rem;
+        transform: translate(-1.5rem, -1.2rem);
+        transform: rotate(180deg);
+        cursor: pointer;
+    }
+}

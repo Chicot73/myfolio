@@ -1,5 +1,6 @@
 .skills__rail {
     @include vert-c;
+
     &:not(:last-child) {
         margin-bottom: 2.5rem;
     }
@@ -8,6 +9,7 @@
 @media only screen and (min-width: 48.1em) and (max-width: 76.5em) {
     .skills__rail {
         @include vert-c;
+
         &:not(:last-child) {
             margin-bottom: 2rem;
         }

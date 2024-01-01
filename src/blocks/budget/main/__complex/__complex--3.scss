@@ -1,0 +1,33 @@
+.main__complex--3 {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+
+    .main__complex--first {
+        flex-grow: 0;
+        flex-shrink: 0;
+        flex-basis: 20.1rem;
+    }
+
+    .main__complex--second {
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: auto;
+    }
+}
+
+@media only screen and (max-width: 36.09em) {
+    .main__complex--3 {
+        margin-left: 3.2rem;
+        display: block;
+        margin-bottom: 3rem;
+
+        & .main__label {
+            margin-bottom: 3rem;
+        }
+
+        .main__subtitle-bullet {
+            margin-left: 0;
+        }
+    }
+}

@@ -1,0 +1,5 @@
+.change-menu__btnname {
+    @include font (600, 1.4rem, 116%);
+    @include gray-3;
+    text-align: center;
+}

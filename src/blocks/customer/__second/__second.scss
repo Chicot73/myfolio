@@ -1,0 +1,11 @@
+.customer__second {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+
+@media only screen and (max-width: 62.5em) {
+    .customer__second {
+        display: block;
+    }
+}

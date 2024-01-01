@@ -1,0 +1,70 @@
+.customer__first {
+    display: grid;
+    grid-template-columns: 1fr minmax(23rem, 43rem) minmax(15rem, 31.8rem);
+    grid-template-rows: 40rem 22.9rem 0;
+    //gap: 0 4.4rem;
+    margin-bottom: 4.4rem;
+    grid-template-areas:
+        "I III IV"
+        "II II IV"
+}
+
+@media only screen and (min-width: 62.51em) and (max-width: 76.5em) {
+    .customer__first {
+        grid-template-columns: 1fr minmax(23rem, 32rem) minmax(15rem, 27rem);
+        margin-bottom: 3.5rem;
+    }
+}
+
+@media only screen and (min-width: 48.1em) and (max-width: 62.5em) {
+    .customer__first {
+        display: grid;
+        grid-template-columns: 1fr 0 30rem;
+        grid-template-rows: 32rem 42rem 1fr;
+        gap: 3.7rem 1.5rem;
+        margin-bottom: .4rem;
+        grid-template-areas:
+            "I III III"
+            "IV IV IV"
+            "II II II"
+    }
+}
+
+@media only screen and (min-width: 36.1em) and (max-width: 48.09em) {
+    .customer__first {
+        margin-bottom: -1rem;
+        grid-template-columns: 100% 0 0;
+        grid-template-rows: 29.7rem 50rem 1fr;
+        gap: 0;
+        grid-template-areas:
+            "I I I"
+            "IV IV IV"
+            "II II II"
+    }
+}
+
+@media only screen and (min-width: 20.1em) and (max-width: 36.09em) {
+    .customer__first {
+        margin-bottom: -1rem;
+        grid-template-columns: 100% 0 0;
+        grid-template-rows: 46.5rem 48rem 1fr;
+        gap: 0;
+        grid-template-areas:
+            "I I I"
+            "IV IV IV"
+            "II II II"
+    }
+}
+
+@media only screen and (max-width: 36.09em) {
+    .customer__first {
+        margin-bottom: -1rem;
+        grid-template-columns: 100% 0 0;
+        grid-template-rows: 46.5rem 74rem 1fr;
+        gap: 0;
+        grid-template-areas:
+            "I I I"
+            "IV IV IV"
+            "II II II"
+    }
+}

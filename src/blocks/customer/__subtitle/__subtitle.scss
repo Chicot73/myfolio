@@ -1,0 +1,6 @@
+.customer__subtitle {
+    @include font (700, 2rem, normal);
+    text-transform: uppercase;
+    @include gray-23;
+    padding-bottom: 1.6rem;
+}

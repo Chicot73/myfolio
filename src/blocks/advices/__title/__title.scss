@@ -1,0 +1,6 @@
+.advices__title {
+    @include font (700, 2rem, auto);
+    text-transform: uppercase;
+    @include gray-23;
+    padding-bottom: 2.1rem;
+}

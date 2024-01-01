@@ -1,0 +1,27 @@
+.main__span {
+    position: absolute;
+    top: 50%;
+    right: -2rem;
+    transform: translate(0, -50%);
+    @include font (600, 1.5rem, 140%);
+    @include gray-2;
+    user-select: none;
+}
+
+@media only screen and (min-width: 62.51em) and (max-width: 76.5em) {
+    .main__span {
+        position: absolute;
+        top: 50%;
+        right: -2.5rem;
+        transform: translate(0, -50%);
+        @include font (600, 1.5rem, 140%);
+        @include gray-2;
+        user-select: none;
+    }
+}
+
+@media only screen and (max-width: 36.09em) {
+    .main__span {
+        display: none;
+    }
+}

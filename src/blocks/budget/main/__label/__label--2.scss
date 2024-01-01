@@ -1,0 +1,46 @@
+.main__label--2 {
+    position: relative;
+    @include font (600, 1.5rem, 140%);
+    @include gray-2;
+    //margin-bottom: 1.4rem;
+    width: 100%;
+    max-width: 47.7rem;
+    padding-left: 3.1rem;
+    display: block;
+    user-select: none;
+
+    &::before {
+        content: "";
+        display: block;
+        width: 1.6rem;
+        height: 1.6rem;
+        @include gray-5-bg;
+        flex-shrink: 0;
+        cursor: pointer;
+        position: absolute;
+        left: 0;
+        top: 0.3rem;
+        transform: translate(0, 0);
+    }
+}
+
+@media only screen and (min-width: 62.51em) and (max-width: 76.5em) {
+    .main__label--2 {
+        max-width: 45rem;
+        letter-spacing: -0.03em;
+    }
+}
+
+@media only screen and (min-width: 48.1em) and (max-width: 62.5em) {
+    .main__label--2 {
+        max-width: 47.7rem;
+        letter-spacing: 0;
+    }
+}
+
+@media only screen and (max-width: 48.09em) {
+    .main__label--2 {
+        max-width: 38rem;
+        letter-spacing: 0;
+    }
+}

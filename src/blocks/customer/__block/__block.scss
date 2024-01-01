@@ -1,0 +1,22 @@
+.customer__block {
+    width: 100%;
+    max-width: 33.3rem;
+}
+
+@media only screen and (min-width: 62.51em) and (max-width: 76.5em) {
+    .customer__block {
+        max-width: 26.3rem;
+    }
+}
+
+@media only screen and (min-width: 48.1em) and (max-width: 62.5em) {
+    .customer__block {
+        margin: 0 2.5rem 3rem;
+    }
+}
+
+@media only screen and (max-width: 48.09em) {
+    .customer__block {
+        max-width: 100%;
+    }
+}

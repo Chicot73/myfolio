@@ -1,0 +1,18 @@
+.customer__textbold {
+    @include font (600, 1.5rem, 50%);
+    @include gray-2;
+    margin-bottom: 4.5rem;
+}
+
+@media only screen and (max-width: 48.09em) {
+    .customer__textbold {
+        @include font (600, 1.5rem, 140%);
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 36.09em) {
+    .customer__textbold {
+        margin: 0 4rem 4.5rem;
+    }
+}

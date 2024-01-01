@@ -1,0 +1,6 @@
+.main__subtitle {
+    position: relative;
+    @include font(700, 1.6rem, 140%);
+    @include gray-2;
+    margin-bottom: .7rem;
+}

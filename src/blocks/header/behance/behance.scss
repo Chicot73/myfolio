@@ -5,42 +5,48 @@
     right: 0;
     width: 11.9rem;
     height: 11.9rem;
-    padding-top: 2.9rem; 
+    padding-top: 2.2rem;
     text-align: center;
     background: #7ECFDA;
     animation: bg3 .2s;
     animation-timing-function: ease-out;
+    overflow: hidden;
+
     @keyframes bg3 {
 
         from {
             background: #68c6d3;
         }
-        to { 
+
+        to {
             background: #7ECFDA;
         }
     }
+
     &:hover {
         background: #68c6d3;
         animation: bg4 .2s;
         animation-timing-function: ease-out;
+
         @keyframes bg4 {
 
             from {
                 background: #7ECFDA;
             }
-            to { 
+
+            to {
                 background: #68c6d3;
             }
         }
     }
-    
+
     & img {
         width: 4.9rem;
         height: fit-content;
         margin-bottom: 1rem;
     }
 
-} 
+}
 
 @media only screen and (min-width: 20.1em) and (max-width: 76.5em) {
     .behance {

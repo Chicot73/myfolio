@@ -1,0 +1,48 @@
+.main__title--3 {
+    position: relative;
+    @include font (bold, 2.3rem, 154%);
+    text-transform: uppercase;
+    @include turquoise;
+    margin-bottom: 3.5rem;
+    width: auto;
+    //letter-spacing: -0.02em;
+
+    & span {
+        @include font (bold, 1.6rem, 154%);
+        letter-spacing: 0;
+    }
+}
+
+@media only screen and (min-width: 62.51em) and (max-width: 76.5em) {
+    .main__title--3 {
+        @include font (bold, 2.2rem, 154%);
+        margin-bottom: 3rem;
+    }
+}
+
+@media only screen and (max-width: 62.5em) {
+    .main__title--3 {
+        @include font (bold, 2.2rem, 154%);
+        margin-bottom: 3rem;
+        position: absolute;
+        top: -7rem;
+        left: 0;
+    }
+}
+
+@media only screen and (max-width: 48.09em) {
+    .main__title--3 {
+        @include font (bold, 2.2rem, 154%);
+        margin-bottom: 3rem;
+        left: 50%;
+        transform: translate(-50%, 0);
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 36.09em) {
+    .main__title--3 {
+        top: -17rem;
+    }
+}

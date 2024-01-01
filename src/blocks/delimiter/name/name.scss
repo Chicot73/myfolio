@@ -1,0 +1,21 @@
+.name {
+    position: relative;
+    width: 100%;
+    max-width: 57.4rem;
+    min-height: 4.6rem;
+    margin-bottom: 8.9rem;
+}
+
+@media only screen and (max-width: 48.09em) {
+    .name {
+        margin-bottom: 7.7rem;
+        min-height: 7rem;
+    }
+}
+
+@media only screen and (max-width: 36.09em) {
+    .name {
+        margin-bottom: 2.7rem;
+        min-height: 15rem;
+    }
+}

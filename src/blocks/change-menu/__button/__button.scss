@@ -1,0 +1,20 @@
+.change-menu__button {
+    display: block;
+    cursor: pointer;
+    flex: 1 1 0;
+    margin-left: 1.2rem;
+    margin-right: 1.2rem;
+    background-color: #E8FBFD;
+    box-shadow: 0.3rem 0.3rem 0.4rem 0 rgba(0, 0, 0, 0.15);
+    padding-top: 4.2rem;
+    padding-bottom: 4.8rem;
+
+    &:hover {
+        background-color: #FFFBE6;
+        box-shadow: 0.1rem 0.2rem 0.41rem 0 rgba(0, 0, 0, 0.17);
+
+        .change-menu__btnname {
+            @include gray-23;
+        }
+    }
+}

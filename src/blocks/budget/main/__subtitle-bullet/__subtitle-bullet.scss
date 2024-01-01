@@ -1,0 +1,30 @@
+.main__subtitle-bullet {
+    position: relative;
+    @include font (bold, 1.5rem, 140%);
+    @include gray-2;
+    margin-bottom: 1.6rem;
+    margin-right: 3rem;
+    padding-left: 3.1rem;
+    display: block;
+    user-select: none;
+
+    &::before {
+        content: "";
+        display: block;
+        width: .9rem;
+        height: .9rem;
+        border-radius: 50%;
+        @include turquoise-bg;
+        flex-shrink: 0;
+        position: absolute;
+        left: 0;
+        top: 0.52rem;
+        transform: translate(0, 0);
+    }
+}
+
+@media only screen and (max-width: 36.09em) {
+    .main__subtitle-bullet {
+        margin-left: 3.2rem;
+    }
+}

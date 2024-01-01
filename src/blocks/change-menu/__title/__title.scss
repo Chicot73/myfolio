@@ -1,0 +1,9 @@
+.change-menu__title {
+    flex: 1 1 0;
+    padding-right: 3rem;
+    @include font (600, 1.8rem, auto);
+    padding-top: 11.4rem;
+    text-align: center;
+    @include gray-23;
+    user-select: none;
+}
