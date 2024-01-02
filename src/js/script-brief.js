@@ -143,18 +143,19 @@ window.addEventListener('DOMContentLoaded', () => {
     let budgetHide = document.querySelector(".budget__hide"),
         turgetDlm = document.getElementById("d02"),
         turget = document.querySelector(".turget"),
-        budgetBtn = document.getElementById("d01-sec");
-    let budgetDlm = document.getElementById("d01");
+        budgetBtn = document.getElementById("d01-sec"),
+        budgetTitle = document.getElementById("budget-title");
+    //let budgetDlm = document.getElementById("d01");
 
-    function getCoords(budgetDlm) {
-        let box = budgetDlm.getBoundingClientRect();
+    function getCoords(budgetBtn) {
+        let box = budgetBtn.getBoundingClientRect();
 
         return {
             top: box.top + window.scrollY
         }
     }
-    let coords = getCoords(budgetDlm);
-    let maxWidth;
+    let coords = getCoords(budgetBtn);
+    /* let maxWidth;
     let maxWidth2;
     let maxWidthSec;
     let maxWidthSec2;
@@ -162,17 +163,17 @@ window.addEventListener('DOMContentLoaded', () => {
     maxWidth = 90;
     maxWidth2 = 90;
     maxWidthSec = 500;
-    maxWidthSec2 = 500;
+    maxWidthSec2 = 500; */
 
 
 
     function change765(e) {
         if (e.matches) {
-            f1000();
-            maxWidth = -70;
+            coords = getCoords(budgetBtn);
+            /* maxWidth = -70;
             maxWidth2 = -70;
             maxWidthSec = 1000;
-            maxWidthSec2 = 700;
+            maxWidthSec2 = 700; */
         }
     };
     const mQuery1 = window.matchMedia('(min-width: 62.51em) and (max-width: 76.5em)');
@@ -183,12 +184,11 @@ window.addEventListener('DOMContentLoaded', () => {
 
     function change625(e) {
         if (e.matches) {
-            f1000();
-            scrl = null;
-            maxWidth = -1100;
+            coords = getCoords(budgetBtn);
+            /* maxWidth = -1100;
             maxWidth2 = -250;
             maxWidthSec = 1350;
-            maxWidthSec2 = 700;
+            maxWidthSec2 = 700; */
         }
     };
     const mQuery2 = window.matchMedia('(min-width: 48.1em) and (max-width: 62.5em)');
@@ -199,11 +199,11 @@ window.addEventListener('DOMContentLoaded', () => {
 
     function change481(e) {
         if (e.matches) {
-            scrl = null;
-            maxWidth = -1350;
+            coords = getCoords(budgetBtn);
+            /* maxWidth = -1350;
             maxWidth2 = -370;
             maxWidthSec = 1700;
-            maxWidthSec2 = 600;
+            maxWidthSec2 = 600; */
         }
     };
     const mQuery3 = window.matchMedia('(min-width: 36.1em) and (max-width: 48.09em)');
@@ -214,11 +214,11 @@ window.addEventListener('DOMContentLoaded', () => {
 
     function change361(e) {
         if (e.matches) {
-            scrl = null;
-            maxWidth = -2300;
+            coords = getCoords(budgetBtn);
+            /* maxWidth = -2300;
             maxWidthSec = 2500;
             maxWidth2 = -320;
-            maxWidthSec2 = 600;
+            maxWidthSec2 = 600; */
         }
     };
     const mQuery4 = window.matchMedia('(min-width: 20.1em) and (max-width: 36.09em)');
@@ -229,11 +229,11 @@ window.addEventListener('DOMContentLoaded', () => {
 
     function change201(e) {
         if (e.matches) {
-            scrl = null;
-            maxWidth = -2100;
+            coords = getCoords(budgetBtn);
+            /* maxWidth = -2100;
             maxWidthSec = 2500;
             maxWidth2 = -270;
-            maxWidthSec2 = 600;
+            maxWidthSec2 = 600; */
         }
     };
     const mQuery5 = window.matchMedia('(max-width: 20.09em)');
@@ -247,11 +247,14 @@ window.addEventListener('DOMContentLoaded', () => {
 
         let scrl = window.scrollY || document.documentElement.scrollTop;
 
-        if (scrl > coords.top - maxWidth) {
-            window.scrollTo({
-                top: coords.top - maxWidth,
-                behavior: 'auto',
+        if (scrl > coords.top + 200) {
+            budgetBtn.scrollIntoView({
+                block: "center"
             });
+            /* window.scrollTo({
+                top: coords.top,
+                behavior: 'auto',
+            }); */
         } else {
             return;
         };
@@ -265,9 +268,13 @@ window.addEventListener('DOMContentLoaded', () => {
             turgetDlm.style.display = "block";
             turget.style.display = "block";
 
-            window.scrollTo({
-                top: coords.top + maxWidthSec,
+            /* window.scrollTo({
+                top: coords.top + 1400,
                 behavior: 'smooth',
+            }); */
+            budgetTitle.scrollIntoView({
+                block: "center",
+                behavior: 'smooth'
             });
 
 
@@ -279,27 +286,30 @@ window.addEventListener('DOMContentLoaded', () => {
 
             let turgetHide = document.querySelector(".turget__hide"),
                 turgetBtn = document.getElementById("d02-sec"),
-                turgetDlmB = document.getElementById("d02"),
+                //turgetDlmB = document.getElementById("d02"),
                 posit = document.querySelector(".positioning"),
-                positDlm = document.getElementById("d03");
+                positDlm = document.getElementById("d03"),
+                turgetTitle = document.getElementById("turget-title");
 
-            function getCoords02(turgetDlmB) {
-                let box2 = turgetDlmB.getBoundingClientRect();
+            function getCoords02(turgetBtn) {
+                let box2 = turgetBtn.getBoundingClientRect();
 
                 return {
                     top: box2.top + window.scrollY
                 };
             }
-            let coords02 = getCoords02(turgetDlmB);
+            let coords02 = getCoords02(turgetBtn);
 
             function scrollHandler02() {
                 let scrl02 = window.scrollY || document.documentElement.scrollTop;
-                if (scrl02 > coords02.top - maxWidth2) {
-                    window.scrollTo({
-                        top: coords02.top - maxWidth2,
-                        behavior: 'auto',
+                if (scrl02 > coords02.top + 200) {
+                    turgetBtn.scrollIntoView({
+                        block: "center"
                     });
                 };
+
+
+
 
                 turgetBtn.addEventListener('click', (e) => {
                     e.preventDefault();
@@ -309,9 +319,13 @@ window.addEventListener('DOMContentLoaded', () => {
                     turgetHide.style.display = "none";
                     positDlm.style.display = "block";
                     posit.style.display = "block";
-                    window.scrollTo({
+                    /* window.scrollTo({
                         top: coords02.top + maxWidthSec2,
                         behavior: 'smooth',
+                    }); */
+                    turgetTitle.scrollIntoView({
+                        block: "center",
+                        behavior: 'smooth'
                     });
 
 
@@ -323,25 +337,31 @@ window.addEventListener('DOMContentLoaded', () => {
 
                     let positHide = document.querySelector(".positioning__hide"),
                         positBtn = document.getElementById("d03-sec"),
-                        positDlmB = document.getElementById("d03"),
+                        //positDlmB = document.getElementById("d03"),
                         collage = document.querySelector(".collage"),
-                        collageDlm = document.getElementById("d04");
+                        collageDlm = document.getElementById("d04"),
+                        positTitle = document.getElementById("posit-title");
 
-                    function getCoords03(positDlmB) {
-                        let box3 = positDlmB.getBoundingClientRect();
+                    function getCoords03(positBtn) {
+                        let box3 = positBtn.getBoundingClientRect();
 
                         return {
                             top: box3.top + window.scrollY
                         };
                     }
-                    let coords03 = getCoords03(positDlmB);
+                    let coords03 = getCoords03(positBtn);
 
                     function scrollHandler03() {
                         let scrl03 = window.scrollY || document.documentElement.scrollTop;
-                        if (scrl03 > coords03.top - maxWidth2) {
+                        /* if (scrl03 > coords03.top) {
                             window.scrollTo({
-                                top: coords03.top - maxWidth2,
+                                top: coords03.top,
                                 behavior: 'auto',
+                            });
+                        }; */
+                        if (scrl03 > coords03.top + 200) {
+                            positBtn.scrollIntoView({
+                                block: "center"
                             });
                         };
 
@@ -354,9 +374,13 @@ window.addEventListener('DOMContentLoaded', () => {
                             positHide.style.display = "none";
                             collageDlm.style.display = "block";
                             collage.style.display = "block";
-                            window.scrollTo({
+                            /* window.scrollTo({
                                 top: coords03.top + maxWidthSec2,
                                 behavior: 'smooth',
+                            }); */
+                            positTitle.scrollIntoView({
+                                block: "center",
+                                behavior: 'smooth'
                             });
 
 
@@ -370,24 +394,30 @@ window.addEventListener('DOMContentLoaded', () => {
 
                             let collageHide = document.querySelector(".collage__hide"),
                                 collageBtn = document.getElementById("d04-sec"),
-                                collageDlmB = document.getElementById("d04"),
-                                finishDlm = document.getElementById("d05");
+                                //collageDlmB = document.getElementById("d04"),
+                                finishDlm = document.getElementById("d05"),
+                                collageTitle = document.getElementById("collage-title");
 
-                            function getCoords04(collageDlmB) {
-                                let box4 = collageDlmB.getBoundingClientRect();
+                            function getCoords04(collageBtn) {
+                                let box4 = collageBtn.getBoundingClientRect();
 
                                 return {
                                     top: box4.top + window.scrollY
                                 };
                             }
-                            let coords04 = getCoords04(collageDlmB);
+                            let coords04 = getCoords04(collageBtn);
 
                             function scrollHandler04() {
                                 let scrl04 = window.scrollY || document.documentElement.scrollTop;
-                                if (scrl04 > coords04.top - maxWidth2) {
+                                /* if (scrl04 > coords04.top) {
                                     window.scrollTo({
-                                        top: coords04.top - maxWidth2,
+                                        top: coords04.top,
                                         behavior: 'auto',
+                                    });
+                                }; */
+                                if (scrl04 > coords04.top + 200) {
+                                    collageBtn.scrollIntoView({
+                                        block: "center"
                                     });
                                 };
 
@@ -401,9 +431,13 @@ window.addEventListener('DOMContentLoaded', () => {
                                     collageHide.style.display = "none";
                                     finishDlm.style.display = "block";
                                     collage.style.display = "block";
-                                    window.scrollTo({
+                                    /* window.scrollTo({
                                         top: coords04.top + maxWidthSec2,
                                         behavior: 'smooth',
+                                    }); */
+                                    collageTitle.scrollIntoView({
+                                        block: "center",
+                                        behavior: 'smooth'
                                     });
                                 })
                             };

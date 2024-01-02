@@ -198,18 +198,19 @@
                             <div class="name__img name__img--left">
                                 <img src="../img/brief/quotes.svg" alt="quotes">
                             </div>
-                            <h3 class="name__title">Бюджет проекта</h3>
+                            <h3 class="name__title one">Бюджет проекта</h3>
                             <div class="name__img">
                                 <img src="../img/brief/quotes.svg" alt="quotes">
                             </div>
                         </div>
-                        <div class="buttons buttons__first">
-                            <button class="buttons__button">
+                        <!-- <div class="buttons buttons__first"> -->
+                        <div class="buttons">
+                            <!-- <button class="buttons__button">
                                 <div class="buttons__btnimg">
                                     <img src="../img/brief/budget-min.png" alt="На предыдущую" loading="lazy">
                                 </div>
                                 <p class="buttons__btnname">На предыдущую</p>
-                            </button>
+                            </button> -->
                             <button class="buttons__button" id="d01-sec">
                                 <div class="buttons__btnimg">
                                     <img src="../img/brief/budget-min.png" alt="На следующую" loading="lazy">
@@ -243,7 +244,7 @@
                             </div>
                         </aside>
                         <div class="main">
-                            <h2 class="main__title">бюджет проекта</h2>
+                            <h2 class="main__title" id="budget-title">бюджет проекта</h2>
                             <div class="main__textblock">
                                 <h3 class="main__subtitle main__subtitle--2"><span class="alert">
                                         <img src="../img/brief/alert.svg" alt="alert">
@@ -257,7 +258,8 @@
                                 <label for="colors" class="main__label"><span>Фирменные цвета</span>
                                 </label>
                                 <input class="main__input" type="checkbox" name="images" id="images">
-                                <label for="images" class="main__label"><span>Подобрать имиджевые фотографии, шрифты,
+                                <label for="images" class="main__label"><span>Подобрать имиджевые фотографии,
+                                        шрифты,
                                         оформительские элементы</span>
                                 </label>
                                 <input class="main__input" type="checkbox" name="content" id="content">
@@ -337,7 +339,8 @@
                                 </div>
                                 <div class="main__inputs--wrap">
                                     <input class="main__input" type="checkbox" name="accordion" id="accordion">
-                                    <label for="accordion" class="main__label--2"><span>Анимированных блоков (списков)
+                                    <label for="accordion" class="main__label--2"><span>Анимированных блоков
+                                            (списков)
                                             "accordion" -</span>
                                     </label>
                                     <div class="counter">
@@ -356,7 +359,8 @@
                                 </div>
                                 <div class="main__inputs--wrap">
                                     <input class="main__input" type="checkbox" name="map" id="map">
-                                    <label for="map" class="main__label--2"><span>Виджета: интерактивная карта –</span>
+                                    <label for="map" class="main__label--2"><span>Виджета: интерактивная карта
+                                            –</span>
                                     </label>
                                     <div class="counter">
                                         <label for="count-map" class="counter__label">
@@ -455,7 +459,8 @@
                                 </span>Предыдущие проекты
                             </h3>
                             <div class="main__textblock">
-                                <h3 class="main__subtitle">Чего не добились дизайнеры, разрабатывая предыдущие версии
+                                <h3 class="main__subtitle">Чего не добились дизайнеры, разрабатывая предыдущие
+                                    версии
                                     сайта?</h3>
                                 <h3 class="main__subtitle">Что, какую тенденцию в оформлении хотелось бы продолжить?
                                 </h3>
@@ -535,25 +540,30 @@
                                 <ul>
                                     <li class="advices__item">Обратите внимание: фактическая и желаемая ЦА могут
                                         отличаться. Подойдите к этому пункту серьезно: проконсультируйтесь со
-                                        своими маркетологами, возможно, стоит провести исследование фокус-группы, либо
+                                        своими маркетологами, возможно, стоит провести исследование фокус-группы,
+                                        либо
                                         поручить эту работу мне, у меня есть свои
                                         методы определения ЦА
                                     </li>
-                                    <li class="advices__item">Если людей, входящих в ЦА для данного товара, несколько -
+                                    <li class="advices__item">Если людей, входящих в ЦА для данного товара,
+                                        несколько -
                                         вы можете отметить их тоже (мужчины и женщины, молодежь и люди среднего
                                         возраста...), но
                                         учитывайте при этом, что чем более размытой будет ЦА, тем менее эффективной
                                         станет реклама
                                     </li>
-                                    <li class="advices__item">Лиц из дополнительной ЦА - сопутствующих потребителей либо
-                                        посредников (например, родителей детей из основной ЦА) вы можете указать, если
+                                    <li class="advices__item">Лиц из дополнительной ЦА - сопутствующих потребителей
+                                        либо
+                                        посредников (например, родителей детей из основной ЦА) вы можете указать,
+                                        если
                                         нажмете на кнопку "Дополнительная ЦА" в конце этой секции
                                     </li>
                                 </ul>
                             </div>
                         </aside>
                         <div class="main">
-                            <h2 class="main__title">Основная Целевая аудитория<br><span>(фактические
+                            <h2 class="main__title" id="turget-title">Основная Целевая
+                                аудитория<br><span>(фактические
                                     потребители)</span>
                             </h2>
                             <div class="main__zero-1">.</div>
@@ -631,10 +641,12 @@
                                 </h4>
                                 <div class="main__complex">
                                     <input class="main__input" type="checkbox" name="w-child" id="w-child">
-                                    <label for="w-child" class="main__label"><span>семейные с детьми до 18 лет</span>
+                                    <label for="w-child" class="main__label"><span>семейные с детьми до 18
+                                            лет</span>
                                     </label>
                                     <input class="main__input" type="checkbox" name="wo-child" id="wo-child">
-                                    <label for="wo-child" class="main__label"><span>семейные без детей до 18 лет</span>
+                                    <label for="wo-child" class="main__label"><span>семейные без детей до 18
+                                            лет</span>
                                     </label>
                                     <input class="main__input" type="checkbox" name="alones" id="alones">
                                     <label for="alones" class="main__label"><span>одинокие</span>
@@ -788,7 +800,8 @@
                                             покупка</span>
                                     </label>
                                     <input class="main__input" type="checkbox" name="special-case" id="special-case">
-                                    <label for="special-case" class="main__label"><span>да, это особый случай:</span>
+                                    <label for="special-case" class="main__label"><span>да, это особый
+                                            случай:</span>
                                     </label>
                                     <label for="special-case-text">
                                         <input type="text" name="special-case-text" id="special-case-text"
@@ -875,7 +888,8 @@
                                             пользователь</span>
                                     </label>
                                     <input class="main__input" type="checkbox" name="user-status-5" id="user-status-5">
-                                    <label for="user-status-5" class="main__label"><span>регулярный пользователь</span>
+                                    <label for="user-status-5" class="main__label"><span>регулярный
+                                            пользователь</span>
                                     </label>
                                 </div>
                                 <h4 class="main__subtitle-bullet"><span class="alert">
@@ -927,7 +941,8 @@
                                 </h4>
                                 <div class="main__complex">
                                     <input class="main__input" type="checkbox" name="attitude-1" id="attitude-1">
-                                    <label for="attitude-1" class="main__label"><span>безусловно положительное</span>
+                                    <label for="attitude-1" class="main__label"><span>безусловно
+                                            положительное</span>
                                     </label>
                                     <input class="main__input" type="checkbox" name="attitude-2" id="attitude-2">
                                     <label for="attitude-2" class="main__label"><span>положительное</span>
@@ -939,7 +954,8 @@
                                     <label for="attitude-4" class="main__label"><span>отрицательное</span>
                                     </label>
                                     <input class="main__input" type="checkbox" name="attitude-5" id="attitude-5">
-                                    <label for="attitude-5" class="main__label"><span>безусловно отрицательное</span>
+                                    <label for="attitude-5" class="main__label"><span>безусловно
+                                            отрицательное</span>
                                     </label>
                                 </div>
                             </div>
@@ -967,7 +983,8 @@
                             </button>
                             <div class="main__zero-1">.</div>
                             <div class="main__inputs">
-                                <h3 class="main__subtitle">Опишите потребителей / адресатов ваших товаров (услуг)</h3>
+                                <h3 class="main__subtitle">Опишите потребителей / адресатов ваших товаров (услуг)
+                                </h3>
                             </div>
                             <div class="main__inputs">
                                 <div class="main__complex">
@@ -1033,7 +1050,8 @@
                                 </h4>
                                 <div class="main__complex">
                                     <input class="main__input" type="checkbox" name="01w-child" id="01w-child">
-                                    <label for="01w-child" class="main__label"><span>семейные с детьми до 18 лет</span>
+                                    <label for="01w-child" class="main__label"><span>семейные с детьми до 18
+                                            лет</span>
                                     </label>
                                     <input class="main__input" type="checkbox" name="01wo-child" id="01wo-child">
                                     <label for="01wo-child" class="main__label"><span>семейные без детей до 18
@@ -1167,7 +1185,8 @@
                                 <div class="main__complex">
                                     <input class="main__input" type="checkbox" name="01person-type-1"
                                         id="01person-type-1">
-                                    <label for="01person-type-1" class="main__label"><span>увлекающаяся натура</span>
+                                    <label for="01person-type-1" class="main__label"><span>увлекающаяся
+                                            натура</span>
                                     </label>
                                     <input class="main__input" type="checkbox" name="01person-type-2"
                                         id="01person-type-2">
@@ -1181,7 +1200,8 @@
                                     </label>
                                     <input class="main__input" type="checkbox" name="01person-type-4"
                                         id="01person-type-4">
-                                    <label for="01person-type-4" class="main__label"><span>честолюбивая натура</span>
+                                    <label for="01person-type-4" class="main__label"><span>честолюбивая
+                                            натура</span>
                                     </label>
                                 </div>
                                 <h4 class="main__subtitle-bullet"><span class="alert">
@@ -1197,7 +1217,8 @@
                                     </label>
                                     <input class="main__input" type="checkbox" name="01special-case"
                                         id="01special-case">
-                                    <label for="01special-case" class="main__label"><span>да, это особый случай:</span>
+                                    <label for="01special-case" class="main__label"><span>да, это особый
+                                            случай:</span>
                                     </label>
                                     <label for="01special-case-text">
                                         <input type="text" name="01special-case-text" id="01special-case-text"
@@ -1276,7 +1297,8 @@
                                     </label>
                                     <input class="main__input" type="checkbox" name="01user-status-2"
                                         id="01user-status-2">
-                                    <label for="01user-status-2" class="main__label"><span>бывший пользователь</span>
+                                    <label for="01user-status-2" class="main__label"><span>бывший
+                                            пользователь</span>
                                     </label>
                                     <input class="main__input" type="checkbox" name="01user-status-3"
                                         id="01user-status-3">
@@ -1335,7 +1357,8 @@
                                     <label for="01low-user" class="main__label"><span>слабый потребитель</span>
                                     </label>
                                     <input class="main__input" type="checkbox" name="01middle-user" id="01middle-user">
-                                    <label for="01middle-user" class="main__label"><span>умеренный потребитель</span>
+                                    <label for="01middle-user" class="main__label"><span>умеренный
+                                            потребитель</span>
                                     </label>
                                     <input class="main__input" type="checkbox" name="01top-user" id="01top-user">
                                     <label for="01top-user" class="main__label"><span>активный потребитель</span>
@@ -1348,7 +1371,8 @@
                                 </h4>
                                 <div class="main__complex">
                                     <input class="main__input" type="checkbox" name="01attitude-1" id="01attitude-1">
-                                    <label for="01attitude-1" class="main__label"><span>безусловно положительное</span>
+                                    <label for="01attitude-1" class="main__label"><span>безусловно
+                                            положительное</span>
                                     </label>
                                     <input class="main__input" type="checkbox" name="01attitude-2" id="01attitude-2">
                                     <label for="01attitude-2" class="main__label"><span>положительное</span>
@@ -1360,7 +1384,8 @@
                                     <label for="01attitude-4" class="main__label"><span>отрицательное</span>
                                     </label>
                                     <input class="main__input" type="checkbox" name="01attitude-5" id="01attitude-5">
-                                    <label for="01attitude-5" class="main__label"><span>безусловно отрицательное</span>
+                                    <label for="01attitude-5" class="main__label"><span>безусловно
+                                            отрицательное</span>
                                     </label>
                                 </div>
                             </div>
@@ -1388,7 +1413,8 @@
                             </button>
                             <div class="main__zero-1">.</div>
                             <div class="main__inputs">
-                                <h3 class="main__subtitle">Опишите потребителей / адресатов ваших товаров (услуг)</h3>
+                                <h3 class="main__subtitle">Опишите потребителей / адресатов ваших товаров (услуг)
+                                </h3>
                             </div>
                             <div class="main__inputs">
                                 <div class="main__complex">
@@ -1454,7 +1480,8 @@
                                 </h4>
                                 <div class="main__complex">
                                     <input class="main__input" type="checkbox" name="02w-child" id="02w-child">
-                                    <label for="02w-child" class="main__label"><span>семейные с детьми до 18 лет</span>
+                                    <label for="02w-child" class="main__label"><span>семейные с детьми до 18
+                                            лет</span>
                                     </label>
                                     <input class="main__input" type="checkbox" name="02wo-child" id="02wo-child">
                                     <label for="02wo-child" class="main__label"><span>семейные без детей до 18
@@ -1588,7 +1615,8 @@
                                 <div class="main__complex">
                                     <input class="main__input" type="checkbox" name="02person-type-1"
                                         id="02person-type-1">
-                                    <label for="02person-type-1" class="main__label"><span>увлекающаяся натура</span>
+                                    <label for="02person-type-1" class="main__label"><span>увлекающаяся
+                                            натура</span>
                                     </label>
                                     <input class="main__input" type="checkbox" name="02person-type-2"
                                         id="02person-type-2">
@@ -1602,7 +1630,8 @@
                                     </label>
                                     <input class="main__input" type="checkbox" name="02person-type-4"
                                         id="02person-type-4">
-                                    <label for="02person-type-4" class="main__label"><span>честолюбивая натура</span>
+                                    <label for="02person-type-4" class="main__label"><span>честолюбивая
+                                            натура</span>
                                     </label>
                                 </div>
                                 <h4 class="main__subtitle-bullet"><span class="alert">
@@ -1618,7 +1647,8 @@
                                     </label>
                                     <input class="main__input" type="checkbox" name="02special-case"
                                         id="02special-case">
-                                    <label for="02special-case" class="main__label"><span>да, это особый случай:</span>
+                                    <label for="02special-case" class="main__label"><span>да, это особый
+                                            случай:</span>
                                     </label>
                                     <label for="02special-case-text">
                                         <input type="text" name="02special-case-text" id="02special-case-text"
@@ -1697,7 +1727,8 @@
                                     </label>
                                     <input class="main__input" type="checkbox" name="02user-status-2"
                                         id="02user-status-2">
-                                    <label for="02user-status-2" class="main__label"><span>бывший пользователь</span>
+                                    <label for="02user-status-2" class="main__label"><span>бывший
+                                            пользователь</span>
                                     </label>
                                     <input class="main__input" type="checkbox" name="02user-status-3"
                                         id="02user-status-3">
@@ -1756,7 +1787,8 @@
                                     <label for="02low-user" class="main__label"><span>слабый потребитель</span>
                                     </label>
                                     <input class="main__input" type="checkbox" name="02middle-user" id="02middle-user">
-                                    <label for="02middle-user" class="main__label"><span>умеренный потребитель</span>
+                                    <label for="02middle-user" class="main__label"><span>умеренный
+                                            потребитель</span>
                                     </label>
                                     <input class="main__input" type="checkbox" name="02top-user" id="02top-user">
                                     <label for="02top-user" class="main__label"><span>активный потребитель</span>
@@ -1769,7 +1801,8 @@
                                 </h4>
                                 <div class="main__complex">
                                     <input class="main__input" type="checkbox" name="02attitude-1" id="02attitude-1">
-                                    <label for="02attitude-1" class="main__label"><span>безусловно положительное</span>
+                                    <label for="02attitude-1" class="main__label"><span>безусловно
+                                            положительное</span>
                                     </label>
                                     <input class="main__input" type="checkbox" name="02attitude-2" id="02attitude-2">
                                     <label for="02attitude-2" class="main__label"><span>положительное</span>
@@ -1781,7 +1814,8 @@
                                     <label for="02attitude-4" class="main__label"><span>отрицательное</span>
                                     </label>
                                     <input class="main__input" type="checkbox" name="02attitude-5" id="02attitude-5">
-                                    <label for="02attitude-5" class="main__label"><span>безусловно отрицательное</span>
+                                    <label for="02attitude-5" class="main__label"><span>безусловно
+                                            отрицательное</span>
                                     </label>
                                 </div>
                             </div>
@@ -1829,13 +1863,15 @@
                             </div>
                         </aside>
                         <div class="main">
-                            <h2 class="main__title--3">Устоявшееся мнение потребителей о компании<span class="alert">
+                            <h2 class="main__title--3" id="posit-title">Устоявшееся мнение потребителей о
+                                компании<span class="alert">
                                     <img src="../img/brief/alert.svg" alt="alert">
                                 </span>
                             </h2>
                             <div class="main__inputs">
                                 <h3 class="main__subtitle">Как бы вы оценили отношение целевой аудитории (ЦА) к
-                                    продуктам, услугам и сервису вашей компании в ряду конкурентов по пятибальной шкале?
+                                    продуктам, услугам и сервису вашей компании в ряду конкурентов по пятибальной
+                                    шкале?
                                     Если цифра отлична от “5”, то какие есть психологические или иные барьеры к
                                     совершению сделки?</h3>
                             </div>
@@ -1867,7 +1903,8 @@
                                     </div>
                                 </label>
                                 <div class="main__zero-1">.</div>
-                                <h4 class="main__h4">, однако имеет по сравнению с его продуктом некоторые преимущества:
+                                <h4 class="main__h4">, однако имеет по сравнению с его продуктом некоторые
+                                    преимущества:
                                 </h4>
                                 <label for="dont-worse-text">
                                     <textarea name="dont-worse-text" id="dont-worse-text"
@@ -1934,7 +1971,8 @@
                                 <h3 class="main__subtitle">Исходя из поставленной задачи, какое предложение ваша
                                     компания готова сделать ЦА?
                                 </h3>
-                                <h3 class="main__subtitle">Если заказчик воспользуется вашими услугами, то он получит:
+                                <h3 class="main__subtitle">Если заказчик воспользуется вашими услугами, то он
+                                    получит:
                                 </h3>
                             </div>
                             <div class="main__textblock">
@@ -1953,7 +1991,8 @@
                                         компании</span>
                                 </label>
                                 <input class="main__input" type="checkbox" name="advantage" id="advantage">
-                                <label for="advantage" class="main__label"><span>преимущество перед своими конкурентами
+                                <label for="advantage" class="main__label"><span>преимущество перед своими
+                                        конкурентами
                                         / повод для гордости</span>
                                 </label>
                                 <input class="main__input" type="checkbox" name="another-offer" id="another-offer">
@@ -1970,7 +2009,8 @@
                                 </span>
                             </h2>
                             <div class="main__inputs">
-                                <h3 class="main__subtitle">Благодаря какому свойству продукта заказчик сможет получить
+                                <h3 class="main__subtitle">Благодаря какому свойству продукта заказчик сможет
+                                    получить
                                     желаемое (из предыдущего пункта) ?</h3>
                             </div>
                             <div class="main__textblock">
@@ -2030,7 +2070,8 @@
                                 <div class="circle--4"></div>
                                 <h3 class="advices__title">Советы</h3>
                                 <ul>
-                                    <li class="advices__item">К этому моменту мы уже определились, для какой ЦА делается
+                                    <li class="advices__item">К этому моменту мы уже определились, для какой ЦА
+                                        делается
                                         проект, остается выбрать соответствующий её вкусам стиль оформления
                                     </li>
                                     <li class="advices__item">Если при выборе стилей оформления что-то вызывает
@@ -2040,14 +2081,15 @@
                                     </li>
                                     <li class="advices__item">Прежде, чем мы начнем работу над сайтом, давайте
                                         удостоверимся, что Ваш логотип и корпоративные изображения
-                                        качественные, современные и удачные. Возможно, их стоит обновить? Я помогу, у
+                                        качественные, современные и удачные. Возможно, их стоит обновить? Я помогу,
+                                        у
                                         меня большой опыт разработки айдентики и фирменного стиля (см. портфолио)
                                     </li>
                                 </ul>
                             </div>
                         </aside>
                         <div class="main">
-                            <h2 class="main__title">оформление сайта
+                            <h2 class="main__title" id="collage-title">оформление сайта
                             </h2>
                             <div class="main__zero-6">.</div>
                             <div class="main__inputs">
@@ -2251,7 +2293,8 @@
                     <div class="delimiter__popup">
                         <a href="#" class="delimiter__gotoup">к начальному экрану</a>
                         <div class="name">
-                            <h3 class="name__title name__title--end">Вы почти у цели!<br>Заполните форму обратной связи,
+                            <h3 class="name__title name__title--end">Вы почти у цели!<br>Заполните форму обратной
+                                связи,
                                 чтобы
                                 завершить
                                 опросник</h3>
