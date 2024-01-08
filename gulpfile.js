@@ -54,6 +54,7 @@ function browsersync() {
     server: {
       baseDir: baseDir + '/'
     },
+    browser: 'chrome',
     notify: false,
     online: online
   })

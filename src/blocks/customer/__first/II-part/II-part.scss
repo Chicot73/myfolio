@@ -1,3 +1,7 @@
 .II-part {
     grid-area: II;
+
+    & .customer__textbold:last-of-type {
+        display: none;
+    }
 }
