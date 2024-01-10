@@ -301,8 +301,8 @@ window.addEventListener('DOMContentLoaded', () => {
         };
 
 
-        let completed = 0,
-            completed2 = 0;
+        let completed = false,
+            completed2 = false;
 
 
         budgetBtn.addEventListener('click', function (e) {
@@ -311,6 +311,64 @@ window.addEventListener('DOMContentLoaded', () => {
             let customerInputs = document.querySelectorAll(".customer__marc");
             let customerInputsData = document.querySelectorAll(".customer__marc2");
 
+            let emptyInputs = [];
+            let tempInputs = [];
+            let emptyInputs02 = [];
+            let tempInputs02 = [];
+
+            /* function pushToStart(arr) {
+
+                for (let str of arr) {
+                    if (!startInputs.includes(str)) {
+                        startInputs.push(str);
+                    }
+                }
+
+                return emptyInputs;
+            } */
+
+
+            emptyChecker = () => {
+                emptyInputs.forEach(item => {
+                    item.addEventListener('change', function () {
+                        if (item.value != "") {
+                            //console.log(el);
+                            let num = item.value.length;
+
+                            if (num > 3) {
+                                item.parentNode.parentNode.children[0].children[0].style.display = 'none';
+
+                                if (!tempInputs.includes(item)) {
+                                    tempInputs.push(item);
+                                }
+
+                                let newArray = emptyInputs.filter((item) => item.id == item.id);
+                                emptyInputs = newArray;
+                                newArray = null;
+                            }
+                        }
+                    })
+                })
+            }
+
+            tempChecker = () => {
+                tempInputs.forEach(item => {
+                    item.addEventListener('change', function () {
+                        if (item.value.trim() == "") {
+
+                            item.parentNode.parentNode.children[0].children[0].style.display = 'block';
+                            document.getElementById("dlm-alert-customer").style.display = "block";
+
+                            if (!emptyInputs.includes(item)) {
+                                emptyInputs.push(item);
+                            }
+                            let newArray = tempInputs.filter((item) => item.id == item.id);
+                            tempInputs = newArray;
+                            newArray = null;
+                        }
+                    })
+                })
+            }
 
             customerInputs.forEach((el) => {
 
@@ -319,295 +377,327 @@ window.addEventListener('DOMContentLoaded', () => {
                     el.parentNode.parentNode.children[0].children[0].style.display = 'block';
                     document.getElementById("dlm-alert-customer").style.display = "block";
 
-                    el.addEventListener('change', function (e) {
-                        if (el.value != "") {
+                    if (!emptyInputs.includes(el)) {
+                        emptyInputs.push(el);
+                        //console.log(emptyInputs);
+                    };
 
-                            let num = el.value.length;
-                            //let isTrue = false;
-                            //let num3 = false;
-                            if (num > 3) {
-                                el.parentNode.parentNode.children[0].children[0].style.display = 'none';
+                    return emptyChecker();
 
-                                completed++;
-                                //isTrue = true;
-                                //num3 = true;
-                                //console.log(num3);
-                            } else if (num <= 3) {
-                                if (completed > 0) {
-                                    completed--;
-                                    //isTrue = false;
-                                    el.parentNode.parentNode.children[0].children[0].style.display = 'block';
-                                }
-                            };
-                        }
-                    })
                 } else if (el.value != "") {
 
+                    //console.log(el);
                     let num = el.value.length;
-                    //let isTrue = false;
-                    //let num3 = false;
+
                     if (num > 3) {
                         el.parentNode.parentNode.children[0].children[0].style.display = 'none';
 
-                        completed++;
-                        //isTrue = true;
-                        //num3 = true;
-                        //console.log(num3);
-                    } else if (num <= 3) {
-                        if (completed > 0) {
-                            completed--;
-                            //isTrue = false;
-                            el.parentNode.parentNode.children[0].children[0].style.display = 'block';
-                        }
-                    };
-                }
-            });
-            customerInputsData.forEach((el2) => {
+                        if (!tempInputs.includes(el)) {
+                            tempInputs.push(el);
+                        };
 
-                if (el2.value == 0) {
+                        return tempChecker();
 
-                    el2.parentNode.parentNode.children[0].children[0].style.display = 'block';
-                    document.getElementById("dlm-alert-customer").style.display = "block";
+                        /* let newArray = emptyInputs.filter((el) => el.id == el.id);
+                        emptyInputs = newArray; */
+                    } else {
+                        el.parentNode.parentNode.children[0].children[0].style.display = 'block';
+                        document.getElementById("dlm-alert-customer").style.display = "block";
 
-                    el2.addEventListener('change', function (e) {
-                        if (el2.value != 0) {
+                        if (!emptyInputs.includes(el)) {
+                            emptyInputs.push(el);
+                        };
 
-
-                            let num2 = el2.value.length;
-                            //let isTrue2 = false;
-                            //let num3 = false;
-                            if (num2 == 10) {
-                                el2.parentNode.parentNode.children[0].children[0].style.display = 'none';
-
-                                completed2++;
-                                //isTrue2 = true;
-                                //num3 = true;
-                                //console.log(num3);
-                            } else if (num2 < 10) {
-                                if (completed2 > 0) {
-                                    completed2--;
-                                    //isTrue = false;
-                                    el2.parentNode.parentNode.children[0].children[0].style.display = 'block';
-                                }
-                            }
-                        }
-                    })
-                } else if (el2.value != 0) {
-
-
-                    let num2 = el2.value.length;
-                    //let isTrue2 = false;
-                    //let num3 = false;
-                    if (num2 == 10) {
-                        el2.parentNode.parentNode.children[0].children[0].style.display = 'none';
-
-                        completed2++;
-                        //isTrue2 = true;
-                        //num3 = true;
-                        //console.log(num3);
-                    } else if (num2 < 10) {
-                        if (completed2 > 0) {
-                            completed2--;
-                            //isTrue = false;
-                            el2.parentNode.parentNode.children[0].children[0].style.display = 'block';
-                        }
+                        return emptyChecker();
                     }
                 }
-            });
-            let summ = completed + completed2;
-            //console.log(summ);
+            })
+
+            //console.log(emptyInputs.length);
 
 
-            if (summ == 5) {
+            if (emptyInputs.length == 0) { // закончена отработка первого блока
 
-                if (document.getElementById("dlm-alert-customer").style.display = "block") {
-                    document.getElementById("dlm-alert-customer").style.display = "none"
-                };
+                emptyChecker02 = () => {
+                    emptyInputs02.forEach(item => {
+                        item.addEventListener('change', function () {
+                            if (item.value != 0) {
+                                //console.log(el);
+                                let num = item.value.length;
 
+                                if (num == 10) {
+                                    item.parentNode.parentNode.children[0].children[0].style.display = 'none';
 
+                                    if (!tempInputs02.includes(item)) {
+                                        tempInputs02.push(item);
+                                    }
 
-
-                scrl = null;
-                window.removeEventListener("scroll", f1000);
-                budgetHide.style.display = "none";
-                turgetDlm.style.display = "block";
-                turget.style.display = "block";
-
-                /* window.scrollTo({
-                    top: coords.top + 1400,
-                    behavior: 'smooth',
-                }); */
-                budgetTitle.scrollIntoView({
-                    block: "center",
-                    behavior: 'smooth'
-                });
-
-
-
-
-                const f021000 = throttle(scrollHandler02, 750);
-
-                window.addEventListener("scroll", f021000);
-
-                let turgetHide = document.querySelector(".turget__hide"),
-                    //turgetBtn = document.getElementById("d02-sec"),
-                    //turgetDlmB = document.getElementById("d02"),
-                    posit = document.querySelector(".positioning"),
-                    positDlm = document.getElementById("d03");
-
-                /* function getCoords02(turgetBtn) {
-                    let box2 = turgetBtn.getBoundingClientRect();
-    
-                    return {
-                        top: box2.top + window.scrollY
-                    };
-                } */
-                let coords02 = getCoords(turgetBtn);
-
-                function scrollHandler02() {
-                    let scrl02 = window.scrollY || document.documentElement.scrollTop;
-                    if (scrl02 > coords02.top + 1000) {
-                        turgetBtn.scrollIntoView({
-                            block: "center"
-                        });
-                    };
-
-
-
-
-                    turgetBtn.addEventListener('click', (e) => {
-                        e.preventDefault();
-                        scrl = null;
-                        scrl02 = null;
-                        window.removeEventListener("scroll", f021000);
-                        turgetHide.style.display = "none";
-                        positDlm.style.display = "block";
-                        posit.style.display = "block";
-                        /* window.scrollTo({
-                            top: coords02.top + maxWidthSec2,
-                            behavior: 'smooth',
-                        }); */
-                        turgetTitle.scrollIntoView({
-                            block: "center",
-                            behavior: 'smooth'
-                        });
-
-
-
-
-                        const f031000 = throttle(scrollHandler03, 750);
-
-                        window.addEventListener("scroll", f031000);
-
-                        let positHide = document.querySelector(".positioning__hide"),
-                            //positBtn = document.getElementById("d03-sec"),
-                            //positDlmB = document.getElementById("d03"),
-                            collage = document.querySelector(".collage"),
-                            collageDlm = document.getElementById("d04");
-
-                        /* function getCoords03(positBtn) {
-                            let box3 = positBtn.getBoundingClientRect();
-    
-                            return {
-                                top: box3.top + window.scrollY
-                            };
-                        } */
-                        let coords03 = getCoords(positBtn);
-
-                        function scrollHandler03() {
-                            let scrl03 = window.scrollY || document.documentElement.scrollTop;
-                            /* if (scrl03 > coords03.top) {
-                                window.scrollTo({
-                                    top: coords03.top,
-                                    behavior: 'auto',
-                                });
-                            }; */
-                            if (scrl03 > coords03.top + 1000) {
-                                positBtn.scrollIntoView({
-                                    block: "center"
-                                });
-                            };
-
-                            positBtn.addEventListener('click', (e) => {
-                                e.preventDefault();
-                                scrl = null;
-                                scrl02 = null;
-                                scrl03 = null;
-                                window.removeEventListener("scroll", f031000);
-                                positHide.style.display = "none";
-                                collageDlm.style.display = "block";
-                                collage.style.display = "block";
-                                /* window.scrollTo({
-                                    top: coords03.top + maxWidthSec2,
-                                    behavior: 'smooth',
-                                }); */
-                                positTitle.scrollIntoView({
-                                    block: "center",
-                                    behavior: 'smooth'
-                                });
-
-
-
-
-
-
-                                const f041000 = throttle(scrollHandler04, 750);
-
-                                window.addEventListener("scroll", f041000);
-
-                                let collageHide = document.querySelector(".collage__hide"),
-                                    //collageBtn = document.getElementById("d04-sec"),
-                                    //collageDlmB = document.getElementById("d04"),
-                                    finishDlm = document.getElementById("d05"),
-                                    collageTitle = document.getElementById("collage-title");
-
-                                /* function getCoords04(collageBtn) {
-                                    let box4 = collageBtn.getBoundingClientRect();
-    
-                                    return {
-                                        top: box4.top + window.scrollY
-                                    };
-                                } */
-                                let coords04 = getCoords(collageBtn);
-
-                                function scrollHandler04() {
-                                    let scrl04 = window.scrollY || document.documentElement.scrollTop;
-                                    /* if (scrl04 > coords04.top) {
-                                        window.scrollTo({
-                                            top: coords04.top,
-                                            behavior: 'auto',
-                                        });
-                                    }; */
-                                    if (scrl04 > coords04.top + 1000) {
-                                        collageBtn.scrollIntoView({
-                                            block: "center"
-                                        });
-                                    };
-
-                                    collageBtn.addEventListener('click', (e) => {
-                                        e.preventDefault();
-                                        scrl = null;
-                                        scrl02 = null;
-                                        scrl03 = null;
-                                        scrl04 = null;
-                                        window.removeEventListener("scroll", f041000);
-                                        collageHide.style.display = "none";
-                                        finishDlm.style.display = "block";
-                                        collage.style.display = "block";
-                                        /* window.scrollTo({
-                                            top: coords04.top + maxWidthSec2,
-                                            behavior: 'smooth',
-                                        }); */
-                                        collageTitle.scrollIntoView({
-                                            block: "center",
-                                            behavior: 'smooth'
-                                        })
-                                    })
+                                    let newArray = emptyInputs02.filter((item) => item.id == item.id);
+                                    emptyInputs02 = newArray;
+                                    newArray = null;
                                 }
-                            })
-                        }
+                            }
+                        })
                     })
                 }
+
+                tempChecker02 = () => {
+                    tempInputs02.forEach(item => {
+                        item.addEventListener('change', function () {
+                            if (item.value.trim() == 0) {
+
+                                item.parentNode.parentNode.children[0].children[0].style.display = 'block';
+                                document.getElementById("dlm-alert-customer").style.display = "block";
+
+                                if (!emptyInputs02.includes(item)) {
+                                    emptyInputs02.push(item);
+                                }
+                                let newArray = tempInputs02.filter((item) => item.id == item.id);
+                                tempInputs02 = newArray;
+                                newArray = null;
+                            }
+                        })
+                    })
+                }
+
+                customerInputsData.forEach((el) => {
+
+                    if (el.value == 0) {
+
+                        el.parentNode.parentNode.children[0].children[0].style.display = 'block';
+                        document.getElementById("dlm-alert-customer").style.display = "block";
+
+                        if (!emptyInputs02.includes(el)) {
+                            emptyInputs02.push(el);
+                        }
+
+                        return emptyChecker02();
+
+                    } else if (el.value != 0) {
+
+                        //console.log(el);
+                        let num = el.value.length;
+
+                        if (num == 10) {
+                            el.parentNode.parentNode.children[0].children[0].style.display = 'none';
+
+                            if (!tempInputs02.includes(el)) {
+                                tempInputs02.push(el);
+                            }
+
+                            return tempChecker02();
+
+                            /* let newArray = emptyInputs.filter((el) => el.id == el.id);
+                            emptyInputs = newArray; */
+                        } else if (num < 10) {
+                            el.parentNode.parentNode.children[0].children[0].style.display = 'block';
+                            document.getElementById("dlm-alert-customer").style.display = "block";
+
+                            if (!emptyInputs02.includes(el)) {
+                                emptyInputs02.push(el);
+                            }
+
+                            return emptyChecker02();
+                        }
+                    }
+                })
+
+                if (emptyInputs02.length == 0) {
+
+                    if (document.getElementById("dlm-alert-customer").style.display = "block") {
+                        document.getElementById("dlm-alert-customer").style.display = "none"
+                    };
+
+
+
+
+                    scrl = null;
+                    window.removeEventListener("scroll", f1000);
+                    budgetHide.style.display = "none";
+                    turgetDlm.style.display = "block";
+                    turget.style.display = "block";
+
+                    /* window.scrollTo({
+                        top: coords.top + 1400,
+                        behavior: 'smooth',
+                    }); */
+                    budgetTitle.scrollIntoView({
+                        block: "center",
+                        behavior: 'smooth'
+                    });
+
+
+
+
+                    const f021000 = throttle(scrollHandler02, 750);
+
+                    window.addEventListener("scroll", f021000);
+
+                    let turgetHide = document.querySelector(".turget__hide"),
+                        //turgetBtn = document.getElementById("d02-sec"),
+                        //turgetDlmB = document.getElementById("d02"),
+                        posit = document.querySelector(".positioning"),
+                        positDlm = document.getElementById("d03");
+
+                    /* function getCoords02(turgetBtn) {
+                        let box2 = turgetBtn.getBoundingClientRect();
+        
+                        return {
+                            top: box2.top + window.scrollY
+                        };
+                    } */
+                    let coords02 = getCoords(turgetBtn);
+
+                    function scrollHandler02() {
+                        let scrl02 = window.scrollY || document.documentElement.scrollTop;
+                        if (scrl02 > coords02.top + 1000) {
+                            turgetBtn.scrollIntoView({
+                                block: "center"
+                            });
+                        };
+
+
+
+
+                        turgetBtn.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            scrl = null;
+                            scrl02 = null;
+                            window.removeEventListener("scroll", f021000);
+                            turgetHide.style.display = "none";
+                            positDlm.style.display = "block";
+                            posit.style.display = "block";
+                            /* window.scrollTo({
+                                top: coords02.top + maxWidthSec2,
+                                behavior: 'smooth',
+                            }); */
+                            turgetTitle.scrollIntoView({
+                                block: "center",
+                                behavior: 'smooth'
+                            });
+
+
+
+
+                            const f031000 = throttle(scrollHandler03, 750);
+
+                            window.addEventListener("scroll", f031000);
+
+                            let positHide = document.querySelector(".positioning__hide"),
+                                //positBtn = document.getElementById("d03-sec"),
+                                //positDlmB = document.getElementById("d03"),
+                                collage = document.querySelector(".collage"),
+                                collageDlm = document.getElementById("d04");
+
+                            /* function getCoords03(positBtn) {
+                                let box3 = positBtn.getBoundingClientRect();
+        
+                                return {
+                                    top: box3.top + window.scrollY
+                                };
+                            } */
+                            let coords03 = getCoords(positBtn);
+
+                            function scrollHandler03() {
+                                let scrl03 = window.scrollY || document.documentElement.scrollTop;
+                                /* if (scrl03 > coords03.top) {
+                                    window.scrollTo({
+                                        top: coords03.top,
+                                        behavior: 'auto',
+                                    });
+                                }; */
+                                if (scrl03 > coords03.top + 1000) {
+                                    positBtn.scrollIntoView({
+                                        block: "center"
+                                    });
+                                };
+
+                                positBtn.addEventListener('click', (e) => {
+                                    e.preventDefault();
+                                    scrl = null;
+                                    scrl02 = null;
+                                    scrl03 = null;
+                                    window.removeEventListener("scroll", f031000);
+                                    positHide.style.display = "none";
+                                    collageDlm.style.display = "block";
+                                    collage.style.display = "block";
+                                    /* window.scrollTo({
+                                        top: coords03.top + maxWidthSec2,
+                                        behavior: 'smooth',
+                                    }); */
+                                    positTitle.scrollIntoView({
+                                        block: "center",
+                                        behavior: 'smooth'
+                                    });
+
+
+
+
+
+
+                                    const f041000 = throttle(scrollHandler04, 750);
+
+                                    window.addEventListener("scroll", f041000);
+
+                                    let collageHide = document.querySelector(".collage__hide"),
+                                        //collageBtn = document.getElementById("d04-sec"),
+                                        //collageDlmB = document.getElementById("d04"),
+                                        finishDlm = document.getElementById("d05"),
+                                        collageTitle = document.getElementById("collage-title");
+
+                                    /* function getCoords04(collageBtn) {
+                                        let box4 = collageBtn.getBoundingClientRect();
+        
+                                        return {
+                                            top: box4.top + window.scrollY
+                                        };
+                                    } */
+                                    let coords04 = getCoords(collageBtn);
+
+                                    function scrollHandler04() {
+                                        let scrl04 = window.scrollY || document.documentElement.scrollTop;
+                                        /* if (scrl04 > coords04.top) {
+                                            window.scrollTo({
+                                                top: coords04.top,
+                                                behavior: 'auto',
+                                            });
+                                        }; */
+                                        if (scrl04 > coords04.top + 1000) {
+                                            collageBtn.scrollIntoView({
+                                                block: "center"
+                                            });
+                                        };
+
+                                        collageBtn.addEventListener('click', (e) => {
+                                            e.preventDefault();
+                                            scrl = null;
+                                            scrl02 = null;
+                                            scrl03 = null;
+                                            scrl04 = null;
+                                            window.removeEventListener("scroll", f041000);
+                                            collageHide.style.display = "none";
+                                            finishDlm.style.display = "block";
+                                            collage.style.display = "block";
+                                            /* window.scrollTo({
+                                                top: coords04.top + maxWidthSec2,
+                                                behavior: 'smooth',
+                                            }); */
+                                            collageTitle.scrollIntoView({
+                                                block: "center",
+                                                behavior: 'smooth'
+                                            })
+                                        })
+                                    }
+                                })
+                            }
+                        })
+                    }
+                } else {
+                    return
+                }
+
+            } else {
+                return
             }
         })
     }
