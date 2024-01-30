@@ -3,8 +3,8 @@
 let accordeon = document.querySelector('.experience'),
     tab = document.querySelectorAll('.experience__frame'),
     cut = document.querySelectorAll('.experience__cut'),
-    button = document.querySelectorAll('.experience__button');
-buttonW = document.querySelectorAll('.experience__button--w');
+    button = document.querySelectorAll('.experience__button'),
+    buttonW = document.querySelectorAll('.experience__button--w');
 
 function click1(e) {
     const target = e.target.closest('.experience__frame');
@@ -100,9 +100,7 @@ let puArr = [puCross, puLinks].forEach(item => {
 
 let changeBtn = document.querySelector('.benefits__button'),
     changeBody = document.querySelector('.change-menu'),
-    changeBack = document.querySelector('.dark'),
-    changeBack2 = document.querySelector('.dark2'),
-    changeBack3 = document.querySelector('.dark3'),
+    changeBack = document.querySelector('.dark-site'),
     changeCross = document.querySelector('.change-menu__cross'),
     body2 = document.querySelector('body');
 
@@ -113,8 +111,6 @@ changeBtn.addEventListener('click', (e) => {
     };
     changeBody.classList.add('change-menu--in');
     changeBack.style.display = 'block';
-    changeBack2.style.display = 'block';
-    changeBack3.style.display = 'block';
     body2.style.overflow = 'hidden';
 });
 let changeArr = [changeCross, changeBack].forEach(item => {
@@ -122,8 +118,6 @@ let changeArr = [changeCross, changeBack].forEach(item => {
         changeBody.classList.remove('change-menu--in');
         changeBody.classList.add('change-menu--out');
         changeBack.style.display = 'none';
-        changeBack2.style.display = 'none';
-        changeBack3.style.display = 'none';
         body2.style.overflow = 'scroll';
     });
 });

@@ -1,0 +1,46 @@
+.header__fb-input {
+    width: 100%;
+    //max-width: 69.7rem;
+    @include font (600, 1.5rem, normal);
+    @include gray-2;
+    padding: 1rem 2.5rem;
+    @include gray-5-bg;
+    border: 0.1rem solid #CDCECF;
+    box-shadow: 0.1rem 0.1rem 0.85rem 0 rgba(0, 0, 0, 0.14) inset;
+    margin-bottom: 4rem;
+    cursor: text;
+
+    &:hover {
+        outline: 0.1rem solid #CDCECF;
+    }
+
+    &:focus {
+        outline: 0.1rem solid #b6b6b6;
+        border: 0.1rem solid #b6b6b6;
+        box-shadow: none;
+    }
+
+    &::placeholder {
+        @include gray-32;
+    }
+}
+
+input[type="date"] {
+    color: #9c9c9c;
+}
+
+@media only screen and (min-width: 62.51em) and (max-width: 76.5em) {
+    .header__fb-input {
+        //max-width: 56.2rem;
+    }
+}
+
+@media only screen and (max-width: 36.09em) {
+    .header__fb-input {
+        margin-bottom: 0;
+
+        &::placeholder {
+            opacity: 0;
+        }
+    }
+}

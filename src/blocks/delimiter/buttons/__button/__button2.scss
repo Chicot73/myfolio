@@ -1,0 +1,34 @@
+.buttons__button2 {
+    width: max-content;
+    position: absolute;
+    bottom: 5rem;
+    left: 50%;
+    transform: translate(-50%, 0);
+    padding: 3.3rem 4.2rem 3rem;
+    display: block;
+    cursor: pointer;
+    @include turquoise-lite-bg;
+    box-shadow: 0.3rem 0.3rem 0.4rem 0 rgba(0, 0, 0, 0.15);
+    border-left: 0 solid #FFFFFF;
+    border-top: 0 solid #FFFFFF;
+
+    &:hover {
+
+        padding-bottom: 2.75rem;
+        background-color: #FFFBE6;
+        box-shadow: 0.1rem 0.1rem 0.1rem 0 rgba(0, 0, 0, 0.17);
+        border-left: .3rem solid #FFFFFF;
+        border-top: .3rem solid #FFFFFF;
+        transition: all .1s ease-in-out;
+
+        .buttons__btnname {
+            @include gray-23;
+        }
+    }
+}
+
+@media only screen and (max-width: 36.09em) {
+    .buttons__button2 {
+        padding: 3.3rem 2.2rem 3rem;
+    }
+}

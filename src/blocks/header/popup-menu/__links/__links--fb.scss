@@ -1,0 +1,24 @@
+.popup-menu__links--fb {
+    position: absolute;
+    top: 50%;
+    right: 4.6rem;
+    transform: translate(0, -50%);
+    width: 20rem;
+    //height: 17.5rem;
+    z-index: 101;
+    display: block;
+    @include font (600, 1.6rem, 150%);
+    @include gray-3;
+
+    & p {
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media only screen and (max-width: 36.09em) {
+    .popup-menu__links--fb {
+        right: 2rem;
+        width: 11rem;
+        height: 20.7rem;
+    }
+}

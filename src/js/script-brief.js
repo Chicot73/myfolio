@@ -3,6 +3,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 
+
     //Прокрутка по секциям
 
     function throttle(func, ms) {
@@ -35,7 +36,7 @@ window.addEventListener('DOMContentLoaded', () => {
         return wrapper;
     }; //это функция для торможения срабатывания события "scroll"
 
-    const f1000 = throttle(scrollHandler, 750);
+    const f1000 = throttle(scrollHandler, 1000);
     //это подключение с аргументами: что подрубать и время в мс
 
     window.addEventListener("scroll", f1000);
@@ -47,6 +48,7 @@ window.addEventListener('DOMContentLoaded', () => {
         turgetBtn = document.getElementById("d02-sec"),
         positBtn = document.getElementById("d03-sec"),
         collageBtn = document.getElementById("d04-sec");
+    finishForm = document.getElementById("d05-sec");
     const budgetTitle = document.getElementById("budget-title");
     const turgetTitle = document.getElementById("turget-title");
     const positTitle = document.getElementById("posit-title");
@@ -100,19 +102,28 @@ window.addEventListener('DOMContentLoaded', () => {
         // let completed = false,
         //     completed2 = false;
 
+        let customerInputs = document.querySelectorAll(".customer__marc");
+        let customerInputsData = document.querySelectorAll(".customer__marc2");
 
-        budgetBtn.addEventListener('click', function (e) {
+        let emptyInputs = [];
+        let tempInputs = [];
+        let emptyInputs02 = [];
+        let tempInputs02 = [];
+
+        const controller = new AbortController();
+
+        function customerCheck(e) {
             e.preventDefault();
 
-            let customerInputs = document.querySelectorAll(".customer__marc");
-            let customerInputsData = document.querySelectorAll(".customer__marc2");
-
-            let emptyInputs = [];
-            let tempInputs = [];
-            let emptyInputs02 = [];
-            let tempInputs02 = [];
-
-            successChecked();/////////   УДАЛИТЬ!!!!
+            //successChecked();/////////........\\\\\\\\\.......////////   УДАЛИТЬ!!!!
+            ////////////////////////////////////////////////////////////////////////
+            ////////////////////////////////////////////////////////////////////////
+            ////////////////////////////////////////////////////////////////////////
+            ////////////////////////////////////////////////////////////////////////
+            ////////////////////////////////////////////////////////////////////////
+            ////////////////////////////////////////////////////////////////////////
+            ////////////////////////////////////////////////////////////////////////
+            ////////////////////////////////////////////////////////////////////////
 
 
 
@@ -128,9 +139,10 @@ window.addEventListener('DOMContentLoaded', () => {
             } */
 
 
+
             emptyChecker = () => {
                 emptyInputs.forEach(item => {
-                    item.addEventListener('change', function () {
+                    document.addEventListener('change', function () {
                         if (item.value != "") {
                             //console.log(el);
                             let num = item.value.length;
@@ -146,10 +158,13 @@ window.addEventListener('DOMContentLoaded', () => {
                                 emptyInputs = newArray;
                                 newArray = null;
 
-                                tempChecker(e);
+                                setTimeout(tempChecker, 3000);
+                                clearTimeout(tempChecker);
                             }
                         }
-                    })
+                    },
+                        { signal: controller.signal },
+                    );
                 })
             }
 
@@ -168,7 +183,8 @@ window.addEventListener('DOMContentLoaded', () => {
                             tempInputs = newArray;
                             newArray = null;
 
-                            emptyChecker(e);
+                            setTimeout(emptyChecker, 3000);
+                            clearTimeout(emptyChecker);
 
                         } else if (item.value != "") {
 
@@ -186,12 +202,17 @@ window.addEventListener('DOMContentLoaded', () => {
                                 tempInputs = newArray;
                                 newArray = null;
 
-                                emptyChecker(e);
+                                setTimeout(emptyChecker, 3000);
+                                clearTimeout(emptyChecker);
                             }
                         }
-                    })
+                    },
+                        { signal: controller.signal },
+                    );
                 })
             }
+
+
 
             emptyChecker02 = () => {
                 emptyInputs02.forEach(item => {
@@ -211,12 +232,17 @@ window.addEventListener('DOMContentLoaded', () => {
                                 emptyInputs02 = newArray;
                                 newArray = null;
 
-                                tempChecker02(e);
+                                setTimeout(tempChecker02, 3000);
+                                clearTimeout(tempChecker02);
                             }
                         }
-                    })
+                    },
+                        { signal: controller.signal },
+                    );
                 })
             }
+
+
 
             tempChecker02 = () => {
                 tempInputs02.forEach(item => {
@@ -233,7 +259,8 @@ window.addEventListener('DOMContentLoaded', () => {
                             tempInputs02 = newArray;
                             newArray = null;
 
-                            emptyChecker02(e);
+                            setTimeout(emptyChecker02, 3000);
+                            clearTimeout(emptyChecker02);
 
                         } else if (item.value != 0) {
 
@@ -251,12 +278,17 @@ window.addEventListener('DOMContentLoaded', () => {
                                 tempInputs = newArray;
                                 newArray = null;
 
-                                emptyChecker(e);
+                                setTimeout(emptyChecker02, 3000);
+                                clearTimeout(emptyChecker02);
                             }
                         }
-                    })
+                    },
+                        { signal: controller.signal },
+                    );
                 })
             }
+
+
             closeAlert = () => {
                 document.getElementById("dlm-alert-customer").style.display = "none";
             }
@@ -269,6 +301,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
                     document.getElementById("dlm-alert-customer").style.display = "block";
                     setTimeout(closeAlert, 3000);
+                    clearTimeout(closeAlert);
 
 
                     if (!emptyInputs.includes(el)) {
@@ -300,6 +333,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
                         document.getElementById("dlm-alert-customer").style.display = "block";
                         setTimeout(closeAlert, 3000);
+                        clearTimeout(closeAlert);
 
 
                         if (!emptyInputs.includes(el)) {
@@ -320,6 +354,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
                     document.getElementById("dlm-alert-customer").style.display = "block";
                     setTimeout(closeAlert, 3000);
+                    clearTimeout(closeAlert);
 
 
                     if (!emptyInputs02.includes(el)) {
@@ -330,9 +365,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
                     /* let commonEmpty = emptyInputs.length + emptyInputs02.length;
                     //console.log(commonEmpty);
-
+ 
                     if (commonEmpty == 0) {
-
+ 
                         if (document.getElementById("dlm-alert-customer").style.display = "block") {
                             document.getElementById("dlm-alert-customer").style.display = "none"
                         }
@@ -362,6 +397,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
                         document.getElementById("dlm-alert-customer").style.display = "block";
                         setTimeout(closeAlert, 3000);
+                        clearTimeout(closeAlert);
 
 
                         if (!emptyInputs02.includes(el)) {
@@ -374,7 +410,7 @@ window.addEventListener('DOMContentLoaded', () => {
                         //console.log(commonEmpty);
 
                         /* if (commonEmpty == 0) {
-
+ 
                             if (document.getElementById("dlm-alert-customer").style.display = "block") {
                                 document.getElementById("dlm-alert-customer").style.display = "none"
                             }
@@ -384,10 +420,20 @@ window.addEventListener('DOMContentLoaded', () => {
                 }
             })
 
+
+
+
+
             let commonEmpty = emptyInputs.length + emptyInputs02.length;
+
+            //console.log(commonEmpty);
 
 
             function successChecked() {
+
+                controller.abort();
+
+                const controller02 = new AbortController();
 
 
 
@@ -414,7 +460,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 });
 
 
-                const f021000 = throttle(scrollHandler02, 750);
+                const f021000 = throttle(scrollHandler02, 1000);
 
                 window.addEventListener("scroll", f021000);
 
@@ -447,25 +493,34 @@ window.addEventListener('DOMContentLoaded', () => {
                     };
 
 
-
-                    turgetBtn.addEventListener('click', (e) => {
+                    function budgetCheck(e) {
                         e.preventDefault();
 
-                        let budget = document.querySelector('.budget');
-                        let history = document.querySelector('.history');
-                        let inputsHistory = history.querySelectorAll('input[type="textarea"]');
-                        const inputsBudget = budget.querySelectorAll('input[type="checkbox"]');
+
+
+
+                        //successTrue();/////////........\\\\\\\\\.......////////   УДАЛИТЬ!!!!
+                        ////////////////////////////////////////////////////////////////////////
+                        ////////////////////////////////////////////////////////////////////////
+                        ////////////////////////////////////////////////////////////////////////
+                        ////////////////////////////////////////////////////////////////////////
+                        ////////////////////////////////////////////////////////////////////////
+                        ////////////////////////////////////////////////////////////////////////
+                        ////////////////////////////////////////////////////////////////////////
+                        ////////////////////////////////////////////////////////////////////////
+
                         const boxes = document.querySelectorAll('.budget__inputs');
+
                         const box01 = document.querySelector('.budget__inputs01');
                         let box01Inputs = box01.querySelectorAll('input[type="checkbox"]');
                         const box02 = document.querySelector('.budget__inputs02');
                         let box02Inputs = box02.querySelectorAll('input[type="checkbox"]');
                         const box03 = document.querySelector('.budget__inputs03');
                         let box03Inputs = box03.querySelectorAll('input[type="checkbox"]');
+                        const box04 = document.querySelector('.history__textarea');
+                        let box04Inputs = box04.querySelectorAll('textarea');
                         let ids; //заполненные чекбоксы
-                        let alarm01 = box01.querySelector('.alert');
-                        let alarm02 = box02.querySelector('.alert');
-                        let alarm03 = box03.querySelector('.alert');
+
 
 
 
@@ -476,36 +531,151 @@ window.addEventListener('DOMContentLoaded', () => {
                         let empty03 = [];
                         let temp03 = [];
 
+                        let error = false;
                         let error01 = false;
                         let error02 = false;
                         let error03 = false;
+                        let errorTa = false;
+                        let success = false;
                         //let counter = 0;
                         //let success = false;
                         let budgetAlert01 = document.getElementById("alert-budget-01");
                         let budgetAlert02 = document.getElementById("alert-budget-02");
                         let budgetAlert03 = document.getElementById("alert-budget-03");
 
+
                         boxes.forEach(el => {
+
+                            closeAlert = () => {
+                                document.getElementById("dlm-alert-budget").style.display = "none";
+                            }
+
                             if (!el.querySelectorAll('input:checked').length) {
+
                                 error = true;
-                                //console.log(true);
 
                                 document.getElementById("dlm-alert-budget").style.display = "block";
                                 setTimeout(closeAlert, 3000);
+                                clearTimeout(closeAlert);
                             }
                         });
 
+                        /* if (box04Inputs.value == "") {
+
+                            closeAlert = () => {
+                                document.getElementById("dlm-alert-budget").style.display = "none";
+                            }
+
+                            errorTa = true;
+
+                            document.getElementById("dlm-alert-budget").style.display = "block";
+                            setTimeout(closeAlert, 3000);
+
+                        }; */
+
+                        box04Inputs.forEach(el => {
+
+                            checkAreas = () => {
+                                el.addEventListener('change', function () {
+                                    if ((el == undefined) || (el.value.trim() == '')) {
+
+                                        el.parentNode.parentNode.children[0].children[0].style.display = 'block';
+
+                                        errorTa = true;
+
+                                    } else {
+
+                                        if (el.value != '') {
+
+                                            let num = el.value.length;
+
+                                            if (num > 3) {
+
+                                                if (el.parentNode.parentNode.children[0].children[0].style.display = 'block') {
+                                                    el.parentNode.parentNode.children[0].children[0].style.display = 'none';
+                                                }
+                                            } else {
+
+                                                closeAlert = () => {
+                                                    document.getElementById("dlm-alert-budget").style.display = "none";
+                                                }
+
+                                                document.getElementById("dlm-alert-budget").style.display = "block";
+                                                setTimeout(closeAlert, 3000);
+                                                clearTimeout(closeAlert);
+
+                                                el.parentNode.parentNode.children[0].children[0].style.display = 'block';
+
+                                                errorTa = true;
+                                            }
+                                        }
+                                    }
+                                },
+                                    { signal: controller02.signal },
+                                )
+                            };
+
+                            el.getAttribute('value');
+                            if ((el == undefined) || (el.value.trim() == '')) {
+
+                                el.parentNode.parentNode.children[0].children[0].style.display = 'block';
+
+                                errorTa = true;
+
+                                checkAreas();
+
+
+                            } else {
+
+                                if (el.value != '') {
+
+                                    let num = el.value.length;
+
+                                    if (num > 3) {
+
+                                        if (el.parentNode.parentNode.children[0].children[0].style.display = 'block') {
+                                            el.parentNode.parentNode.children[0].children[0].style.display = 'none';
+                                        };
+
+                                        checkAreas();
+
+                                    } else {
+
+                                        closeAlert = () => {
+                                            document.getElementById("dlm-alert-budget").style.display = "none";
+                                        }
+
+                                        document.getElementById("dlm-alert-budget").style.display = "block";
+                                        setTimeout(closeAlert, 3000);
+                                        clearTimeout(closeAlert);
+
+                                        el.parentNode.parentNode.children[0].children[0].style.display = 'block';
+
+                                        errorTa = true;
+
+                                        checkAreas();
+                                    }
+                                }
+                            }
+                        });
+
+
                         if (!box01.querySelectorAll('input:checked').length) {
+
                             error01 = true;
 
                             budgetAlert01.style.display = 'block';
                         };
+
                         if (!box02.querySelectorAll('input:checked').length) {
+
                             error02 = true;
 
                             budgetAlert02.style.display = 'block';
                         };
+
                         if (!box03.querySelectorAll('input:checked').length) {
+
                             error03 = true;
 
                             budgetAlert03.style.display = 'block';
@@ -515,7 +685,9 @@ window.addEventListener('DOMContentLoaded', () => {
                         checkEmpty01 = () => {
 
                             empty01.forEach(e => {
+
                                 e.addEventListener('change', function () {
+
                                     if (e.checked) {
 
                                         if (!temp01.includes(e)) {
@@ -538,14 +710,19 @@ window.addEventListener('DOMContentLoaded', () => {
                                         } */
                                     };
                                     setTimeout(checkTemp01, 3000);
-                                })
+                                    clearTimeout(checkTemp01);
+                                },
+                                    { signal: controller02.signal },
+                                );
                             })
                         }
 
                         checkTemp01 = () => {
 
                             temp01.forEach(e => {
+
                                 e.addEventListener('change', function () {
+
                                     if (!e.checked) {
 
                                         if (!empty01.includes(e)) {
@@ -570,14 +747,19 @@ window.addEventListener('DOMContentLoaded', () => {
                                         };
                                     };
                                     setTimeout(checkEmpty01, 3000);
-                                })
-                            });
+                                    clearTimeout(checkEmpty01);
+                                },
+                                    { signal: controller02.signal },
+                                );
+                            })
                         }
 
                         checkEmpty02 = () => {
 
                             empty02.forEach(e => {
+
                                 e.addEventListener('change', function () {
+
                                     if (e.checked) {
 
                                         if (!temp02.includes(e)) {
@@ -600,14 +782,19 @@ window.addEventListener('DOMContentLoaded', () => {
                                         } */
                                     };
                                     setTimeout(checkTemp02, 3000);
-                                })
+                                    clearTimeout(checkTemp02);
+                                },
+                                    { signal: controller02.signal },
+                                );
                             })
                         }
 
                         checkTemp02 = () => {
 
                             temp02.forEach(e => {
+
                                 e.addEventListener('change', function () {
+
                                     if (!e.checked) {
 
                                         if (!empty02.includes(e)) {
@@ -632,14 +819,44 @@ window.addEventListener('DOMContentLoaded', () => {
                                         };
                                     };
                                     setTimeout(checkEmpty02, 3000);
-                                })
-                            });
+                                    clearTimeout(checkEmpty02);
+                                },
+                                    { signal: controller02.signal },
+                                );
+                            })
+
+                            /* box02.addEventListener('click', function (e) {
+                                if (e) {
+                                    temp02.forEach(e => {
+                                        if (!e.checked) {
+
+                                            if (!empty02.includes(e)) {
+                                                empty02.push(e);
+                                            };
+                                            let coll = box02.querySelectorAll('input:not(checked)');
+                                            temp02 = null;
+                                            temp02 = [];
+                                            coll.forEach(e => {
+                                                if (!temp02.includes(e)) {
+                                                    temp02.push(e);
+                                                }
+                                            });
+                                            if (temp02.length == 0) {
+                                                budgetAlert02.style.display = 'block';
+                                                //alarm01.style.display = 'block';
+                                            };
+                                        }
+                                    })
+                                }
+                            }) */
                         }
 
                         checkEmpty03 = () => {
 
                             empty03.forEach(e => {
+
                                 e.addEventListener('change', function () {
+
                                     if (e.checked) {
 
                                         if (!temp03.includes(e)) {
@@ -662,14 +879,19 @@ window.addEventListener('DOMContentLoaded', () => {
                                         } */
                                     };
                                     setTimeout(checkTemp03, 3000);
-                                })
+                                    clearTimeout(checkTemp03);
+                                },
+                                    { signal: controller02.signal },
+                                );
                             })
                         }
 
                         checkTemp03 = () => {
 
                             temp03.forEach(e => {
+
                                 e.addEventListener('change', function () {
+
                                     if (!e.checked) {
 
                                         if (!empty03.includes(e)) {
@@ -694,8 +916,11 @@ window.addEventListener('DOMContentLoaded', () => {
                                         };
                                     };
                                     setTimeout(checkEmpty03, 3000);
-                                })
-                            });
+                                    clearTimeout(checkEmpty03);
+                                },
+                                    { signal: controller02.signal },
+                                )
+                            })
                         }
 
                         /* if (!error) {
@@ -703,7 +928,7 @@ window.addEventListener('DOMContentLoaded', () => {
                         } */
 
                         if (!error01) {
-                            console.log('true');
+                            //console.log('true');
                             box01Inputs.forEach((e) => {
 
                                 if (e.checked) {
@@ -803,533 +1028,34 @@ window.addEventListener('DOMContentLoaded', () => {
 
                             });
                             checkEmpty03();
-                        }
+                        };
 
-                        /* let budgetInputs01 = document.querySelectorAll(".budget__checkbox--01");
-                        let budgetInputs02 = document.querySelectorAll(".budget__checkbox--02");
-                        let budgetInputs03 = document.querySelectorAll(".budget__checkbox--03");
-                        let budgetInputsTextarea01 = document.getElementById("old-progects");
-                        let budgetInputsTextarea02 = document.getElementById("competitors");
-                        let budgetAlert01 = document.getElementById("alert-budget-01");
-                        let budgetAlert02 = document.getElementById("alert-budget-02");
-                        let budgetAlert03 = document.getElementById("alert-budget-03");
-                        let budgetAlert04 = document.getElementById("alert-budget-04");
-                        let budgetAlert05 = document.getElementById("alert-budget-05");
+                        box02.addEventListener('click', function (e) {
+                            if (e) {
 
+                                let counters = function () {
+                                    if (!box02.querySelectorAll('input:checked').length) {
 
-                        let logo = document.getElementById("logo");
+                                        budgetAlert02.style.display = 'block';
 
+                                    } else {
 
-                        // let emptyInputs = [];
-                        // let tempInputs = [];
-                        let emptyInputs01 = [];
-                        let tempInputs01 = [];
-                        let emptyInputs02 = [];
-                        let tempInputs02 = [];
-                        let emptyInputs03 = [];
-                        let tempInputs03 = [];
-                        let budget = document.querySelector('.budget'); */
-
-                        /* emptyChecker01 = () => {
-                            document.addEventListener('click', function (e, i) {
-
-                                e.stopPropagation();
-
-                                if (e) {
-
-
-                                    //console.log(e.target);
-                                    e.target[i] = i;
-                                    e.target.addEventListener('change', goChange);
-                                    function goChange(e, i) {
-                                        e.stopPropagation();
-
-
-
-
-                                        if (e.target.checked === true) {
-
-
-                                            if (!tempInputs01.includes(e.target)) {
-                                                tempInputs01.push(e.target);
-
-                                                if (tempInputs01.length != 0) {
-
-                                                    budgetAlert01.style.display = 'none';
-                                                };
-                                            };
-                                            // console.log(emptyInputs01.length);
-                                            // emptyInputs01.splice(i, 1);
-                                            // console.log('--- ' + (emptyInputs01.length));
-
-                                            let a = true;
-
-                                            console.log(emptyInputs01.length);
-                                            if (a) {
-
-                                                emptyInputs01.splice(i, 1);
-                                                a = false;
-                                            }
-                                            console.log('--- ' + (emptyInputs01.length));
-
-                                        }
-
-
-
-                                        if (e) {
-                                            e.target.removeEventListener('change', goChange);
-                                            return;
-                                        }
+                                        budgetAlert02.style.display = 'none';
                                     }
-                                }
-                            })
-                        } */
-
-                        /* emptyChecker01 = (e) => {
-                            emptyInputs01.forEach(function (e, i) {
-                                e.addEventListener('change', function (ev) {
-                                    ev.stopPropagation();
-
-                                    if (!e.checked) {
-                                        i = null;
-                                        throw ev;
-                                        return;
-                                    }
-
-                                    if (e.checked == true) {
-
-
-                                        if (!tempInputs01.includes(e)) {
-                                            tempInputs01.push(e);
-
-                                            if (tempInputs01.length != 0) {
-
-                                                budgetAlert01.style.display = 'none';
-                                            };
-                                        };
-
-
-                                        emptyChecker01(e);
-
-                                        //console.log(i);
-
-
-
-                                        // function once(fn, context) {
-                                        //     let result;
-
-                                        //     return function () {
-                                        //         if (fn) {
-                                        //             result = fn.apply(context || this, arguments);
-                                        //             fn = null;
-                                        //         }
-
-                                        //         return result;
-                                        //     }
-                                        // }
-
-                                        // let onlyOnce = once(function () {
-
-                                        //     emptyInputs01.splice(-1, 0);
-                                        // })
-
-                                        // if (e) {
-                                        //     emptyInputs01.splice(i, 1);
-                                        // }
-
-                                        // if (e == goal) {
-
-                                        //     emptyInputs01.splice(e.i, 1);
-                                        // }
-
-
-                                        //onlyOnce();
-
-                                        // let a = true;
-                                        // if (a) {
-
-                                        //     emptyInputs01.splice(i, 1);
-                                        //     a = false;
-                                        // }
-
-
-                                        // console.log('empty');
-                                        // console.log(emptyInputs01.length);
-                                        // console.log('temp');
-                                        // console.log(tempInputs01.length);
-                                        console.log(emptyInputs01.length);
-
-                                        emptyInputs01.splice(i, 1);
-
-                                        console.log('--- ' + (emptyInputs01.length));
-
-
-                                        return;
-                                    }
-                                })
-                            })
-                        } */
-
-                        /* tempChecker01 = () => {
-                            tempInputs01.forEach(function (e, i) {
-                                e.addEventListener('change', function () {
-
-                                    if (e.checked == false) {
-
-                                        if (!emptyInputs01.includes(e)) {
-                                            emptyInputs01.push(e);
-                                        };
-
-
-                                        tempChecker01(e);
-
-                                        if (e) {
-                                            tempInputs01.splice(i, 1);
-                                            if (tempInputs01.length == 0) {
-
-                                                budgetAlert01.style.display = 'block';
-
-                                                document.getElementById("dlm-alert-budget").style.display = "block";
-
-                                                setTimeout(closeAlert, 3000);
-                                            }
-                                            return;
-                                        }
-                                    }
-                                })
-                            })
-                        }
-
-                        emptyChecker02 = () => {
-                            emptyInputs02.forEach(function (e, i) {
-                                e.addEventListener('change', function () {
-                                    if (e.checked == true) {
-
-                                        if (!tempInputs02.includes(e)) {
-                                            tempInputs02.push(e);
-
-                                            if (tempInputs02.length != 0) {
-
-                                                budgetAlert02.style.display = 'none';
-                                            };
-
-                                            tempChecker02(e);
-                                        };
-
-
-                                        let index = i;
-
-
-                                        emptyInputs02.splice(i, 1);
-
-
-                                        emptyChecker02(e);
-                                    }
-                                })
-                            })
-                        }
-
-                        tempChecker02 = () => {
-                            tempInputs02.forEach(function (e, i) {
-                                e.addEventListener('change', function () {
-                                    if (e.checked == false) {
-
-                                        if (!emptyInputs02.includes(e)) {
-                                            emptyInputs02.push(e);
-
-                                            emptyChecker02(e);
-                                        };
-
-
-                                        let index = i;
-
-
-                                        tempInputs02.splice(i, 1);
-
-                                        if (tempInputs02.length == 0) {
-
-                                            budgetAlert02.style.display = 'block';
-
-                                            document.getElementById("dlm-alert-budget").style.display = "block";
-
-                                            setTimeout(closeAlert, 3000);
-                                        }
-
-                                        tempChecker02(e);
-                                    }
-                                })
-                            })
-                        }
-
-                        emptyChecker03 = () => {
-                            emptyInputs03.forEach(function (e, i) {
-                                e.addEventListener('change', function () {
-                                    if (e.checked == true) {
-
-                                        if (!tempInputs03.includes(e)) {
-                                            tempInputs03.push(e);
-
-                                            if (tempInputs03.length != 0) {
-
-                                                budgetAlert03.style.display = 'none';
-                                            };
-
-                                            tempChecker03(e);
-                                        };
-
-
-                                        let index = i;
-
-
-                                        emptyInputs03.splice(i, 1);
-
-
-                                        emptyChecker03(e);
-                                    }
-                                })
-                            })
-                        }
-
-                        tempChecker03 = () => {
-                            tempInputs03.forEach(function (e, i) {
-                                e.addEventListener('change', function () {
-                                    if (e.checked == false) {
-
-                                        if (!emptyInputs03.includes(e)) {
-                                            emptyInputs03.push(e);
-
-                                            emptyChecker03(e);
-                                        };
-
-
-                                        let index = i;
-
-
-                                        tempInputs03.splice(i, 1);
-
-                                        if (tempInputs03.length == 0) {
-
-                                            budgetAlert03.style.display = 'block';
-
-                                            document.getElementById("dlm-alert-budget").style.display = "block";
-
-                                            setTimeout(closeAlert, 3000);
-                                        }
-
-                                        tempChecker03(e);
-                                    }
-                                })
-                            })
-                        } */
-
-
-
-                        /* budgetInputs01.forEach((el) => {
-
-                            if (el.checked == false) {
-
-                                if (!emptyInputs01.includes(el)) {
-                                    emptyInputs01.push(el);
                                 };
 
-                                emptyChecker01(e);
-
-                            } else if (el.checked == true) {
-
-                                if (!tempInputs01.includes(el)) {
-                                    tempInputs01.push(el);
-                                };
-
-                                tempChecker01(e);
-                            };
-                            if (tempInputs01.length == 0) {
-
-                                budgetAlert01.style.display = 'block';
-
-                                document.getElementById("dlm-alert-budget").style.display = "block";
-
-                                setTimeout(closeAlert, 3000);
-                            };
-                        })
-
-                        budgetInputs02.forEach((el) => {
-
-                            if (el.checked == false) {
-
-                                if (!emptyInputs02.includes(el)) {
-                                    emptyInputs02.push(el);
-                                };
-
-                                // emptyChecker02(e);
-
-                            } else if (el.checked == true) {
-
-                                if (!tempInputs02.includes(el)) {
-                                    tempInputs02.push(el);
-                                };
-
-                                // tempChecker02(e);
-                            };
-                            if (emptyInputs02.length != 0) {
-
-                                budgetAlert02.style.display = 'block';
-
-                                if (document.getElementById("dlm-alert-budget").style.display == "none") {
-                                    document.getElementById("dlm-alert-budget").style.display = "block";
-
-                                    setTimeout(closeAlert, 3000);
-                                }
-                            } else {
-
-                                budgetAlert02.style.display = 'none';
-                            }
-                        })
-
-                        budgetInputs03.forEach((el) => {
-
-                            if (el.checked == false) {
-
-                                if (!emptyInputs03.includes(el)) {
-                                    emptyInputs03.push(el);
-                                };
-
-                                // emptyChecker03(e);
-
-                            } else if (el.checked == true) {
-
-                                if (!tempInputs03.includes(el)) {
-                                    tempInputs03.push(el);
-                                };
-
-                                // tempChecker03(e);
-                            };
-                            if (emptyInputs03.length != 0) {
-
-                                budgetAlert03.style.display = 'block';
-
-                                if (document.getElementById("dlm-alert-budget").style.display == "none") {
-                                    document.getElementById("dlm-alert-budget").style.display = "block";
-
-                                    setTimeout(closeAlert, 3000);
-                                }
-                            } else {
-
-                                budgetAlert03.style.display = 'none';
+                                setTimeout(counters, 0);
                             }
                         })
 
 
 
-                        if (budgetInputsTextarea01.value.trim() == "") {
 
+                        function successTrue() {
 
-                            budgetAlert04.style.display = 'block';
+                            controller02.abort();
 
-
-                            document.getElementById("dlm-alert-budget").style.display = "block";
-
-                            setTimeout(closeAlert, 3000);
-
-
-
-                            budgetInputsTextarea01.addEventListener('change', function () {
-                                if (budgetInputsTextarea01.value != "") {
-
-                                    let num = budgetInputsTextarea01.value.length;
-
-                                    if (num > 3) {
-                                        budgetAlert04.style.display = 'none';
-                                    }
-                                }
-                            })
-
-                        } else if (budgetInputsTextarea01.value != "") {
-
-                            let num = budgetInputsTextarea01.value.length;
-
-                            if (num > 3) {
-
-                                budgetAlert04.style.display = 'none';
-
-                            } else {
-
-                                budgetAlert04.style.display = 'block';
-
-                                document.getElementById("dlm-alert-budget").style.display = "block";
-
-                                setTimeout(closeAlert, 3000);
-
-
-                                budgetInputsTextarea01.addEventListener('change', function () {
-                                    if (budgetInputsTextarea01.value != "") {
-
-                                        let num = budgetInputsTextarea01.value.length;
-
-                                        if (num > 3) {
-                                            budgetAlert04.style.display = 'none';
-                                        }
-                                    }
-                                })
-                            }
-                        }
-
-                        if (budgetInputsTextarea02.value.trim() == "") {
-
-
-                            budgetAlert05.style.display = 'block';
-
-
-                            document.getElementById("dlm-alert-budget").style.display = "block";
-
-                            setTimeout(closeAlert, 3000);
-
-
-
-                            budgetInputsTextarea02.addEventListener('change', function () {
-                                if (budgetInputsTextarea02.value != "") {
-
-                                    let num = budgetInputsTextarea02.value.length;
-
-                                    if (num > 3) {
-                                        budgetAlert05.style.display = 'none';
-                                    }
-                                }
-                            })
-
-                        } else if (budgetInputsTextarea02.value != "") {
-
-                            let num = budgetInputsTextarea02.value.length;
-
-                            if (num > 3) {
-
-                                budgetAlert05.style.display = 'none';
-
-                            } else {
-
-                                budgetAlert05.style.display = 'block';
-
-                                document.getElementById("dlm-alert-budget").style.display = "block";
-
-                                setTimeout(closeAlert, 3000);
-
-
-                                budgetInputsTextarea02.addEventListener('change', function () {
-                                    if (budgetInputsTextarea02.value != "") {
-
-                                        let num = budgetInputsTextarea02.value.length;
-
-                                        if (num > 3) {
-                                            budgetAlert05.style.display = 'none';
-                                        }
-                                    }
-                                })
-                            }
-                        } */
-
-
-
-
-                        function successChecked() {
+                            const controller03 = new AbortController();
 
 
 
@@ -1355,7 +1081,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 
-                            const f031000 = throttle(scrollHandler03, 750);
+                            const f031000 = throttle(scrollHandler03, 1000);
 
                             window.addEventListener("scroll", f031000);
 
@@ -1375,6 +1101,7 @@ window.addEventListener('DOMContentLoaded', () => {
                             //coords03 = getCoords(positBtn);
 
                             function scrollHandler03() {
+
                                 scrl03 = window.scrollY || document.documentElement.scrollTop;
                                 /* if (scrl03 > coords03.top) {
                                     window.scrollTo({
@@ -1382,7 +1109,9 @@ window.addEventListener('DOMContentLoaded', () => {
                                         behavior: 'auto',
                                     });
                                 }; */
+
                                 heightScroll = 30000;
+
                                 if (scrl03 > heightScroll) {
                                     positBtn.scrollIntoView({
                                         block: "center"
@@ -1393,85 +1122,3427 @@ window.addEventListener('DOMContentLoaded', () => {
                                     }); */
                                 };
 
-                                positBtn.addEventListener('click', (e) => {
+                                turgetBtn.removeEventListener('click', budgetCheck);
+
+
+                                function turgetCheck(e) {
+
+                                    //loadingIn(e);
                                     e.preventDefault();
-                                    scrl03 = 0;
-                                    window.removeEventListener("scroll", f031000);
-                                    positHide.style.display = "none";
-                                    collageDlm.style.display = "block";
-                                    collage.style.display = "block";
-                                    /* window.scrollTo({
-                                        top: coords03.top + maxWidthSec2,
-                                        behavior: 'smooth',
-                                    }); */
-                                    positTitle.scrollIntoView({
-                                        block: "center",
-                                        behavior: 'smooth'
+
+                                    //successTrue(); ///   удалить!!!
+                                    //////////////////  удалить!!!
+                                    /////////////////////////////////////////
+                                    ////////////////////////////////////////
+
+
+
+                                    const boxes = document.querySelectorAll('.turget__inputs');
+
+                                    const box01 = document.querySelector('.turget__inputs01');
+
+                                    const box01Inputs = box01.querySelectorAll('input[type="checkbox"]');
+
+                                    const box02 = document.querySelector('.turget__inputs02');
+
+                                    const box02Inputs = box02.querySelectorAll('input[type="checkbox"]');
+
+                                    const box03 = document.querySelector('.turget__inputs03');
+
+                                    const box03Inputs = box03.querySelectorAll('input[type="checkbox"]');
+
+                                    const box04 = document.querySelector('.turget__inputs04');
+
+                                    const box04Inputs = box04.querySelectorAll('input[type="checkbox"]');
+
+                                    const box05 = document.querySelector('.turget__inputs05');
+
+                                    const box05Inputs = box05.querySelectorAll('input[type="checkbox"]');
+
+                                    const box06 = document.querySelector('.turget__inputs06');
+
+                                    const box06Inputs = box06.querySelectorAll('input[type="checkbox"]');
+
+                                    const box07 = document.querySelector('.turget__inputs07');
+
+                                    const box07Inputs = box07.querySelectorAll('input[type="checkbox"]');
+
+                                    const box08 = document.querySelector('.turget__inputs08');
+
+                                    const box08Inputs = box08.querySelectorAll('input[type="checkbox"]');
+
+                                    const box09 = document.querySelector('.turget__inputs09');
+
+                                    const box09Inputs = box09.querySelectorAll('input[type="checkbox"]');
+
+                                    const box10 = document.querySelector('.turget__inputs10');
+
+                                    const box10Inputs = box10.querySelectorAll('input[type="checkbox"]');
+
+                                    const box11 = document.querySelector('.turget__inputs11');
+
+                                    const box11Inputs = box11.querySelectorAll('input[type="checkbox"]');
+
+                                    const box12 = document.querySelector('.turget__inputs12');
+
+                                    const box12Inputs = box12.querySelectorAll('input[type="checkbox"]');
+
+                                    const box13 = document.querySelector('.turget__inputs13');
+
+                                    const box13Inputs = box13.querySelectorAll('input[type="checkbox"]');
+
+                                    const box14 = document.querySelector('.turget__inputs14');
+
+                                    const box14Inputs = box14.querySelectorAll('input[type="checkbox"]');
+
+                                    const box15 = document.querySelector('.turget__inputs15');
+
+                                    const box15Inputs = box15.querySelectorAll('input[type="checkbox"]');
+
+                                    const boxPh = document.querySelectorAll('.turget__placeholder');
+
+
+
+
+
+
+
+                                    let turgetAlert01 = document.getElementById("alert-turget-01");
+                                    let turgetAlert02 = document.getElementById("alert-turget-02");
+                                    let turgetAlert03 = document.getElementById("alert-turget-03");
+                                    let turgetAlert04 = document.getElementById("alert-turget-04");
+                                    let turgetAlert05 = document.getElementById("alert-turget-05");
+                                    let turgetAlert06 = document.getElementById("alert-turget-06");
+                                    let turgetAlert07 = document.getElementById("alert-turget-07");
+                                    let turgetAlert08 = document.getElementById("alert-turget-08");
+                                    let turgetAlert09 = document.getElementById("alert-turget-09");
+                                    let turgetAlert10 = document.getElementById("alert-turget-10");
+                                    let turgetAlert11 = document.getElementById("alert-turget-11");
+                                    let turgetAlert12 = document.getElementById("alert-turget-12");
+                                    let turgetAlert13 = document.getElementById("alert-turget-13");
+                                    let turgetAlert14 = document.getElementById("alert-turget-14");
+                                    let turgetAlert15 = document.getElementById("alert-turget-15");
+
+
+
+
+
+
+
+
+                                    let empty01 = [];
+                                    let temp01 = [];
+                                    let empty02 = [];
+                                    let temp02 = [];
+                                    let empty03 = [];
+                                    let temp03 = [];
+                                    let empty04 = [];
+                                    let temp04 = [];
+                                    let empty05 = [];
+                                    let temp05 = [];
+                                    let empty06 = [];
+                                    let temp06 = [];
+                                    let empty07 = [];
+                                    let temp07 = [];
+                                    let empty08 = [];
+                                    let temp08 = [];
+                                    let empty09 = [];
+                                    let temp09 = [];
+                                    let empty10 = [];
+                                    let temp10 = [];
+                                    let empty11 = [];
+                                    let temp11 = [];
+                                    let empty12 = [];
+                                    let temp12 = [];
+                                    let empty13 = [];
+                                    let temp13 = [];
+                                    let empty14 = [];
+                                    let temp14 = [];
+                                    let empty15 = [];
+                                    let temp15 = [];
+
+
+                                    let error = false;
+                                    let error01 = false;
+                                    let error02 = false;
+                                    let error03 = false;
+                                    let error04 = false;
+                                    let error05 = false;
+                                    let error06 = false;
+                                    let error07 = false;
+                                    let error08 = false;
+                                    let error09 = false;
+                                    let error10 = false;
+                                    let error11 = false;
+                                    let error12 = false;
+                                    let error13 = false;
+                                    let error14 = false;
+                                    let error15 = false;
+
+                                    let errorPh = false;
+                                    let success = false;
+
+
+
+                                    boxes.forEach(el => {
+
+                                        closeAlert = () => {
+                                            document.getElementById("dlm-alert-turget").style.display = "none";
+                                        }
+
+                                        if (!el.querySelectorAll('input:checked').length) {
+
+                                            error = true;
+
+                                            document.getElementById("dlm-alert-turget").style.display = "block";
+                                            setTimeout(closeAlert, 3000);
+                                            clearTimeout(closeAlert);
+                                        }
                                     });
 
 
+                                    boxPh.forEach(el => {
+
+                                        let boxPhInputs = el.querySelectorAll('input[type="text"]');
+
+                                        boxPhInputs.forEach(el => {
+
+                                            let turgetAlertPh = el.parentNode.parentNode.querySelector('.alert-turget-ph');
+                                            // let turgetAlertPh = document.getElementById('alert-turget-ph02');
+
+                                            checkAreas = () => {
+                                                el.addEventListener('change', function () {
+                                                    if ((el.value == undefined) || (el.value.trim() == '')) {
+
+                                                        turgetAlertPh.style.display = 'block';
+
+                                                        errorPh = true;
 
 
 
+                                                    } else {
 
-                                    const f041000 = throttle(scrollHandler04, 750);
+                                                        if (el.value != '') {
 
-                                    window.addEventListener("scroll", f041000);
+                                                            let num = el.value.length;
 
-                                    let collageHide = document.querySelector(".collage__hide"),
-                                        //collageBtn = document.getElementById("d04-sec"),
-                                        //collageDlmB = document.getElementById("d04"),
-                                        finishDlm = document.getElementById("d05"),
-                                        collageTitle = document.getElementById("collage-title");
+                                                            if (num > 3) {
 
-                                    /* function getCoords04(collageBtn) {
-                                        let box4 = collageBtn.getBoundingClientRect();
-         
-                                        return {
-                                            top: box4.top + window.scrollY
-                                        };
-                                    } */
-                                    //coords04 = getCoords(collageBtn);
+                                                                if (turgetAlertPh.style.display = 'block') {
+                                                                    turgetAlertPh.style.display = 'none';
+                                                                }
+                                                            } else {
 
-                                    function scrollHandler04() {
-                                        let scrl04 = window.scrollY;
-                                        /* if (scrl04 > coords04.top) {
-                                            window.scrollTo({
-                                                top: coords04.top,
-                                                behavior: 'auto',
-                                            });
-                                        }; */
-                                        heightScroll = 32000;
-                                        if (scrl04 > heightScroll) {
-                                            collageBtn.scrollIntoView({
-                                                block: "center"
-                                            });
-                                            /* window.scrollBy({
-                                                top: -500,
-                                                behavior: 'auto',
-                                            }); */
-                                        };
+                                                                closeAlert = () => {
+                                                                    document.getElementById("dlm-alert-turget").style.display = "none";
 
-                                        collageBtn.addEventListener('click', (e) => {
-                                            e.preventDefault();
-                                            scrl04 = 0;
-                                            window.removeEventListener("scroll", f041000);
-                                            collageHide.style.display = "none";
-                                            finishDlm.style.display = "block";
-                                            collage.style.display = "block";
-                                            /* window.scrollTo({
-                                                top: coords04.top + maxWidthSec2,
-                                                behavior: 'smooth',
-                                            }); */
-                                            collageTitle.scrollIntoView({
-                                                block: "center",
-                                                behavior: 'smooth'
-                                            })
+                                                                }
+
+                                                                document.getElementById("dlm-alert-turget").style.display = "block";
+                                                                setTimeout(closeAlert, 3000);
+                                                                clearTimeout(closeAlert);
+
+                                                                turgetAlertPh.style.display = 'block';
+
+                                                                errorPh = true;
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                    { signal: controller03.signal },
+                                                )
+                                            };
+
+                                            el.getAttribute('value');
+                                            if ((el.value == undefined) || (el.value.trim() == '')) {
+
+                                                turgetAlertPh.style.display = 'block';
+
+                                                errorPh = true;
+
+                                                closeAlert = () => {
+                                                    document.getElementById("dlm-alert-turget").style.display = "none";
+
+                                                }
+
+                                                document.getElementById("dlm-alert-turget").style.display = "block";
+                                                setTimeout(closeAlert, 3000);
+                                                clearTimeout(closeAlert);
+
+                                                setTimeout(checkAreas, 3000);
+                                                clearTimeout(checkAreas);
+
+
+                                            } else {
+
+                                                if (el.value != '') {
+
+                                                    let num = el.value.length;
+
+                                                    if (num > 3) {
+
+                                                        if (turgetAlertPh.style.display = 'block') {
+                                                            turgetAlertPh.style.display = 'none';
+                                                        };
+                                                        setTimeout(checkAreas, 3000);
+                                                        clearTimeout(checkAreas);
+
+                                                    } else {
+
+                                                        closeAlert = () => {
+                                                            document.getElementById("dlm-alert-turget").style.display = "none";
+
+                                                        }
+
+                                                        document.getElementById("dlm-alert-turget").style.display = "block";
+
+                                                        setTimeout(closeAlert, 3000);
+                                                        clearTimeout(closeAlert);
+
+                                                        turgetAlertPh.style.display = 'block';
+
+                                                        errorPh = true;
+                                                        setTimeout(checkAreas, 3000);
+                                                        clearTimeout(checkAreas);
+                                                    }
+                                                }
+                                            }
+                                        })
+                                    });
+
+
+                                    checkEmpty01 = () => {
+
+                                        empty01.forEach(e => {
+
+                                            e.addEventListener('change', function () {
+
+                                                if (e.checked) {
+
+                                                    if (!temp01.includes(e)) {
+                                                        temp01.push(e);
+                                                    };
+                                                    if (temp01.length != 0) {
+                                                        turgetAlert01.style.display = 'none';
+                                                    };
+                                                    let coll = box01.querySelectorAll('input:not(checked)');
+                                                    empty01 = null;
+                                                    empty01 = [];
+                                                    coll.forEach(e => {
+                                                        if (!empty01.includes(e)) {
+                                                            empty01.push(e);
+                                                        }
+                                                    })
+                                                    /* const findIndex = empty01.findIndex(i => i.e === e)
+                                                    if (findIndex) {
+                                                        empty01.splice([findIndex], 1);
+                                                    } */
+                                                };
+
+                                                // setTimeout(checkTemp01, 3000);
+                                                // clearTimeout(checkTemp01);
+                                            },
+                                                { signal: controller03.signal },
+                                            )
                                         })
                                     }
-                                })
+
+                                    checkTemp01 = () => {
+
+                                        temp01.forEach(e => {
+
+                                            e.addEventListener('change', function () {
+
+                                                if (!e.checked) {
+
+                                                    if (!empty01.includes(e)) {
+                                                        empty01.push(e);
+                                                    };
+                                                    /* const findIndex = temp01.findIndex(i => i.e === e)
+                                                    if (findIndex) {
+                                                        temp01.splice([findIndex], 1);
+                                                    }; */
+                                                    let coll = box01.querySelectorAll('input:checked');
+                                                    temp01 = null;
+                                                    temp01 = [];
+                                                    coll.forEach(e => {
+                                                        if (!temp01.includes(e)) {
+                                                            temp01.push(e);
+                                                        }
+                                                    });
+
+                                                    if (temp01.length == 0) {
+                                                        turgetAlert01.style.display = 'block';
+                                                        //alarm01.style.display = 'block';
+                                                    };
+                                                };
+                                                // setTimeout(checkEmpty01, 3000);
+                                                // clearTimeout(checkEmpty01);
+                                            },
+                                                { signal: controller03.signal },
+                                            )
+                                        })
+                                    }
+
+                                    checkEmpty02 = () => {
+
+                                        empty02.forEach(e => {
+
+                                            e.addEventListener('change', function () {
+
+                                                if (e.checked) {
+
+                                                    if (!temp02.includes(e)) {
+                                                        temp02.push(e);
+                                                    };
+                                                    if (temp02.length != 0) {
+                                                        turgetAlert02.style.display = 'none';
+                                                    };
+                                                    let coll = box02.querySelectorAll('input:not(checked)');
+                                                    empty02 = null;
+                                                    empty02 = [];
+                                                    coll.forEach(e => {
+                                                        if (!empty02.includes(e)) {
+                                                            empty02.push(e);
+                                                        }
+                                                    })
+                                                    /* const findIndex = empty01.findIndex(i => i.e === e)
+                                                    if (findIndex) {
+                                                        empty01.splice([findIndex], 1);
+                                                    } */
+                                                };
+                                                // setTimeout(checkTemp02, 3000);
+                                                // clearTimeout(checkTemp02);
+                                            },
+                                                { signal: controller03.signal },
+                                            )
+                                        })
+                                    }
+
+                                    checkTemp02 = () => {
+
+                                        temp02.forEach(e => {
+
+                                            e.addEventListener('change', function () {
+
+                                                if (!e.checked) {
+
+                                                    if (!empty02.includes(e)) {
+                                                        empty02.push(e);
+                                                    };
+                                                    /* const findIndex = temp01.findIndex(i => i.e === e)
+                                                    if (findIndex) {
+                                                        temp01.splice([findIndex], 1);
+                                                    }; */
+                                                    let coll = box02.querySelectorAll('input:checked');
+                                                    temp02 = null;
+                                                    temp02 = [];
+                                                    coll.forEach(e => {
+                                                        if (!temp02.includes(e)) {
+                                                            temp02.push(e);
+                                                        }
+                                                    });
+
+                                                    if (temp02.length == 0) {
+                                                        turgetAlert02.style.display = 'block';
+                                                        //alarm01.style.display = 'block';
+                                                    };
+                                                };
+                                                // setTimeout(checkEmpty02, 3000);
+                                                // clearTimeout(checkEmpty02);
+                                            },
+                                                { signal: controller03.signal },
+                                            )
+                                        });
+
+                                        /* box02.addEventListener('click', function (e) {
+                                            if (e) {
+                                                temp02.forEach(e => {
+                                                    if (!e.checked) {
+            
+                                                        if (!empty02.includes(e)) {
+                                                            empty02.push(e);
+                                                        };
+                                                        let coll = box02.querySelectorAll('input:not(checked)');
+                                                        temp02 = null;
+                                                        temp02 = [];
+                                                        coll.forEach(e => {
+                                                            if (!temp02.includes(e)) {
+                                                                temp02.push(e);
+                                                            }
+                                                        });
+                                                        if (temp02.length == 0) {
+                                                            budgetAlert02.style.display = 'block';
+                                                            //alarm01.style.display = 'block';
+                                                        };
+                                                    }
+                                                })
+                                            }
+                                        }) */
+                                    }
+
+                                    checkEmpty03 = () => {
+
+                                        empty03.forEach(e => {
+
+                                            e.addEventListener('change', function () {
+                                                if (e.checked) {
+
+                                                    if (!temp03.includes(e)) {
+                                                        temp03.push(e);
+                                                    };
+                                                    if (temp03.length != 0) {
+                                                        turgetAlert03.style.display = 'none';
+                                                    };
+                                                    let coll = box03.querySelectorAll('input:not(checked)');
+                                                    empty03 = null;
+                                                    empty03 = [];
+                                                    coll.forEach(e => {
+                                                        if (!empty03.includes(e)) {
+                                                            empty03.push(e);
+                                                        }
+                                                    })
+                                                    /* const findIndex = empty01.findIndex(i => i.e === e)
+                                                    if (findIndex) {
+                                                        empty01.splice([findIndex], 1);
+                                                    } */
+                                                };
+                                                // setTimeout(checkTemp03, 3000);
+                                                // clearTimeout(checkTemp03);
+                                            },
+                                                { signal: controller03.signal },
+                                            )
+                                        })
+                                    }
+
+                                    checkTemp03 = () => {
+
+                                        temp03.forEach(e => {
+
+                                            e.addEventListener('change', function () {
+                                                if (!e.checked) {
+
+                                                    if (!empty03.includes(e)) {
+                                                        empty03.push(e);
+                                                    };
+                                                    /* const findIndex = temp01.findIndex(i => i.e === e)
+                                                    if (findIndex) {
+                                                        temp01.splice([findIndex], 1);
+                                                    }; */
+                                                    let coll = box03.querySelectorAll('input:checked');
+                                                    temp03 = null;
+                                                    temp03 = [];
+                                                    coll.forEach(e => {
+                                                        if (!temp03.includes(e)) {
+                                                            temp03.push(e);
+                                                        }
+                                                    });
+
+                                                    if (temp03.length == 0) {
+                                                        turgetAlert03.style.display = 'block';
+                                                        //alarm01.style.display = 'block';
+                                                    };
+                                                };
+                                                // setTimeout(checkEmpty03, 3000);
+                                                // clearTimeout(checkEmpty03);
+                                            },
+                                                { signal: controller03.signal },
+                                            )
+                                        });
+                                    }
+
+                                    checkEmpty04 = () => {
+
+                                        empty04.forEach(e => {
+
+                                            e.addEventListener('change', function () {
+                                                if (e.checked) {
+
+                                                    if (!temp04.includes(e)) {
+                                                        temp04.push(e);
+                                                    };
+                                                    if (temp04.length != 0) {
+                                                        turgetAlert04.style.display = 'none';
+                                                    };
+                                                    let coll = box04.querySelectorAll('input:not(checked)');
+                                                    empty04 = null;
+                                                    empty04 = [];
+                                                    coll.forEach(e => {
+                                                        if (!empty04.includes(e)) {
+                                                            empty04.push(e);
+                                                        }
+                                                    })
+                                                    /* const findIndex = empty01.findIndex(i => i.e === e)
+                                                    if (findIndex) {
+                                                        empty01.splice([findIndex], 1);
+                                                    } */
+                                                };
+                                                // setTimeout(checkTemp04, 3000);
+                                                // clearTimeout(checkTemp04);
+                                            },
+                                                { signal: controller03.signal },
+                                            )
+                                        })
+                                    }
+
+                                    checkTemp04 = () => {
+
+                                        temp04.forEach(e => {
+
+                                            e.addEventListener('change', function () {
+
+                                                if (!e.checked) {
+
+                                                    if (!empty04.includes(e)) {
+                                                        empty04.push(e);
+                                                    };
+                                                    /* const findIndex = temp01.findIndex(i => i.e === e)
+                                                    if (findIndex) {
+                                                        temp01.splice([findIndex], 1);
+                                                    }; */
+                                                    let coll = box04.querySelectorAll('input:checked');
+                                                    temp04 = null;
+                                                    temp04 = [];
+                                                    coll.forEach(e => {
+                                                        if (!temp04.includes(e)) {
+                                                            temp04.push(e);
+                                                        }
+                                                    });
+
+                                                    if (temp04.length == 0) {
+                                                        turgetAlert04.style.display = 'block';
+                                                        //alarm01.style.display = 'block';
+                                                    };
+                                                };
+                                                // setTimeout(checkEmpty04, 3000);
+                                                // clearTimeout(checkEmpty04);
+                                            },
+                                                { signal: controller03.signal },
+                                            )
+                                        });
+                                    }
+
+                                    checkEmpty05 = () => {
+
+                                        empty05.forEach(e => {
+
+                                            e.addEventListener('change', function () {
+
+                                                if (e.checked) {
+
+                                                    if (!temp05.includes(e)) {
+                                                        temp05.push(e);
+                                                    };
+                                                    if (temp05.length != 0) {
+                                                        turgetAlert05.style.display = 'none';
+                                                    };
+                                                    let coll = box05.querySelectorAll('input:not(checked)');
+                                                    empty05 = null;
+                                                    empty05 = [];
+                                                    coll.forEach(e => {
+                                                        if (!empty05.includes(e)) {
+                                                            empty05.push(e);
+                                                        }
+                                                    })
+                                                    /* const findIndex = empty01.findIndex(i => i.e === e)
+                                                    if (findIndex) {
+                                                        empty01.splice([findIndex], 1);
+                                                    } */
+                                                };
+                                                // setTimeout(checkTemp05, 3000);
+                                                // clearTimeout(checkTemp05);
+                                            },
+                                                { signal: controller03.signal },
+                                            )
+                                        })
+                                    }
+
+                                    checkTemp05 = () => {
+
+                                        temp05.forEach(e => {
+
+                                            e.addEventListener('change', function () {
+
+                                                if (!e.checked) {
+
+                                                    if (!empty05.includes(e)) {
+                                                        empty05.push(e);
+                                                    };
+                                                    /* const findIndex = temp01.findIndex(i => i.e === e)
+                                                    if (findIndex) {
+                                                        temp01.splice([findIndex], 1);
+                                                    }; */
+                                                    let coll = box05.querySelectorAll('input:checked');
+                                                    temp05 = null;
+                                                    temp05 = [];
+                                                    coll.forEach(e => {
+                                                        if (!temp05.includes(e)) {
+                                                            temp05.push(e);
+                                                        }
+                                                    });
+
+                                                    if (temp05.length == 0) {
+                                                        turgetAlert05.style.display = 'block';
+                                                        //alarm01.style.display = 'block';
+                                                    };
+                                                };
+                                                // setTimeout(checkEmpty05, 3000);
+                                                // clearTimeout(checkEmpty05);
+                                            },
+                                                { signal: controller03.signal },
+                                            )
+                                        });
+                                    }
+
+                                    checkEmpty06 = () => {
+
+                                        empty06.forEach(e => {
+
+                                            e.addEventListener('change', function () {
+
+                                                if (e.checked) {
+
+                                                    if (!temp06.includes(e)) {
+                                                        temp06.push(e);
+                                                    };
+                                                    if (temp06.length != 0) {
+                                                        turgetAlert06.style.display = 'none';
+                                                    };
+                                                    let coll = box06.querySelectorAll('input:not(checked)');
+                                                    empty06 = null;
+                                                    empty06 = [];
+                                                    coll.forEach(e => {
+                                                        if (!empty06.includes(e)) {
+                                                            empty06.push(e);
+                                                        }
+                                                    })
+                                                    /* const findIndex = empty01.findIndex(i => i.e === e)
+                                                    if (findIndex) {
+                                                        empty01.splice([findIndex], 1);
+                                                    } */
+                                                };
+                                                // setTimeout(checkTemp06, 3000);
+                                                // clearTimeout(checkTemp06);
+                                            },
+                                                { signal: controller03.signal },
+                                            )
+                                        })
+                                    }
+
+                                    checkTemp06 = () => {
+
+                                        temp06.forEach(e => {
+
+                                            e.addEventListener('change', function () {
+
+                                                if (!e.checked) {
+
+                                                    if (!empty06.includes(e)) {
+                                                        empty06.push(e);
+                                                    };
+                                                    /* const findIndex = temp01.findIndex(i => i.e === e)
+                                                    if (findIndex) {
+                                                        temp01.splice([findIndex], 1);
+                                                    }; */
+                                                    let coll = box06.querySelectorAll('input:checked');
+                                                    temp06 = null;
+                                                    temp06 = [];
+                                                    coll.forEach(e => {
+                                                        if (!temp06.includes(e)) {
+                                                            temp06.push(e);
+                                                        }
+                                                    });
+
+                                                    if (temp06.length == 0) {
+                                                        turgetAlert06.style.display = 'block';
+                                                        //alarm01.style.display = 'block';
+                                                    };
+                                                };
+                                                // setTimeout(checkEmpty06, 3000);
+                                                // clearTimeout(checkEmpty06);
+                                            },
+                                                { signal: controller03.signal },
+                                            )
+                                        });
+                                    }
+
+                                    checkEmpty07 = () => {
+
+                                        empty07.forEach(e => {
+
+                                            e.addEventListener('change', function () {
+
+                                                if (e.checked) {
+
+                                                    if (!temp07.includes(e)) {
+                                                        temp07.push(e);
+                                                    };
+                                                    if (temp07.length != 0) {
+                                                        turgetAlert07.style.display = 'none';
+                                                    };
+                                                    let coll = box07.querySelectorAll('input:not(checked)');
+                                                    empty07 = null;
+                                                    empty07 = [];
+                                                    coll.forEach(e => {
+                                                        if (!empty07.includes(e)) {
+                                                            empty07.push(e);
+                                                        }
+                                                    })
+                                                    /* const findIndex = empty01.findIndex(i => i.e === e)
+                                                    if (findIndex) {
+                                                        empty01.splice([findIndex], 1);
+                                                    } */
+                                                };
+                                                // setTimeout(checkTemp07, 3000);
+                                                // clearTimeout(checkTemp07);
+                                            },
+                                                { signal: controller03.signal },
+                                            )
+                                        })
+                                    }
+
+                                    checkTemp07 = () => {
+
+                                        temp07.forEach(e => {
+
+                                            e.addEventListener('change', function () {
+
+                                                if (!e.checked) {
+
+                                                    if (!empty07.includes(e)) {
+                                                        empty07.push(e);
+                                                    };
+                                                    /* const findIndex = temp01.findIndex(i => i.e === e)
+                                                    if (findIndex) {
+                                                        temp01.splice([findIndex], 1);
+                                                    }; */
+                                                    let coll = box07.querySelectorAll('input:checked');
+                                                    temp07 = null;
+                                                    temp07 = [];
+                                                    coll.forEach(e => {
+                                                        if (!temp07.includes(e)) {
+                                                            temp07.push(e);
+                                                        }
+                                                    });
+
+                                                    if (temp07.length == 0) {
+                                                        turgetAlert07.style.display = 'block';
+                                                        //alarm01.style.display = 'block';
+                                                    };
+                                                };
+                                                // setTimeout(checkEmpty07, 3000);
+                                                // clearTimeout(checkEmpty07);
+                                            },
+                                                { signal: controller03.signal },
+                                            )
+                                        });
+                                    }
+
+                                    checkEmpty08 = () => {
+
+                                        empty08.forEach(e => {
+
+                                            e.addEventListener('change', function () {
+
+                                                if (e.checked) {
+
+                                                    if (!temp08.includes(e)) {
+                                                        temp08.push(e);
+                                                    };
+                                                    if (temp08.length != 0) {
+                                                        turgetAlert08.style.display = 'none';
+                                                    };
+                                                    let coll = box08.querySelectorAll('input:not(checked)');
+                                                    empty08 = null;
+                                                    empty08 = [];
+                                                    coll.forEach(e => {
+                                                        if (!empty08.includes(e)) {
+                                                            empty08.push(e);
+                                                        }
+                                                    })
+                                                    /* const findIndex = empty01.findIndex(i => i.e === e)
+                                                    if (findIndex) {
+                                                        empty01.splice([findIndex], 1);
+                                                    } */
+                                                };
+                                                // setTimeout(checkTemp08, 3000);
+                                                // clearTimeout(checkTemp08);
+                                            },
+                                                { signal: controller03.signal },
+                                            )
+                                        })
+                                    }
+
+                                    checkTemp08 = () => {
+
+                                        temp08.forEach(e => {
+
+                                            e.addEventListener('change', function () {
+
+                                                if (!e.checked) {
+
+                                                    if (!empty08.includes(e)) {
+                                                        empty08.push(e);
+                                                    };
+                                                    /* const findIndex = temp01.findIndex(i => i.e === e)
+                                                    if (findIndex) {
+                                                        temp01.splice([findIndex], 1);
+                                                    }; */
+                                                    let coll = box08.querySelectorAll('input:checked');
+                                                    temp08 = null;
+                                                    temp08 = [];
+                                                    coll.forEach(e => {
+                                                        if (!temp08.includes(e)) {
+                                                            temp08.push(e);
+                                                        }
+                                                    });
+
+                                                    if (temp08.length == 0) {
+                                                        turgetAlert08.style.display = 'block';
+                                                        //alarm01.style.display = 'block';
+                                                    };
+                                                };
+                                                // setTimeout(checkEmpty08, 3000);
+                                                // clearTimeout(checkEmpty08);
+                                            },
+                                                { signal: controller03.signal },
+                                            )
+                                        });
+                                    }
+
+                                    checkEmpty09 = () => {
+
+                                        empty09.forEach(e => {
+
+                                            e.addEventListener('change', function () {
+
+                                                if (e.checked) {
+
+                                                    if (!temp09.includes(e)) {
+                                                        temp09.push(e);
+                                                    };
+                                                    if (temp09.length != 0) {
+                                                        turgetAlert09.style.display = 'none';
+                                                    };
+                                                    let coll = box09.querySelectorAll('input:not(checked)');
+                                                    empty09 = null;
+                                                    empty09 = [];
+                                                    coll.forEach(e => {
+                                                        if (!empty09.includes(e)) {
+                                                            empty09.push(e);
+                                                        }
+                                                    })
+                                                    /* const findIndex = empty01.findIndex(i => i.e === e)
+                                                    if (findIndex) {
+                                                        empty01.splice([findIndex], 1);
+                                                    } */
+                                                };
+                                                // setTimeout(checkTemp09, 3000);
+                                                // clearTimeout(checkTemp09);
+                                            },
+                                                { signal: controller03.signal },
+                                            )
+                                        })
+                                    }
+
+                                    checkTemp09 = () => {
+
+                                        temp09.forEach(e => {
+
+                                            e.addEventListener('change', function () {
+
+                                                if (!e.checked) {
+
+                                                    if (!empty09.includes(e)) {
+                                                        empty09.push(e);
+                                                    };
+                                                    /* const findIndex = temp01.findIndex(i => i.e === e)
+                                                    if (findIndex) {
+                                                        temp01.splice([findIndex], 1);
+                                                    }; */
+                                                    let coll = box09.querySelectorAll('input:checked');
+                                                    temp09 = null;
+                                                    temp09 = [];
+                                                    coll.forEach(e => {
+                                                        if (!temp09.includes(e)) {
+                                                            temp09.push(e);
+                                                        }
+                                                    });
+
+                                                    if (temp09.length == 0) {
+                                                        turgetAlert09.style.display = 'block';
+                                                        //alarm01.style.display = 'block';
+                                                    };
+                                                };
+                                                // setTimeout(checkEmpty09, 3000);
+                                                // clearTimeout(checkEmpty09);
+                                            },
+                                                { signal: controller03.signal },
+                                            )
+                                        });
+                                    }
+
+                                    checkEmpty10 = () => {
+
+                                        empty10.forEach(e => {
+
+                                            e.addEventListener('change', function () {
+
+                                                if (e.checked) {
+
+                                                    if (!temp10.includes(e)) {
+                                                        temp10.push(e);
+                                                    };
+                                                    if (temp10.length != 0) {
+                                                        turgetAlert10.style.display = 'none';
+                                                    };
+                                                    let coll = box10.querySelectorAll('input:not(checked)');
+                                                    empty10 = null;
+                                                    empty10 = [];
+                                                    coll.forEach(e => {
+                                                        if (!empty10.includes(e)) {
+                                                            empty10.push(e);
+                                                        }
+                                                    })
+                                                    /* const findIndex = empty01.findIndex(i => i.e === e)
+                                                    if (findIndex) {
+                                                        empty01.splice([findIndex], 1);
+                                                    } */
+                                                };
+                                                // setTimeout(checkTemp10, 3000);
+                                                // clearTimeout(checkTemp10);
+                                            },
+                                                { signal: controller03.signal },
+                                            )
+                                        })
+                                    }
+
+                                    checkTemp10 = () => {
+
+                                        temp10.forEach(e => {
+
+                                            e.addEventListener('change', function () {
+
+                                                if (!e.checked) {
+
+                                                    if (!empty10.includes(e)) {
+                                                        empty10.push(e);
+                                                    };
+                                                    /* const findIndex = temp01.findIndex(i => i.e === e)
+                                                    if (findIndex) {
+                                                        temp01.splice([findIndex], 1);
+                                                    }; */
+                                                    let coll = box10.querySelectorAll('input:checked');
+                                                    temp10 = null;
+                                                    temp10 = [];
+                                                    coll.forEach(e => {
+                                                        if (!temp10.includes(e)) {
+                                                            temp10.push(e);
+                                                        }
+                                                    });
+
+                                                    if (temp10.length == 0) {
+                                                        turgetAlert10.style.display = 'block';
+                                                        //alarm01.style.display = 'block';
+                                                    };
+                                                };
+                                                // setTimeout(checkEmpty10, 3000);
+                                                // clearTimeout(checkEmpty10);
+                                            },
+                                                { signal: controller03.signal },
+                                            )
+                                        });
+                                    }
+
+                                    checkEmpty11 = () => {
+
+                                        empty11.forEach(e => {
+
+                                            e.addEventListener('change', function () {
+
+                                                if (e.checked) {
+
+                                                    if (!temp11.includes(e)) {
+                                                        temp11.push(e);
+                                                    };
+                                                    if (temp11.length != 0) {
+                                                        turgetAlert11.style.display = 'none';
+                                                    };
+                                                    let coll = box11.querySelectorAll('input:not(checked)');
+                                                    empty11 = null;
+                                                    empty11 = [];
+                                                    coll.forEach(e => {
+                                                        if (!empty11.includes(e)) {
+                                                            empty11.push(e);
+                                                        }
+                                                    })
+                                                    /* const findIndex = empty01.findIndex(i => i.e === e)
+                                                    if (findIndex) {
+                                                        empty01.splice([findIndex], 1);
+                                                    } */
+                                                };
+                                                // setTimeout(checkTemp11, 3000);
+                                                // clearTimeout(checkTemp11);
+                                            },
+                                                { signal: controller03.signal },
+                                            )
+                                        })
+                                    }
+
+                                    checkTemp11 = () => {
+
+                                        temp11.forEach(e => {
+
+                                            e.addEventListener('change', function () {
+
+                                                if (!e.checked) {
+
+                                                    if (!empty11.includes(e)) {
+                                                        empty11.push(e);
+                                                    };
+                                                    /* const findIndex = temp01.findIndex(i => i.e === e)
+                                                    if (findIndex) {
+                                                        temp01.splice([findIndex], 1);
+                                                    }; */
+                                                    let coll = box11.querySelectorAll('input:checked');
+                                                    temp11 = null;
+                                                    temp11 = [];
+                                                    coll.forEach(e => {
+                                                        if (!temp11.includes(e)) {
+                                                            temp11.push(e);
+                                                        }
+                                                    });
+
+                                                    if (temp11.length == 0) {
+                                                        turgetAlert11.style.display = 'block';
+                                                        //alarm01.style.display = 'block';
+                                                    };
+                                                };
+                                                // setTimeout(checkEmpty11, 3000);
+                                                // clearTimeout(checkEmpty11);
+                                            },
+                                                { signal: controller03.signal },
+                                            )
+                                        })
+                                    }
+
+                                    checkEmpty12 = () => {
+
+                                        empty12.forEach(e => {
+
+                                            e.addEventListener('change', function () {
+
+                                                if (e.checked) {
+
+                                                    if (!temp12.includes(e)) {
+                                                        temp12.push(e);
+                                                    };
+                                                    if (temp12.length != 0) {
+                                                        turgetAlert12.style.display = 'none';
+                                                    };
+                                                    let coll = box12.querySelectorAll('input:not(checked)');
+                                                    empty12 = null;
+                                                    empty12 = [];
+                                                    coll.forEach(e => {
+                                                        if (!empty12.includes(e)) {
+                                                            empty12.push(e);
+                                                        }
+                                                    })
+                                                    /* const findIndex = empty01.findIndex(i => i.e === e)
+                                                    if (findIndex) {
+                                                        empty01.splice([findIndex], 1);
+                                                    } */
+                                                };
+                                                // setTimeout(checkTemp12, 3000);
+                                                // clearTimeout(checkTemp12);
+                                            },
+                                                { signal: controller03.signal },
+                                            )
+                                        })
+                                    }
+
+                                    checkTemp12 = () => {
+
+                                        temp12.forEach(e => {
+
+                                            e.addEventListener('change', function () {
+
+                                                if (!e.checked) {
+
+                                                    if (!empty12.includes(e)) {
+                                                        empty12.push(e);
+                                                    };
+                                                    /* const findIndex = temp01.findIndex(i => i.e === e)
+                                                    if (findIndex) {
+                                                        temp01.splice([findIndex], 1);
+                                                    }; */
+                                                    let coll = box12.querySelectorAll('input:checked');
+                                                    temp12 = null;
+                                                    temp12 = [];
+                                                    coll.forEach(e => {
+                                                        if (!temp12.includes(e)) {
+                                                            temp12.push(e);
+                                                        }
+                                                    });
+
+                                                    if (temp12.length == 0) {
+                                                        turgetAlert12.style.display = 'block';
+                                                        //alarm01.style.display = 'block';
+                                                    };
+                                                };
+                                                // setTimeout(checkEmpty12, 3000);
+                                                // clearTimeout(checkEmpty12);
+                                            },
+                                                { signal: controller03.signal },
+                                            )
+                                        })
+                                    }
+
+                                    checkEmpty13 = () => {
+
+                                        empty13.forEach(e => {
+
+                                            e.addEventListener('change', function () {
+
+                                                if (e.checked) {
+
+                                                    if (!temp13.includes(e)) {
+                                                        temp13.push(e);
+                                                    };
+                                                    if (temp13.length != 0) {
+                                                        turgetAlert13.style.display = 'none';
+                                                    };
+                                                    let coll = box13.querySelectorAll('input:not(checked)');
+                                                    empty13 = null;
+                                                    empty13 = [];
+                                                    coll.forEach(e => {
+                                                        if (!empty13.includes(e)) {
+                                                            empty13.push(e);
+                                                        }
+                                                    })
+                                                    /* const findIndex = empty01.findIndex(i => i.e === e)
+                                                    if (findIndex) {
+                                                        empty01.splice([findIndex], 1);
+                                                    } */
+                                                };
+                                                // setTimeout(checkTemp13, 3000);
+                                                // clearTimeout(checkTemp13);
+                                            },
+                                                { signal: controller03.signal },
+                                            )
+                                        })
+                                    }
+
+                                    checkTemp13 = () => {
+
+                                        temp13.forEach(e => {
+
+                                            e.addEventListener('change', function () {
+
+                                                if (!e.checked) {
+
+                                                    if (!empty13.includes(e)) {
+                                                        empty13.push(e);
+                                                    };
+                                                    /* const findIndex = temp01.findIndex(i => i.e === e)
+                                                    if (findIndex) {
+                                                        temp01.splice([findIndex], 1);
+                                                    }; */
+                                                    let coll = box13.querySelectorAll('input:checked');
+                                                    temp13 = null;
+                                                    temp13 = [];
+                                                    coll.forEach(e => {
+                                                        if (!temp13.includes(e)) {
+                                                            temp13.push(e);
+                                                        }
+                                                    });
+
+                                                    if (temp13.length == 0) {
+                                                        turgetAlert13.style.display = 'block';
+                                                        //alarm01.style.display = 'block';
+                                                    };
+                                                };
+                                                // setTimeout(checkEmpty13, 3000);
+                                                // clearTimeout(checkEmpty13);
+                                            },
+                                                { signal: controller03.signal },
+                                            )
+                                        });
+                                    }
+
+                                    checkEmpty14 = () => {
+
+                                        empty14.forEach(e => {
+
+                                            e.addEventListener('change', function () {
+
+                                                if (e.checked) {
+
+                                                    if (!temp14.includes(e)) {
+                                                        temp14.push(e);
+                                                    };
+                                                    if (temp14.length != 0) {
+                                                        turgetAlert14.style.display = 'none';
+                                                    };
+                                                    let coll = box14.querySelectorAll('input:not(checked)');
+                                                    empty14 = null;
+                                                    empty14 = [];
+                                                    coll.forEach(e => {
+                                                        if (!empty14.includes(e)) {
+                                                            empty14.push(e);
+                                                        }
+                                                    })
+                                                    /* const findIndex = empty01.findIndex(i => i.e === e)
+                                                    if (findIndex) {
+                                                        empty01.splice([findIndex], 1);
+                                                    } */
+                                                };
+                                                // setTimeout(checkTemp14, 3000);
+                                                // clearTimeout(checkTemp14);
+                                            },
+                                                { signal: controller03.signal },
+                                            )
+                                        })
+                                    }
+
+                                    checkTemp14 = () => {
+
+                                        temp14.forEach(e => {
+
+                                            e.addEventListener('change', function () {
+
+                                                if (!e.checked) {
+
+                                                    if (!empty14.includes(e)) {
+                                                        empty14.push(e);
+                                                    };
+                                                    /* const findIndex = temp01.findIndex(i => i.e === e)
+                                                    if (findIndex) {
+                                                        temp01.splice([findIndex], 1);
+                                                    }; */
+                                                    let coll = box14.querySelectorAll('input:checked');
+                                                    temp14 = null;
+                                                    temp14 = [];
+                                                    coll.forEach(e => {
+                                                        if (!temp14.includes(e)) {
+                                                            temp14.push(e);
+                                                        }
+                                                    });
+
+                                                    if (temp14.length == 0) {
+                                                        turgetAlert14.style.display = 'block';
+                                                        //alarm01.style.display = 'block';
+                                                    };
+                                                };
+                                                // setTimeout(checkEmpty14, 3000);
+                                                // clearTimeout(checkEmpty14);
+                                            },
+                                                { signal: controller03.signal },
+                                            )
+                                        })
+                                    }
+
+                                    checkEmpty15 = () => {
+
+                                        empty15.forEach(e => {
+
+                                            e.addEventListener('change', function () {
+
+                                                if (e.checked) {
+
+                                                    if (!temp15.includes(e)) {
+                                                        temp15.push(e);
+                                                    };
+                                                    if (temp15.length != 0) {
+                                                        turgetAlert15.style.display = 'none';
+                                                    };
+                                                    let coll = box15.querySelectorAll('input:not(checked)');
+                                                    empty15 = null;
+                                                    empty15 = [];
+                                                    coll.forEach(e => {
+                                                        if (!empty15.includes(e)) {
+                                                            empty15.push(e);
+                                                        }
+                                                    })
+                                                    /* const findIndex = empty01.findIndex(i => i.e === e)
+                                                    if (findIndex) {
+                                                        empty01.splice([findIndex], 1);
+                                                    } */
+                                                };
+                                                // setTimeout(checkTemp15, 3000);
+                                                // clearTimeout(checkTemp15);
+                                            },
+                                                { signal: controller03.signal },
+                                            )
+                                        })
+                                    }
+
+                                    checkTemp15 = () => {
+
+                                        temp15.forEach(e => {
+
+                                            e.addEventListener('change', function () {
+
+                                                if (!e.checked) {
+
+                                                    if (!empty15.includes(e)) {
+                                                        empty15.push(e);
+                                                    };
+                                                    /* const findIndex = temp01.findIndex(i => i.e === e)
+                                                    if (findIndex) {
+                                                        temp01.splice([findIndex], 1);
+                                                    }; */
+                                                    let coll = box15.querySelectorAll('input:checked');
+                                                    temp15 = null;
+                                                    temp15 = [];
+                                                    coll.forEach(e => {
+                                                        if (!temp15.includes(e)) {
+                                                            temp15.push(e);
+                                                        }
+                                                    });
+
+                                                    if (temp15.length == 0) {
+                                                        turgetAlert15.style.display = 'block';
+                                                        //alarm01.style.display = 'block';
+                                                    };
+                                                };
+                                                // setTimeout(checkEmpty15, 3000);
+                                                // clearTimeout(checkEmpty15);
+                                            },
+                                                { signal: controller03.signal },
+                                            )
+                                        })
+                                    }
+
+                                    if (!error01) {
+
+                                        box01Inputs.forEach((e) => {
+
+                                            if (e.checked) {
+
+                                                if (!temp01.includes(e)) {
+                                                    temp01.push(e);
+                                                };
+                                                // checkTemp01();
+
+                                            } else {
+
+                                                if (!empty01.includes(e)) {
+                                                    empty01.push(e);
+                                                };
+                                                checkEmpty01();
+                                            }
+                                        })
+                                    };
+
+                                    if (error01) {
+
+                                        box01Inputs.forEach(e => {
+
+                                            if (!empty01.includes(e)) {
+                                                empty01.push(e);
+                                            };
+
+                                        });
+                                        checkEmpty01();
+                                    }
+
+
+                                    if (!error02) {
+
+                                        box02Inputs.forEach((e) => {
+
+                                            if (e.checked) {
+
+                                                if (!temp02.includes(e)) {
+                                                    temp02.push(e);
+                                                };
+                                                // checkTemp02();
+
+                                            } else {
+
+                                                if (!empty02.includes(e)) {
+                                                    empty02.push(e);
+                                                };
+                                                checkEmpty02();
+                                                //setTimeout(checkEmpty02, 3000);
+                                            }
+                                        })
+                                    };
+
+                                    if (error02) {
+
+                                        box02Inputs.forEach(e => {
+
+                                            if (!empty02.includes(e)) {
+                                                empty02.push(e);
+                                            };
+
+                                        });
+                                        checkEmpty02();
+                                        //setTimeout(checkEmpty02, 3000);
+                                    }
+
+                                    if (!error03) {
+
+                                        box03Inputs.forEach((e) => {
+
+                                            if (e.checked) {
+
+                                                if (!temp03.includes(e)) {
+                                                    temp03.push(e);
+                                                };
+                                                // checkTemp03();
+                                                //setTimeout(checkTemp03, 3000);
+
+                                            } else {
+
+                                                if (!empty03.includes(e)) {
+                                                    empty03.push(e);
+                                                };
+                                                checkEmpty03();
+                                                //setTimeout(checkEmpty03, 3000);
+                                            }
+                                        })
+                                    };
+
+                                    if (error03) {
+
+                                        box03Inputs.forEach(e => {
+
+                                            if (!empty03.includes(e)) {
+                                                empty03.push(e);
+                                            };
+
+                                        });
+                                        //setTimeout(checkEmpty03, 3000);
+                                        checkEmpty03();
+                                    }
+
+                                    if (!error04) {
+
+                                        box04Inputs.forEach((e) => {
+
+                                            if (e.checked) {
+
+                                                if (!temp04.includes(e)) {
+                                                    temp04.push(e);
+                                                };
+                                                // checkTemp04();
+                                                //setTimeout(checkTemp04, 3000);
+
+                                            } else {
+
+                                                if (!empty04.includes(e)) {
+                                                    empty04.push(e);
+                                                };
+                                                checkEmpty04();
+                                                //setTimeout(checkEmpty04, 3000);
+                                            }
+                                        })
+                                    };
+
+                                    if (error04) {
+
+                                        box04Inputs.forEach(e => {
+
+                                            if (!empty04.includes(e)) {
+                                                empty04.push(e);
+                                            };
+
+                                        });
+                                        checkEmpty04();
+                                        //setTimeout(checkEmpty04, 3000);
+                                    }
+
+                                    if (!error05) {
+                                        //console.log('true');
+                                        box05Inputs.forEach((e) => {
+
+                                            if (e.checked) {
+
+                                                if (!temp05.includes(e)) {
+                                                    temp05.push(e);
+                                                };
+                                                // checkTemp05();
+                                                //setTimeout(checkTemp05, 3000);
+
+                                            } else {
+
+                                                if (!empty05.includes(e)) {
+                                                    empty05.push(e);
+                                                };
+                                                checkEmpty05();
+                                                //setTimeout(checkEmpty05, 3000);
+                                            }
+                                        })
+                                    };
+
+                                    if (error05) {
+                                        //console.log('true');
+                                        box05Inputs.forEach(e => {
+
+                                            if (!empty05.includes(e)) {
+                                                empty05.push(e);
+                                            };
+
+                                        });
+                                        checkEmpty05();
+                                        //setTimeout(checkEmpty05, 3000);
+                                    }
+
+                                    if (!error06) {
+                                        //console.log('true');
+                                        box06Inputs.forEach((e) => {
+
+                                            if (e.checked) {
+
+                                                if (!temp06.includes(e)) {
+                                                    temp06.push(e);
+                                                };
+                                                // checkTemp06();
+                                                //setTimeout(checkTemp06, 3000);
+
+                                            } else {
+
+                                                if (!empty06.includes(e)) {
+                                                    empty06.push(e);
+                                                };
+                                                checkEmpty06();
+                                                //setTimeout(checkEmpty06, 3000);
+                                            }
+                                        })
+                                    };
+
+                                    if (error06) {
+                                        //console.log('true');
+                                        box06Inputs.forEach(e => {
+
+                                            if (!empty06.includes(e)) {
+                                                empty06.push(e);
+                                            };
+
+                                        });
+                                        //setTimeout(checkEmpty06, 3000);
+                                        checkEmpty06();
+                                    }
+
+                                    if (!error07) {
+                                        //console.log('true');
+                                        box07Inputs.forEach((e) => {
+
+                                            if (e.checked) {
+
+                                                if (!temp07.includes(e)) {
+                                                    temp07.push(e);
+                                                };
+                                                // checkTemp07();
+                                                //setTimeout(checkTemp07, 3000);
+
+                                            } else {
+
+                                                if (!empty07.includes(e)) {
+                                                    empty07.push(e);
+                                                };
+                                                checkEmpty07();
+                                                //setTimeout(checkEmpty07, 3000);
+                                            }
+                                        })
+                                    };
+
+                                    if (error07) {
+                                        //console.log('true');
+                                        box07Inputs.forEach(e => {
+
+                                            if (!empty07.includes(e)) {
+                                                empty07.push(e);
+                                            };
+
+                                        });
+                                        checkEmpty07();
+                                        //setTimeout(checkEmpty07, 3000);
+                                    }
+
+                                    if (!error08) {
+                                        //console.log('true');
+                                        box08Inputs.forEach((e) => {
+
+                                            if (e.checked) {
+
+                                                if (!temp08.includes(e)) {
+                                                    temp08.push(e);
+                                                };
+                                                // checkTemp08();
+                                                //setTimeout(checkTemp08, 3000);
+
+                                            } else {
+
+                                                if (!empty08.includes(e)) {
+                                                    empty08.push(e);
+                                                };
+                                                checkEmpty08();
+                                                //setTimeout(checkEmpty08, 3000);
+                                            }
+                                        })
+                                    };
+
+                                    if (error08) {
+                                        //console.log('true');
+                                        box08Inputs.forEach(e => {
+
+                                            if (!empty08.includes(e)) {
+                                                empty08.push(e);
+                                            };
+
+                                        });
+                                        checkEmpty08();
+                                        //setTimeout(checkEmpty08, 3000);
+                                    }
+
+                                    if (!error09) {
+                                        //console.log('true');
+                                        box09Inputs.forEach((e) => {
+
+                                            if (e.checked) {
+
+                                                if (!temp09.includes(e)) {
+                                                    temp09.push(e);
+                                                };
+                                                // checkTemp09();
+                                                //setTimeout(checkTemp09, 3000);
+
+                                            } else {
+
+                                                if (!empty09.includes(e)) {
+                                                    empty09.push(e);
+                                                };
+                                                checkEmpty09();
+                                                //setTimeout(checkEmpty09, 3000);
+                                            }
+                                        })
+                                    };
+
+                                    if (error09) {
+                                        //console.log('true');
+                                        box09Inputs.forEach(e => {
+
+                                            if (!empty09.includes(e)) {
+                                                empty09.push(e);
+                                            };
+
+                                        });
+                                        checkEmpty09();
+                                        //setTimeout(checkEmpty09, 3000);
+                                    }
+
+                                    if (!error10) {
+                                        //console.log('true');
+                                        box10Inputs.forEach((e) => {
+
+                                            if (e.checked) {
+
+                                                if (!temp10.includes(e)) {
+                                                    temp10.push(e);
+                                                };
+                                                // checkTemp10();
+                                                //setTimeout(checkTemp10, 3000);
+
+                                            } else {
+
+                                                if (!empty10.includes(e)) {
+                                                    empty10.push(e);
+                                                };
+                                                checkEmpty10();
+                                                //setTimeout(checkEmpty10, 3000);
+                                            }
+                                        })
+                                    };
+
+                                    if (error10) {
+                                        //console.log('true');
+                                        box10Inputs.forEach(e => {
+
+                                            if (!empty10.includes(e)) {
+                                                empty10.push(e);
+                                            };
+
+                                        });
+                                        checkEmpty10();
+                                        //setTimeout(checkEmpty10, 3000);
+                                    }
+
+                                    if (!error11) {
+                                        //console.log('true');
+                                        box11Inputs.forEach((e) => {
+
+                                            if (e.checked) {
+
+                                                if (!temp11.includes(e)) {
+                                                    temp11.push(e);
+                                                };
+                                                // checkTemp11();
+                                                //setTimeout(checkTemp11, 3000);
+
+                                            } else {
+
+                                                if (!empty11.includes(e)) {
+                                                    empty11.push(e);
+                                                };
+                                                checkEmpty11();
+                                                //setTimeout(checkEmpty11, 3000);
+                                            }
+                                        })
+                                    };
+
+                                    if (error11) {
+                                        //console.log('true');
+                                        box11Inputs.forEach(e => {
+
+                                            if (!empty11.includes(e)) {
+                                                empty11.push(e);
+                                            };
+
+                                        });
+                                        checkEmpty11();
+                                        //setTimeout(checkEmpty11, 3000);
+                                    }
+
+                                    if (!error12) {
+                                        //console.log('true');
+                                        box12Inputs.forEach((e) => {
+
+                                            if (e.checked) {
+
+                                                if (!temp12.includes(e)) {
+                                                    temp12.push(e);
+                                                };
+                                                checkTemp12();
+                                                //setTimeout(checkTemp12, 3000);
+
+                                            } else {
+
+                                                if (!empty12.includes(e)) {
+                                                    empty12.push(e);
+                                                };
+                                                checkEmpty12();
+                                                //setTimeout(checkEmpty12, 3000);
+                                            }
+                                        })
+                                    };
+
+                                    if (error12) {
+                                        //console.log('true');
+                                        box12Inputs.forEach(e => {
+
+                                            if (!empty12.includes(e)) {
+                                                empty12.push(e);
+                                            };
+
+                                        });
+                                        checkEmpty12();
+                                        //setTimeout(checkEmpty12, 3000);
+                                    }
+
+                                    if (!error13) {
+                                        //console.log('true');
+                                        box13Inputs.forEach((e) => {
+
+                                            if (e.checked) {
+
+                                                if (!temp13.includes(e)) {
+                                                    temp13.push(e);
+                                                };
+                                                // checkTemp13();
+                                                //setTimeout(checkTemp13, 3000);
+
+                                            } else {
+
+                                                if (!empty13.includes(e)) {
+                                                    empty13.push(e);
+                                                };
+                                                checkEmpty13();
+                                                //setTimeout(checkEmpty13, 3000);
+                                            }
+                                        })
+                                    };
+
+                                    if (error13) {
+                                        //console.log('true');
+                                        box13Inputs.forEach(e => {
+
+                                            if (!empty13.includes(e)) {
+                                                empty13.push(e);
+                                            };
+
+                                        });
+                                        checkEmpty13();
+                                        //setTimeout(checkEmpty13, 3000);
+                                    }
+
+                                    if (!error14) {
+                                        //console.log('true');
+                                        box14Inputs.forEach((e) => {
+
+                                            if (e.checked) {
+
+                                                if (!temp14.includes(e)) {
+                                                    temp14.push(e);
+                                                };
+                                                // checkTemp14();
+                                                //setTimeout(checkTemp14, 3000);
+
+                                            } else {
+
+                                                if (!empty14.includes(e)) {
+                                                    empty14.push(e);
+                                                };
+                                                checkEmpty14();
+                                                //setTimeout(checkEmpty14, 3000);
+                                            }
+                                        })
+                                    };
+
+                                    if (error14) {
+                                        //console.log('true');
+                                        box14Inputs.forEach(e => {
+
+                                            if (!empty14.includes(e)) {
+                                                empty14.push(e);
+                                            };
+
+                                        });
+                                        checkEmpty14();
+                                        //setTimeout(checkEmpty14, 3000);
+                                    }
+
+                                    if (!error15) {
+                                        //console.log('true');
+                                        box15Inputs.forEach((e) => {
+
+                                            if (e.checked) {
+
+                                                if (!temp15.includes(e)) {
+                                                    temp15.push(e);
+                                                };
+                                                // checkTemp15();
+                                                //setTimeout(checkTemp15, 3000);
+
+
+                                            } else {
+
+                                                if (!empty15.includes(e)) {
+                                                    empty15.push(e);
+                                                };
+                                                checkEmpty15();
+                                                //setTimeout(checkEmpty15, 3000);
+
+                                            }
+                                        });
+
+                                    };
+
+                                    if (error15) {
+                                        //console.log('true');
+                                        box15Inputs.forEach(e => {
+
+                                            if (!empty15.includes(e)) {
+                                                empty15.push(e);
+                                            };
+
+                                        });
+                                        checkEmpty15();
+                                        //setTimeout(checkEmpty15, 3000);
+
+                                    }
+
+
+
+
+                                    if (!box01.querySelectorAll('input:checked').length) {
+
+                                        error01 = true;
+
+                                        turgetAlert01.style.display = 'block';
+                                    };
+
+                                    if (!box02.querySelectorAll('input:checked').length) {
+
+                                        error02 = true;
+
+                                        turgetAlert02.style.display = 'block';
+                                    };
+
+                                    if (!box03.querySelectorAll('input:checked').length) {
+
+                                        error03 = true;
+
+                                        turgetAlert03.style.display = 'block';
+                                    };
+
+                                    if (!box04.querySelectorAll('input:checked').length) {
+
+                                        error04 = true;
+
+                                        turgetAlert04.style.display = 'block';
+                                    };
+
+                                    if (!box05.querySelectorAll('input:checked').length) {
+
+                                        error05 = true;
+
+                                        turgetAlert05.style.display = 'block';
+                                    };
+
+                                    if (!box06.querySelectorAll('input:checked').length) {
+
+                                        error06 = true;
+
+                                        turgetAlert06.style.display = 'block';
+                                    };
+
+                                    if (!box07.querySelectorAll('input:checked').length) {
+
+                                        error07 = true;
+
+                                        turgetAlert07.style.display = 'block';
+                                    };
+
+                                    if (!box08.querySelectorAll('input:checked').length) {
+
+                                        error08 = true;
+
+                                        turgetAlert08.style.display = 'block';
+                                    };
+
+                                    if (!box09.querySelectorAll('input:checked').length) {
+
+                                        error09 = true;
+
+                                        turgetAlert09.style.display = 'block';
+                                    };
+
+                                    if (!box10.querySelectorAll('input:checked').length) {
+
+                                        error10 = true;
+
+                                        turgetAlert10.style.display = 'block';
+                                    };
+
+                                    if (!box11.querySelectorAll('input:checked').length) {
+
+                                        error11 = true;
+
+                                        turgetAlert11.style.display = 'block';
+                                    };
+
+                                    if (!box12.querySelectorAll('input:checked').length) {
+
+                                        error12 = true;
+
+                                        turgetAlert12.style.display = 'block';
+                                    };
+
+                                    if (!box13.querySelectorAll('input:checked').length) {
+
+                                        error13 = true;
+
+                                        turgetAlert13.style.display = 'block';
+                                    };
+
+                                    if (!box14.querySelectorAll('input:checked').length) {
+
+                                        error14 = true;
+
+                                        turgetAlert14.style.display = 'block';
+                                    };
+
+                                    if (!box15.querySelectorAll('input:checked').length) {
+
+                                        error15 = true;
+
+                                        turgetAlert15.style.display = 'block';
+                                    };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                    function successTrue() {
+
+                                        controller03.abort();
+
+                                        const controller04 = new AbortController();
+
+                                        //setTimeout(loadingOut, 1000);
+
+                                        scrl03 = 0;
+                                        window.removeEventListener("scroll", f031000);
+                                        positHide.style.display = "none";
+                                        collageDlm.style.display = "block";
+                                        collage.style.display = "block";
+                                        /* window.scrollTo({
+                                            top: coords03.top + maxWidthSec2,
+                                            behavior: 'smooth',
+                                        }); */
+                                        positTitle.scrollIntoView({
+                                            block: "center",
+                                            behavior: 'smooth'
+                                        });
+
+
+
+
+
+
+                                        const f041000 = throttle(scrollHandler04, 1000);
+
+                                        window.addEventListener("scroll", f041000);
+
+                                        let collageHide = document.querySelector(".collage__hide"),
+                                            //collageBtn = document.getElementById("d04-sec"),
+                                            //collageDlmB = document.getElementById("d04"),
+                                            finishDlm = document.getElementById("d05"),
+                                            collageTitle = document.getElementById("collage-title");
+
+                                        /* function getCoords04(collageBtn) {
+                                            let box4 = collageBtn.getBoundingClientRect();
+             
+                                            return {
+                                                top: box4.top + window.scrollY
+                                            };
+                                        } */
+                                        //coords04 = getCoords(collageBtn);
+
+                                        function scrollHandler04() {
+                                            let scrl04 = window.scrollY;
+                                            /* if (scrl04 > coords04.top) {
+                                                window.scrollTo({
+                                                    top: coords04.top,
+                                                    behavior: 'auto',
+                                                });
+                                            }; */
+                                            heightScroll = 32000;
+                                            if (scrl04 > heightScroll) {
+                                                collageBtn.scrollIntoView({
+                                                    block: "center"
+                                                });
+                                                /* window.scrollBy({
+                                                    top: -500,
+                                                    behavior: 'auto',
+                                                }); */
+                                            };
+
+                                            positBtn.removeEventListener('click', turgetCheck);
+
+
+
+                                            function positioningCheck(e) {
+
+                                                e.preventDefault();
+
+
+                                                //successTrue(); /////////////////////////////////////////////////////-----УДАЛИТЬ!!!!!
+                                                /////////////////////////////////////////////////////-----УДАЛИТЬ!!!!!
+                                                /////////////////////////////////////////////////////-----УДАЛИТЬ!!!!!
+                                                /////////////////////////////////////////////////////-----УДАЛИТЬ!!!!!
+                                                /////////////////////////////////////////////////////-----УДАЛИТЬ!!!!!
+
+
+
+
+                                                const boxes = document.querySelectorAll('.positioning__inputs');
+
+                                                const boxTa = document.querySelectorAll('.positioning__textarea');
+                                                const boxTaInp = document.querySelectorAll('.positioning__textarea--inp');
+
+                                                const boxRadio = document.querySelector('.positioning__radio');
+
+                                                boxRadioInputs = boxRadio.querySelectorAll('textarea');
+                                                boxRadioInput2 = document.getElementById("competitor");
+
+                                                const box01 = document.querySelector('.positioning__inputs01');
+
+                                                const box01Inputs = box01.querySelectorAll('input[type="checkbox"]');
+
+                                                const box02 = document.querySelector('.positioning__inputs02');
+
+                                                const box02Inputs = box02.querySelectorAll('input[type="checkbox"]');
+
+                                                //let positioningAlert01 = document.getElementById("alert-positioning-01");
+                                                let positioningAlert02 = document.getElementById("alert-positioning-02");
+                                                let positioningAlert03 = document.getElementById("alert-positioning-03");
+                                                let positioningAlert04 = document.getElementById("alert-positioning-04");
+
+                                                //let positioningAlertTa = document.querySelectorAll('.alert-positioning-ta');
+
+                                                let empty01 = [];
+                                                let temp01 = [];
+                                                let empty02 = [];
+                                                let temp02 = [];
+
+                                                let empty05 = [];
+                                                let temp05 = [];
+
+
+                                                let error = false;
+                                                let error01 = false;
+                                                let error02 = false;
+                                                let errorTa = false;
+                                                let errorTaInp = false;
+
+                                                let errorRadio = false;
+                                                let count = 0;
+
+                                                boxRadioInputs.forEach(el => {
+
+
+
+
+                                                    if ((el.value == '') || (el.value == undefined)) {
+
+
+                                                        count++;
+
+
+                                                    } else {
+
+                                                        if (el.value != '') {
+
+                                                            let num = el.value.length;
+
+                                                            if (num <= 3) {
+
+                                                                count++;
+
+
+                                                                positioningAlert02.style.display = 'block';
+
+                                                            }
+                                                        }
+                                                    };
+
+                                                    checkAreas02 = () => {
+                                                        el.addEventListener('change', function () {
+                                                            if (el.value != '') {
+
+                                                                let num = el.value.length;
+
+                                                                if (num > 3) {
+
+                                                                    count--;
+
+                                                                    if (count < 2) {
+
+                                                                        positioningAlert02.style.display = 'none';
+
+                                                                        errorTaInp = false;
+                                                                    }
+
+                                                                } else {
+
+                                                                    if (num <= 3) {
+
+                                                                        count++;
+                                                                    }
+                                                                }
+                                                            } else if (el.value == '') {
+
+                                                                count++;
+                                                            }
+                                                        },
+                                                            { signal: controller04.signal },
+                                                        )
+                                                    };
+
+                                                    checkAreas02();
+
+
+
+                                                    if (count == 2) {
+
+                                                        positioningAlert02.style.display = 'block';
+
+                                                        errorTaInp = true;
+
+                                                        closeAlert = () => {
+                                                            document.getElementById("dlm-alert-positioning").style.display = "none";
+                                                        }
+
+                                                        document.getElementById("dlm-alert-positioning").style.display = "block";
+                                                        setTimeout(closeAlert, 3000);
+                                                        clearTimeout(closeAlert);
+
+                                                        checkAreas02();
+
+                                                    } else if (count < 2) {
+
+                                                        positioningAlert02.style.display = 'none';
+
+                                                        errorTaInp = false;
+                                                    };
+                                                    //console.log(count);
+                                                })
+
+                                                boxes.forEach(el => {
+
+
+                                                    if (!el.querySelectorAll('input:checked').length) {
+
+                                                        error = true;
+                                                    };
+
+                                                    if (error == true) {
+
+                                                        boxTaInp.forEach(el => {
+
+                                                            let positioningAlertTa = el.parentNode.parentNode.parentNode.querySelector('.alert-positioning-ta');
+                                                            // let turgetAlertPh = document.getElementById('alert-turget-ph02');
+
+                                                            checkAreas = () => {
+                                                                el.addEventListener('change', function () {
+                                                                    if ((el.value == undefined) || (el.value.trim() == '')) {
+
+                                                                        positioningAlertTa.style.display = 'block';
+
+
+                                                                    } else {
+
+                                                                        if (el.value != '') {
+
+                                                                            let num = el.value.length;
+
+                                                                            if (num > 3) {
+
+                                                                                if (positioningAlertTa.style.display = 'block') {
+                                                                                    positioningAlertTa.style.display = 'none';
+                                                                                };
+
+                                                                                error = false;
+
+                                                                            } else {
+
+                                                                                closeAlert = () => {
+                                                                                    document.getElementById("dlm-alert-positioning").style.display = "none";
+                                                                                }
+
+                                                                                document.getElementById("dlm-alert-positioning").style.display = "block";
+                                                                                setTimeout(closeAlert, 3000);
+                                                                                clearTimeout(closeAlert);
+
+                                                                                positioningAlertTa.style.display = 'block';
+
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                },
+                                                                    { signal: controller04.signal },
+                                                                )
+                                                            };
+
+                                                            el.getAttribute('value');
+
+                                                            if ((el.value == undefined) || (el.value.trim() == '')) {
+
+                                                                positioningAlertTa.style.display = 'block';
+
+                                                                error = true;
+
+                                                                closeAlert = () => {
+                                                                    document.getElementById("dlm-alert-positioning").style.display = "none";
+                                                                }
+
+                                                                document.getElementById("dlm-alert-positioning").style.display = "block";
+                                                                setTimeout(closeAlert, 3000);
+                                                                clearTimeout(closeAlert);
+
+                                                                checkAreas();
+
+
+                                                            } else {
+
+                                                                if (el.value != '') {
+
+                                                                    let num = el.value.length;
+
+                                                                    if (num > 3) {
+
+                                                                        if (positioningAlertTa.style.display = 'block') {
+                                                                            positioningAlertTa.style.display = 'none';
+                                                                        };
+
+                                                                        error = false;
+
+                                                                        setTimeout(checkAreas, 3000);
+                                                                        clearTimeout(checkAreas);
+
+                                                                    } else {
+
+                                                                        closeAlert = () => {
+                                                                            document.getElementById("dlm-alert-positioning").style.display = "none";
+                                                                        }
+
+                                                                        document.getElementById("dlm-alert-positioning").style.display = "block";
+
+                                                                        setTimeout(closeAlert, 3000);
+                                                                        clearTimeout(closeAlert);
+
+                                                                        positioningAlertTa.style.display = 'block';
+
+                                                                        error = true;
+
+                                                                        checkAreas();
+                                                                    }
+                                                                }
+                                                            }
+                                                        })
+                                                    }
+                                                });
+
+                                                boxTa.forEach(el => {
+
+                                                    //let boxPhInput = document.getElementById('competitor');
+                                                    let boxTaInputs = el.querySelectorAll('textarea');
+
+                                                    let AllInputs = boxTaInputs;
+
+                                                    boxTaInputs.forEach(el => {
+
+                                                        let positioningAlertTa = el.parentNode.parentNode.parentNode.querySelector('.alert-positioning-ta');
+                                                        // let turgetAlertPh = document.getElementById('alert-turget-ph02');
+
+                                                        checkAreas = () => {
+                                                            el.addEventListener('change', function () {
+                                                                if ((el.value == undefined) || (el.value.trim() == '')) {
+
+                                                                    positioningAlertTa.style.display = 'block';
+
+                                                                    errorTa = true;
+
+
+
+                                                                } else {
+
+                                                                    if (el.value != '') {
+
+                                                                        let num = el.value.length;
+
+                                                                        if (num > 3) {
+
+                                                                            if (positioningAlertTa.style.display = 'block') {
+                                                                                positioningAlertTa.style.display = 'none';
+                                                                            }
+                                                                        } else {
+
+                                                                            closeAlert = () => {
+                                                                                document.getElementById("dlm-alert-positioning").style.display = "none";
+                                                                            }
+
+                                                                            document.getElementById("dlm-alert-positioning").style.display = "block";
+                                                                            setTimeout(closeAlert, 3000);
+                                                                            clearTimeout(closeAlert);
+
+                                                                            positioningAlertTa.style.display = 'block';
+
+                                                                            errorTa = true;
+                                                                        }
+                                                                    }
+                                                                }
+                                                            },
+                                                                { signal: controller04.signal },
+                                                            )
+                                                        };
+
+                                                        el.getAttribute('value');
+                                                        if ((el.value == undefined) || (el.value.trim() == '')) {
+
+                                                            positioningAlertTa.style.display = 'block';
+
+                                                            errorTa = true;
+
+                                                            closeAlert = () => {
+                                                                document.getElementById("dlm-alert-positioning").style.display = "none";
+                                                            }
+
+                                                            document.getElementById("dlm-alert-positioning").style.display = "block";
+                                                            setTimeout(closeAlert, 3000);
+                                                            clearTimeout(closeAlert);
+
+                                                            checkAreas();
+
+
+                                                        } else {
+
+                                                            if (el.value != '') {
+
+                                                                let num = el.value.length;
+
+                                                                if (num > 3) {
+
+                                                                    if (positioningAlertTa.style.display = 'block') {
+                                                                        positioningAlertTa.style.display = 'none';
+                                                                    };
+
+                                                                    checkAreas();
+
+                                                                } else {
+
+                                                                    closeAlert = () => {
+                                                                        document.getElementById("dlm-alert-positioning").style.display = "none";
+                                                                    }
+
+                                                                    document.getElementById("dlm-alert-positioning").style.display = "block";
+
+                                                                    setTimeout(closeAlert, 3000);
+                                                                    clearTimeout(closeAlert);
+
+                                                                    positioningAlertTa.style.display = 'block';
+
+                                                                    errorTa = true;
+
+                                                                    checkAreas();
+                                                                }
+                                                            }
+                                                        }
+                                                    })
+                                                });
+
+                                                checkEmpty01 = () => {
+
+                                                    empty01.forEach(e => {
+                                                        e.addEventListener('change', function () {
+                                                            if (e.checked) {
+
+                                                                if (!temp01.includes(e)) {
+                                                                    temp01.push(e);
+                                                                };
+                                                                if (temp01.length != 0) {
+                                                                    positioningAlert03.style.display = 'none';
+                                                                };
+                                                                let coll = box01.querySelectorAll('input:not(checked)');
+                                                                empty01 = null;
+                                                                empty01 = [];
+                                                                coll.forEach(e => {
+                                                                    if (!empty01.includes(e)) {
+                                                                        empty01.push(e);
+                                                                    }
+                                                                })
+                                                                /* const findIndex = empty01.findIndex(i => i.e === e)
+                                                                if (findIndex) {
+                                                                    empty01.splice([findIndex], 1);
+                                                                } */
+                                                            };
+                                                            // setTimeout(checkTemp01, 3000);
+                                                            // clearTimeout(checkTemp01);
+                                                        },
+                                                            { signal: controller04.signal },
+                                                        )
+                                                    })
+                                                }
+
+                                                checkTemp01 = () => {
+
+                                                    temp01.forEach(e => {
+                                                        e.addEventListener('change', function () {
+                                                            if (!e.checked) {
+
+                                                                if (!empty01.includes(e)) {
+                                                                    empty01.push(e);
+                                                                };
+                                                                /* const findIndex = temp01.findIndex(i => i.e === e)
+                                                                if (findIndex) {
+                                                                    temp01.splice([findIndex], 1);
+                                                                }; */
+                                                                let coll = box01.querySelectorAll('input:checked');
+                                                                temp01 = null;
+                                                                temp01 = [];
+                                                                coll.forEach(e => {
+                                                                    if (!temp01.includes(e)) {
+                                                                        temp01.push(e);
+                                                                    }
+                                                                });
+
+                                                                if (temp01.length == 0) {
+                                                                    positioningAlert03.style.display = 'block';
+                                                                    //alarm01.style.display = 'block';
+                                                                };
+                                                            };
+                                                            // setTimeout(checkEmpty01, 3000);
+                                                            // clearTimeout(checkEmpty01);
+                                                        },
+                                                            { signal: controller04.signal },
+                                                        )
+                                                    })
+                                                }
+
+                                                checkEmpty02 = () => {
+
+                                                    empty02.forEach(e => {
+                                                        e.addEventListener('change', function () {
+                                                            if (e.checked) {
+
+                                                                if (!temp02.includes(e)) {
+                                                                    temp02.push(e);
+                                                                };
+                                                                if (temp02.length != 0) {
+                                                                    positioningAlert04.style.display = 'none';
+                                                                };
+                                                                let coll = box02.querySelectorAll('input:not(checked)');
+                                                                empty02 = null;
+                                                                empty02 = [];
+                                                                coll.forEach(e => {
+                                                                    if (!empty02.includes(e)) {
+                                                                        empty02.push(e);
+                                                                    }
+                                                                })
+                                                                /* const findIndex = empty01.findIndex(i => i.e === e)
+                                                                if (findIndex) {
+                                                                    empty01.splice([findIndex], 1);
+                                                                } */
+                                                            };
+                                                            // setTimeout(checkTemp02, 3000);
+                                                            // clearTimeout(checkTemp02);
+                                                        },
+                                                            { signal: controller04.signal },
+                                                        )
+                                                    })
+                                                }
+
+                                                checkTemp02 = () => {
+
+                                                    temp02.forEach(e => {
+                                                        e.addEventListener('change', function () {
+                                                            if (!e.checked) {
+
+                                                                if (!empty02.includes(e)) {
+                                                                    empty02.push(e);
+                                                                };
+                                                                /* const findIndex = temp01.findIndex(i => i.e === e)
+                                                                if (findIndex) {
+                                                                    temp01.splice([findIndex], 1);
+                                                                }; */
+                                                                let coll = box02.querySelectorAll('input:checked');
+                                                                temp02 = null;
+                                                                temp02 = [];
+                                                                coll.forEach(e => {
+                                                                    if (!temp02.includes(e)) {
+                                                                        temp02.push(e);
+                                                                    }
+                                                                });
+
+                                                                if (temp02.length == 0) {
+                                                                    positioningAlert04.style.display = 'block';
+                                                                    //alarm01.style.display = 'block';
+                                                                };
+                                                            };
+                                                            // setTimeout(checkEmpty02, 3000);
+                                                            // clearTimeout(checkEmpty02);
+
+                                                        },
+                                                            { signal: controller04.signal },
+                                                        )
+                                                    })
+                                                }
+
+
+
+
+
+                                                if (!error01) {
+
+                                                    box01Inputs.forEach((e) => {
+
+                                                        if (e.checked) {
+
+                                                            if (!temp01.includes(e)) {
+                                                                temp01.push(e);
+                                                            };
+
+                                                            // checkTemp01();
+
+                                                        } else {
+
+                                                            if (!empty01.includes(e)) {
+                                                                empty01.push(e);
+                                                            };
+
+                                                            checkEmpty01();
+                                                        }
+                                                    })
+                                                };
+
+                                                if (error01) {
+
+                                                    box01Inputs.forEach(e => {
+
+                                                        if (!empty01.includes(e)) {
+                                                            empty01.push(e);
+                                                        };
+
+                                                    });
+                                                    checkEmpty01();
+                                                }
+
+                                                if (!error02) {
+
+                                                    box02Inputs.forEach((e) => {
+
+                                                        if (e.checked) {
+
+                                                            if (!temp02.includes(e)) {
+                                                                temp02.push(e);
+                                                            };
+
+                                                            // checkTemp02();
+
+                                                        } else {
+
+                                                            if (!empty02.includes(e)) {
+                                                                empty02.push(e);
+                                                            };
+
+                                                            checkEmpty02();
+                                                        }
+                                                    })
+                                                };
+
+                                                if (error02) {
+
+                                                    box02Inputs.forEach(e => {
+
+                                                        if (!empty02.includes(e)) {
+                                                            empty02.push(e);
+                                                        };
+
+                                                    });
+                                                    checkEmpty02();
+                                                }
+
+
+
+                                                /* if (!errorRadio) {
+
+                                                    boxRadioInputs.forEach((e) => {
+
+                                                        if (e.checked) {
+
+                                                            if (!temp05.includes(e)) {
+                                                                temp05.push(e);
+                                                            };
+
+                                                            checkTemp05();
+
+                                                        } else {
+
+                                                            if (!empty05.includes(e)) {
+                                                                empty05.push(e);
+                                                            };
+
+                                                            checkEmpty05();
+                                                        }
+                                                    })
+                                                };
+
+                                                if (errorRadio) {
+
+                                                    boxRadioInputs.forEach(e => {
+
+                                                        if (!empty05.includes(e)) {
+                                                            empty05.push(e);
+                                                        };
+
+                                                    });
+                                                    checkEmpty05();
+                                                } */
+
+                                                if (!box01.querySelectorAll('input:checked').length) {
+
+                                                    error01 = true;
+
+                                                    positioningAlert03.style.display = 'block';
+                                                };
+
+                                                if (!box02.querySelectorAll('input:checked').length) {
+
+                                                    error02 = true;
+
+                                                    positioningAlert04.style.display = 'block';
+                                                };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                //console.log(error);
+
+                                                function successTrue() {
+
+                                                    controller04.abort();
+
+                                                    const controller05 = new AbortController();
+
+
+
+                                                    scrl04 = 0;
+                                                    window.removeEventListener("scroll", f041000);
+                                                    collageHide.style.display = "none";
+                                                    finishDlm.style.display = "block";
+                                                    collage.style.display = "block";
+                                                    /* window.scrollTo({
+                                                        top: coords04.top + maxWidthSec2,
+                                                        behavior: 'smooth',
+                                                    }); */
+                                                    collageTitle.scrollIntoView({
+                                                        block: "center",
+                                                        behavior: 'smooth'
+                                                    })
+
+                                                    collageBtn.removeEventListener('click', positioningCheck);
+
+
+
+
+
+
+
+
+
+                                                    function collageCheck() {
+
+                                                        e.preventDefault();
+
+                                                        const boxes = document.querySelectorAll('.collage__inputs');
+
+                                                        const Ta = document.querySelector('.collage__textarea');
+                                                        const taInput = document.querySelector('.collage__textarea--inp');
+
+                                                        const box01 = document.querySelector('.collage__inputs01');
+
+                                                        const box01Inputs = box01.querySelectorAll('input[type="checkbox"]');
+
+                                                        const box02 = document.querySelector('.collage__inputs02');
+
+                                                        const box02Inputs = box02.querySelectorAll('input[type="checkbox"]');
+
+                                                        const boxInputs = document.querySelectorAll('.collage__checkbox--inp');
+
+                                                        //let positioningAlert01 = document.getElementById("alert-positioning-01");
+                                                        let collageAlert01 = document.getElementById("alert-collage-01");
+                                                        let collageAlert02 = document.getElementById("alert-collage-02");
+                                                        let collageAlert03 = document.getElementById("alert-collage-03");
+
+                                                        //let positioningAlertTa = document.querySelectorAll('.alert-positioning-ta');
+
+                                                        let empty01 = [];
+                                                        let temp01 = [];
+                                                        let empty02 = [];
+                                                        let temp02 = [];
+
+                                                        let error = false;
+                                                        let error01 = false;
+                                                        let error02 = false;
+                                                        let errorTa = false;
+
+                                                        boxes.forEach(el => {
+
+
+                                                            if (!el.querySelectorAll('input:checked').length) {
+
+                                                                error = true;
+                                                            }
+
+                                                            if (error == true) {
+
+                                                                boxInputs.forEach(el => {
+
+                                                                    let collageAlertTa = el.parentNode.parentNode.parentNode.querySelector('.alert-collage-ta');
+                                                                    // let turgetAlertPh = document.getElementById('alert-turget-ph02');
+
+                                                                    checkAreas = () => {
+                                                                        el.addEventListener('change', function () {
+                                                                            if ((el.value == undefined) || (el.value.trim() == '')) {
+
+                                                                                collageAlertTa.style.display = 'block';
+
+
+                                                                            } else {
+
+                                                                                if (el.value != '') {
+
+                                                                                    let num = el.value.length;
+
+                                                                                    if (num > 3) {
+
+                                                                                        if (collageAlertTa.style.display = 'block') {
+                                                                                            collageAlertTa.style.display = 'none';
+                                                                                        };
+
+                                                                                        error = false;
+
+                                                                                    } else {
+
+                                                                                        closeAlert = () => {
+                                                                                            document.getElementById("dlm-alert-collage").style.display = "none";
+                                                                                        }
+
+                                                                                        document.getElementById("dlm-alert-collage").style.display = "block";
+                                                                                        setTimeout(closeAlert, 3000);
+                                                                                        clearTimeout(closeAlert);
+
+                                                                                        collageAlertTa.style.display = 'block';
+
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        },
+                                                                            { signal: controller05.signal },
+                                                                        )
+                                                                    };
+
+                                                                    el.getAttribute('value');
+
+                                                                    if ((el.value == undefined) || (el.value.trim() == '')) {
+
+                                                                        collageAlertTa.style.display = 'block';
+
+                                                                        error = true;
+
+                                                                        closeAlert = () => {
+                                                                            document.getElementById("dlm-alert-collage").style.display = "none";
+                                                                        }
+
+                                                                        document.getElementById("dlm-alert-collage").style.display = "block";
+
+                                                                        setTimeout(closeAlert, 3000);
+                                                                        clearTimeout(closeAlert);
+
+                                                                        checkAreas();
+
+
+                                                                    } else {
+
+                                                                        if (el.value != '') {
+
+                                                                            let num = el.value.length;
+
+                                                                            if (num > 3) {
+
+                                                                                if (collageAlertTa.style.display = 'block') {
+                                                                                    collageAlertTa.style.display = 'none';
+                                                                                };
+
+                                                                                error = false;
+
+                                                                                checkAreas();
+
+                                                                            } else {
+
+                                                                                closeAlert = () => {
+                                                                                    document.getElementById("dlm-alert-collage").style.display = "none";
+                                                                                }
+
+                                                                                document.getElementById("dlm-alert-collage").style.display = "block";
+
+                                                                                setTimeout(closeAlert, 3000);
+                                                                                clearTimeout(closeAlert);
+
+                                                                                collageAlertTa.style.display = 'block';
+
+                                                                                error = true;
+
+                                                                                checkAreas();
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                })
+                                                            }
+                                                        })
+
+                                                        taInput.getAttribute('value');
+
+                                                        checkAreas02 = () => {
+                                                            taInput.addEventListener('change', function () {
+                                                                if ((taInput.value == undefined) || (taInput.value.trim() == '')) {
+
+                                                                    collageAlert03.style.display = 'block';
+
+
+                                                                } else {
+
+                                                                    if (taInput.value != '') {
+
+                                                                        let num = taInput.value.length;
+
+                                                                        if (num > 3) {
+
+                                                                            if (collageAlert03.style.display = 'block') {
+                                                                                collageAlert03.style.display = 'none';
+                                                                            };
+
+                                                                            errorTa = false;
+
+                                                                        } else {
+
+                                                                            closeAlert = () => {
+                                                                                document.getElementById("dlm-alert-collage").style.display = "none";
+                                                                            }
+
+                                                                            document.getElementById("dlm-alert-collage").style.display = "block";
+                                                                            setTimeout(closeAlert, 3000);
+                                                                            clearTimeout(closeAlert);
+
+                                                                            collageAlert03.style.display = 'block';
+                                                                        }
+                                                                    }
+                                                                }
+                                                            },
+                                                                { signal: controller05.signal },
+                                                            )
+                                                        };
+
+                                                        if ((taInput.value == undefined) || (taInput.value.trim() == '')) {
+
+                                                            collageAlert03.style.display = 'block';
+
+                                                            errorTa = true;
+
+                                                            closeAlert = () => {
+                                                                document.getElementById("dlm-alert-collage").style.display = "none";
+                                                            }
+
+                                                            document.getElementById("dlm-alert-collage").style.display = "block";
+
+                                                            setTimeout(closeAlert, 3000);
+                                                            clearTimeout(closeAlert);
+
+                                                            checkAreas02();
+
+
+                                                        } else {
+
+                                                            if (taInput.value != '') {
+
+                                                                let num = taInput.value.length;
+
+                                                                if (num > 3) {
+
+                                                                    if (collageAlert03.style.display = 'block') {
+                                                                        collageAlert03.style.display = 'none';
+                                                                    };
+
+                                                                    errorTa = false;
+
+                                                                    checkAreas02();
+
+                                                                } else {
+
+                                                                    closeAlert = () => {
+                                                                        document.getElementById("dlm-alert-collage").style.display = "none";
+                                                                    }
+
+                                                                    document.getElementById("dlm-alert-collage").style.display = "block";
+
+                                                                    setTimeout(closeAlert, 3000);
+                                                                    clearTimeout(closeAlert);
+
+                                                                    collageAlert03.style.display = 'block';
+
+                                                                    errorTa = true;
+
+                                                                    checkAreas02();
+                                                                }
+                                                            }
+                                                        }
+
+                                                        checkEmpty01 = () => {
+
+                                                            empty01.forEach(e => {
+                                                                e.addEventListener('change', function () {
+                                                                    if (e.checked) {
+
+                                                                        if (!temp01.includes(e)) {
+                                                                            temp01.push(e);
+                                                                        };
+                                                                        if (temp01.length != 0) {
+                                                                            collageAlert01.style.display = 'none';
+                                                                        };
+                                                                        let coll = box01.querySelectorAll('input:not(checked)');
+                                                                        empty01 = null;
+                                                                        empty01 = [];
+                                                                        coll.forEach(e => {
+                                                                            if (!empty01.includes(e)) {
+                                                                                empty01.push(e);
+                                                                            }
+                                                                        })
+                                                                        /* const findIndex = empty01.findIndex(i => i.e === e)
+                                                                        if (findIndex) {
+                                                                            empty01.splice([findIndex], 1);
+                                                                        } */
+                                                                    };
+                                                                    setTimeout(checkTemp01, 3000);
+                                                                    clearTimeout(checkTemp01);
+                                                                },
+                                                                    { signal: controller05.signal },
+                                                                )
+                                                            })
+                                                        }
+
+                                                        checkTemp01 = () => {
+
+                                                            temp01.forEach(e => {
+                                                                e.addEventListener('change', function () {
+                                                                    if (!e.checked) {
+
+                                                                        if (!empty01.includes(e)) {
+                                                                            empty01.push(e);
+                                                                        };
+                                                                        /* const findIndex = temp01.findIndex(i => i.e === e)
+                                                                        if (findIndex) {
+                                                                            temp01.splice([findIndex], 1);
+                                                                        }; */
+                                                                        let coll = box01.querySelectorAll('input:checked');
+                                                                        temp01 = null;
+                                                                        temp01 = [];
+                                                                        coll.forEach(e => {
+                                                                            if (!temp01.includes(e)) {
+                                                                                temp01.push(e);
+                                                                            }
+                                                                        });
+
+                                                                        if (temp01.length == 0) {
+                                                                            collageAlert01.style.display = 'block';
+                                                                            //alarm01.style.display = 'block';
+                                                                        };
+                                                                    };
+                                                                    setTimeout(checkEmpty01, 3000);
+                                                                    clearTimeout(checkEmpty01);
+                                                                },
+                                                                    { signal: controller05.signal },
+                                                                )
+                                                            })
+                                                        }
+
+                                                        checkEmpty02 = () => {
+
+                                                            empty02.forEach(e => {
+                                                                e.addEventListener('change', function () {
+                                                                    if (e.checked) {
+
+                                                                        if (!temp02.includes(e)) {
+                                                                            temp02.push(e);
+                                                                        };
+                                                                        if (temp02.length != 0) {
+                                                                            collageAlert02.style.display = 'none';
+                                                                        };
+                                                                        let coll = box02.querySelectorAll('input:not(checked)');
+                                                                        empty02 = null;
+                                                                        empty02 = [];
+                                                                        coll.forEach(e => {
+                                                                            if (!empty02.includes(e)) {
+                                                                                empty02.push(e);
+                                                                            }
+                                                                        })
+                                                                        /* const findIndex = empty01.findIndex(i => i.e === e)
+                                                                        if (findIndex) {
+                                                                            empty01.splice([findIndex], 1);
+                                                                        } */
+                                                                    };
+                                                                    setTimeout(checkTemp02, 3000);
+                                                                    clearTimeout(checkTemp02);
+                                                                },
+                                                                    { signal: controller05.signal },
+                                                                )
+                                                            })
+                                                        }
+
+                                                        checkTemp02 = () => {
+
+                                                            temp02.forEach(e => {
+                                                                e.addEventListener('change', function () {
+                                                                    if (!e.checked) {
+
+                                                                        if (!empty02.includes(e)) {
+                                                                            empty02.push(e);
+                                                                        };
+                                                                        /* const findIndex = temp01.findIndex(i => i.e === e)
+                                                                        if (findIndex) {
+                                                                            temp01.splice([findIndex], 1);
+                                                                        }; */
+                                                                        let coll = box02.querySelectorAll('input:checked');
+                                                                        temp02 = null;
+                                                                        temp02 = [];
+                                                                        coll.forEach(e => {
+                                                                            if (!temp02.includes(e)) {
+                                                                                temp02.push(e);
+                                                                            }
+                                                                        });
+
+                                                                        if (temp02.length == 0) {
+                                                                            collageAlert02.style.display = 'block';
+                                                                            //alarm01.style.display = 'block';
+                                                                        };
+                                                                    };
+                                                                    setTimeout(checkEmpty02, 3000);
+                                                                    clearTimeout(checkEmpty02);
+                                                                },
+                                                                    { signal: controller05.signal },
+                                                                )
+                                                            })
+                                                        }
+
+
+
+
+
+                                                        if (!error01) {
+
+                                                            box01Inputs.forEach((e) => {
+
+                                                                if (e.checked) {
+
+                                                                    if (!temp01.includes(e)) {
+                                                                        temp01.push(e);
+                                                                    };
+
+                                                                    checkTemp01();
+
+                                                                } else {
+
+                                                                    if (!empty01.includes(e)) {
+                                                                        empty01.push(e);
+                                                                    };
+
+                                                                    checkEmpty01();
+                                                                }
+                                                            })
+                                                        };
+
+                                                        if (error01) {
+
+                                                            box01Inputs.forEach(e => {
+
+                                                                if (!empty01.includes(e)) {
+                                                                    empty01.push(e);
+                                                                };
+
+                                                            });
+                                                            checkEmpty01();
+                                                        }
+
+                                                        if (!error02) {
+
+                                                            box02Inputs.forEach((e) => {
+
+                                                                if (e.checked) {
+
+                                                                    if (!temp02.includes(e)) {
+                                                                        temp02.push(e);
+                                                                    };
+
+                                                                    checkTemp02();
+
+                                                                } else {
+
+                                                                    if (!empty02.includes(e)) {
+                                                                        empty02.push(e);
+                                                                    };
+
+                                                                    checkEmpty02();
+                                                                }
+                                                            })
+                                                        };
+
+                                                        if (error02) {
+
+                                                            box02Inputs.forEach(e => {
+
+                                                                if (!empty02.includes(e)) {
+                                                                    empty02.push(e);
+                                                                };
+
+                                                            });
+                                                            checkEmpty02();
+                                                        }
+
+                                                        if (!box01.querySelectorAll('input:checked').length) {
+
+                                                            error01 = true;
+
+                                                            positioningAlert03.style.display = 'block';
+                                                        };
+
+                                                        if (!box02.querySelectorAll('input:checked').length) {
+
+                                                            error02 = true;
+
+                                                            positioningAlert04.style.display = 'block';
+                                                        };
+
+                                                        function successTrue() {
+
+                                                            controller05.abort();
+
+                                                            document.location.replace('https://yandex.ru');
+
+                                                            // finishForm.onclick = () => {
+
+                                                            //     document.location.replace('https://yandex.ru');
+                                                            // };
+
+                                                            //console.log('true');
+
+                                                            //document.location.href = 'https://yandex.ru';
+
+                                                        };
+
+                                                        if ((errorTa === false) && (error === false)) {
+
+                                                            success = true;
+                                                            //console.log('success = ' + success);
+                                                        } else {
+
+
+                                                            //console.log('false');
+                                                            //setTimeout(loadingOut, 1000);
+                                                            return;
+                                                        };
+
+                                                        function ifSuccess() {
+
+                                                            if (success == true) {
+
+                                                                successTrue();
+
+                                                            } else {
+                                                                return;
+                                                            }
+                                                        };
+
+                                                        ifSuccess();
+                                                    };
+
+                                                    finishForm.addEventListener('click', collageCheck);
+                                                };
+
+
+                                                if ((error === false) && (errorTa === false) && (errorTaInp === false)) {
+
+                                                    success = true;
+                                                    //console.log('success = ' + success);
+                                                } else {
+
+                                                    //setTimeout(loadingOut, 1000);
+                                                    return;
+                                                };
+
+                                                function ifSuccess() {
+
+                                                    if (success == true) {
+                                                        successTrue();
+                                                    } else {
+                                                        return;
+                                                    }
+                                                };
+
+                                                ifSuccess();
+                                            };
+
+                                            collageBtn.addEventListener('click', positioningCheck);
+                                        }
+                                    };
+
+                                    if ((error === false) && (errorPh === false)) {
+
+                                        success = true;
+
+
+                                        //console.log('success = ' + success);
+                                    } else {
+
+                                        //setTimeout(loadingOut, 1000);
+                                        return;
+                                    };
+
+                                    function ifSuccess() {
+
+                                        if (success == true) {
+
+                                            successTrue();
+
+                                        } else {
+
+                                            return;
+                                        }
+                                    };
+
+                                    ifSuccess();
+                                };
+
+                                positBtn.addEventListener('click', turgetCheck);
                             }
                         };
+
+                        if ((error === false) && (errorTa === false)) {
+
+                            success = true;
+                            //console.log('success = ' + success);
+
+
+                        } else {
+
+                            return;
+                        };
+
+                        function ifSuccess() {
+
+                            if (success == true) {
+                                successTrue();
+                            } else {
+                                return;
+                            }
+                        };
+
+                        ifSuccess();
 
                         /* function ifNotnull() {
 
@@ -1489,7 +4560,11 @@ window.addEventListener('DOMContentLoaded', () => {
                         } */
 
                         //ifNotnull();
-                    })
+                    };
+
+                    budgetBtn.removeEventListener('click', customerCheck);
+
+                    turgetBtn.addEventListener('click', budgetCheck);
                 }
             }
 
@@ -1510,13 +4585,22 @@ window.addEventListener('DOMContentLoaded', () => {
             }
 
             ifNotnull();
+        };
 
-        })
+        budgetBtn.addEventListener('click', customerCheck);
     }
 })
 
 
 //console.log(completed);
+
+let loadingOut = () => {
+    document.querySelector('.downloader').style.display = 'none';
+};
+let loadingIn = () => {
+    document.querySelector('.downloader').style.display = 'block';
+    //setTimeout(loadingOut, 300);
+};
 
 
 
@@ -1739,6 +4823,47 @@ let counter06 = new counterInput(document.getElementById("coun-ar-r06").children
 counter06.start();
 
 
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// Форма отправки
+
+
+/* const form = document.querySelector('.form');
+
+const sendForm = (data) => {
+    return fetch('mail.php', {
+        method: 'post',
+        body: JSON.stringify(data),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8'
+        }
+    }).then(res => res.json());
+}
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const dataForm = new FormData(form);
+    const user = {};
+
+    dataForm.forEach((val, key) => {
+        user[key] = val;
+    });
+
+    // console.log(dataForm.has([budget_01]));
+
+    sendForm(user).then(data => {
+        console.log('Письмо отправлено успешно');
+    });
+
+    form.reset();
+}) */
 
 
 

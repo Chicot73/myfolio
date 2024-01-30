@@ -1,0 +1,5 @@
+.buttons__btnname2 {
+    @include font (600, 2rem, 150%);
+    @include gray-23;
+    text-align: center;
+}

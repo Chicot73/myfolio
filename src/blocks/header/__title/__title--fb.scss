@@ -1,0 +1,30 @@
+.header__title--fb {
+    font-weight: bold;
+    font-size: 6.4rem;
+    line-height: 112%;
+    line-height: 100%;
+    font-family: 'Bebas Neue';
+    text-transform: uppercase;
+    @include gray-1;
+    margin-bottom: 5.4rem;
+    margin-top: 5.6rem;
+}
+
+@media only screen and (max-width: 76.5em) {
+    .header__title--fb {
+        font-size: 5.7rem;
+    }
+}
+
+@media only screen and (max-width: 48.09em) {
+    .header__title--fb {
+        font-size: 5.15rem;
+    }
+}
+
+@media only screen and (max-width: 36.09em) {
+    .header__title--fb {
+        margin-bottom: 2rem;
+        letter-spacing: -0.02em;
+    }
+}

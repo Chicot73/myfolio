@@ -14,7 +14,6 @@
     <meta name="theme-color" content="#ffffff">
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <link rel="stylesheet" href="../css/style.css">
-    <script defer src="../js/script-brief.js"></script>
     <title>Myfolio - Brief</title>
 </head>
 
@@ -59,7 +58,7 @@
             </a>
         </header>
         <main>
-            <div class="form">
+            <form action="#" method="post" class="form">
                 <section class="customer">
                     <div class="customer__first">
                         <div class="I-part">
@@ -153,7 +152,7 @@
                                             <img src="../img/brief/alert.svg" alt="alert">
                                         </span>дата утверждения</h2>
                                     <label for="deadline-1">
-                                        <input type="date" name="deadline-1" id="deadline-1"
+                                        <input type="date" name="deadline_1" id="deadline-1"
                                             placeholder="Дата, когда предполагается утверждение проекта"
                                             class="customer__input customer__marc2" oninput="">
                                         <div class="customer__input--placeholder">
@@ -166,7 +165,7 @@
                                             <img src="../img/brief/alert.svg" alt="alert">
                                         </span>Дата запуска</h2>
                                     <label for="deadline-2">
-                                        <input type="date" name="deadline-2" id="deadline-2"
+                                        <input type="date" name="deadline_2" id="deadline-2"
                                             placeholder="Дата запуска проекта" class="customer__input customer__marc2"
                                             oninput="">
                                         <div class="customer__input--placeholder">
@@ -266,21 +265,21 @@
                                 </div>
                                 <div class="main__inputs">
                                     <div class="main__textblock">
-                                        <input class="main__input budget__checkbox--01" type="checkbox" name="logo"
-                                            id="logo">
+                                        <input class="main__input budget__checkbox--01" type="checkbox"
+                                            name="budget_01[]" value="logo" id="logo">
                                         <label for="logo" class="main__label"><span>Логотип</span>
                                         </label>
-                                        <input class="main__input budget__checkbox--01" type="checkbox" name="colors"
-                                            id="colors">
-                                        <label for="colors" class="main__label"><span>Фирменные цвета</span>
+                                        <input class="main__input budget__checkbox--01" type="checkbox"
+                                            name="budget_01[]" value="colors" id="colors">
+                                        <label for="colors" class="main__label"><span>Фирменный цвет (цвета)</span>
                                         </label>
-                                        <input class="main__input budget__checkbox--01" type="checkbox" name="images"
-                                            id="images">
+                                        <input class="main__input budget__checkbox--01" type="checkbox"
+                                            name="budget_01[]" value="images" id="images">
                                         <label for="images" class="main__label"><span>Подобрать имиджевые фотографии,
                                                 шрифты, оформительские элементы</span>
                                         </label>
-                                        <input class="main__input budget__checkbox--01" type="checkbox" name="content"
-                                            id="content">
+                                        <input class="main__input budget__checkbox--01" type="checkbox"
+                                            name="budget_01[]" value="content" id="content">
                                         <label for="content" class="main__label"><span>Наполнение сайта (текст,
                                                 фотографии и
                                                 весь графический материал)</span>
@@ -288,7 +287,7 @@
                                     </div>
                                     <div class="main__textblock">
                                         <input class="main__input budget__checkbox--01" type="checkbox"
-                                            name="budget_nothing01" id="budget_nothing01">
+                                            name="budget_01[]" value="Ничего" id="budget_nothing01">
                                         <label for="budget_nothing01" class="main__label semibold"><span>Ничего из
                                                 вышеперечисленного</span>
                                         </label>
@@ -496,7 +495,7 @@
                                             </label>
                                         </div>
                                     </div>
-                                    <div class="main__zero-1 lh">.</div>
+                                    <!-- <div class="main__zero-1 lh">.</div> -->
                                     <div class="main__textblock">
                                         <input class="main__input budget__checkbox--02" type="checkbox"
                                             name="budget_nothing02" id="budget_nothing02">
@@ -550,41 +549,46 @@
                     <div class="history__wrapper">
                         <div class="aside--2"></div>
                         <div class="main history__textarea">
-                            <h3 class="main__title--2">
-                                <span class="alert" id="alert-budget-04">
-                                    <img src="../img/brief/alert.svg" alt="alert">
-                                </span>Предыдущие проекты
-                            </h3>
-                            <div class="main__textblock">
-                                <h3 class="main__subtitle">Чего не добились дизайнеры, разрабатывая предыдущие
-                                    версии
-                                    сайта?</h3>
-                                <h3 class="main__subtitle">Что, какую тенденцию в оформлении хотелось бы продолжить?
+                            <div class="history__block">
+                                <h3 class="main__title--2">
+                                    <span class="alert" id="alert-budget-04">
+                                        <img src="../img/brief/alert.svg" alt="alert">
+                                    </span>Предыдущие проекты
                                 </h3>
+                                <div class="main__textblock">
+                                    <h3 class="main__subtitle">Чего не добились дизайнеры, разрабатывая предыдущие
+                                        версии
+                                        сайта?</h3>
+                                    <h3 class="main__subtitle">Что, какую тенденцию в оформлении хотелось бы продолжить?
+                                    </h3>
+                                </div>
+                                <label for="old-progects">
+                                    <textarea name="old-progects" id="old-progects"
+                                        placeholder="Внесите сведения по вопросам вверху, укажите адрес старого сайта, если он существует"
+                                        class="main__textarea"></textarea>
+                                </label>
+                                <div class="main__zero-1">.</div>
                             </div>
-                            <label for="old-progects">
-                                <textarea name="old-progects" id="old-progects"
-                                    placeholder="Внесите сведения по вопросам вверху, укажите адрес старого сайта, если он существует"
-                                    class="main__textarea"></textarea>
-                            </label>
-                            <div class="main__zero-1">.</div>
-                            <h3 class="main__title--2"><span class="alert" id="alert-budget-05">
-                                    <img src="../img/brief/alert.svg" alt="alert">
-                                </span>Конкурентное окружение
-                            </h3>
-                            <div class="main__textblock">
-                                <h3 class="main__subtitle">Какие компании являются вашими прямыми конкурентами?
+                            <div class="history__block">
+                                <h3 class="main__title--2">
+                                    <span class="alert" id="alert-budget-05">
+                                        <img src="../img/brief/alert.svg" alt="alert">
+                                    </span>Конкурентное окружение
                                 </h3>
-                                <h3 class="main__subtitle">Как они позиционируют/рекламируют себя на рынке услуг?
-                                </h3>
-                                <h3 class="main__subtitle">Что вам нравится/не нравится в их рекламных проектах?
-                                </h3>
+                                <div class="main__textblock">
+                                    <h3 class="main__subtitle">Какие компании являются вашими прямыми конкурентами?
+                                    </h3>
+                                    <h3 class="main__subtitle">Как они позиционируют/рекламируют себя на рынке услуг?
+                                    </h3>
+                                    <h3 class="main__subtitle">Что вам нравится/не нравится в их рекламных проектах?
+                                    </h3>
+                                </div>
+                                <label for="competitors">
+                                    <textarea name="competitors" id="competitors"
+                                        placeholder="Внесите сведения по вопросам вверху, укажите ссылки на сайты основных конкурентов"
+                                        class="main__textarea"></textarea>
+                                </label>
                             </div>
-                            <label for="competitors">
-                                <textarea name="competitors" id="competitors"
-                                    placeholder="Внесите сведения по вопросам вверху, укажите ссылки на сайты основных конкурентов"
-                                    class="main__textarea"></textarea>
-                            </label>
                         </div>
                     </div>
                 </section>
@@ -661,8 +665,7 @@
                         </aside>
                         <div class="main">
                             <h2 class="main__title" id="turget-title">Основная Целевая
-                                аудитория<br><span>(фактические
-                                    потребители)</span>
+                                аудитория<br><span>(фактические потребители)</span>
                             </h2>
                             <div class="main__zero-1">.</div>
                             <div class="main__inputs">
@@ -670,13 +673,13 @@
                                 </h3>
                             </div>
                             <div class="main__inputs">
-                                <div class="main__complex">
-                                    <h4 class="main__subtitle-bullet"><span class="alert">
+                                <div class="main__complex turget__inputs turget__inputs01">
+                                    <h4 class="main__subtitle-bullet"><span class="alert" id="alert-turget-01">
                                             <img src="../img/brief/alert.svg" alt="alert">
                                         </span>
-                                        <span class="alert">
+                                        <!-- <span class="alert">
                                             <img src="../img/brief/alert.svg" alt="alert">
-                                        </span>
+                                        </span> -->
                                         Пол
                                     </h4>
                                     <input class="main__input" type="checkbox" name="female" id="female">
@@ -687,41 +690,44 @@
                                     </label>
                                     <div class="main__zero-6"></div>
                                 </div>
-                                <h4 class="main__subtitle-bullet"><span class="alert">
-                                        <img src="../img/brief/alert.svg" alt="alert">
-                                    </span>
-                                    <span class="alert">
-                                        <img src="../img/brief/alert.svg" alt="alert">
-                                    </span>
-                                    Возраст
-                                </h4>
-                                <div class="main__complex">
-                                    <input class="main__input" type="checkbox" name="6-11" id="6-11">
-                                    <label for="6-11" class="main__label"><span>6-11 лет</span>
-                                    </label>
-                                    <input class="main__input" type="checkbox" name="12-19" id="12-19">
-                                    <label for="12-19" class="main__label"><span>12-19 лет</span>
-                                    </label>
-                                    <input class="main__input" type="checkbox" name="20-34" id="20-34">
-                                    <label for="20-34" class="main__label"><span>20-34 года</span>
-                                    </label>
-                                    <input class="main__input" type="checkbox" name="35-49" id="35-49">
-                                    <label for="35-49" class="main__label"><span>35-49 лет</span>
-                                    </label>
-                                    <input class="main__input" type="checkbox" name="50-64" id="50-64">
-                                    <label for="50-64" class="main__label"><span>50-64 года</span>
-                                    </label>
-                                    <input class="main__input" type="checkbox" name="65" id="65">
-                                    <label for="65" class="main__label"><span>65 лет и старше</span>
-                                    </label>
-                                    <div class="main__zero-6"></div>
+                                <div class="turget__inputs turget__inputs02">
+                                    <h4 class="main__subtitle-bullet"><span class="alert" id="alert-turget-02">
+                                            <img src="../img/brief/alert.svg" alt="alert">
+                                        </span>
+                                        <!-- <span class="alert">
+                                            <img src="../img/brief/alert.svg" alt="alert">
+                                        </span> -->
+                                        Возраст
+                                    </h4>
+                                    <div class="main__complex">
+                                        <input class="main__input" type="checkbox" name="6-11" id="6-11">
+                                        <label for="6-11" class="main__label"><span>6-11 лет</span>
+                                        </label>
+                                        <input class="main__input" type="checkbox" name="12-19" id="12-19">
+                                        <label for="12-19" class="main__label"><span>12-19 лет</span>
+                                        </label>
+                                        <input class="main__input" type="checkbox" name="20-34" id="20-34">
+                                        <label for="20-34" class="main__label"><span>20-34 года</span>
+                                        </label>
+                                        <input class="main__input" type="checkbox" name="35-49" id="35-49">
+                                        <label for="35-49" class="main__label"><span>35-49 лет</span>
+                                        </label>
+                                        <input class="main__input" type="checkbox" name="50-64" id="50-64">
+                                        <label for="50-64" class="main__label"><span>50-64 года</span>
+                                        </label>
+                                        <input class="main__input" type="checkbox" name="65" id="65">
+                                        <label for="65" class="main__label"><span>65 лет и старше</span>
+                                        </label>
+                                        <div class="main__zero-6"></div>
+                                    </div>
                                 </div>
-                                <h4 class="main__subtitle-bullet"><span class="alert">
-                                        <img src="../img/brief/alert.svg" alt="alert">
-                                    </span>
-                                    Географическое происхождение
-                                </h4>
-                                <div class="main__complex--2">
+                                <div class="turget__input--text01 turget__placeholder">
+                                    <h4 class="main__subtitle-bullet"><span class="alert alert-turget-ph"
+                                            id="alert-turget-ph01">
+                                            <img src="../img/brief/alert.svg" alt="alert">
+                                        </span>
+                                        Географическое происхождение
+                                    </h4>
                                     <label for="ethnos">
                                         <input type="text" name="ethnos" id="ethnos"
                                             placeholder="национальность, этническая группа"
@@ -732,68 +738,76 @@
                                     </label>
                                 </div>
                                 <div class="main__zero-1">.</div>
-                                <h4 class="main__subtitle-bullet"><span class="alert">
-                                        <img src="../img/brief/alert.svg" alt="alert">
-                                    </span>
-                                    Семейное положение
-                                </h4>
-                                <div class="main__complex">
-                                    <input class="main__input" type="checkbox" name="w-child" id="w-child">
-                                    <label for="w-child" class="main__label"><span>семейные с детьми до 18
-                                            лет</span>
-                                    </label>
-                                    <input class="main__input" type="checkbox" name="wo-child" id="wo-child">
-                                    <label for="wo-child" class="main__label"><span>семейные без детей до 18
-                                            лет</span>
-                                    </label>
-                                    <input class="main__input" type="checkbox" name="alones" id="alones">
-                                    <label for="alones" class="main__label"><span>одинокие</span>
-                                    </label>
-                                    <input class="main__input" type="checkbox" name="empty" id="empty">
-                                    <label for="empty" class="main__label"><span>не определено</span>
-                                    </label>
-                                    <div class="main__zero-6"></div>
+                                <div class="main__zero-1">.</div>
+                                <div class="turget__inputs turget__inputs03">
+                                    <h4 class="main__subtitle-bullet"><span class="alert" id="alert-turget-03">
+                                            <img src="../img/brief/alert.svg" alt="alert">
+                                        </span>
+                                        Семейное положение
+                                    </h4>
+                                    <div class="main__complex">
+                                        <input class="main__input" type="checkbox" name="w-child" id="w-child">
+                                        <label for="w-child" class="main__label"><span>семейные с детьми до 18
+                                                лет</span>
+                                        </label>
+                                        <input class="main__input" type="checkbox" name="wo-child" id="wo-child">
+                                        <label for="wo-child" class="main__label"><span>семейные без детей до 18
+                                                лет</span>
+                                        </label>
+                                        <input class="main__input" type="checkbox" name="alones" id="alones">
+                                        <label for="alones" class="main__label"><span>одинокие</span>
+                                        </label>
+                                        <input class="main__input" type="checkbox" name="empty" id="empty">
+                                        <label for="empty" class="main__label"><span>не определено</span>
+                                        </label>
+                                        <div class="main__zero-6"></div>
+                                    </div>
                                 </div>
-                                <h4 class="main__subtitle-bullet"><span class="alert">
-                                        <img src="../img/brief/alert.svg" alt="alert">
-                                    </span>
-                                    Образование
-                                </h4>
-                                <div class="main__complex">
-                                    <input class="main__input" type="checkbox" name="edu-1" id="edu-1">
-                                    <label for="edu-1" class="main__label"><span>среднее</span>
-                                    </label>
-                                    <input class="main__input" type="checkbox" name="edu-2" id="edu-2">
-                                    <label for="edu-2" class="main__label"><span>среднее специальное</span>
-                                    </label>
-                                    <input class="main__input" type="checkbox" name="edu-3" id="edu-3">
-                                    <label for="edu-3" class="main__label"><span>неоконченное высшее</span>
-                                    </label>
-                                    <input class="main__input" type="checkbox" name="edu-4" id="edu-4">
-                                    <label for="edu-4" class="main__label"><span>высшее</span>
-                                    </label>
+                                <div class="turget__inputs turget__inputs04">
+                                    <h4 class="main__subtitle-bullet"><span class="alert" id="alert-turget-04">
+                                            <img src="../img/brief/alert.svg" alt="alert">
+                                        </span>
+                                        Образование
+                                    </h4>
+                                    <div class="main__complex">
+                                        <input class="main__input" type="checkbox" name="edu-1" id="edu-1">
+                                        <label for="edu-1" class="main__label"><span>среднее</span>
+                                        </label>
+                                        <input class="main__input" type="checkbox" name="edu-2" id="edu-2">
+                                        <label for="edu-2" class="main__label"><span>среднее специальное</span>
+                                        </label>
+                                        <input class="main__input" type="checkbox" name="edu-3" id="edu-3">
+                                        <label for="edu-3" class="main__label"><span>неоконченное высшее</span>
+                                        </label>
+                                        <input class="main__input" type="checkbox" name="edu-4" id="edu-4">
+                                        <label for="edu-4" class="main__label"><span>высшее</span>
+                                        </label>
+                                    </div>
                                 </div>
-                                <h4 class="main__subtitle-bullet"><span class="alert">
-                                        <img src="../img/brief/alert.svg" alt="alert">
-                                    </span>
-                                    Религия
-                                </h4>
-                                <div class="main__complex">
-                                    <input class="main__input" type="checkbox" name="cross" id="cross">
-                                    <label for="cross" class="main__label"><span>христианство</span>
-                                    </label>
-                                    <input class="main__input" type="checkbox" name="islam" id="islam">
-                                    <label for="islam" class="main__label"><span>ислам</span>
-                                    </label>
-                                    <input class="main__input" type="checkbox" name="another-rel" id="another-rel">
-                                    <label for="another-rel" class="main__label"><span>другие религии</span>
-                                    </label>
-                                    <input class="main__input" type="checkbox" name="not-rel" id="not-rel">
-                                    <label for="not-rel" class="main__label"><span>не религиозны</span>
-                                    </label>
+                                <div class="turget__inputs turget__inputs05">
+                                    <h4 class="main__subtitle-bullet"><span class="alert" id="alert-turget-05">
+                                            <img src="../img/brief/alert.svg" alt="alert">
+                                        </span>
+                                        Религия
+                                    </h4>
+                                    <div class="main__complex">
+                                        <input class="main__input" type="checkbox" name="cross" id="cross">
+                                        <label for="cross" class="main__label"><span>христианство</span>
+                                        </label>
+                                        <input class="main__input" type="checkbox" name="islam" id="islam">
+                                        <label for="islam" class="main__label"><span>ислам</span>
+                                        </label>
+                                        <input class="main__input" type="checkbox" name="another-rel" id="another-rel">
+                                        <label for="another-rel" class="main__label"><span>другие религии</span>
+                                        </label>
+                                        <input class="main__input" type="checkbox" name="not-rel" id="not-rel">
+                                        <label for="not-rel" class="main__label"><span>не религиозны</span>
+                                        </label>
+                                    </div>
                                 </div>
-                                <div class="main__complex--2">
-                                    <h4 class="main__subtitle-bullet"><span class="alert">
+                                <div class="main__complex--2 turget__input--text02 turget__placeholder">
+                                    <h4 class="main__subtitle-bullet"><span class="alert alert-turget-ph"
+                                            id="alert-turget-ph02">
                                             <img src="../img/brief/alert.svg" alt="alert">
                                         </span>
                                         Род занятий
@@ -808,8 +822,9 @@
                                     </label>
                                 </div>
                                 <div class="main__zero-1">.</div>
-                                <div class="main__complex--2">
-                                    <h4 class="main__subtitle-bullet"><span class="alert">
+                                <div class="main__complex--2 turget__input--text03 turget__placeholder">
+                                    <h4 class="main__subtitle-bullet"><span class="alert alert-turget-ph"
+                                            id="alert-turget-ph03">
                                             <img src="../img/brief/alert.svg" alt="alert">
                                         </span>
                                         Уровень дохода в месяц на семью
@@ -824,253 +839,288 @@
                                     </label>
                                 </div>
                                 <div class="main__zero-1">.</div>
-                                <h4 class="main__subtitle-bullet"><span class="alert">
-                                        <img src="../img/brief/alert.svg" alt="alert">
-                                    </span>
-                                    Общественный класс
-                                </h4>
-                                <div class="main__complex">
-                                    <input class="main__input" type="checkbox" name="class-low" id="class-low">
-                                    <label for="class-low" class="main__label"><span>низший</span>
-                                    </label>
-                                    <input class="main__input" type="checkbox" name="class-low-middle"
-                                        id="class-low-middle">
-                                    <label for="class-low-middle" class="main__label"><span>низший-средний</span>
-                                    </label>
-                                    <input class="main__input" type="checkbox" name="class-middle" id="class-middle">
-                                    <label for="class-middle" class="main__label"><span>средний</span>
-                                    </label>
-                                    <input class="main__input" type="checkbox" name="class-high-middle"
-                                        id="class-high-middle">
-                                    <label for="class-high-middle" class="main__label"><span>средний-высший</span>
-                                    </label>
-                                    <input class="main__input" type="checkbox" name="class-vip" id="class-vip">
-                                    <label for="class-vip" class="main__label"><span>vip</span>
-                                    </label>
+                                <div class="turget__inputs turget__inputs06">
+                                    <h4 class="main__subtitle-bullet"><span class="alert" id="alert-turget-06">
+                                            <img src="../img/brief/alert.svg" alt="alert">
+                                        </span>
+                                        Общественный класс
+                                    </h4>
+                                    <div class="main__complex">
+                                        <input class="main__input" type="checkbox" name="class-low" id="class-low">
+                                        <label for="class-low" class="main__label"><span>низший</span>
+                                        </label>
+                                        <input class="main__input" type="checkbox" name="class-low-middle"
+                                            id="class-low-middle">
+                                        <label for="class-low-middle" class="main__label"><span>низший-средний</span>
+                                        </label>
+                                        <input class="main__input" type="checkbox" name="class-middle"
+                                            id="class-middle">
+                                        <label for="class-middle" class="main__label"><span>средний</span>
+                                        </label>
+                                        <input class="main__input" type="checkbox" name="class-high-middle"
+                                            id="class-high-middle">
+                                        <label for="class-high-middle" class="main__label"><span>средний-высший</span>
+                                        </label>
+                                        <input class="main__input" type="checkbox" name="class-vip" id="class-vip">
+                                        <label for="class-vip" class="main__label"><span>vip</span>
+                                        </label>
+                                    </div>
                                 </div>
-                                <h4 class="main__subtitle-bullet"><span class="alert">
-                                        <img src="../img/brief/alert.svg" alt="alert">
-                                    </span>
-                                    Образ жизни
-                                </h4>
-                                <div class="main__complex">
-                                    <input class="main__input" type="checkbox" name="traditionalists"
-                                        id="traditionalists">
-                                    <label for="traditionalists" class="main__label"><span>традиционалисты</span>
-                                    </label>
-                                    <input class="main__input" type="checkbox" name="life-lovers" id="life-lovers">
-                                    <label for="life-lovers" class="main__label"><span>жизнелюбы</span>
-                                    </label>
-                                    <input class="main__input" type="checkbox" name="aesthetes" id="aesthetes">
-                                    <label for="aesthetes" class="main__label"><span>эстеты</span>
-                                    </label>
+                                <div class="turget__inputs turget__inputs07">
+                                    <h4 class="main__subtitle-bullet"><span class="alert" id="alert-turget-07">
+                                            <img src="../img/brief/alert.svg" alt="alert">
+                                        </span>
+                                        Образ жизни
+                                    </h4>
+                                    <div class="main__complex">
+                                        <input class="main__input" type="checkbox" name="traditionalists"
+                                            id="traditionalists">
+                                        <label for="traditionalists" class="main__label"><span>традиционалисты</span>
+                                        </label>
+                                        <input class="main__input" type="checkbox" name="life-lovers" id="life-lovers">
+                                        <label for="life-lovers" class="main__label"><span>жизнелюбы</span>
+                                        </label>
+                                        <input class="main__input" type="checkbox" name="aesthetes" id="aesthetes">
+                                        <label for="aesthetes" class="main__label"><span>эстеты</span>
+                                        </label>
+                                    </div>
                                 </div>
-                                <h4 class="main__subtitle-bullet"><span class="alert">
-                                        <img src="../img/brief/alert.svg" alt="alert">
-                                    </span>
-                                    Тип, эмоциональная структура личности
-                                </h4>
-                                <div class="main__complex">
-                                    <input class="main__input" type="checkbox" name="person-type-1" id="person-type-1">
-                                    <label for="person-type-1" class="main__label"><span>увлекающаяся натура</span>
-                                    </label>
-                                    <input class="main__input" type="checkbox" name="person-type-2" id="person-type-2">
-                                    <label for="person-type-2" class="main__label"><span>любитель поступать «как
-                                            все»</span>
-                                    </label>
-                                    <input class="main__input" type="checkbox" name="person-type-3" id="person-type-3">
-                                    <label for="person-type-3" class="main__label"><span>авторитарная (зависимая)
-                                            натура</span>
-                                    </label>
-                                    <input class="main__input" type="checkbox" name="person-type-4" id="person-type-4">
-                                    <label for="person-type-4" class="main__label"><span>честолюбивая натура</span>
-                                    </label>
+                                <div class="turget__inputs turget__inputs08">
+                                    <h4 class="main__subtitle-bullet"><span class="alert" id="alert-turget-08">
+                                            <img src="../img/brief/alert.svg" alt="alert">
+                                        </span>
+                                        Тип, эмоциональная структура личности
+                                    </h4>
+                                    <div class="main__complex">
+                                        <input class="main__input" type="checkbox" name="person-type-1"
+                                            id="person-type-1">
+                                        <label for="person-type-1" class="main__label"><span>увлекающаяся натура</span>
+                                        </label>
+                                        <input class="main__input" type="checkbox" name="person-type-2"
+                                            id="person-type-2">
+                                        <label for="person-type-2" class="main__label"><span>любитель поступать «как
+                                                все»</span>
+                                        </label>
+                                        <input class="main__input" type="checkbox" name="person-type-3"
+                                            id="person-type-3">
+                                        <label for="person-type-3" class="main__label"><span>авторитарная (зависимая)
+                                                натура</span>
+                                        </label>
+                                        <input class="main__input" type="checkbox" name="person-type-4"
+                                            id="person-type-4">
+                                        <label for="person-type-4" class="main__label"><span>честолюбивая натура</span>
+                                        </label>
+                                    </div>
                                 </div>
-                                <h4 class="main__subtitle-bullet"><span class="alert">
-                                        <img src="../img/brief/alert.svg" alt="alert">
-                                    </span>
-                                    Нужен ли повод для совершения сделки?
-                                </h4>
-                                <div class="main__complex--2">
-                                    <input class="main__input" type="checkbox" name="ordinary-purchase"
-                                        id="ordinary-purchase">
-                                    <label for="ordinary-purchase" class="main__label"><span>нет, это обыденная
-                                            покупка</span>
-                                    </label>
-                                    <input class="main__input" type="checkbox" name="special-case" id="special-case">
-                                    <label for="special-case" class="main__label"><span>да, это особый
-                                            случай:</span>
-                                    </label>
-                                    <label for="special-case-text">
-                                        <input type="text" name="special-case-text" id="special-case-text"
-                                            placeholder="кратко опишите этот случай"
-                                            class="main__input-txt main__input-txt2"
-                                            oninput='this.parentNode.parentNode.children[2].checked = (this.value!="" ? true : false)'>
-                                        </input>
-                                        <div class="main__input--placeholder main__input--placeholder2">
-                                            <span>кратко опишите этот случай</span>
-                                        </div>
-                                    </label>
-                                </div>
-                                <div class="main__zero-1">.</div>
-                                <h4 class="main__subtitle-bullet"><span class="alert">
-                                        <img src="../img/brief/alert.svg" alt="alert">
-                                    </span>
-                                    Что останавливает ЦА от совершения сделки?
-                                </h4>
-                                <div class="main__complex--2">
-                                    <input class="main__input" type="checkbox" name="block-1" id="block-1">
-                                    <label for="block-1" class="main__label"><span>кажется не по карману</span>
-                                    </label>
-                                    <input class="main__input" type="checkbox" name="block-2" id="block-2">
-                                    <label for="block-2" class="main__label"><span>неправильное представление о
-                                            продукте</span>
-                                    </label>
-                                    <input class="main__input" type="checkbox" name="block-3" id="block-3">
-                                    <label for="block-3" class="main__label"><span>другое:</span>
-                                    </label>
-                                    <label for="block-3-text">
-                                        <input type="text" name="block-3-text" id="block-3-text"
-                                            placeholder="кратко опишите этот &#34;блок&#34;"
-                                            class="main__input-txt main__input-txt2"
-                                            oninput='this.parentNode.parentNode.children[4].checked = (this.value!="" ? true : false)'>
-                                        </input>
-                                        <div class="main__input--placeholder main__input--placeholder2">
-                                            <span>кратко опишите этот "блок"</span>
-                                        </div>
-                                    </label>
+                                <div class="turget__inputs turget__inputs09">
+                                    <h4 class="main__subtitle-bullet"><span class="alert" id="alert-turget-09">
+                                            <img src="../img/brief/alert.svg" alt="alert">
+                                        </span>
+                                        Нужен ли повод для совершения сделки?
+                                    </h4>
+                                    <div class="main__complex--2">
+                                        <input class="main__input" type="checkbox" name="ordinary-purchase"
+                                            id="ordinary-purchase">
+                                        <label for="ordinary-purchase" class="main__label"><span>нет, это обыденная
+                                                покупка</span>
+                                        </label>
+                                        <input class="main__input" type="checkbox" name="special-case"
+                                            id="special-case">
+                                        <label for="special-case" class="main__label"><span>да, это особый
+                                                случай:</span>
+                                        </label>
+                                        <label for="special-case-text">
+                                            <input type="text" name="special-case-text" id="special-case-text"
+                                                placeholder="кратко опишите этот случай"
+                                                class="main__input-txt main__input-txt2"
+                                                oninput='this.parentNode.parentNode.children[2].checked = (this.value!="" ? true : false)'>
+                                            </input>
+                                            <div class="main__input--placeholder main__input--placeholder2">
+                                                <span>кратко опишите этот случай</span>
+                                            </div>
+                                        </label>
+                                    </div>
                                 </div>
                                 <div class="main__zero-1">.</div>
-                                <h4 class="main__subtitle-bullet"><span class="alert">
-                                        <img src="../img/brief/alert.svg" alt="alert">
-                                    </span>
-                                    Искомые выгоды
-                                </h4>
-                                <div class="main__complex--2">
-                                    <input class="main__input" type="checkbox" name="quality" id="quality">
-                                    <label for="quality" class="main__label"><span>качество</span>
-                                    </label>
-                                    <input class="main__input" type="checkbox" name="service" id="service">
-                                    <label for="service" class="main__label"><span>сервис</span>
-                                    </label>
-                                    <input class="main__input" type="checkbox" name="saving" id="saving">
-                                    <label for="saving" class="main__label"><span>экономия</span>
-                                    </label>
-                                    <input class="main__input" type="checkbox" name="special-benefit"
-                                        id="special-benefit">
-                                    <label for="special-benefit" class="main__label"><span>другое:</span>
-                                    </label>
-                                    <label for="special-benefit-text">
-                                        <input type="text" name="special-benefit-text" id="special-benefit-text"
-                                            placeholder="кратко опишите эти выгоды"
-                                            class="main__input-txt main__input-txt2"
-                                            oninput='this.parentNode.parentNode.children[6].checked = (this.value!="" ? true : false)'>
-                                        </input>
-                                        <div class="main__input--placeholder main__input--placeholder2">
-                                            <span>кратко опишите эти выгоды</span>
-                                        </div>
-                                    </label>
+                                <div class="turget__inputs turget__inputs10">
+                                    <h4 class="main__subtitle-bullet"><span class="alert" id="alert-turget-10">
+                                            <img src="../img/brief/alert.svg" alt="alert">
+                                        </span>
+                                        Что останавливает ЦА от совершения сделки?
+                                    </h4>
+                                    <div class="main__complex--2">
+                                        <input class="main__input" type="checkbox" name="block-1" id="block-1">
+                                        <label for="block-1" class="main__label"><span>кажется не по карману</span>
+                                        </label>
+                                        <input class="main__input" type="checkbox" name="block-2" id="block-2">
+                                        <label for="block-2" class="main__label"><span>неправильное представление о
+                                                продукте</span>
+                                        </label>
+                                        <input class="main__input" type="checkbox" name="block-3" id="block-3">
+                                        <label for="block-3" class="main__label"><span>другое:</span>
+                                        </label>
+                                        <label for="block-3-text">
+                                            <input type="text" name="block-3-text" id="block-3-text"
+                                                placeholder="кратко опишите этот &#34;блок&#34;"
+                                                class="main__input-txt main__input-txt2"
+                                                oninput='this.parentNode.parentNode.children[4].checked = (this.value!="" ? true : false)'>
+                                            </input>
+                                            <div class="main__input--placeholder main__input--placeholder2">
+                                                <span>кратко опишите этот "блок"</span>
+                                            </div>
+                                        </label>
+                                    </div>
                                 </div>
                                 <div class="main__zero-1">.</div>
-                                <h4 class="main__subtitle-bullet"><span class="alert">
-                                        <img src="../img/brief/alert.svg" alt="alert">
-                                    </span>
-                                    Статус пользователя в компании
-                                </h4>
-                                <div class="main__complex">
-                                    <input class="main__input" type="checkbox" name="user-status-1" id="user-status-1">
-                                    <label for="user-status-1" class="main__label"><span>не пользующийся</span>
-                                    </label>
-                                    <input class="main__input" type="checkbox" name="user-status-2" id="user-status-2">
-                                    <label for="user-status-2" class="main__label"><span>бывший пользователь</span>
-                                    </label>
-                                    <input class="main__input" type="checkbox" name="user-status-3" id="user-status-3">
-                                    <label for="user-status-3" class="main__label"><span>пользователь-новичок</span>
-                                    </label>
-                                    <input class="main__input" type="checkbox" name="user-status-4" id="user-status-4">
-                                    <label for="user-status-4" class="main__label"><span>потенциальный
-                                            пользователь</span>
-                                    </label>
-                                    <input class="main__input" type="checkbox" name="user-status-5" id="user-status-5">
-                                    <label for="user-status-5" class="main__label"><span>регулярный
-                                            пользователь</span>
-                                    </label>
+                                <div class="turget__inputs turget__inputs11">
+                                    <h4 class="main__subtitle-bullet"><span class="alert" id="alert-turget-11">
+                                            <img src="../img/brief/alert.svg" alt="alert">
+                                        </span>
+                                        Искомые выгоды
+                                    </h4>
+                                    <div class="main__complex--2">
+                                        <input class="main__input" type="checkbox" name="quality" id="quality">
+                                        <label for="quality" class="main__label"><span>качество</span>
+                                        </label>
+                                        <input class="main__input" type="checkbox" name="service" id="service">
+                                        <label for="service" class="main__label"><span>сервис</span>
+                                        </label>
+                                        <input class="main__input" type="checkbox" name="saving" id="saving">
+                                        <label for="saving" class="main__label"><span>экономия</span>
+                                        </label>
+                                        <input class="main__input" type="checkbox" name="special-benefit"
+                                            id="special-benefit">
+                                        <label for="special-benefit" class="main__label"><span>другое:</span>
+                                        </label>
+                                        <label for="special-benefit-text">
+                                            <input type="text" name="special-benefit-text" id="special-benefit-text"
+                                                placeholder="кратко опишите эти выгоды"
+                                                class="main__input-txt main__input-txt2"
+                                                oninput='this.parentNode.parentNode.children[6].checked = (this.value!="" ? true : false)'>
+                                            </input>
+                                            <div class="main__input--placeholder main__input--placeholder2">
+                                                <span>кратко опишите эти выгоды</span>
+                                            </div>
+                                        </label>
+                                    </div>
                                 </div>
-                                <h4 class="main__subtitle-bullet"><span class="alert">
-                                        <img src="../img/brief/alert.svg" alt="alert">
-                                    </span>
-                                    Уровень готовности к восприятию продукта / услуги
-                                </h4>
-                                <div class="main__complex">
-                                    <input class="main__input" type="checkbox" name="level-toup-1" id="level-toup-1">
-                                    <label for="level-toup-1" class="main__label"><span>неосведомленный</span>
-                                    </label>
-                                    <input class="main__input" type="checkbox" name="level-toup-2" id="level-toup-2">
-                                    <label for="level-toup-2" class="main__label"><span>осведомленный</span>
-                                    </label>
-                                    <input class="main__input" type="checkbox" name="level-toup-3" id="level-toup-3">
-                                    <label for="level-toup-3" class="main__label"><span>информированный</span>
-                                    </label>
-                                    <input class="main__input" type="checkbox" name="level-toup-4" id="level-toup-4">
-                                    <label for="level-toup-4" class="main__label"><span>заинтересованный</span>
-                                    </label>
-                                    <input class="main__input" type="checkbox" name="level-toup-5" id="level-toup-5">
-                                    <label for="level-toup-5" class="main__label"><span>желающий</span>
-                                    </label>
-                                    <input class="main__input" type="checkbox" name="level-toup-6" id="level-toup-6">
-                                    <label for="level-toup-6" class="main__label"><span>намеревающийся совершить
-                                            сделку</span>
-                                    </label>
+                                <div class="main__zero-1">.</div>
+                                <div class="turget__inputs turget__inputs12">
+                                    <h4 class="main__subtitle-bullet"><span class="alert" id="alert-turget-12">
+                                            <img src="../img/brief/alert.svg" alt="alert">
+                                        </span>
+                                        Статус пользователя в компании
+                                    </h4>
+                                    <div class="main__complex">
+                                        <input class="main__input" type="checkbox" name="user-status-1"
+                                            id="user-status-1">
+                                        <label for="user-status-1" class="main__label"><span>не пользующийся</span>
+                                        </label>
+                                        <input class="main__input" type="checkbox" name="user-status-2"
+                                            id="user-status-2">
+                                        <label for="user-status-2" class="main__label"><span>бывший пользователь</span>
+                                        </label>
+                                        <input class="main__input" type="checkbox" name="user-status-3"
+                                            id="user-status-3">
+                                        <label for="user-status-3" class="main__label"><span>пользователь-новичок</span>
+                                        </label>
+                                        <input class="main__input" type="checkbox" name="user-status-4"
+                                            id="user-status-4">
+                                        <label for="user-status-4" class="main__label"><span>потенциальный
+                                                пользователь</span>
+                                        </label>
+                                        <input class="main__input" type="checkbox" name="user-status-5"
+                                            id="user-status-5">
+                                        <label for="user-status-5" class="main__label"><span>регулярный
+                                                пользователь</span>
+                                        </label>
+                                    </div>
                                 </div>
-                                <h4 class="main__subtitle-bullet"><span class="alert">
-                                        <img src="../img/brief/alert.svg" alt="alert">
-                                    </span>
-                                    Интенсивность потребления данного рода продуктов / услуг
-                                </h4>
-                                <div class="main__complex">
-                                    <input class="main__input" type="checkbox" name="low-user" id="low-user">
-                                    <label for="low-user" class="main__label"><span>слабый потребитель</span>
-                                    </label>
-                                    <input class="main__input" type="checkbox" name="middle-user" id="middle-user">
-                                    <label for="middle-user" class="main__label"><span>умеренный потребитель</span>
-                                    </label>
-                                    <input class="main__input" type="checkbox" name="top-user" id="top-user">
-                                    <label for="top-user" class="main__label"><span>активный потребитель</span>
-                                    </label>
+                                <div class="turget__inputs turget__inputs13">
+                                    <h4 class="main__subtitle-bullet"><span class="alert" id="alert-turget-13">
+                                            <img src="../img/brief/alert.svg" alt="alert">
+                                        </span>
+                                        Уровень готовности к восприятию продукта / услуги
+                                    </h4>
+                                    <div class="main__complex">
+                                        <input class="main__input" type="checkbox" name="level-toup-1"
+                                            id="level-toup-1">
+                                        <label for="level-toup-1" class="main__label"><span>неосведомленный</span>
+                                        </label>
+                                        <input class="main__input" type="checkbox" name="level-toup-2"
+                                            id="level-toup-2">
+                                        <label for="level-toup-2" class="main__label"><span>осведомленный</span>
+                                        </label>
+                                        <input class="main__input" type="checkbox" name="level-toup-3"
+                                            id="level-toup-3">
+                                        <label for="level-toup-3" class="main__label"><span>информированный</span>
+                                        </label>
+                                        <input class="main__input" type="checkbox" name="level-toup-4"
+                                            id="level-toup-4">
+                                        <label for="level-toup-4" class="main__label"><span>заинтересованный</span>
+                                        </label>
+                                        <input class="main__input" type="checkbox" name="level-toup-5"
+                                            id="level-toup-5">
+                                        <label for="level-toup-5" class="main__label"><span>желающий</span>
+                                        </label>
+                                        <input class="main__input" type="checkbox" name="level-toup-6"
+                                            id="level-toup-6">
+                                        <label for="level-toup-6" class="main__label"><span>намеревающийся совершить
+                                                сделку</span>
+                                        </label>
+                                    </div>
                                 </div>
-                                <h4 class="main__subtitle-bullet"><span class="alert">
-                                        <img src="../img/brief/alert.svg" alt="alert">
-                                    </span>
-                                    Отношение к товару / услуге на данный момент
-                                </h4>
-                                <div class="main__complex">
-                                    <input class="main__input" type="checkbox" name="attitude-1" id="attitude-1">
-                                    <label for="attitude-1" class="main__label"><span>безусловно
-                                            положительное</span>
-                                    </label>
-                                    <input class="main__input" type="checkbox" name="attitude-2" id="attitude-2">
-                                    <label for="attitude-2" class="main__label"><span>положительное</span>
-                                    </label>
-                                    <input class="main__input" type="checkbox" name="attitude-3" id="attitude-3">
-                                    <label for="attitude-3" class="main__label"><span>безразличное</span>
-                                    </label>
-                                    <input class="main__input" type="checkbox" name="attitude-4" id="attitude-4">
-                                    <label for="attitude-4" class="main__label"><span>отрицательное</span>
-                                    </label>
-                                    <input class="main__input" type="checkbox" name="attitude-5" id="attitude-5">
-                                    <label for="attitude-5" class="main__label"><span>безусловно
-                                            отрицательное</span>
-                                    </label>
+                                <div class="turget__inputs turget__inputs14">
+                                    <h4 class="main__subtitle-bullet"><span class="alert" id="alert-turget-14">
+                                            <img src="../img/brief/alert.svg" alt="alert">
+                                        </span>
+                                        Интенсивность потребления данного рода продуктов / услуг
+                                    </h4>
+                                    <div class="main__complex">
+                                        <input class="main__input" type="checkbox" name="low-user" id="low-user">
+                                        <label for="low-user" class="main__label"><span>слабый потребитель</span>
+                                        </label>
+                                        <input class="main__input" type="checkbox" name="middle-user" id="middle-user">
+                                        <label for="middle-user" class="main__label"><span>умеренный потребитель</span>
+                                        </label>
+                                        <input class="main__input" type="checkbox" name="top-user" id="top-user">
+                                        <label for="top-user" class="main__label"><span>активный потребитель</span>
+                                        </label>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="buttons__center">
-                                <button type="button" id="normal-button"
-                                    class="buttons__button buttons__button--turget buttons__btnname">
-                                    Дополнительная ЦА
-                                </button>
+                                <div class="turget__inputs turget__inputs15">
+                                    <h4 class="main__subtitle-bullet"><span class="alert" id="alert-turget-15">
+                                            <img src="../img/brief/alert.svg" alt="alert">
+                                        </span>
+                                        Отношение к товару / услуге на данный момент
+                                    </h4>
+                                    <div class="main__complex">
+                                        <input class="main__input" type="checkbox" name="attitude-1" id="attitude-1">
+                                        <label for="attitude-1" class="main__label"><span>безусловно
+                                                положительное</span>
+                                        </label>
+                                        <input class="main__input" type="checkbox" name="attitude-2" id="attitude-2">
+                                        <label for="attitude-2" class="main__label"><span>положительное</span>
+                                        </label>
+                                        <input class="main__input" type="checkbox" name="attitude-3" id="attitude-3">
+                                        <label for="attitude-3" class="main__label"><span>безразличное</span>
+                                        </label>
+                                        <input class="main__input" type="checkbox" name="attitude-4" id="attitude-4">
+                                        <label for="attitude-4" class="main__label"><span>отрицательное</span>
+                                        </label>
+                                        <input class="main__input" type="checkbox" name="attitude-5" id="attitude-5">
+                                        <label for="attitude-5" class="main__label"><span>безусловно
+                                                отрицательное</span>
+                                        </label>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <button type="button" id="normal-button"
+                        class="buttons__button2 buttons__button--turget buttons__btnname">
+                        Дополнительная ЦА
+                    </button>
                 </section>
                 <section class="turget2">
                     <div class="budget__background"></div>
@@ -1081,9 +1131,10 @@
                             <h2 class="main__title">Дополнительная Целевая аудитория<br><span>(сопутствующие
                                     потребители, посредники)</span>
                             </h2>
+                            <div class="turget2__field"></div>
                             <div class="buttons__center">
                                 <button type="button" id="normal-button02"
-                                    class="buttons__button buttons__button--turget-2 buttons__btnname">
+                                    class="buttons__button3 buttons__button--turget-2 buttons__btnname">
                                     Дополнительная ЦА отсутствует
                                 </button>
                             </div>
@@ -1495,14 +1546,12 @@
                                     </label>
                                 </div>
                             </div>
-                            <div class="buttons__center">
-                                <button type="button" id="normal-button03"
-                                    class="buttons__button buttons__button--turget-2 buttons__btnname">
-                                    Дополнительная ЦА
-                                </button>
-                            </div>
                         </div>
                     </div>
+                    <button type="button" id="normal-button03"
+                        class="buttons__button2 buttons__button--turget-2 buttons__btnname">
+                        Дополнительная ЦА
+                    </button>
                 </section>
                 <section class="turget3">
                     <div class="turget3__background"></div>
@@ -1513,9 +1562,10 @@
                             <h2 class="main__title">Дополнительная Целевая аудитория<br><span>(сопутствующие
                                     потребители, посредники)</span>
                             </h2>
+                            <div class="turget3__field"></div>
                             <div class="buttons__center">
                                 <button type="button" id="normal-button04"
-                                    class="buttons__button buttons__button--turget buttons__btnname">Дополнительная ЦА
+                                    class="buttons__button3 buttons__button--turget buttons__btnname">Дополнительная ЦА
                                     отсутствует
                                 </button>
                             </div>
@@ -1957,7 +2007,8 @@
                                 <p class="buttons__btnname">На следующую</p>
                             </button>
                         </div>
-                        <p class="delimiter__alert">Заполните пункты, отмеченные знаком “ <span class="delimiter__sign">
+                        <p class="delimiter__alert" id="dlm-alert-turget">Заполните пункты, отмеченные знаком “ <span
+                                class="delimiter__sign">
                                 <img src="../img/brief/alert.svg" alt="alert">
                             </span> “</p>
                     </div>
@@ -1971,102 +2022,109 @@
                             </div>
                         </aside>
                         <div class="main">
-                            <h2 class="main__title--3" id="posit-title">Устоявшееся мнение потребителей о
-                                компании<span class="alert">
-                                    <img src="../img/brief/alert.svg" alt="alert">
-                                </span>
-                            </h2>
-                            <div class="main__inputs">
-                                <h3 class="main__subtitle">Как бы вы оценили отношение целевой аудитории (ЦА) к
-                                    продуктам, услугам и сервису вашей компании в ряду конкурентов по пятибальной
-                                    шкале?
-                                    Если цифра отлична от “5”, то какие есть психологические или иные барьеры к
-                                    совершению сделки?</h3>
+                            <div class="positioning__textarea">
+                                <h2 class="main__title--3" id="posit-title">Устоявшееся мнение потребителей о
+                                    компании<span class="alert alert-positioning-ta" id="alert-positioning-01">
+                                        <img src="../img/brief/alert.svg" alt="alert">
+                                    </span>
+                                </h2>
+                                <div class="main__inputs">
+                                    <h3 class="main__subtitle">Как бы вы оценили отношение целевой аудитории (ЦА) к
+                                        продуктам, услугам и сервису вашей компании в ряду конкурентов по пятибальной
+                                        шкале?
+                                        Если цифра отлична от “5”, то какие есть психологические или иные барьеры к
+                                        совершению сделки?</h3>
+                                </div>
+                                <div class="main__textblock">
+                                    <label for="barriers">
+                                        <textarea name="barriers" id="barriers"
+                                            placeholder="Внесите сведения по вопросам вверху"
+                                            class="main__textarea"></textarea>
+                                    </label>
+                                </div>
                             </div>
-                            <div class="main__textblock">
-                                <label for="barriers">
-                                    <textarea name="barriers" id="barriers"
-                                        placeholder="Внесите сведения по вопросам вверху"
-                                        class="main__textarea"></textarea>
-                                </label>
+                            <div class="positioning__radio">
+                                <h2 class="main__title--2">Позиционирование<span class="alert"
+                                        id="alert-positioning-02">
+                                        <img src="../img/brief/alert.svg" alt="alert">
+                                    </span>
+                                </h2>
+                                <div class="main__textblock">
+                                    <h3 class="main__subtitle">Выберите один из двух пунктов!
+                                    </h3>
+                                </div>
+                                <div class="main__textblock">
+                                    <input class="main__input" type="radio" name="radio" id="dont-worse">
+                                    <label for="dont-worse" class="main__label main__h4">Рекламируемый продукт /
+                                        услуга <span>не хуже, чем у ближайшего конкурента</span>
+                                    </label>
+                                    <label for="competitor">
+                                        <input type="text" name="competitor" id="competitor"
+                                            placeholder="впишите название фирмы-конкурента" class="main__input-txt"
+                                            oninput='this.parentNode.parentNode.children[0].checked = (this.value!="" ? true : false)'>
+                                        </input>
+                                        <div class="main__input--placeholder">
+                                            <span>впишите название фирмы-конкурента</span>
+                                        </div>
+                                    </label>
+                                    <div class="main__zero-1">.</div>
+                                    <h4 class="main__h4">, однако имеет по сравнению с его продуктом некоторые
+                                        преимущества:
+                                    </h4>
+                                    <label for="dont-worse-text">
+                                        <textarea name="dont-worse-text" id="dont-worse-text"
+                                            placeholder="&#5867;&#5867;&#5867; интересные факты об истории Компании или о ваших заказчиках; &#5867;&#5867;&#5867; цена (относительно низкая стоимость в сочетании с хорошим качеством, скидки, гибкая ценовая политика); &#5867;&#5867;&#5867; образ продукта в сознании ЦА (высокое качество, лучшие потребительские свойства, эксклюзивность, экологичность); &#5867;&#5867;&#5867; продукт вызывает доверие, дает чувство уверенности, защищенности; &#5867;&#5867;&#5867; другое"
+                                            class="main__textarea--2"></textarea>
+                                    </label>
+                                    <input class="main__input" type="radio" name="radio" id="thebest">
+                                    <label for="thebest" class="main__label main__h4">Рекламируемый продукт / услуга
+                                        <span>не имеет аналогов у конкурентов,</span>
+                                    </label>
+                                    <h4 class="main__h4">занимает свою нишу рынка благодаря заметным и уникальным
+                                        особенностям и преимуществам:
+                                    </h4>
+                                    <label for="thebest-text">
+                                        <textarea name="thebest-text" id="thebest-text"
+                                            placeholder="&#5867;&#5867;&#5867; уникальные характеристики продукта; &#5867;&#5867;&#5867; уникальные компетенции персонала; &#5867;&#5867;&#5867; зксклюзивность услуг; &#5867;&#5867;&#5867; уникальность технологий; &#5867;&#5867;&#5867; другое"
+                                            class="main__textarea--2"
+                                            oninput='this.parentNode.parentNode.children[6].checked = (this.value!="" ? true : false)'></textarea>
+                                    </label>
+                                </div>
                             </div>
-                            <h2 class="main__title--2">Позиционирование<span class="alert">
-                                    <img src="../img/brief/alert.svg" alt="alert">
-                                </span>
-                            </h2>
-                            <div class="main__textblock">
-                                <h3 class="main__subtitle">Выберите один из двух пунктов!
-                                </h3>
-                            </div>
-                            <div class="main__textblock">
-                                <input class="main__input" type="radio" name="radio" id="dont-worse">
-                                <label for="dont-worse" class="main__label main__h4">Рекламируемый продукт /
-                                    услуга <span>не хуже, чем у ближайшего конкурента</span>
-                                </label>
-                                <label for="competitor">
-                                    <input type="text" name="competitor" id="competitor"
-                                        placeholder="впишите название фирмы-конкурента" class="main__input-txt"
-                                        oninput='this.parentNode.parentNode.children[0].checked = (this.value!="" ? true : false)'>
-                                    </input>
-                                    <div class="main__input--placeholder">
-                                        <span>впишите название фирмы-конкурента</span>
-                                    </div>
-                                </label>
-                                <div class="main__zero-1">.</div>
-                                <h4 class="main__h4">, однако имеет по сравнению с его продуктом некоторые
-                                    преимущества:
-                                </h4>
-                                <label for="dont-worse-text">
-                                    <textarea name="dont-worse-text" id="dont-worse-text"
-                                        placeholder="/&#8230; интересные факты об истории Компании или о ваших заказчиках &#8230;/&#8230; цена (относительно низкая стоимость в сочетании с хорошим качеством, скидки, гибкая ценовая политика) &#8230;/&#8230; образ продукта в сознании ЦА (высокое качество, лучшие потребительские свойства, эксклюзивность, экологичность) &#8230;/&#8230; продукт вызывает доверие, дает чувство уверенности, защищенности &#8230;/&#8230; наследие (прочность традиций, культура производства) &#8230;/&#8230; другое&#8230;/"
-                                        class="main__textarea--2"></textarea>
-                                </label>
-                                <input class="main__input" type="radio" name="radio" id="thebest">
-                                <label for="thebest" class="main__label main__h4">Рекламируемый продукт / услуга
-                                    <span>не имеет аналогов у конкурентов,</span>
-                                </label>
-                                <h4 class="main__h4">занимает свою нишу рынка благодаря заметным и уникальным
-                                    особенностям и преимуществам:
-                                </h4>
-                                <label for="thebest-text">
-                                    <textarea name="thebest-text" id="thebest-text"
-                                        placeholder="/&#8230;уникальные характеристики продукта &#8230;/&#8230; уникальные компетенции персонала &#8230;/&#8230; зксклюзивность услуг &#8230;/&#8230; уникальность технологий&#8230;/"
-                                        class="main__textarea--2"
-                                        oninput='this.parentNode.parentNode.children[6].checked = (this.value!="" ? true : false)'>
-                                    </textarea>
-                                </label>
-                            </div>
-                            <h2 class="main__title--2">Что нужно достигнуть этим проектом<span class="alert">
-                                    <img src="../img/brief/alert.svg" alt="alert">
-                                </span>
-                            </h2>
-                            <div class="main__inputs">
-                                <h3 class="main__subtitle">Исходя из вышеперечисленного, что является маркетинговой
-                                    задачей проекта?
-                                </h3>
-                            </div>
-                            <div class="main__textblock">
-                                <input class="main__input" type="checkbox" name="first-case" id="first-case">
-                                <label for="first-case" class="main__label"><span>для новых клиентов — побудить
-                                        к заключению первой / пробной сделки</span>
-                                </label>
-                                <input class="main__input" type="checkbox" name="knowledge" id="knowledge">
-                                <label for="knowledge" class="main__label"><span>создать / увеличить
-                                        осведомленность о новых услугах (продуктах)</span>
-                                </label>
-                                <input class="main__input" type="checkbox" name="frequency" id="frequency">
-                                <label for="frequency" class="main__label"><span>увеличить частоту совершения
-                                        сделок</span>
-                                </label>
-                                <input class="main__input" type="checkbox" name="another-task" id="another-task">
-                                <label for="another-task" class="main__label"><span>другое:</span>
-                                </label>
-                                <label for="another-task-text">
-                                    <textarea name="another-task-text" id="another-task-text"
-                                        placeholder="ваш вариант задачи" class="main__textarea"
-                                        oninput='this.parentNode.parentNode.children[6].checked = (this.value!="" ? true : false)'>
-                                    </textarea>
-                                </label>
+                            <div class="positioning__inputs positioning__inputs01">
+                                <h2 class="main__title--2">Что нужно достигнуть этим проектом<span
+                                        class="alert alert-positioning-ta" id="alert-positioning-03">
+                                        <img src="../img/brief/alert.svg" alt="alert">
+                                    </span>
+                                </h2>
+                                <div class="main__inputs">
+                                    <h3 class="main__subtitle">Исходя из вышеперечисленного, что является маркетинговой
+                                        задачей проекта?
+                                    </h3>
+                                </div>
+                                <div class="main__textblock">
+                                    <input class="main__input" type="checkbox" name="first-case" id="first-case">
+                                    <label for="first-case" class="main__label"><span>для новых клиентов — побудить
+                                            к заключению первой / пробной сделки</span>
+                                    </label>
+                                    <input class="main__input" type="checkbox" name="knowledge" id="knowledge">
+                                    <label for="knowledge" class="main__label"><span>создать / увеличить
+                                            осведомленность о новых услугах (продуктах)</span>
+                                    </label>
+                                    <input class="main__input" type="checkbox" name="frequency" id="frequency">
+                                    <label for="frequency" class="main__label"><span>увеличить частоту совершения
+                                            сделок</span>
+                                    </label>
+                                    <input class="main__input" type="checkbox" name="another-task" id="another-task">
+                                    <label for="another-task" class="main__label"><span>другое:</span>
+                                    </label>
+                                    <label for="another-task-text">
+                                        <textarea name="another-task-text" id="another-task-text"
+                                            placeholder="ваш вариант задачи"
+                                            class="main__textarea positioning__textarea--inp"
+                                            oninput='this.parentNode.parentNode.children[6].checked = (this.value!="" ? true : false)'></textarea>
+                                    </label>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -2077,64 +2135,69 @@
                             </div>
                         </div>
                         <div class="main">
-                            <h2 class="main__title--4">Рекламное предложение ЦА<span class="alert">
-                                    <img src="../img/brief/alert.svg" alt="alert">
-                                </span>
-                            </h2>
-                            <div class="main__inputs">
-                                <h3 class="main__subtitle">Исходя из поставленной задачи, какое предложение ваша
-                                    компания готова сделать ЦА?
-                                </h3>
-                                <h3 class="main__subtitle">Если заказчик воспользуется вашими услугами, то он
-                                    получит:
-                                </h3>
+                            <div class="positioning__inputs positioning__inputs02">
+                                <h2 class="main__title--4">Рекламное предложение ЦА<span
+                                        class="alert alert-positioning-ta" id="alert-positioning-04">
+                                        <img src="../img/brief/alert.svg" alt="alert">
+                                    </span>
+                                </h2>
+                                <div class="main__inputs">
+                                    <h3 class="main__subtitle">Исходя из поставленной задачи, какое предложение ваша
+                                        компания готова сделать ЦА?
+                                    </h3>
+                                    <h3 class="main__subtitle">Если заказчик воспользуется вашими услугами, то он
+                                        получит:
+                                    </h3>
+                                </div>
+                                <div class="main__textblock">
+                                    <input class="main__input" type="checkbox" name="satisfaction" id="satisfaction">
+                                    <label for="satisfaction" class="main__label"><span>удовлетворение чем-либо
+                                            (чем?)</span>
+                                    </label>
+                                    <input class="main__input" type="checkbox" name="velocity" id="velocity">
+                                    <label for="velocity" class="main__label"><span>скорость осуществления заказа</span>
+                                    </label>
+                                    <input class="main__input" type="checkbox" name="quality-offer" id="quality-offer">
+                                    <label for="quality-offer" class="main__label"><span>качество</span>
+                                    </label>
+                                    <input class="main__input" type="checkbox" name="impression" id="impression">
+                                    <label for="impression" class="main__label"><span>соответствие его представлению о
+                                            компании</span>
+                                    </label>
+                                    <input class="main__input" type="checkbox" name="advantage" id="advantage">
+                                    <label for="advantage" class="main__label"><span>преимущество перед своими
+                                            конкурентами
+                                            / повод для гордости</span>
+                                    </label>
+                                    <input class="main__input" type="checkbox" name="another-offer" id="another-offer">
+                                    <label for="another-offer" class="main__label"><span>другое:</span>
+                                    </label>
+                                    <label for="another-offer-text">
+                                        <textarea name="another-offer-text" id="another-offer-text"
+                                            placeholder="Раскройте выделенный вами вариант в одном сжатом, но емком предложении"
+                                            class="main__textarea positioning__textarea--inp"
+                                            oninput='this.parentNode.parentNode.children[10].checked = (this.value!="" ? true : false)'></textarea>
+                                    </label>
+                                </div>
                             </div>
-                            <div class="main__textblock">
-                                <input class="main__input" type="checkbox" name="satisfaction" id="satisfaction">
-                                <label for="satisfaction" class="main__label"><span>удовлетворение чем-либо
-                                        (чем?)</span>
-                                </label>
-                                <input class="main__input" type="checkbox" name="velocity" id="velocity">
-                                <label for="velocity" class="main__label"><span>скорость осуществления заказа</span>
-                                </label>
-                                <input class="main__input" type="checkbox" name="quality-offer" id="quality-offer">
-                                <label for="quality-offer" class="main__label"><span>качество</span>
-                                </label>
-                                <input class="main__input" type="checkbox" name="impression" id="impression">
-                                <label for="impression" class="main__label"><span>соответствие его представлению о
-                                        компании</span>
-                                </label>
-                                <input class="main__input" type="checkbox" name="advantage" id="advantage">
-                                <label for="advantage" class="main__label"><span>преимущество перед своими
-                                        конкурентами
-                                        / повод для гордости</span>
-                                </label>
-                                <input class="main__input" type="checkbox" name="another-offer" id="another-offer">
-                                <label for="another-offer" class="main__label"><span>другое:</span>
-                                </label>
-                                <label for="another-offer-text">
-                                    <textarea name="another-offer-text" id="another-offer-text"
-                                        placeholder="Раскройте выделенный вами вариант в одном сжатом, но емком предложении"
-                                        class="main__textarea"
-                                        oninput='this.parentNode.parentNode.children[10].checked = (this.value!="" ? true : false)'>
-                                    </textarea>
-                                </label>
-                            </div>
-                            <h2 class="main__title--2">Доказательства, подтверждающие предложение<span class="alert">
-                                    <img src="../img/brief/alert.svg" alt="alert">
-                                </span>
-                            </h2>
-                            <div class="main__inputs">
-                                <h3 class="main__subtitle">Благодаря какому свойству продукта заказчик сможет
-                                    получить
-                                    желаемое (из предыдущего пункта) ?</h3>
-                            </div>
-                            <div class="main__textblock">
-                                <label for="unique-text">
-                                    <textarea name="unique-text" id="unique-text"
-                                        placeholder="Перечислите преимущества ваших продуктов / услуг, их особенности, технические данные, представьте сертификаты, добавьте отзывы клиентов"
-                                        class="main__textarea"></textarea>
-                                </label>
+                            <div class="positioning__textarea">
+                                <h2 class="main__title--2">Доказательства, подтверждающие предложение<span
+                                        class="alert alert-positioning-ta" id="alert-positioning-05">
+                                        <img src="../img/brief/alert.svg" alt="alert">
+                                    </span>
+                                </h2>
+                                <div class="main__inputs">
+                                    <h3 class="main__subtitle">Благодаря какому свойству продукта заказчик сможет
+                                        получить
+                                        желаемое (из предыдущего пункта) ?</h3>
+                                </div>
+                                <div class="main__textblock">
+                                    <label for="unique-text">
+                                        <textarea name="unique-text" id="unique-text"
+                                            placeholder="Перечислите преимущества ваших продуктов / услуг, их особенности, технические данные, представьте сертификаты, добавьте отзывы клиентов"
+                                            class="main__textarea"></textarea>
+                                    </label>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -2166,9 +2229,11 @@
                                 <p class="buttons__btnname">На следующую</p>
                             </button>
                         </div>
-                        <p class="delimiter__alert">Заполните пункты, отмеченные знаком “ <span class="delimiter__sign">
+                        <p class="delimiter__alert" id="dlm-alert-positioning">Заполните пункты, отмеченные знаком “
+                            <span class="delimiter__sign">
                                 <img src="../img/brief/alert.svg" alt="alert">
-                            </span> “</p>
+                            </span> “
+                        </p>
                     </div>
                 </div>
                 <section class="collage">
@@ -2208,200 +2273,222 @@
                             <h2 class="main__title" id="collage-title">оформление сайта
                             </h2>
                             <div class="main__zero-6">.</div>
-                            <div class="main__inputs">
-                                <h3 class="main__subtitle">Впечатление<span class="alert">
-                                        <img src="../img/brief/alert.svg" alt="alert">
-                                    </span>
-                                </h3>
+                            <div class="collage__textarea">
+                                <div class="main__inputs">
+                                    <h3 class="main__subtitle">Впечатление<span class="alert" id="alert-collage-03">
+                                            <img src="../img/brief/alert.svg" alt="alert">
+                                        </span>
+                                    </h3>
+                                </div>
+                                <h4 class="main__h4">Какое впечатление должно остаться у ЦА после посещения
+                                    сайта?<br>Что не должно разрушать устоявшийся образ компании?</h4>
+                                <div class="main__zero-1">.</div>
+                                <label for="impression-text">
+                                    <textarea name="impression-text" id="impression-text"
+                                        placeholder="Внесите сведения по вопросам вверху"
+                                        class="main__textarea collage__textarea--inp"></textarea>
+                                </label>
                             </div>
-                            <h4 class="main__h4">Какое впечатление должно остаться у ЦА после посещения
-                                сайта?<br>Что не должно разрушать устоявшийся образ компании?</h4>
-                            <div class="main__zero-1">.</div>
-                            <label for="impression-text">
-                                <textarea name="impression-text" id="impression-text"
-                                    placeholder="Внесите сведения по вопросам вверху" class="main__textarea"></textarea>
-                            </label>
                             <div class="main__zero-6">.</div>
-                            <div class="main__inputs">
-                                <h3 class="main__subtitle">Стиль оформления<span class="alert">
-                                        <img src="../img/brief/alert.svg" alt="alert">
-                                    </span>
-                                </h3>
+                            <div class="collage__inputs collage__inputs01">
+                                <div class="main__inputs">
+                                    <h3 class="main__subtitle">Стиль подачи материала<span
+                                            class="alert alert-collage-ta" id="alert-collage-01">
+                                            <img src="../img/brief/alert.svg" alt="alert">
+                                        </span>
+                                    </h3>
+                                </div>
+                                <h4 class="main__h4">Какой стиль оформления предпочтителен?<br>Выберите не более 5-6
+                                    вариантов ответов. Старайтесь, чтобы выбранные варианты не спорили друг с другом
+                                </h4>
+                                <div class="main__zero-6">.</div>
+                                <div class="main__inputs">
+                                    <div class="main__complex--3">
+                                        <input class="main__input" type="checkbox" name="style00" id="style00">
+                                        <label for="style00"
+                                            class="main__label main__complex--first"><span>минималистичный</span>
+                                        </label>
+                                        <input class="main__input" type="checkbox" name="style01" id="style01">
+                                        <label for="style01" class="main__label main__complex--second"><span>с
+                                                плотным
+                                                наполнением</span>
+                                        </label>
+                                    </div>
+                                    <div class="main__complex--3">
+                                        <input class="main__input" type="checkbox" name="style02" id="style02">
+                                        <label for="style02" class="main__label main__complex--first"><span>спокойный,
+                                                рациональный</span>
+                                        </label>
+                                        <input class="main__input" type="checkbox" name="style03" id="style03">
+                                        <label for="style03"
+                                            class="main__label main__complex--second"><span>чувственный,
+                                                эмоциональный</span>
+                                        </label>
+                                    </div>
+                                    <div class="main__complex--3">
+                                        <input class="main__input" type="checkbox" name="style04" id="style04">
+                                        <label for="style04"
+                                            class="main__label main__complex--first"><span>реалистический</span>
+                                        </label>
+                                        <input class="main__input" type="checkbox" name="style05" id="style05">
+                                        <label for="style05"
+                                            class="main__label main__complex--second"><span>преувеличенный
+                                                (эпатажный)</span>
+                                        </label>
+                                    </div>
+                                    <div class="main__complex--3">
+                                        <input class="main__input" type="checkbox" name="style06" id="style06">
+                                        <label for="style06"
+                                            class="main__label main__complex--first"><span>официальный</span>
+                                        </label>
+                                        <input class="main__input" type="checkbox" name="style07" id="style07">
+                                        <label for="style07"
+                                            class="main__label main__complex--second"><span>неформальный,
+                                                доверительный</span>
+                                        </label>
+                                    </div>
+                                    <div class="main__complex--3">
+                                        <input class="main__input" type="checkbox" name="style09" id="style09">
+                                        <label for="style09" class="main__label main__complex--first"><span>утонченный,
+                                                изысканный</span>
+                                        </label>
+                                        <input class="main__input" type="checkbox" name="style10" id="style10">
+                                        <label for="style10"
+                                            class="main__label main__complex--second"><span>брутальный</span>
+                                        </label>
+                                    </div>
+                                    <div class="main__complex--3">
+                                        <input class="main__input" type="checkbox" name="style11" id="style11">
+                                        <label for="style11"
+                                            class="main__label main__complex--first"><span>эстетский</span>
+                                        </label>
+                                        <input class="main__input" type="checkbox" name="style12" id="style12">
+                                        <label for="style12" class="main__label main__complex--second"><span>простецкий,
+                                                свойский</span>
+                                        </label>
+                                    </div>
+                                    <div class="main__complex--3">
+                                        <input class="main__input" type="checkbox" name="style13" id="style13">
+                                        <label for="style13"
+                                            class="main__label main__complex--first"><span>традиционный</span>
+                                        </label>
+                                        <input class="main__input" type="checkbox" name="style14" id="style14">
+                                        <label for="style14"
+                                            class="main__label main__complex--second"><span>современный</span>
+                                        </label>
+                                    </div>
+                                    <div class="main__complex--3">
+                                        <input class="main__input" type="checkbox" name="style15" id="style15">
+                                        <label for="style15"
+                                            class="main__label main__complex--first"><span>демократичный</span>
+                                        </label>
+                                        <input class="main__input" type="checkbox" name="style16" id="style16">
+                                        <label for="style16"
+                                            class="main__label main__complex--second"><span>респектабельный
+                                                (люксовый)</span>
+                                        </label>
+                                    </div>
+                                    <div class="main__complex--3">
+                                        <input class="main__input" type="checkbox" name="style17" id="style17">
+                                        <label for="style17" class="main__label main__complex--first"><span>уверенный,
+                                                основательный</span>
+                                        </label>
+                                        <input class="main__input" type="checkbox" name="style18" id="style18">
+                                        <label for="style18"
+                                            class="main__label main__complex--second"><span>расслабленный,
+                                                релаксный</span>
+                                        </label>
+                                    </div>
+                                    <div class="main__complex--3">
+                                        <input class="main__input" type="checkbox" name="style19" id="style19">
+                                        <label for="style19"
+                                            class="main__label main__complex--first"><span>статичный</span>
+                                        </label>
+                                        <input class="main__input" type="checkbox" name="style20" id="style20">
+                                        <label for="style20" class="main__label main__complex--second"><span>динамичный,
+                                                энергичный</span>
+                                        </label>
+                                    </div>
+                                    <input class="main__input" type="checkbox" name="user-style" id="user-style">
+                                    <label for="user-style" class="main__label"><span>ваш вариант стиля, ссылки на
+                                            понравившиеся сайты:</span>
+                                    </label>
+                                    <label for="user-style-text">
+                                        <textarea name="user-style-text" id="user-style-text"
+                                            placeholder="Внесите сведения по вопросам вверху"
+                                            class="main__textarea collage__checkbox--inp"
+                                            oninput='this.parentNode.parentNode.children[10].checked = (this.value!="" ? true : false)'></textarea>
+                                    </label>
+                                </div>
                             </div>
-                            <h4 class="main__h4">Какой стиль оформления предпочтителен?<br>Выберите не более 5-6
-                                вариантов ответов. Старайтесь, чтобы выбранные варианты не спорили друг с другом
-                            </h4>
-                            <div class="main__zero-6">.</div>
-                            <div class="main__inputs">
-                                <div class="main__complex--3">
-                                    <input class="main__input" type="checkbox" name="style00" id="style00">
-                                    <label for="style00"
-                                        class="main__label main__complex--first"><span>минималистичный</span>
+                            <div class="collage__inputs collage__inputs02">
+                                <div class="main__inputs">
+                                    <h3 class="main__subtitle">Обязательные элементы оформления<span
+                                            class="alert alert-collage-ta" id="alert-collage-02">
+                                            <img src="../img/brief/alert.svg" alt="alert">
+                                        </span>
+                                    </h3>
+                                </div>
+                                <h4 class="main__h4">Элементы, которые должны присутствовать на всей рекламной и
+                                    презентационной продукции Вашей компании <span>(предоставляются заказчиком
+                                        отдельно)</span>
+                                </h4>
+                                <div class="main__zero-6">.</div>
+                                <div class="main__inputs">
+                                    <div class="main__complex--3">
+                                        <input class="main__input" type="checkbox" name="required01" id="required01">
+                                        <label for="required01"
+                                            class="main__label main__complex--second"><span>логотип</span>
+                                        </label>
+                                    </div>
+                                    <div class="main__complex--3">
+                                        <input class="main__input" type="checkbox" name="required02" id="required02">
+                                        <label for="required02"
+                                            class="main__label main__complex--second"><span>корпоративная
+                                                цветовая
+                                                гамма</span>
+                                        </label>
+                                    </div>
+                                    <div class="main__complex--3">
+                                        <input class="main__input" type="checkbox" name="required03" id="required03">
+                                        <label for="required03"
+                                            class="main__label main__complex--second"><span>корпоративные
+                                                шрифты</span>
+                                        </label>
+                                    </div>
+                                    <div class="main__complex--3">
+                                        <input class="main__input" type="checkbox" name="required04" id="required04">
+                                        <label for="required04"
+                                            class="main__label main__complex--second"><span>фотоизображения,
+                                                рисунки или
+                                                иконки, являющиеся частью корпоративного стиля</span>
+                                        </label>
+                                    </div>
+                                    <div class="main__complex--3">
+                                        <input class="main__input" type="checkbox" name="required05" id="required05">
+                                        <label for="required05"
+                                            class="main__label main__complex--second"><span>рекламный
+                                                слоган</span>
+                                        </label>
+                                    </div>
+                                    <div class="main__complex--3">
+                                        <input class="main__input" type="checkbox" name="required06" id="required06">
+                                        <label for="required06"
+                                            class="main__label main__complex--second"><span>особенности
+                                                в композиции</span>
+                                        </label>
+                                    </div>
+                                    <input class="main__input" type="checkbox" name="user-required" id="user-required">
+                                    <label for="user-required"
+                                        class="main__label main__complex--second"><span>другое:</span>
                                     </label>
-                                    <input class="main__input" type="checkbox" name="style01" id="style01">
-                                    <label for="style01" class="main__label main__complex--second"><span>с плотным
-                                            наполнением</span>
+                                    <label for="user-required-text">
+                                        <textarea name="user-required-text" id="user-required-text"
+                                            placeholder="Внесите сведения по вопросам вверху"
+                                            class="main__textarea collage__checkbox--inp"
+                                            oninput='this.parentNode.parentNode.children[6].checked = (this.value!="" ? true : false)'></textarea>
                                     </label>
                                 </div>
-                                <div class="main__complex--3">
-                                    <input class="main__input" type="checkbox" name="style02" id="style02">
-                                    <label for="style02" class="main__label main__complex--first"><span>спокойный,
-                                            рациональный</span>
-                                    </label>
-                                    <input class="main__input" type="checkbox" name="style03" id="style03">
-                                    <label for="style03" class="main__label main__complex--second"><span>чувственный,
-                                            эмоциональный</span>
-                                    </label>
-                                </div>
-                                <div class="main__complex--3">
-                                    <input class="main__input" type="checkbox" name="style04" id="style04">
-                                    <label for="style04"
-                                        class="main__label main__complex--first"><span>реалистический</span>
-                                    </label>
-                                    <input class="main__input" type="checkbox" name="style05" id="style05">
-                                    <label for="style05" class="main__label main__complex--second"><span>преувеличенный
-                                            (эпатажный)</span>
-                                    </label>
-                                </div>
-                                <div class="main__complex--3">
-                                    <input class="main__input" type="checkbox" name="style06" id="style06">
-                                    <label for="style06"
-                                        class="main__label main__complex--first"><span>официальный</span>
-                                    </label>
-                                    <input class="main__input" type="checkbox" name="style07" id="style07">
-                                    <label for="style07" class="main__label main__complex--second"><span>неформальный,
-                                            доверительный</span>
-                                    </label>
-                                </div>
-                                <div class="main__complex--3">
-                                    <input class="main__input" type="checkbox" name="style09" id="style09">
-                                    <label for="style09" class="main__label main__complex--first"><span>утонченный,
-                                            изысканный</span>
-                                    </label>
-                                    <input class="main__input" type="checkbox" name="style10" id="style10">
-                                    <label for="style10"
-                                        class="main__label main__complex--second"><span>брутальный</span>
-                                    </label>
-                                </div>
-                                <div class="main__complex--3">
-                                    <input class="main__input" type="checkbox" name="style11" id="style11">
-                                    <label for="style11" class="main__label main__complex--first"><span>эстетский</span>
-                                    </label>
-                                    <input class="main__input" type="checkbox" name="style12" id="style12">
-                                    <label for="style12" class="main__label main__complex--second"><span>простецкий,
-                                            свойский</span>
-                                    </label>
-                                </div>
-                                <div class="main__complex--3">
-                                    <input class="main__input" type="checkbox" name="style13" id="style13">
-                                    <label for="style13"
-                                        class="main__label main__complex--first"><span>традиционный</span>
-                                    </label>
-                                    <input class="main__input" type="checkbox" name="style14" id="style14">
-                                    <label for="style14"
-                                        class="main__label main__complex--second"><span>современный</span>
-                                    </label>
-                                </div>
-                                <div class="main__complex--3">
-                                    <input class="main__input" type="checkbox" name="style15" id="style15">
-                                    <label for="style15"
-                                        class="main__label main__complex--first"><span>демократичный</span>
-                                    </label>
-                                    <input class="main__input" type="checkbox" name="style16" id="style16">
-                                    <label for="style16" class="main__label main__complex--second"><span>респектабельный
-                                            (люксовый)</span>
-                                    </label>
-                                </div>
-                                <div class="main__complex--3">
-                                    <input class="main__input" type="checkbox" name="style17" id="style17">
-                                    <label for="style17" class="main__label main__complex--first"><span>уверенный,
-                                            основательный</span>
-                                    </label>
-                                    <input class="main__input" type="checkbox" name="style18" id="style18">
-                                    <label for="style18" class="main__label main__complex--second"><span>расслабленный,
-                                            релаксирующий</span>
-                                    </label>
-                                </div>
-                                <div class="main__complex--3">
-                                    <input class="main__input" type="checkbox" name="style19" id="style19">
-                                    <label for="style19" class="main__label main__complex--first"><span>статичный</span>
-                                    </label>
-                                    <input class="main__input" type="checkbox" name="style20" id="style20">
-                                    <label for="style20" class="main__label main__complex--second"><span>динамичный,
-                                            энергичный</span>
-                                    </label>
-                                </div>
-                                <input class="main__input" type="checkbox" name="user-style" id="user-style">
-                                <label for="user-style" class="main__label"><span>ваш вариант стиля, ссылки на
-                                        понравившиеся сайты:</span>
-                                </label>
-                                <label for="user-style-text">
-                                    <textarea name="user-style-text" id="user-style-text"
-                                        placeholder="Внесите сведения по вопросам вверху" class="main__textarea"
-                                        oninput='this.parentNode.parentNode.children[10].checked = (this.value!="" ? true : false)'>
-                                    </textarea>
-                                </label>
-                            </div>
-                            <div class="main__inputs">
-                                <h3 class="main__subtitle">Обязательные элементы оформления<span class="alert">
-                                        <img src="../img/brief/alert.svg" alt="alert">
-                                    </span>
-                                </h3>
-                            </div>
-                            <h4 class="main__h4">Элементы, которые должны присутствовать на всей рекламной и
-                                презентационной продукции Вашей компании <span>(предоставляются заказчиком
-                                    отдельно)</span>
-                            </h4>
-                            <div class="main__zero-6">.</div>
-                            <div class="main__inputs">
-                                <div class="main__complex--3">
-                                    <input class="main__input" type="checkbox" name="required01" id="required01">
-                                    <label for="required01"
-                                        class="main__label main__complex--second"><span>логотип</span>
-                                    </label>
-                                </div>
-                                <div class="main__complex--3">
-                                    <input class="main__input" type="checkbox" name="required02" id="required02">
-                                    <label for="required02"
-                                        class="main__label main__complex--second"><span>корпоративная цветовая
-                                            гамма</span>
-                                    </label>
-                                </div>
-                                <div class="main__complex--3">
-                                    <input class="main__input" type="checkbox" name="required03" id="required03">
-                                    <label for="required03"
-                                        class="main__label main__complex--second"><span>корпоративные шрифты</span>
-                                    </label>
-                                </div>
-                                <div class="main__complex--3">
-                                    <input class="main__input" type="checkbox" name="required04" id="required04">
-                                    <label for="required04"
-                                        class="main__label main__complex--second"><span>фотоизображения, рисунки или
-                                            иконки, являющиеся частью корпоративного стиля</span>
-                                    </label>
-                                </div>
-                                <div class="main__complex--3">
-                                    <input class="main__input" type="checkbox" name="required05" id="required05">
-                                    <label for="required05" class="main__label main__complex--second"><span>рекламный
-                                            слоган</span>
-                                    </label>
-                                </div>
-                                <div class="main__complex--3">
-                                    <input class="main__input" type="checkbox" name="required06" id="required06">
-                                    <label for="required06" class="main__label main__complex--second"><span>особенности
-                                            в композиции</span>
-                                    </label>
-                                </div>
-                                <input class="main__input" type="checkbox" name="user-required" id="user-required">
-                                <label for="user-required"
-                                    class="main__label main__complex--second"><span>другое:</span>
-                                </label>
-                                <label for="user-required-text">
-                                    <textarea name="user-required-text" id="user-required-text"
-                                        placeholder="Внесите сведения по вопросам вверху" class="main__textarea"
-                                        oninput='this.parentNode.parentNode.children[6].checked = (this.value!="" ? true : false)'>
-                                    </textarea>
-                                </label>
                             </div>
                         </div>
                     </div>
@@ -2423,21 +2510,27 @@
                                 </div>
                                 <p class="buttons__btnname">На предыдущую</p>
                             </button>
-                            <button class="buttons__button">
+                            <button type="submit" class="buttons__button" id="d05-sec">
                                 <div class="buttons__btnimg">
                                     <img src="../img/brief/end.png" alt="Заполнить форму обратной связи" loading="lazy">
                                 </div>
                                 <p class="buttons__btnname">Заполнить форму обратной связи</p>
                             </button>
                         </div>
-                        <p class="delimiter__alert">Заполните пункты, отмеченные знаком “ <span class="delimiter__sign">
+                        <p class="delimiter__alert" id="dlm-alert-collage">Заполните пункты, отмеченные знаком “ <span
+                                class="delimiter__sign">
                                 <img src="../img/brief/alert.svg" alt="alert">
-                            </span> “</p>
+                            </span> “
+                        </p>
                     </div>
                 </div>
-            </div>
+            </form>
         </main>
         <footer>
         </footer>
+        <div class="downloader">
+            <img src="../img/brief/download3.gif" alt="downloading...">
+        </div>
+        <script defer src="../js/script-brief.js"></script>
     </div>
 </body>
