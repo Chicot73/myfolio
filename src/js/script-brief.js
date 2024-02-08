@@ -1786,6 +1786,7 @@ window.addEventListener('DOMContentLoaded', () => {
                                                 let count = 0;
                                                 let count2 = 0;
                                                 let count3 = 0;
+                                                let countTa = 0;
                                                 let temp = false;
 
 
@@ -1881,9 +1882,12 @@ window.addEventListener('DOMContentLoaded', () => {
                                                                     el.parentNode.parentNode.parentNode.querySelector('.alert-positioning-ta').style.display = 'none';
                                                                 }
 
-                                                                errorTa = false;
-                                                                // setTimeout(checkAreas, 3000);
-                                                                // clearTimeout(checkAreas);
+                                                                countTa++;
+
+                                                                if (countTa >= 2) {
+
+                                                                    errorTa = false;
+                                                                }
 
                                                             } else {
 
@@ -2048,12 +2052,7 @@ window.addEventListener('DOMContentLoaded', () => {
                                                     }) */
 
 
-                                                    /* function downloadAnimOut(e) {
 
-                                                        if (document.querySelector('.downloader').classList.contains('active')) {
-                                                            document.querySelector('.downloader').classList.remove('active');
-                                                        }
-                                                    }; */
 
 
                                                     const boxes = document.querySelectorAll('.collage__inputs');
@@ -2117,54 +2116,9 @@ window.addEventListener('DOMContentLoaded', () => {
                                                     })
 
 
-                                                    // Форма отправки
 
 
-                                                    //const form = document.querySelector('.form');
 
-                                                    //let successForm = false;
-
-                                                    //let countForm = false;
-
-                                                    /* const sendForm = (data) => {
-                                                        return fetch('/mail.php', {
-                                                            method: 'POST',
-                                                            body: JSON.stringify(data),
-                                                            headers: {
-                                                                'Content-type': 'application/json; charset=UTF-8'
-                                                            }
-                                                        }).then(res => res.json());
-                                                    }
-
-                                                    function letForm() {
-
-                                                        e.preventDefault();
-
-                                                        const dataForm = new FormData(form);
-                                                        const user = {};
-
-                                                        dataForm.forEach((val, key) => {
-                                                            user[key] = val;
-                                                        });
-
-                                                        // console.log(dataForm.has([budget_01]));
-
-                                                        sendForm(user).then(data => {
-                                                            console.log('Письмо отправлено успешно');
-                                                        });
-
-                                                        form.reset();
-
-                                                        //countForm = true;
-
-                                                        //debugger;
-                                                        setTimeout(document.location.replace('https://igorbobyrev.ru/html/feedback.html'), 600);
-
-                                                        // if ((successForm === true) && (countForm === false)) {
-
-
-                                                        // }
-                                                    } */
 
                                                     /////////////////////////////////////////
                                                     /////////////////////////////////////////
@@ -2515,7 +2469,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 
-    const section01 = document.querySelector('.turget2');
+    /* const section01 = document.querySelector('.turget2');
 
 
     document.addEventListener('click', (e) => {
@@ -2544,7 +2498,7 @@ window.addEventListener('DOMContentLoaded', () => {
             document.querySelector('.turget3').style.display = 'none';
             //heightScroll = 12000;
         };
-    })
+    }) */
 
 
 
@@ -2656,14 +2610,14 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 
-        function downloadAnimOut(e) {
+        // function downloadAnimOut(e) {
 
-            if (document.querySelector('.downloader').classList.contains('active')) {
-                document.querySelector('.downloader').classList.remove('active');
-            }
-        };
+        //     if (document.querySelector('.downloader').classList.contains('active')) {
+        //         document.querySelector('.downloader').classList.remove('active');
+        //     }
+        // };
 
-        if (formSucess = true) {
+        if (formSucess === true) {
 
             const dataForm = new FormData(form);
             const user = {};
@@ -2682,7 +2636,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
             //downloadAnimOut();
 
-            //document.location.replace('https://igorbobyrev.ru/html/feedback.html')
+            document.location.replace('https://igorbobyrev.ru/html/feedback.html')
 
             return;
         }
