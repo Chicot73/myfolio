@@ -1,44 +1,143 @@
 window.addEventListener('DOMContentLoaded', () => {
 
-    // Форма отправки
-
-
-    const form = document.querySelector('.form');
-
-    const sendForm = (data) => {
-        return fetch('./mail.php', {
-            method: 'POST',
-            body: JSON.stringify(data),
-            headers: {
-                'Content-type': 'application/json; charset=UTF-8'
-            }
-        }).then(res => res.json());
-    }
-
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-
-        const dataForm = new FormData(form);
-        const user = {};
-
-        dataForm.forEach((val, key) => {
-            user[key] = val;
-        });
-
-        // console.log(dataForm.has([budget_01]));
-
-        sendForm(user).then(data => {
-            console.log('Письмо отправлено успешно');
-        });
-
-        form.reset();
-    })
+    let formSucess = false;
 
     //Анимация спиннера - включение
+
+    const buttonCustomer = document.getElementById('d01-sec');
+
+    let counterCustomer;
+
+    function downloadAnimIn() {
+        if (counterCustomer >= 1) {
+            if (!document.querySelector('.downloader').classList.contains('active')) {
+                document.querySelector('.downloader').classList.add('active');
+            }
+            //console.log(counterTurg);
+        };
+    };
+
+    function customerAnim(e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+
+        downloadAnimIn(e);
+        counterCustomer = 0;
+
+        counterCustomer++;
+
+    }
+
+    buttonCustomer.addEventListener('click', customerAnim);
+
+    const buttonBudget = document.getElementById('d02-sec');
+
+    let counterBudget;
+
+    function downloadAnimIn() {
+        if (counterBudget >= 1) {
+            if (!document.querySelector('.downloader').classList.contains('active')) {
+                document.querySelector('.downloader').classList.add('active');
+            }
+            //console.log(counterTurg);
+        };
+    };
+
+    function budgetAnim(e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+
+        downloadAnimIn(e);
+        counterBudget = 0;
+
+        counterBudget++;
+
+    }
+
+    buttonBudget.addEventListener('click', budgetAnim);
 
     const buttonTurg = document.getElementById('d03-sec');
 
     let counterTurg;
+
+    function downloadAnimIn() {
+        if (counterTurg >= 1) {
+            if (!document.querySelector('.downloader').classList.contains('active')) {
+                document.querySelector('.downloader').classList.add('active');
+            }
+            //console.log(counterTurg);
+        };
+    };
+
+    function turgetAnim(e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+
+        downloadAnimIn(e);
+        counterTurg = 0;
+
+        counterTurg++;
+
+    }
+
+    buttonTurg.addEventListener('click', turgetAnim);
+
+    const buttonPosit = document.getElementById('d04-sec');
+
+    let counterPosit;
+
+    function downloadAnimIn() {
+        if (counterPosit >= 1) {
+            if (!document.querySelector('.downloader').classList.contains('active')) {
+                document.querySelector('.downloader').classList.add('active');
+            }
+            //console.log(counterTurg);
+        };
+    };
+
+    function PositAnim(e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+
+        downloadAnimIn(e);
+        counterPosit = 0;
+
+        counterPosit++;
+
+    }
+
+    buttonPosit.addEventListener('click', PositAnim);
+
+    /* const buttonCollage = document.getElementById('d05-sec');
+
+    let counterCollage;
+
+    function downloadAnimIn() {
+        if (counterCollage >= 1) {
+            if (!document.querySelector('.downloader').classList.contains('active')) {
+                document.querySelector('.downloader').classList.add('active');
+            }
+            //console.log(counterTurg);
+        };
+    };
+
+    function CollageAnim(e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+
+        downloadAnimIn(e);
+        counterCollage = 0;
+
+        counterCollage++;
+
+    }
+
+    buttonCollage.addEventListener('click', CollageAnim); */
 
 
     //Прокрутка по секциям
@@ -84,8 +183,8 @@ window.addEventListener('DOMContentLoaded', () => {
         budgetBtn = document.getElementById("d01-sec"),
         turgetBtn = document.getElementById("d02-sec"),
         positBtn = document.getElementById("d03-sec"),
-        collageBtn = document.getElementById("d04-sec");
-    finishForm = document.getElementById("d05-sec");
+        collageBtn = document.getElementById("d04-sec"),
+        finishForm = document.getElementById("d05-sec");
     const budgetTitle = document.getElementById("budget-title");
     const turgetTitle = document.getElementById("turget-title");
     const positTitle = document.getElementById("posit-title");
@@ -149,32 +248,18 @@ window.addEventListener('DOMContentLoaded', () => {
 
         const controller = new AbortController();
 
-        function customerCheck(e) {
-            e.preventDefault();
-            e.stopPropagation();
+        function downloadAnimOut(e) {
 
-            function downloadAnimIn() {
-                if (counterTurg >= 1) {
-                    if (!document.querySelector('.downloader').classList.contains('active')) {
-                        document.querySelector('.downloader').classList.add('active');
-                    }
-                    //console.log(counterTurg);
-                };
-            };
-
-            function turgetAnim(e) {
-                e.preventDefault();
-                e.stopPropagation();
-
-
-                downloadAnimIn(e);
-                counterTurg = 0;
-
-                counterTurg++;
-
+            if (document.querySelector('.downloader').classList.contains('active')) {
+                document.querySelector('.downloader').classList.remove('active');
             }
+        };
 
-            buttonTurg.addEventListener('click', turgetAnim);
+        function customerCheck(e) {
+            //e.preventDefault();
+            //e.stopPropagation();
+
+
 
             //successChecked();/////////........\\\\\\\\\.......////////   УДАЛИТЬ!!!!
             ////////////////////////////////////////////////////////////////////////
@@ -489,6 +574,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
             //console.log(commonEmpty);
 
+            downloadAnimOut()
+
 
             function successChecked() {
 
@@ -545,10 +632,17 @@ window.addEventListener('DOMContentLoaded', () => {
                         }); */
                     };
 
+                    function downloadAnimOut(e) {
+
+                        if (document.querySelector('.downloader').classList.contains('active')) {
+                            document.querySelector('.downloader').classList.remove('active');
+                        }
+                    };
+
 
                     function budgetCheck(e) {
-                        e.preventDefault();
-                        e.stopPropagation();
+                        //e.preventDefault();
+                        //e.stopPropagation();
 
 
 
@@ -1155,7 +1249,7 @@ window.addEventListener('DOMContentLoaded', () => {
                         };
                         box02.addEventListener('click', box02Click);
 
-
+                        downloadAnimOut();
 
 
                         function successTrue() {
@@ -1248,6 +1342,13 @@ window.addEventListener('DOMContentLoaded', () => {
                                     }); */
                                 };
 
+                                function downloadAnimOut(e) {
+
+                                    if (document.querySelector('.downloader').classList.contains('active')) {
+                                        document.querySelector('.downloader').classList.remove('active');
+                                    }
+                                };
+
 
 
                                 const boxes = document.querySelectorAll('.turget__inputs');
@@ -1258,14 +1359,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 
-                                function downloadAnimOut(e) {
 
-                                    if (document.querySelector('.downloader').classList.contains('active')) {
-                                        document.querySelector('.downloader').classList.remove('active');
-                                    }
-                                    //document.querySelector('.downloader').contains('active');
-                                    //setTimeout(loadingOut, 300);
-                                };
 
 
 
@@ -1310,10 +1404,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
                                 function turgetCheck(e) {
 
-                                    e.preventDefault();
-                                    e.stopPropagation();
+                                    //e.preventDefault();
+                                    //e.stopPropagation();
 
-                                    successTrue(); ///   удалить!!!
+                                    //successTrue(); ///   удалить!!!
                                     //////////////////    удалить!!!
                                     /////////////////////////////////////////
                                     ////////////////////////////////////////
@@ -1333,76 +1427,6 @@ window.addEventListener('DOMContentLoaded', () => {
                                     let errorPh = false;
                                     let success = false;
 
-
-                                    /* boxes.forEach(box => {
-
-                                        if (!box.querySelectorAll('input:checked').length) {
-
-                                            let inputTxt = box.contains(document.querySelector(".turget__input-txt"));
-
-                                            if (inputTxt) {
-
-                                                if ((box.querySelector(".turget__input-txt").value == undefined) || (box.querySelector(".turget__input-txt").value.trim() == '')) {
-
-                                                    error = true;
-
-                                                    closeAlert = () => {
-                                                        document.getElementById("dlm-alert-turget").style.display = "none";
-                                                    }
-
-                                                    box.querySelector('.alert-turget').style.display = "block";
-
-                                                    document.getElementById("dlm-alert-turget").style.display = "block";
-                                                    setTimeout(closeAlert, 3000);
-                                                    clearTimeout(closeAlert);
-
-                                                } else {
-
-                                                    if (box.querySelector(".turget__input-txt").value != '') {
-
-                                                        let num = box.querySelector(".turget__input-txt").value.length;
-
-                                                        if (num > 3) {
-
-                                                            if (box.querySelector('.alert-turget').style.display == 'block') {
-                                                                box.querySelector('.alert-turget').style.display = 'none';
-                                                            };
-
-                                                            // checkAreas();
-
-                                                        } else {
-
-                                                            error = true;
-
-                                                            closeAlert = () => {
-                                                                document.getElementById("dlm-alert-turget").style.display = "none";
-                                                            }
-
-                                                            box.querySelector('.alert-turget').style.display = "block";
-
-                                                            document.getElementById("dlm-alert-turget").style.display = "block";
-                                                            setTimeout(closeAlert, 3000);
-                                                            clearTimeout(closeAlert);
-                                                        }
-                                                    }
-                                                }
-
-                                            } else {
-
-                                                error = true;
-
-                                                closeAlert = () => {
-                                                    document.getElementById("dlm-alert-turget").style.display = "none";
-                                                }
-
-                                                box.querySelector('.alert-turget').style.display = "block";
-
-                                                document.getElementById("dlm-alert-turget").style.display = "block";
-                                                setTimeout(closeAlert, 3000);
-                                                clearTimeout(closeAlert);
-                                            }
-                                        }
-                                    }) */
 
                                     boxes.forEach(box => {
 
@@ -1457,6 +1481,19 @@ window.addEventListener('DOMContentLoaded', () => {
                                                         }
                                                     }
                                                 }
+                                            } else {
+
+                                                error = true;
+
+                                                closeAlert = () => {
+                                                    document.getElementById("dlm-alert-turget").style.display = "none";
+                                                }
+
+                                                box.querySelector('.alert-turget').style.display = "block";
+
+                                                document.getElementById("dlm-alert-turget").style.display = "block";
+                                                setTimeout(closeAlert, 3000);
+                                                clearTimeout(closeAlert);
                                             }
                                         }
                                     })
@@ -1567,9 +1604,7 @@ window.addEventListener('DOMContentLoaded', () => {
                                             }
                                         })
                                     });
-
-                                    // setTimeout(downloadAnimOut, 3000);
-                                    // clearTimeout(downloadAnimOut);
+                                    downloadAnimOut();
 
 
 
@@ -1646,14 +1681,19 @@ window.addEventListener('DOMContentLoaded', () => {
                                             };
 
 
+                                            function downloadAnimOut(e) {
 
+                                                if (document.querySelector('.downloader').classList.contains('active')) {
+                                                    document.querySelector('.downloader').classList.remove('active');
+                                                }
+                                            };
 
 
                                             const boxes = document.querySelectorAll('.positioning__inputs');
 
                                             const boxTa2 = document.querySelector('.positioning__radio');
 
-                                            const posTextareas = document.querySelectorAll('.positioning');
+                                            const posTextareas = document.querySelectorAll('.positioning__fieldtxt');
 
                                             const inputsTa2 = boxTa2.querySelectorAll('textarea');
 
@@ -1684,7 +1724,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 
-                                            //let turgetAlert = document.querySelectorAll("alert-turget");
 
                                             boxes.forEach(box => {
 
@@ -1694,7 +1733,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
                                                     input.addEventListener('change', () => {
 
-                                                        box.querySelector('.alert-positioning').style.display = "none";
+                                                        box.querySelector('.alert-positioning-ta').style.display = "none";
 
                                                     },
                                                         { signal: controller04.signal },
@@ -1731,11 +1770,11 @@ window.addEventListener('DOMContentLoaded', () => {
 
                                             function positioningCheck(e) {
 
-                                                e.preventDefault();
-                                                e.stopPropagation();
+                                                // e.preventDefault();
+                                                // e.stopPropagation();
 
 
-                                                successTrue(); /////////////////////////////////////////////////////-----УДАЛИТЬ!!!!!
+                                                //successTrue(); /////////////////////////////////////////////////////-----УДАЛИТЬ!!!!!
                                                 /////////////////////////////////////////////////////-----УДАЛИТЬ!!!!!
                                                 /////////////////////////////////////////////////////-----УДАЛИТЬ!!!!!
                                                 /////////////////////////////////////////////////////-----УДАЛИТЬ!!!!!
@@ -1747,6 +1786,7 @@ window.addEventListener('DOMContentLoaded', () => {
                                                 let count = 0;
                                                 let count2 = 0;
                                                 let count3 = 0;
+                                                let countTa = 0;
                                                 let temp = false;
 
 
@@ -1842,9 +1882,12 @@ window.addEventListener('DOMContentLoaded', () => {
                                                                     el.parentNode.parentNode.parentNode.querySelector('.alert-positioning-ta').style.display = 'none';
                                                                 }
 
-                                                                errorTa = false;
-                                                                // setTimeout(checkAreas, 3000);
-                                                                // clearTimeout(checkAreas);
+                                                                countTa++;
+
+                                                                if (countTa >= 2) {
+
+                                                                    errorTa = false;
+                                                                }
 
                                                             } else {
 
@@ -1983,7 +2026,7 @@ window.addEventListener('DOMContentLoaded', () => {
                                                 //console.log(posTextareas.value);
 
 
-
+                                                downloadAnimOut();
 
 
                                                 function successTrue() {
@@ -2003,20 +2046,18 @@ window.addEventListener('DOMContentLoaded', () => {
                                                         top: coords04.top + maxWidthSec2,
                                                         behavior: 'smooth',
                                                     }); */
-                                                    collageTitle.scrollIntoView({
+                                                    /* collageTitle.scrollIntoView({
                                                         block: "center",
                                                         behavior: 'smooth'
-                                                    })
+                                                    }) */
+
+
 
 
 
                                                     const boxes = document.querySelectorAll('.collage__inputs');
 
-                                                    //const boxTa2 = document.querySelector('.positioning__radio');
-
                                                     const collageTextarea = document.querySelector('.collage__fieldtxt');
-
-                                                    //const inputsTa2 = boxTa2.querySelectorAll('textarea');
 
                                                     const inputsTxt = document.querySelectorAll(".collage__checkbox--inp");
 
@@ -2075,14 +2116,22 @@ window.addEventListener('DOMContentLoaded', () => {
                                                     })
 
 
+
+
+
+
+                                                    /////////////////////////////////////////
+                                                    /////////////////////////////////////////
+                                                    /////////////////////////////////////////
+                                                    /////////////////////////////////////////
+                                                    /////////////////////////////////////////
+                                                    /////////////////////////////////////////
+
                                                     function collageCheck() {
 
-                                                        e.preventDefault();
-                                                        e.stopPropagation();
+                                                        //e.preventDefault();
 
                                                         let error = false;
-                                                        let error01 = false;
-                                                        let error02 = false;
                                                         let errorTa = false;
 
 
@@ -2196,52 +2245,30 @@ window.addEventListener('DOMContentLoaded', () => {
                                                         }
 
 
-                                                        function successTrue() {
 
-                                                            controller05.abort();
-
-                                                            document.location.replace('https://yandex.ru');
-
-                                                            // finishForm.onclick = () => {
-
-                                                            //     document.location.replace('https://yandex.ru');
-                                                            // };
-
-                                                            //console.log('true');
-
-                                                            //document.location.href = 'https://yandex.ru';
-
-                                                        };
 
                                                         if ((errorTa === false) && (error === false)) {
 
-                                                            success = true;
-                                                            //console.log('success = ' + success);
-                                                        } else {
+                                                            //console.log('da');
 
+                                                            //form.addEventListener('submit', letForm);
+                                                            //form.submit(letForm);
 
-                                                            //console.log('false');
-                                                            //setTimeout(loadingOut, 1000);
+                                                            formSucess = true;
+
+                                                            //finishForm.removeEventListener('click', collageCheck);
+                                                            //finishForm.removeEventListener('click', function () { setTimeout(collageCheck, 0) });
+
                                                             return;
-                                                        };
+                                                            //console.log('success = ' + success);
 
-                                                        function ifSuccess() {
+                                                        }
+                                                    }
 
-                                                            if (success == true) {
-
-                                                                successTrue();
-
-                                                            } else {
-                                                                return;
-                                                            }
-                                                        };
-
-                                                        ifSuccess();
-                                                    };
-
-                                                    collageBtn.removeEventListener('click', positioningCheck);
+                                                    collageBtn.removeEventListener('click', function () { setTimeout(positioningCheck, 0) });
 
                                                     finishForm.addEventListener('click', collageCheck);
+                                                    //finishForm.addEventListener('click', function () { setTimeout(collageCheck, 0) });
                                                 };
 
 
@@ -2267,9 +2294,11 @@ window.addEventListener('DOMContentLoaded', () => {
                                                 ifSuccess();
                                             };
 
-                                            positBtn.removeEventListener('click', turgetCheck);
+                                            //positBtn.removeEventListener('click', turgetCheck);
+                                            positBtn.removeEventListener('click', function () { setTimeout(turgetCheck, 0) });
 
-                                            collageBtn.addEventListener('click', positioningCheck);
+                                            //collageBtn.addEventListener('click', positioningCheck);
+                                            collageBtn.addEventListener('click', function () { setTimeout(positioningCheck, 0) });
                                         }
                                     };
 
@@ -2301,9 +2330,12 @@ window.addEventListener('DOMContentLoaded', () => {
                                 };
                                 box02.removeEventListener('click', box02Click);
 
-                                turgetBtn.removeEventListener('click', budgetCheck);
+                                turgetBtn.removeEventListener('click', function () { setTimeout(budgetCheck, 0) });
+                                //turgetBtn.removeEventListener('click', budgetCheck);
 
-                                positBtn.addEventListener('click', turgetCheck);
+                                //positBtn.addEventListener('click', turgetCheck);
+
+                                positBtn.addEventListener('click', function () { setTimeout(turgetCheck, 0) });
                             }
                         };
 
@@ -2347,9 +2379,11 @@ window.addEventListener('DOMContentLoaded', () => {
                         //ifNotnull();
                     };
 
-                    budgetBtn.removeEventListener('click', customerCheck);
+                    //budgetBtn.removeEventListener('click', customerCheck);
+                    budgetBtn.removeEventListener('click', function () { setTimeout(customerCheck, 0) });
 
-                    turgetBtn.addEventListener('click', budgetCheck);
+                    //turgetBtn.addEventListener('click', budgetCheck);
+                    turgetBtn.addEventListener('click', function () { setTimeout(budgetCheck, 0) });
                 }
             }
 
@@ -2372,244 +2406,232 @@ window.addEventListener('DOMContentLoaded', () => {
             ifNotnull();
         };
 
-        budgetBtn.addEventListener('click', customerCheck);
+        budgetBtn.addEventListener('click', function () { setTimeout(customerCheck, 0) });
     }
-})
-
-
-//console.log(completed);
 
 
 
-
-
-
-
-
-
-const turgetBtnPrev = document.getElementById("d02-pre");
-const customerTitle = document.querySelector(".customer__title");
-turgetBtnPrev.addEventListener('click', (e) => {
-    e.preventDefault();
-    customerTitle.scrollIntoView({
-        block: "center",
-        behavior: 'smooth'
-    })
-});
-const positBtnPrev = document.getElementById("d03-pre");
-positBtnPrev.addEventListener('click', (e) => {
-    e.preventDefault();
-    budgetTitle.scrollIntoView({
-        block: "center",
-        behavior: 'smooth'
-    })
-});
-const collageBtnPrev = document.getElementById("d04-pre");
-collageBtnPrev.addEventListener('click', (e) => {
-    e.preventDefault();
-    turgetTitle.scrollIntoView({
-        block: "center",
-        behavior: 'smooth'
-    })
-});
-const finishBtnPrev = document.getElementById("d05-pre");
-finishBtnPrev.addEventListener('click', (e) => {
-    e.preventDefault();
-    positTitle.scrollIntoView({
-        block: "center",
-        behavior: 'smooth'
-    })
-});
-const gotoUp = document.querySelector(".delimiter__gotoup");
-gotoUp.addEventListener('click', (e) => {
-    e.preventDefault();
-    window.scrollTo(scrollY, 0);//наверх страницы
-})
-
-
-
-
-
-///////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////
-
-//кнопки включения дополнительной ЦА
-
-/* function putAddTarget(button) {
-    this.button = button;
-    button.addTarget = function () {
-
-    }
-} */
-
-
-
-
-const section01 = document.querySelector('.turget2');
-
-
-document.addEventListener('click', (e) => {
-
-    if (e.target.closest("#normal-button")) {
+    const turgetBtnPrev = document.getElementById("d02-pre");
+    const customerTitle = document.querySelector(".customer__title");
+    turgetBtnPrev.addEventListener('click', (e) => {
         e.preventDefault();
-
-        document.querySelector('.turget2').style.display = 'block';
-
-    };
-    if (e.target.closest("#normal-button02")) {
-        e.preventDefault();
-
-        document.querySelector('.turget2').style.display = 'none';
-        //heightScroll = 8600;
-    };
-    if (e.target.closest("#normal-button03")) {
-        e.preventDefault();
-
-        document.querySelector('.turget3').style.display = 'block';
-        //heightScroll = 16500;
-    };
-    if (e.target.closest("#normal-button04")) {
-        e.preventDefault();
-
-        document.querySelector('.turget3').style.display = 'none';
-        //heightScroll = 12000;
-    };
-})
-
-
-
-
-/////////////
-
-
-
-/* //  Управление счетчиками в инпутах
-
-
-
-
-let rightArr = document.getElementById("coun-ar-r").children[0];
-let leftArr = document.getElementById("coun-ar-l").children[0];
-let countInput = document.getElementById("count-form");
-document.addEventListener('click', (e) => {
-
-    //console.log(e.target.parentNode);
-
-    if (e.target == rightArr) {
-
-        let count = countInput.value;
-
-        if (count == undefined || count == null || count.trim() === "" || count == NaN) {
-
-            count = 1;
-            //count++;
-            countInput.value = count;
-        };
-
-        if (count >= 0) {
-            count++;
-            countInput.value = count;
-        };
-
-        countInput.parentNode.parentNode.parentNode.children[0].checked = (countInput.value > 0 ? true : false)
-
-    } else if (e.target == leftArr) {
-
-        let count02 = countInput.value;
-
-        if (count02 == undefined || count02 == null || count02.trim() === "" || count02 == NaN) {
-
-            count02 = 0;
-            //count++;
-            countInput.value = count02;
-        };
-
-        if (count02 > 0) {
-            count02--;
-            countInput.value = count02;
-        };
-
-        countInput.parentNode.parentNode.parentNode.children[0].checked = (countInput.value > 0 ? true : false)
-    }
-}); */
-
-
-class counterInput {
-    constructor(rightArr, leftArr, countInput) {
-        this.rightArr = rightArr;
-        this.leftArr = leftArr;
-        this.countInput = countInput;
-    }
-    start() {
-
-        document.addEventListener('click', (e) => {
-
-            if (e.target == this.rightArr) {
-
-                let count = this.countInput.value;
-
-                if (count == undefined || count == null || count.trim() === "" || count == NaN) {
-
-                    count = 1;
-
-                    this.countInput.value = count;
-                };
-
-                if (count >= 0) {
-                    count++;
-                    this.countInput.value = count;
-                };
-
-                this.countInput.parentNode.parentNode.parentNode.children[0].checked = (this.countInput.value > 0 ? true : false)
-
-            } else if (e.target == this.leftArr) {
-
-                let count02 = this.countInput.value;
-
-                if (count02 == undefined || count02 == null || count02.trim() === "" || count02 == NaN) {
-
-                    count02 = 0;
-
-                    this.countInput.value = count02;
-                };
-
-                if (count02 > 0) {
-                    count02--;
-                    this.countInput.value = count02;
-                };
-
-                this.countInput.parentNode.parentNode.parentNode.children[0].checked = (this.countInput.value > 0 ? true : false)
-            }
+        customerTitle.scrollIntoView({
+            block: "center",
+            behavior: 'smooth'
         })
+    });
+    const positBtnPrev = document.getElementById("d03-pre");
+    positBtnPrev.addEventListener('click', (e) => {
+        e.preventDefault();
+        budgetTitle.scrollIntoView({
+            block: "center",
+            behavior: 'smooth'
+        })
+    });
+    const collageBtnPrev = document.getElementById("d04-pre");
+    collageBtnPrev.addEventListener('click', (e) => {
+        e.preventDefault();
+        turgetTitle.scrollIntoView({
+            block: "center",
+            behavior: 'smooth'
+        })
+    });
+    const finishBtnPrev = document.getElementById("d05-pre");
+    finishBtnPrev.addEventListener('click', (e) => {
+        e.preventDefault();
+        positTitle.scrollIntoView({
+            block: "center",
+            behavior: 'smooth'
+        })
+    });
+    const gotoUp = document.querySelector(".delimiter__gotoup");
+    gotoUp.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo(scrollY, 0);//наверх страницы
+    })
+
+
+
+
+
+    ///////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////
+
+    //кнопки включения дополнительной ЦА
+
+    /* function putAddTarget(button) {
+        this.button = button;
+        button.addTarget = function () {
+    
+        }
+    } */
+
+
+
+
+    /* const section01 = document.querySelector('.turget2');
+
+
+    document.addEventListener('click', (e) => {
+
+        if (e.target.closest("#normal-button")) {
+            e.preventDefault();
+
+            document.querySelector('.turget2').style.display = 'block';
+
+        };
+        if (e.target.closest("#normal-button02")) {
+            e.preventDefault();
+
+            document.querySelector('.turget2').style.display = 'none';
+            //heightScroll = 8600;
+        };
+        if (e.target.closest("#normal-button03")) {
+            e.preventDefault();
+
+            document.querySelector('.turget3').style.display = 'block';
+            //heightScroll = 16500;
+        };
+        if (e.target.closest("#normal-button04")) {
+            e.preventDefault();
+
+            document.querySelector('.turget3').style.display = 'none';
+            //heightScroll = 12000;
+        };
+    }) */
+
+
+
+
+    /////////////
+
+
+
+    //  Управление счетчиками в инпутах
+
+
+
+
+    class counterInput {
+        constructor(rightArr, leftArr, countInput) {
+            this.rightArr = rightArr;
+            this.leftArr = leftArr;
+            this.countInput = countInput;
+        }
+        start() {
+
+            document.addEventListener('click', (e) => {
+
+                if (e.target == this.rightArr) {
+
+                    let count = this.countInput.value;
+
+                    if (count == undefined || count == null || count.trim() === "" || count == NaN) {
+
+                        count = 1;
+
+                        this.countInput.value = count;
+                    };
+
+                    if (count >= 0) {
+                        count++;
+                        this.countInput.value = count;
+                    };
+
+                    this.countInput.parentNode.parentNode.parentNode.children[0].checked = (this.countInput.value > 0 ? true : false)
+
+                } else if (e.target == this.leftArr) {
+
+                    let count02 = this.countInput.value;
+
+                    if (count02 == undefined || count02 == null || count02.trim() === "" || count02 == NaN) {
+
+                        count02 = 0;
+
+                        this.countInput.value = count02;
+                    };
+
+                    if (count02 > 0) {
+                        count02--;
+                        this.countInput.value = count02;
+                    };
+
+                    this.countInput.parentNode.parentNode.parentNode.children[0].checked = (this.countInput.value > 0 ? true : false)
+                }
+            })
+        }
     }
-}
 
-let counter01 = new counterInput(document.getElementById("coun-ar-r").children[0], document.getElementById("coun-ar-l").children[0], document.getElementById("count-form"));
-counter01.start();
+    let counter01 = new counterInput(document.getElementById("coun-ar-r").children[0], document.getElementById("coun-ar-l").children[0], document.getElementById("count-form"));
+    counter01.start();
 
-let counter02 = new counterInput(document.getElementById("coun-ar-r02").children[0], document.getElementById("coun-ar-l02").children[0], document.getElementById("count-popup"));
-counter02.start();
+    let counter02 = new counterInput(document.getElementById("coun-ar-r02").children[0], document.getElementById("coun-ar-l02").children[0], document.getElementById("count-popup"));
+    counter02.start();
 
-let counter03 = new counterInput(document.getElementById("coun-ar-r03").children[0], document.getElementById("coun-ar-l03").children[0], document.getElementById("count-slider"));
-counter03.start();
+    let counter03 = new counterInput(document.getElementById("coun-ar-r03").children[0], document.getElementById("coun-ar-l03").children[0], document.getElementById("count-slider"));
+    counter03.start();
 
-let counter04 = new counterInput(document.getElementById("coun-ar-r04").children[0], document.getElementById("coun-ar-l04").children[0], document.getElementById("count-accordion"));
-counter04.start();
+    let counter04 = new counterInput(document.getElementById("coun-ar-r04").children[0], document.getElementById("coun-ar-l04").children[0], document.getElementById("count-accordion"));
+    counter04.start();
 
-let counter05 = new counterInput(document.getElementById("coun-ar-r05").children[0], document.getElementById("coun-ar-l05").children[0], document.getElementById("count-map"));
-counter05.start();
+    let counter05 = new counterInput(document.getElementById("coun-ar-r05").children[0], document.getElementById("coun-ar-l05").children[0], document.getElementById("count-map"));
+    counter05.start();
 
-let counter06 = new counterInput(document.getElementById("coun-ar-r06").children[0], document.getElementById("coun-ar-l06").children[0], document.getElementById("count-video"));
-counter06.start();
-
+    let counter06 = new counterInput(document.getElementById("coun-ar-r06").children[0], document.getElementById("coun-ar-l06").children[0], document.getElementById("count-video"));
+    counter06.start();
 
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+    const form = document.querySelector('.form');
+
+    const sendForm = (data) => {
+        return fetch('/mail.php', {
+            method: 'POST',
+            body: JSON.stringify(data),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8'
+            }
+        }).then(res => res.json());
+    }
+
+    form.addEventListener('submit', (e) => {
+
+
+        e.preventDefault();
+
+
+
+        if (formSucess === true) {
+
+            const dataForm = new FormData(form);
+            const user = {};
+
+            dataForm.forEach((val, key) => {
+                user[key] = val;
+            });
+
+            sendForm(user).then(data => {
+                console.log('Письмо отправлено успешно');
+            });
+
+            form.reset();
+
+
+
+            document.location.replace('https://igorbobyrev.ru/html/feedback.html')
+
+            return;
+        }
+    })
+})
 
 
 

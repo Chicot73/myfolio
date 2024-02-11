@@ -1,0 +1,12 @@
+.btn {
+    position: absolute;
+    top: 6rem;
+    right: 6rem;
+    transform: translate(0, 0);
+    @include font (400, 1.4rem, 70%);
+    padding: 0.9rem 2.3rem 1.2rem;
+    border: 0.1rem solid #909090;
+    border-radius: 5.6rem;
+    background: #FFFFFF;
+    @include gray-2;
+}
