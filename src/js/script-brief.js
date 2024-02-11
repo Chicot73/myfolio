@@ -15,6 +15,10 @@ let positDlm = document.getElementById("d03");
 let collage = document.querySelector(".collage");
 let collageDlm = document.getElementById("d04");
 let finishDlm = document.getElementById("d05");
+const budgetTitle = document.getElementById("budget-title");
+const turgetTitle = document.getElementById("turget-title");
+const positTitle = document.getElementById("posit-title");
+const collageTitle = document.getElementById("collage-title");
 
 window.onload = function () {
     budget.style.display = 'none';
@@ -304,9 +308,14 @@ function customerCheck(e) {
     })
 
     function successCustomer() {
+
         budget.style.display = "block";
         history.style.display = "block";
         turgetDlm.style.display = "block";
+        budgetTitle.scrollIntoView({
+            block: "center",
+            behavior: 'smooth'
+        });
     }
 
     commonEmpty = emptyInputs.length + emptyInputs02.length;
@@ -861,6 +870,10 @@ function budgetCheck(e) {
 
         turget.style.display = "block";
         positDlm.style.display = "block";
+        turgetTitle.scrollIntoView({
+            block: "center",
+            behavior: 'smooth'
+        });
     };
 
     let success = false;
@@ -1117,6 +1130,10 @@ function turgetCheck(e) {
 
         posit.style.display = "block";
         collageDlm.style.display = "block";
+        positTitle.scrollIntoView({
+            block: "center",
+            behavior: 'smooth'
+        });
     }
 
     let successTrg = false;
@@ -1512,6 +1529,10 @@ function positioningCheck(e) {
 
         collage.style.display = "block";
         finishDlm.style.display = "block";
+        collageTitle.scrollIntoView({
+            block: "center",
+            behavior: 'smooth'
+        });
     }
 
     let successPos = false;
@@ -1751,15 +1772,15 @@ finishForm.addEventListener('click', function (e) {
             });
 
             sendForm(user).then(data => {
+
                 console.log('Письмо отправлено успешно');
-            });
 
-            form.reset();
+                form.reset();
 
+                document.location.replace('https://igorbobyrev.ru/html/feedback.html');
 
-            document.location.replace('https://igorbobyrev.ru/html/feedback.html')
-
-            return;
+                formSucess = false;
+            })
         }
     })
 })

@@ -29,8 +29,9 @@
 
 @media only screen and (max-width: 36.09em) {
     .delimiter__alert {
+        line-height: 105%;
         left: 10%;
-        width: 100%;
+        width: 89%;
         transform: translate(-5%, 0);
         bottom: 1.4rem;
     }

@@ -377,35 +377,8 @@ $collage02_06 = $obj['required06'];
 $collage02_07 = $obj['required07'];
 $collage_nothing02 = $obj['collage_nothing02'];
 
-// if (is_array($obj['budget_01'])) {
-//   $arr = $obj['budget_01'];
-//    foreach($arr as $value) {
-//     $arr .= $value;
-//   }
-// }
-
-/* $key = array_search(['budget_01'], $obj);
-foreach($key as $val) {
-  $key .= $val;
-} */
-
-
-// if (!empty($obj['budget_01'])) { 
-//   foreach($obj['budget_01'] as $value) {
-//     $budget_01_arr .= $value;
-//     $a = "есть";
-//   }
-// }
-
-// if (empty($obj['budget_01'])) { 
-//   $a = $obj;
-// }
-
-
-
-
 // Формирование самого письма
-$title = "New user contact";
+$title = "New user database ".$org;
 
 $body = "<h2>New content for Landing page</h2>
 

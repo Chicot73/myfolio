@@ -1,0 +1,14 @@
+.header__fb--alertagree {
+    position: relative;
+    @include font (600, 1.2rem, 140%);
+    color: #ff5f02;
+    margin-bottom: 1.4rem;
+    user-select: none;
+    display: none;
+}
+
+@media only screen and (min-width: 62.51em) and (max-width: 76.5em) {
+    .header__fb--alertagree {
+        letter-spacing: -0.01em;
+    }
+}

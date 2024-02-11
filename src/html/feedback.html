@@ -14,7 +14,6 @@
     <meta name="theme-color" content="#ffffff">
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <link rel="stylesheet" href="../css/style.css">
-    <script defer src="../js/script-feedback.js"></script>
     <title>Myfolio - Feedback</title>
 </head>
 
@@ -28,100 +27,109 @@
     </div>
     <div class="container">
         <header class="header">
-            <div class="header__wrap">
-                <div class="header__content--2">
-                    <nav class="header__upper">
-                        <div class="header__flex">
-                            <div class="header__name--brief">Игорь Бобырев</div>
-                        </div>
-                        <style>
-                            nav.header__upper {
-                                margin-bottom: 0;
-                            }
-                        </style>
-                    </nav>
-                    <div class="header__feedback">
-                        <h1 class="header__title--fb">
-                            <span class="textaccent">ПОЗДРАВЛЯЮ!</span>
-                            <span>ВЫ ЗАПОЛНИЛИ БРИФ!</span>
-                        </h1>
-                        <div class="header__fb-class-2">
-                            <p class="header__fb-article">Заверяю, что ваши данные будут должным образом обработаны и
-                                учтены, этот
-                                бриф станет базой для создания по-настоящему
-                                уместной и таргетированной коммуникации с вашими заказчиками.
+            <form action="#" method="POST" class="form">
+                <div class="header__wrap">
+                    <div class="header__content--2">
+                        <nav class="header__upper">
+                            <div class="header__flex">
+                                <div class="header__name--brief">Игорь Бобырев</div>
+                            </div>
+                            <style>
+                                nav.header__upper {
+                                    margin-bottom: 0;
+                                }
+                            </style>
+                        </nav>
+                        <div class="header__feedback">
+                            <h1 class="header__title--fb">
+                                <span class="textaccent">ПОЗДРАВЛЯЮ!</span>
+                                <span>ВЫ ЗАПОЛНИЛИ БРИФ!</span>
+                            </h1>
+                            <div class="header__fb-class-2">
+                                <p class="header__fb-article">Заверяю, что ваши данные будут должным образом обработаны
+                                    и учтены, этот бриф станет базой для создания по-настоящему уместной и
+                                    таргетированной коммуникации с вашими заказчиками. Все данные пользователей надежно
+                                    хранятся и не передаются третьим лицам.
+                                </p>
+                                <p class="header__fb-article">Чтобы завершить оформление заказа, пожалуйста укажите свои
+                                    контактные данные в форме ниже. Я
+                                    свяжусь с вами так скоро,
+                                    как только смогу!
+                                </p>
+                            </div>
+                            <div class="header__fb-class-3">
+                                <div class="header__fb-class">
+                                    <h2 class="header__fb-title"><span class="alert">
+                                            <img src="../img/brief/alert.svg" alt="alert">
+                                        </span>Ваше имя</h2>
+                                    <label for="fb-name">
+                                        <input type="name" name="fb_name" id="fb-name" placeholder="укажите ваше имя"
+                                            class="header__fb-input header__fb-marc" oninput="">
+                                        <div class="header__fb-input--placeholder">
+                                            <span>укажите ваше имя</span>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="header__fb-class">
+                                    <h2 class="header__fb-title"><span class="alert">
+                                            <img src="../img/brief/alert.svg" alt="alert">
+                                        </span>ваш e-mail</h2>
+                                    <label for="fb-email">
+                                        <input type="e-mail" name="fb_email" id="fb-email"
+                                            placeholder="укажите ваш адрес электронной почты"
+                                            class="header__fb-input header__fb-marc" oninput="">
+                                        <div class="header__fb-input--placeholder">
+                                            <span>укажите ваш адрес электронной почты</span>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="header__fb-class">
+                                    <h2 class="header__fb-title"><span class="alert">
+                                            <img src="../img/brief/alert.svg" alt="alert">
+                                        </span>способ связи с вами</h2>
+                                    <label for="fb-contact">
+                                        <input type="text" name="fb_contact" id="fb-contact"
+                                            placeholder="укажите удобный для вас способ связи"
+                                            class="header__fb-input header__fb-marc" oninput="">
+                                        <div class="header__fb-input--placeholder">
+                                            <span>укажите удобный для вас способ связи</span>
+                                        </div>
+                                    </label>
+                                </div>
+                                <input class="main__input" type="checkbox" name="fb_agree" id="fb-agree"
+                                    value="Я даю согласие на обработку моих персональных данных">
+                                <label for="fb-agree" class="main__label2">
+                                    <span>Я даю согласие на обработку моих персональных данных</span>
+                                </label>
+                                <p class="header__fb--alertagree" id="fb-useragree">Пожалуйста, дайте согласие на
+                                    обработку персональных
+                                    данных</p>
+                            </div>
+                            <button class="buttons__button4" type="submit" id="d06-sec">
+                                <div class="buttons__btnimg2">
+                                    <img src="../img/feedback/brif_02 1.png" alt="Отослать мои данные" loading="lazy">
+                                </div>
+                                <p class="buttons__btnname2">Отослать мои данные</p>
+                            </button>
+                            <p class="header__fb-subsc">Нажимая на кнопку “Отослать мои данные”, я подтверждаю, что
+                                ознакомлен с <a href="https://igorbobyrev.ru/html/politika.html">“Политикой в отношении
+                                    обработки персональных данных”</a>
                             </p>
-                            <p class="header__fb-article">Чтобы завершить оформление заказа, пожалуйста укажите свои
-                                контактные данные в форме ниже. Я
-                                свяжусь с вами так скоро,
-                                как только смогу!
+                            <p class="delimiter__alert">Заполните пункты, отмеченные знаком “ <span
+                                    class="delimiter__sign">
+                                    <img src="../img/brief/alert.svg" alt="alert">
+                                </span> “
                             </p>
                         </div>
-                        <div class="header__fb-class-3">
-                            <div class="header__fb-class">
-                                <h2 class="header__fb-title"><span class="alert">
-                                        <img src="../img/brief/alert.svg" alt="alert">
-                                    </span>Ваше имя</h2>
-                                <label for="fb-name">
-                                    <input type="text" name="fb-name" id="fb-name" placeholder="укажите ваше имя"
-                                        class="header__fb-input header__fb-marc" oninput="">
-                                    <div class="header__fb-input--placeholder">
-                                        <span>укажите ваше имя</span>
-                                    </div>
-                                </label>
-                            </div>
-                            <div class="header__fb-class">
-                                <h2 class="header__fb-title"><span class="alert">
-                                        <img src="../img/brief/alert.svg" alt="alert">
-                                    </span>ваш e-mail</h2>
-                                <label for="fb-email">
-                                    <input type="text" name="fb-email" id="fb-email"
-                                        placeholder="укажите ваш адрес электронной почты"
-                                        class="header__fb-input header__fb-marc" oninput="">
-                                    <div class="header__fb-input--placeholder">
-                                        <span>укажите ваш адрес электронной почты</span>
-                                    </div>
-                                </label>
-                            </div>
-                            <div class="header__fb-class">
-                                <h2 class="header__fb-title"><span class="alert">
-                                        <img src="../img/brief/alert.svg" alt="alert">
-                                    </span>способ связи с вами</h2>
-                                <label for="fb-contact">
-                                    <input type="text" name="fb-contact" id="fb-contact"
-                                        placeholder="укажите удобный для вас способ связи"
-                                        class="header__fb-input header__fb-marc" oninput="">
-                                    <div class="header__fb-input--placeholder">
-                                        <span>укажите удобный для вас способ связи</span>
-                                    </div>
-                                </label>
-                            </div>
-                            <input class="main__input" type="checkbox" name="fb-agree" id="fb-agree">
-                            <label for="fb-agree" class="main__label2">
-                                <span>Я даю согласие на обработку моих персональных данных</span>
-                            </label>
-                            <p class="header__fb-alert-agree">Пожалуйста, дайте согласие на обработку персональных
-                                данных</p>
-                        </div>
-                        <button class="buttons__button4" id="d06-sec">
-                            <div class="buttons__btnimg2">
-                                <img src="../img/feedback/brif_02 1.png" alt="Отослать мои данные" loading="lazy">
-                            </div>
-                            <p class="buttons__btnname2">Отослать мои данные</p>
-                        </button>
-                        <p class="header__fb-subsc">Нажимая на кнопку “Отослать мои данные”, я подтверждаю, что
-                            ознакомлен с <a href="#">“Политикой в отношении обработки персональных
-                                данных”</a>
-                        </p>
                     </div>
                 </div>
-            </div>
-            <a href="https://igorbobyrev.ru" class="behance">
-                <div class="behance__home">
-                    <img src="../img/brief/home.svg" alt="на главную">
-                </div>
-                <p class="behance__text">На главную</p>
-            </a>
+                <a href="https://igorbobyrev.ru" class="behance">
+                    <div class="behance__home">
+                        <img src="../img/brief/home.svg" alt="на главную">
+                    </div>
+                    <p class="behance__text">На главную</p>
+                </a>
+            </form>
         </header>
     </div>
     <div class="dark-fb"></div>
@@ -149,4 +157,5 @@
             <p>Ваши данные были успешно доставлены!</p>
         </div>
     </aside>
+    <script defer src="../js/script-feedback.js"></script>
 </body>
