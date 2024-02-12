@@ -134,8 +134,39 @@ window.addEventListener('resize', (e) => {
 });
 
 
+//верхнее меню
 
+function aboutmeFn() {
 
+    document.getElementById('aboutme').scrollIntoView({
+        block: "start",
+        behavior: 'smooth'
+    })
+}
+
+function experienceFn() {
+
+    document.getElementById('experience').scrollIntoView({
+        block: "start",
+        behavior: 'smooth'
+    })
+}
+
+function examplesFn() {
+
+    document.getElementById('examples').scrollIntoView({
+        block: "start",
+        behavior: 'smooth'
+    })
+}
+
+function contactsFn() {
+
+    document.getElementById('contacts').scrollIntoView({
+        block: "start",
+        behavior: 'smooth'
+    })
+}
 
 //Проигрыватель
 
