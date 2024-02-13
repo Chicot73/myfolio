@@ -1740,20 +1740,45 @@ function collageCheck() {
 }
 
 
+let marked;
+
+let formChange = document.querySelector('.customer__textbold');
+
+if (formChange.textContent == 'Одностраничный сайт (Landing Page)') {
+    marked = 1;
+};
+if (formChange.textContent == 'Многостраничный сайт') {
+    marked = 2;
+};
 
 finishForm.addEventListener('click', function (e) {
     //e.preventDefault();
     collageCheck();
+
     const form = document.querySelector('.form');
 
     const sendForm = (data) => {
-        return fetch('/mail.php', {
-            method: 'POST',
-            body: JSON.stringify(data),
-            headers: {
-                'Content-type': 'application/json; charset=UTF-8'
-            }
-        }).then(res => res.json());
+
+        if (marked == 1) {
+
+            return fetch('/mail.php', {
+                method: 'POST',
+                body: JSON.stringify(data),
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8'
+                }
+            }).then(res => res.json());
+        };
+        if (marked == 2) {
+
+            return fetch('/mail-mp.php', {
+                method: 'POST',
+                body: JSON.stringify(data),
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8'
+                }
+            }).then(res => res.json());
+        };
     }
 
     form.addEventListener('submit', (e) => {
