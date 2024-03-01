@@ -6,3 +6,13 @@
     margin: 0 auto;
     margin-bottom: 6.7rem;
 }
+
+@media only screen and (max-width: 36.09em) {
+    .change-menu__wrap {
+        display: block;
+
+        & a:first-child {
+            margin-bottom: 1rem;
+        }
+    }
+}

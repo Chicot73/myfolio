@@ -14,7 +14,6 @@
     <meta name="theme-color" content="#ffffff">
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <link rel="stylesheet" href="css/style.css">
-    <script defer src="../js/script.js"></script>
     <title>Myfolio</title>
 </head>
 
@@ -38,10 +37,10 @@
                             <div class="header__name">Игорь Бобырев</div>
                         </div>
                         <ul class="header__menu">
-                            <li><a href="#" id="aboutme-item" onclick="aboutmeFn()">Обо мне</a></li>
-                            <li><a href="#" id="experience-item" onclick="experienceFn()">Опыт работы</a></li>
-                            <li><a href="#" id="examples-item" onclick="examplesFn()">Портфолио</a></li>
-                            <li><a href="#" id="contacts-item" onclick="contactsFn()">Контакты</a></li>
+                            <li><a id="aboutme-item" onclick="aboutmeFn()">Обо мне</a></li>
+                            <li><a id="experience-item" onclick="experienceFn()">Опыт работы</a></li>
+                            <li><a id="examples-item" onclick="examplesFn()">Портфолио</a></li>
+                            <li><a id="contacts-item" onclick="contactsFn()">Контакты</a></li>
                         </ul>
                     </nav>
                     <h1 class="header__title">
@@ -781,5 +780,6 @@
         </div>
     </aside>
 </body>
+<script defer src="../js/script.js"></script>
 
 </html>

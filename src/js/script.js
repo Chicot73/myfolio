@@ -137,7 +137,7 @@ window.addEventListener('resize', (e) => {
 //верхнее меню
 
 function aboutmeFn() {
-
+    //e.preventDefault();
     document.getElementById('aboutme').scrollIntoView({
         block: "start",
         behavior: 'smooth'
@@ -145,7 +145,7 @@ function aboutmeFn() {
 }
 
 function experienceFn() {
-
+    //e.preventDefault();
     document.getElementById('experience').scrollIntoView({
         block: "start",
         behavior: 'smooth'
@@ -153,7 +153,7 @@ function experienceFn() {
 }
 
 function examplesFn() {
-
+    //e.preventDefault();
     document.getElementById('examples').scrollIntoView({
         block: "start",
         behavior: 'smooth'
@@ -161,7 +161,7 @@ function examplesFn() {
 }
 
 function contactsFn() {
-
+    //e.preventDefault();
     document.getElementById('contacts').scrollIntoView({
         block: "start",
         behavior: 'smooth'

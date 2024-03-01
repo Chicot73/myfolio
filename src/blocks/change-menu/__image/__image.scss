@@ -2,3 +2,9 @@
     flex: 0 1 22.9rem;
     padding-left: 1.5rem;
 }
+
+@media only screen and (max-width: 36.09em) {
+    .change-menu__image {
+        display: none;
+    }
+}

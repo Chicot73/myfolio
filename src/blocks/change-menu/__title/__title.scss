@@ -7,3 +7,9 @@
     @include gray-23;
     user-select: none;
 }
+
+@media only screen and (max-width: 36.09em) {
+    .change-menu__title {
+        padding-top: 4.4rem;
+    }
+}
